@@ -1,0 +1,1501 @@
+test	Set up job	﻿2026-10-07T14:51:22.0825374Z Current runner version: '2.337.0'
+test	Set up job	2026-10-07T14:51:22.0844784Z ##[group]Runner Image Provisioner
+test	Set up job	2026-10-07T14:51:22.0845382Z Hosted Compute Agent
+test	Set up job	2026-10-07T14:51:22.0845813Z Version: 20261002.596
+test	Set up job	2026-10-07T14:51:22.0846231Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+test	Set up job	2026-10-07T14:51:22.0846664Z Build Date: 2026-10-02T22:28:27Z
+test	Set up job	2026-10-07T14:51:22.0847178Z Worker ID: {07ff11ec-1272-4585-8dd8-df6fc0d39251}
+test	Set up job	2026-10-07T14:51:22.0847644Z Region: westus3
+test	Set up job	2026-10-07T14:51:22.0848021Z Cloud: Azure
+test	Set up job	2026-10-07T14:51:22.0848389Z ##[endgroup]
+test	Set up job	2026-10-07T14:51:22.0849243Z ##[group]Operating System
+test	Set up job	2026-10-07T14:51:22.0849663Z Ubuntu
+test	Set up job	2026-10-07T14:51:22.0849987Z 24.04.5
+test	Set up job	2026-10-07T14:51:22.0850322Z LTS
+test	Set up job	2026-10-07T14:51:22.0850915Z ##[endgroup]
+test	Set up job	2026-10-07T14:51:22.0851276Z ##[group]Runner Image
+test	Set up job	2026-10-07T14:51:22.0851706Z Image: ubuntu-24.04
+test	Set up job	2026-10-07T14:51:22.0852061Z Version: 20261004.327.1
+test	Set up job	2026-10-07T14:51:22.0852727Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+test	Set up job	2026-10-07T14:51:22.0853832Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+test	Set up job	2026-10-07T14:51:22.0854489Z ##[endgroup]
+test	Set up job	2026-10-07T14:51:22.0855160Z ##[group]GITHUB_TOKEN Permissions
+test	Set up job	2026-10-07T14:51:22.0856680Z Contents: read
+test	Set up job	2026-10-07T14:51:22.0857027Z Metadata: read
+test	Set up job	2026-10-07T14:51:22.0857708Z ##[endgroup]
+test	Set up job	2026-10-07T14:51:22.0859184Z Secret source: Actions
+test	Set up job	2026-10-07T14:51:22.0859847Z Cache mode: write
+test	Set up job	2026-10-07T14:51:22.0860289Z Prepare workflow directory
+test	Set up job	2026-10-07T14:51:22.1089583Z Prepare all required actions
+test	Set up job	2026-10-07T14:51:22.1123644Z Getting action download info
+test	Set up job	2026-10-07T14:51:22.4593224Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+test	Set up job	2026-10-07T14:51:22.7857590Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+test	Set up job	2026-10-07T14:51:23.1830518Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+test	Set up job	2026-10-07T14:51:23.6542766Z Complete job name: test
+test	Run actions/checkout@v4	﻿2026-10-07T14:51:23.7471395Z ##[group]Run actions/checkout@v4
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7472276Z with:
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7472832Z   repository: AJ5831A/devops-homework
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7478551Z   token: ***
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7479095Z   ssh-strict: true
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7479636Z   ssh-user: git
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7480191Z   persist-credentials: true
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7480888Z   clean: true
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7481446Z   sparse-checkout-cone-mode: true
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7482098Z   fetch-depth: 1
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7482633Z   fetch-tags: false
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7483184Z   show-progress: true
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7483748Z   lfs: false
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7484280Z   submodules: false
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7484879Z   set-safe-directory: true
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7485505Z   allow-unsafe-pr-checkout: false
+test	Run actions/checkout@v4	2026-10-07T14:51:23.7486243Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8180447Z Syncing repository: AJ5831A/devops-homework
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8182495Z ##[group]Getting Git version info
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8183425Z Working directory is '/home/runner/work/devops-homework/devops-homework'
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8184857Z [command]/usr/bin/git version
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8286586Z git version 2.55.0
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8302377Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8315230Z Temporarily overriding HOME='/home/runner/work/_temp/8ae46204-ab1f-480d-8b50-8095204148ed' before making global git config changes
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8317328Z Adding repository directory to the temporary git global config as a safe directory
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8319166Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8588939Z Deleting the contents of '/home/runner/work/devops-homework/devops-homework'
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8593606Z ##[group]Initializing the repository
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8597497Z [command]/usr/bin/git init /home/runner/work/devops-homework/devops-homework
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8870430Z hint: Using 'master' as the name for the initial branch. This default branch name
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8873240Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8874891Z hint: to use in all of your new repositories, which will suppress this warning,
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8877625Z hint: call:
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8878585Z hint:
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8879742Z hint: 	git config --global init.defaultBranch <name>
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8881223Z hint:
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8882526Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8884305Z hint: 'development'. The just-created branch can be renamed via this command:
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8885655Z hint:
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8886411Z hint: 	git branch -m <name>
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8887274Z hint:
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8888415Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8890355Z Initialized empty Git repository in /home/runner/work/devops-homework/devops-homework/.git/
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8893687Z [command]/usr/bin/git remote add origin https://github.com/AJ5831A/devops-homework
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8967753Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8969182Z ##[group]Disabling automatic garbage collection
+test	Run actions/checkout@v4	2026-10-07T14:51:23.8970396Z [command]/usr/bin/git config --local gc.auto 0
+test	Run actions/checkout@v4	2026-10-07T14:51:23.9370072Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-07T14:51:23.9371660Z ##[group]Setting up auth
+test	Run actions/checkout@v4	2026-10-07T14:51:23.9377197Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Run actions/checkout@v4	2026-10-07T14:51:23.9408679Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Run actions/checkout@v4	2026-10-07T14:51:23.9760765Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Run actions/checkout@v4	2026-10-07T14:51:23.9795599Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Run actions/checkout@v4	2026-10-07T14:51:23.9996980Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Run actions/checkout@v4	2026-10-07T14:51:24.0034025Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Run actions/checkout@v4	2026-10-07T14:51:24.0237074Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test	Run actions/checkout@v4	2026-10-07T14:51:24.0366916Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-07T14:51:24.0367585Z ##[group]Fetching the repository
+test	Run actions/checkout@v4	2026-10-07T14:51:24.0374857Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +be9442981c475a39475f4f14501e0fc95244b681:refs/remotes/origin/main
+test	Run actions/checkout@v4	2026-10-07T14:51:25.0191714Z From https://github.com/AJ5831A/devops-homework
+test	Run actions/checkout@v4	2026-10-07T14:51:25.0192220Z  * [new ref]         be9442981c475a39475f4f14501e0fc95244b681 -> origin/main
+test	Run actions/checkout@v4	2026-10-07T14:51:25.0195012Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-07T14:51:25.0195325Z ##[group]Determining the checkout info
+test	Run actions/checkout@v4	2026-10-07T14:51:25.0197080Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-07T14:51:25.0201501Z [command]/usr/bin/git sparse-checkout disable
+test	Run actions/checkout@v4	2026-10-07T14:51:25.0827331Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test	Run actions/checkout@v4	2026-10-07T14:51:25.0923333Z ##[group]Checking out the ref
+test	Run actions/checkout@v4	2026-10-07T14:51:25.0926926Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+test	Run actions/checkout@v4	2026-10-07T14:51:25.1522471Z Switched to a new branch 'main'
+test	Run actions/checkout@v4	2026-10-07T14:51:25.1523410Z branch 'main' set up to track 'origin/main'.
+test	Run actions/checkout@v4	2026-10-07T14:51:25.1531767Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-07T14:51:25.1743934Z [command]/usr/bin/git log -1 --format=%H
+test	Run actions/checkout@v4	2026-10-07T14:51:25.1764436Z be9442981c475a39475f4f14501e0fc95244b681
+test	Run actions/setup-python@v5	﻿2026-10-07T14:51:25.2040894Z ##[group]Run actions/setup-python@v5
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.2041159Z with:
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.2041275Z   python-version: 3.12
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.2041406Z   check-latest: false
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.2042865Z   token: ***
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.2043149Z   update-environment: true
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.2043293Z   allow-prereleases: false
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.2043424Z   freethreaded: false
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.2043545Z ##[endgroup]
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.2946067Z ##[group]Installed versions
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.3273186Z (node:2081) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.3273944Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.3274304Z Successfully set up CPython (3.12.15)
+test	Run actions/setup-python@v5	2026-10-07T14:51:25.3274860Z ##[endgroup]
+test	Build and unit test	﻿2026-10-07T14:51:25.3532640Z ##[group]Run set -euo pipefail
+test	Build and unit test	2026-10-07T14:51:25.3532995Z ^[[36;1mset -euo pipefail^[[0m
+test	Build and unit test	2026-10-07T14:51:25.3533195Z ^[[36;1mpython -m compileall -q app^[[0m
+test	Build and unit test	2026-10-07T14:51:25.3533477Z ^[[36;1mpython -m unittest discover -s tests -v 2>&1 | tee test-results.txt^[[0m
+test	Build and unit test	2026-10-07T14:51:25.3533845Z ^[[36;1mtar --exclude='__pycache__' -czf application.tar.gz app Dockerfile requirements.txt^[[0m
+test	Build and unit test	2026-10-07T14:51:25.4127126Z shell: /usr/bin/bash -e {0}
+test	Build and unit test	2026-10-07T14:51:25.4127400Z env:
+test	Build and unit test	2026-10-07T14:51:25.4127584Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Build and unit test	2026-10-07T14:51:25.4127871Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test	Build and unit test	2026-10-07T14:51:25.4128294Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Build and unit test	2026-10-07T14:51:25.4128592Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Build and unit test	2026-10-07T14:51:25.4128805Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Build and unit test	2026-10-07T14:51:25.4129022Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test	Build and unit test	2026-10-07T14:51:25.4129269Z ##[endgroup]
+test	Build and unit test	2026-10-07T14:51:26.1617682Z test_arithmetic (test_calculator.CalculatorTests.test_arithmetic) ... ok
+test	Build and unit test	2026-10-07T14:51:26.1621792Z test_invalid_operands (test_calculator.CalculatorTests.test_invalid_operands) ... ok
+test	Build and unit test	2026-10-07T14:51:26.1622394Z test_overflow (test_calculator.CalculatorTests.test_overflow) ... ok
+test	Build and unit test	2026-10-07T14:51:26.1622824Z test_routes (test_calculator.CalculatorTests.test_routes) ... ok
+test	Build and unit test	2026-10-07T14:51:26.1623253Z test_unknown_operation (test_calculator.CalculatorTests.test_unknown_operation) ... ok
+test	Build and unit test	2026-10-07T14:51:26.1623706Z test_zero_division (test_calculator.CalculatorTests.test_zero_division) ... ok
+test	Build and unit test	2026-10-07T14:51:26.1623960Z 
+test	Build and unit test	2026-10-07T14:51:26.1624095Z ----------------------------------------------------------------------
+test	Build and unit test	2026-10-07T14:51:26.1624400Z Ran 6 tests in 0.000s
+test	Build and unit test	2026-10-07T14:51:26.1624516Z 
+test	Build and unit test	2026-10-07T14:51:26.1624592Z OK
+test	Run actions/upload-artifact@v4	﻿2026-10-07T14:51:26.1777121Z ##[group]Run actions/upload-artifact@v4
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1777297Z with:
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1777415Z   name: secure-calculator-build
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1777614Z   path: 16-devsecops/application.tar.gz
+test	Run actions/upload-artifact@v4	16-devsecops/test-results.txt
+test	Run actions/upload-artifact@v4	
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1777812Z   if-no-files-found: warn
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1777939Z   compression-level: 6
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1778055Z   overwrite: false
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1778175Z   include-hidden-files: false
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1778319Z env:
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1778455Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1778679Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1778896Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1779092Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1779288Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1779490Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.1779688Z ##[endgroup]
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.2805115Z (node:2096) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.2805562Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.2839106Z Multiple search paths detected. Calculating the least common ancestor of all paths
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.2845032Z The least common ancestor is /home/runner/work/devops-homework/devops-homework/16-devsecops. This will be the root directory of the artifact
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.2845668Z With the provided path, there will be 2 files uploaded
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.2846193Z Artifact name is valid!
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.2846517Z Root directory input is valid!
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.6205061Z Beginning upload of artifact content to blob storage
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.6321103Z (node:2096) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.8368292Z Uploaded bytes 1722
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.8914813Z Finished uploading artifact content to blob storage!
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.8915444Z SHA256 digest of uploaded artifact zip is 291ae21accfe9714614496d274fbcdbd1732ff652273fe8d45cf070d37943a41
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:26.8916466Z Finalizing artifact upload
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:27.1861015Z Artifact secure-calculator-build.zip successfully finalized. Artifact ID 11491029716
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:27.1861833Z Artifact secure-calculator-build has been successfully uploaded! Final size is 1722 bytes. Artifact ID is 11491029716
+test	Run actions/upload-artifact@v4	2026-10-07T14:51:27.1867537Z Artifact download URL: https://github.com/AJ5831A/devops-homework/actions/runs/37640204904/artifacts/11491029716
+test	Post Run actions/setup-python@v5	﻿2026-10-07T14:51:27.1997369Z Post job cleanup.
+test	Post Run actions/setup-python@v5	2026-10-07T14:51:27.2793396Z (node:2109) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test	Post Run actions/setup-python@v5	2026-10-07T14:51:27.2793850Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test	Post Run actions/checkout@v4	﻿2026-10-07T14:51:27.2950254Z Post job cleanup.
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.3554603Z [command]/usr/bin/git version
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.3588196Z git version 2.55.0
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.3612710Z Temporarily overriding HOME='/home/runner/work/_temp/df3a0abe-3005-4991-9f05-35614fe5025f' before making global git config changes
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.3613424Z Adding repository directory to the temporary git global config as a safe directory
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.3616883Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.3650991Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.3679454Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.3897708Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.3922649Z http.https://github.com/.extraheader
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.3932711Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.3965238Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.4159103Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Post Run actions/checkout@v4	2026-10-07T14:51:27.4189022Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Complete job	﻿2026-10-07T14:51:27.4478064Z Cleaning up orphan processes
+test	Complete job	2026-10-07T14:51:27.4693579Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+security	Set up job	﻿2026-10-07T14:51:37.0729826Z Current runner version: '2.337.0'
+security	Set up job	2026-10-07T14:51:37.0754106Z ##[group]Runner Image Provisioner
+security	Set up job	2026-10-07T14:51:37.0755043Z Hosted Compute Agent
+security	Set up job	2026-10-07T14:51:37.0755588Z Version: 20260901.588
+security	Set up job	2026-10-07T14:51:37.0756162Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+security	Set up job	2026-10-07T14:51:37.0756839Z Build Date: 2026-09-01T19:56:44Z
+security	Set up job	2026-10-07T14:51:37.0757450Z Worker ID: {c015fda0-5f6f-424a-a8e4-0ec52b55da61}
+security	Set up job	2026-10-07T14:51:37.0758188Z Azure Region: westus3
+security	Set up job	2026-10-07T14:51:37.0758744Z ##[endgroup]
+security	Set up job	2026-10-07T14:51:37.0760159Z ##[group]Operating System
+security	Set up job	2026-10-07T14:51:37.0760753Z Ubuntu
+security	Set up job	2026-10-07T14:51:37.0761464Z 24.04.5
+security	Set up job	2026-10-07T14:51:37.0761953Z LTS
+security	Set up job	2026-10-07T14:51:37.0762458Z ##[endgroup]
+security	Set up job	2026-10-07T14:51:37.0762957Z ##[group]Runner Image
+security	Set up job	2026-10-07T14:51:37.0763508Z Image: ubuntu-24.04
+security	Set up job	2026-10-07T14:51:37.0764029Z Version: 20260927.320.1
+security	Set up job	2026-10-07T14:51:37.0765069Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+security	Set up job	2026-10-07T14:51:37.0766656Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+security	Set up job	2026-10-07T14:51:37.0767814Z ##[endgroup]
+security	Set up job	2026-10-07T14:51:37.0768887Z ##[group]GITHUB_TOKEN Permissions
+security	Set up job	2026-10-07T14:51:37.0770938Z Contents: read
+security	Set up job	2026-10-07T14:51:37.0771636Z Metadata: read
+security	Set up job	2026-10-07T14:51:37.0772134Z ##[endgroup]
+security	Set up job	2026-10-07T14:51:37.0774195Z Secret source: Actions
+security	Set up job	2026-10-07T14:51:37.0775083Z Cache mode: write
+security	Set up job	2026-10-07T14:51:37.0775758Z Prepare workflow directory
+security	Set up job	2026-10-07T14:51:37.1142646Z Prepare all required actions
+security	Set up job	2026-10-07T14:51:37.1190612Z Getting action download info
+security	Set up job	2026-10-07T14:51:37.4522285Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+security	Set up job	2026-10-07T14:51:37.5571235Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+security	Set up job	2026-10-07T14:51:37.6245167Z Download action repository 'aquasecurity/trivy-action@v0.36.0' (SHA:ed142fd0673e97e23eac54620cfb913e5ce36c25)
+security	Set up job	2026-10-07T14:51:38.1802605Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+security	Set up job	2026-10-07T14:51:38.5176936Z Getting action download info
+security	Set up job	2026-10-07T14:51:38.6606758Z Download action repository 'aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514' (SHA:3fb12ec12f41e471780db15c232d5dd185dcb514)
+security	Set up job	2026-10-07T14:51:38.8939684Z Download action repository 'actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae' (SHA:27d5ce7f107fe9357f9df03efb73ab90386fccae)
+security	Set up job	2026-10-07T14:51:39.1789459Z Getting action download info
+security	Set up job	2026-10-07T14:51:39.3608884Z Download action repository 'actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb' (SHA:9255dc7a253b0ccc959486e2bca901246202afeb)
+security	Set up job	2026-10-07T14:51:39.6170582Z Download action repository 'actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
+security	Set up job	2026-10-07T14:51:39.7958759Z Complete job name: security
+security	Run actions/checkout@v4	﻿2026-10-07T14:51:39.8807447Z ##[group]Run actions/checkout@v4
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8808809Z with:
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8809633Z   repository: AJ5831A/devops-homework
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8817966Z   token: ***
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8818758Z   ssh-strict: true
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8819550Z   ssh-user: git
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8820376Z   persist-credentials: true
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8821241Z   clean: true
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8822133Z   sparse-checkout-cone-mode: true
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8823059Z   fetch-depth: 1
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8823835Z   fetch-tags: false
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8824628Z   show-progress: true
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8825419Z   lfs: false
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8826153Z   submodules: false
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8826960Z   set-safe-directory: true
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8827863Z   allow-unsafe-pr-checkout: false
+security	Run actions/checkout@v4	2026-10-07T14:51:39.8829046Z ##[endgroup]
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9877379Z Syncing repository: AJ5831A/devops-homework
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9882009Z ##[group]Getting Git version info
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9886151Z Working directory is '/home/runner/work/devops-homework/devops-homework'
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9890687Z [command]/usr/bin/git version
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9892623Z git version 2.55.0
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9902296Z ##[endgroup]
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9912336Z Temporarily overriding HOME='/home/runner/work/_temp/80bda4a3-cb48-433f-83ef-0034dfed27ce' before making global git config changes
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9917238Z Adding repository directory to the temporary git global config as a safe directory
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9922019Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9962595Z Deleting the contents of '/home/runner/work/devops-homework/devops-homework'
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9966388Z ##[group]Initializing the repository
+security	Run actions/checkout@v4	2026-10-07T14:51:39.9970270Z [command]/usr/bin/git init /home/runner/work/devops-homework/devops-homework
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0074552Z hint: Using 'master' as the name for the initial branch. This default branch name
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0078615Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0082365Z hint: to use in all of your new repositories, which will suppress this warning,
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0084975Z hint: call:
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0086909Z hint:
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0088800Z hint: 	git config --global init.defaultBranch <name>
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0091512Z hint:
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0093739Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0097227Z hint: 'development'. The just-created branch can be renamed via this command:
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0100009Z hint:
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0101717Z hint: 	git branch -m <name>
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0103537Z hint:
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0106086Z hint: Disable this message with "git config set advice.defaultBranchName false"
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0110580Z Initialized empty Git repository in /home/runner/work/devops-homework/devops-homework/.git/
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0118137Z [command]/usr/bin/git remote add origin https://github.com/AJ5831A/devops-homework
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0128980Z ##[endgroup]
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0131930Z ##[group]Disabling automatic garbage collection
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0134418Z [command]/usr/bin/git config --local gc.auto 0
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0162527Z ##[endgroup]
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0164998Z ##[group]Setting up auth
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0168593Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0199726Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0544622Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0580894Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0795813Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+security	Run actions/checkout@v4	2026-10-07T14:51:40.0840118Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+security	Run actions/checkout@v4	2026-10-07T14:51:40.1040613Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+security	Run actions/checkout@v4	2026-10-07T14:51:40.1073635Z ##[endgroup]
+security	Run actions/checkout@v4	2026-10-07T14:51:40.1075183Z ##[group]Fetching the repository
+security	Run actions/checkout@v4	2026-10-07T14:51:40.1083053Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +be9442981c475a39475f4f14501e0fc95244b681:refs/remotes/origin/main
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6413651Z From https://github.com/AJ5831A/devops-homework
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6416929Z  * [new ref]         be9442981c475a39475f4f14501e0fc95244b681 -> origin/main
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6423313Z ##[endgroup]
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6426172Z ##[group]Determining the checkout info
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6429057Z ##[endgroup]
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6431764Z [command]/usr/bin/git sparse-checkout disable
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6469609Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6500811Z ##[group]Checking out the ref
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6505174Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6612382Z Switched to a new branch 'main'
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6614734Z branch 'main' set up to track 'origin/main'.
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6619975Z ##[endgroup]
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6657327Z [command]/usr/bin/git log -1 --format=%H
+security	Run actions/checkout@v4	2026-10-07T14:51:40.6679487Z be9442981c475a39475f4f14501e0fc95244b681
+security	Run actions/setup-python@v5	﻿2026-10-07T14:51:40.6987216Z ##[group]Run actions/setup-python@v5
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.6988257Z with:
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.6989071Z   python-version: 3.12
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.6989959Z   check-latest: false
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.6997229Z   token: ***
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.6998093Z   update-environment: true
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.6999045Z   allow-prereleases: false
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.7000005Z   freethreaded: false
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.7000877Z ##[endgroup]
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.8292772Z ##[group]Installed versions
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.8364713Z (node:2227) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.8367289Z (Use `node --trace-deprecation ...` to show where the warning was created)
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.8369247Z Successfully set up CPython (3.12.14)
+security	Run actions/setup-python@v5	2026-10-07T14:51:40.8371775Z ##[endgroup]
+security	Install and inventory security tools	﻿2026-10-07T14:51:40.8587663Z ##[group]Run python -m pip install bandit pip-audit
+security	Install and inventory security tools	2026-10-07T14:51:40.8589968Z ^[[36;1mpython -m pip install bandit pip-audit^[[0m
+security	Install and inventory security tools	2026-10-07T14:51:40.8592510Z ^[[36;1mpython -m pip freeze | tee security-tool-versions.txt^[[0m
+security	Install and inventory security tools	2026-10-07T14:51:40.8961850Z shell: /usr/bin/bash -e {0}
+security	Install and inventory security tools	2026-10-07T14:51:40.8962802Z env:
+security	Install and inventory security tools	2026-10-07T14:51:40.8963692Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Install and inventory security tools	2026-10-07T14:51:40.8964979Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Install and inventory security tools	2026-10-07T14:51:40.8966312Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Install and inventory security tools	2026-10-07T14:51:40.8967487Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Install and inventory security tools	2026-10-07T14:51:40.8968665Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Install and inventory security tools	2026-10-07T14:51:40.8969857Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Install and inventory security tools	2026-10-07T14:51:40.8970874Z ##[endgroup]
+security	Install and inventory security tools	2026-10-07T14:51:47.3352960Z Collecting bandit
+security	Install and inventory security tools	2026-10-07T14:51:47.4055742Z   Downloading bandit-1.9.4-py3-none-any.whl.metadata (7.1 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.4334701Z Collecting pip-audit
+security	Install and inventory security tools	2026-10-07T14:51:47.4437242Z   Downloading pip_audit-2.10.1-py3-none-any.whl.metadata (28 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.5026260Z Collecting PyYAML>=5.3.1 (from bandit)
+security	Install and inventory security tools	2026-10-07T14:51:47.5130716Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.5366928Z Collecting stevedore>=1.20.0 (from bandit)
+security	Install and inventory security tools	2026-10-07T14:51:47.5469450Z   Downloading stevedore-5.9.1-py3-none-any.whl.metadata (2.3 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.5841593Z Collecting rich (from bandit)
+security	Install and inventory security tools	2026-10-07T14:51:47.5942749Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.6163942Z Collecting CacheControl>=0.13.0 (from CacheControl[filecache]>=0.13.0->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:47.6267735Z   Downloading cachecontrol-0.14.4-py3-none-any.whl.metadata (3.1 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.6728543Z Collecting cyclonedx-python-lib<12,>=5 (from pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:47.6836231Z   Downloading cyclonedx_python_lib-11.12.0-py3-none-any.whl.metadata (6.9 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.7046701Z Collecting packaging>=23.0.0 (from pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:47.7150095Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.7337450Z Collecting pip-api>=0.0.28 (from pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:47.7440712Z   Downloading pip_api-0.0.35-py3-none-any.whl.metadata (17 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.7632505Z Collecting pip-requirements-parser>=32.0.0 (from pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:47.7733788Z   Downloading pip_requirements_parser-32.0.1-py3-none-any.whl.metadata (9.3 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.7993872Z Collecting requests>=2.31.0 (from pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:47.8106203Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.8430948Z Collecting tomli>=2.2.1 (from pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:47.8534489Z   Downloading tomli-2.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.8713178Z Collecting tomli-w>=1.2.0 (from pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:47.8814967Z   Downloading tomli_w-1.2.0-py3-none-any.whl.metadata (5.7 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.9054365Z Collecting platformdirs>=4.2.0 (from pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:47.9161457Z   Downloading platformdirs-4.12.3-py3-none-any.whl.metadata (5.5 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.9369519Z Collecting license-expression<31,>=30 (from cyclonedx-python-lib<12,>=5->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:47.9473255Z   Downloading license_expression-30.4.4-py3-none-any.whl.metadata (11 kB)
+security	Install and inventory security tools	2026-10-07T14:51:47.9703766Z Collecting packageurl-python<2,>=0.11 (from cyclonedx-python-lib<12,>=5->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:47.9806399Z   Downloading packageurl_python-0.17.6-py3-none-any.whl.metadata (5.1 kB)
+security	Install and inventory security tools	2026-10-07T14:51:48.0515790Z Collecting py-serializable<3.0.0,>=2.1.0 (from cyclonedx-python-lib<12,>=5->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:48.0617603Z   Downloading py_serializable-2.1.0-py3-none-any.whl.metadata (4.3 kB)
+security	Install and inventory security tools	2026-10-07T14:51:48.1584000Z Collecting sortedcontainers<3.0.0,>=2.4.0 (from cyclonedx-python-lib<12,>=5->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:48.1689307Z   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+security	Install and inventory security tools	2026-10-07T14:51:48.2555951Z Collecting typing_extensions<5.0,>=4.6 (from cyclonedx-python-lib<12,>=5->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:48.2659065Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+security	Install and inventory security tools	2026-10-07T14:51:48.4590001Z Collecting boolean.py>=4.0 (from license-expression<31,>=30->cyclonedx-python-lib<12,>=5->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:48.4696244Z   Downloading boolean_py-5.0-py3-none-any.whl.metadata (2.3 kB)
+security	Install and inventory security tools	2026-10-07T14:51:48.5514081Z Collecting defusedxml<0.8.0,>=0.7.1 (from py-serializable<3.0.0,>=2.1.0->cyclonedx-python-lib<12,>=5->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:48.5621105Z   Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.2995602Z Collecting msgpack<2.0.0,>=0.5.2 (from CacheControl>=0.13.0->CacheControl[filecache]>=0.13.0->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:49.3100492Z   Downloading msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.4331861Z Collecting filelock>=3.8.0 (from CacheControl[filecache]>=0.13.0->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:49.4432235Z   Downloading filelock-4.0.12-py3-none-any.whl.metadata (2.0 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.4477083Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages (from pip-api>=0.0.28->pip-audit) (26.2.1)
+security	Install and inventory security tools	2026-10-07T14:51:49.4736412Z Collecting pyparsing (from pip-requirements-parser>=32.0.0->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:49.4841239Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.6046226Z Collecting charset_normalizer<4,>=2 (from requests>=2.31.0->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:49.6149201Z   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.6387124Z Collecting idna<4,>=2.5 (from requests>=2.31.0->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:49.6498110Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.6752571Z Collecting urllib3<3,>=1.26 (from requests>=2.31.0->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:49.6854319Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.7076564Z Collecting certifi>=2023.5.7 (from requests>=2.31.0->pip-audit)
+security	Install and inventory security tools	2026-10-07T14:51:49.7177263Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.7389963Z Collecting markdown-it-py>=2.2.0 (from rich->bandit)
+security	Install and inventory security tools	2026-10-07T14:51:49.7490387Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.7733461Z Collecting pygments<3.0.0,>=2.13.0 (from rich->bandit)
+security	Install and inventory security tools	2026-10-07T14:51:49.7833861Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.8007828Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->bandit)
+security	Install and inventory security tools	2026-10-07T14:51:49.8108938Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.8402879Z Downloading bandit-1.9.4-py3-none-any.whl (134 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.8622192Z Downloading pip_audit-2.10.1-py3-none-any.whl (62 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.8744197Z Downloading cyclonedx_python_lib-11.12.0-py3-none-any.whl (529 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.8968549Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 529.5/529.5 kB 24.9 MB/s  0:00:00
+security	Install and inventory security tools	2026-10-07T14:51:49.9069705Z Downloading license_expression-30.4.4-py3-none-any.whl (120 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.9191254Z Downloading packageurl_python-0.17.6-py3-none-any.whl (36 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.9310007Z Downloading py_serializable-2.1.0-py3-none-any.whl (23 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.9429157Z Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.9546398Z Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.9665511Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.9788758Z Downloading boolean_py-5.0-py3-none-any.whl (26 kB)
+security	Install and inventory security tools	2026-10-07T14:51:49.9907197Z Downloading cachecontrol-0.14.4-py3-none-any.whl (22 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.0026399Z Downloading msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (472 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.0239921Z Downloading filelock-4.0.12-py3-none-any.whl (111 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.0385168Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.0510247Z Downloading pip_api-0.0.35-py3-none-any.whl (123 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.0632410Z Downloading pip_requirements_parser-32.0.1-py3-none-any.whl (35 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.0756722Z Downloading platformdirs-4.12.3-py3-none-any.whl (32 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.0883120Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.1014213Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 51.0 MB/s  0:00:00
+security	Install and inventory security tools	2026-10-07T14:51:50.1116504Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.1242983Z Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.1371524Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.1496785Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.1622752Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.1749141Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.1876812Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+security	Install and inventory security tools	2026-10-07T14:51:50.1942103Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 245.8 MB/s  0:00:00
+security	Install and inventory security tools	2026-10-07T14:51:50.2044166Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.2165032Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.2283264Z Downloading stevedore-5.9.1-py3-none-any.whl (54 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.2408345Z Downloading tomli-2.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (286 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.2529938Z Downloading tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.2660642Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+security	Install and inventory security tools	2026-10-07T14:51:50.6973400Z Installing collected packages: sortedcontainers, boolean.py, urllib3, typing_extensions, tomli-w, tomli, stevedore, PyYAML, pyparsing, pygments, platformdirs, pip-api, packaging, packageurl-python, msgpack, mdurl, license-expression, idna, filelock, defusedxml, charset_normalizer, certifi, requests, py-serializable, pip-requirements-parser, markdown-it-py, rich, cyclonedx-python-lib, CacheControl, bandit, pip-audit
+security	Install and inventory security tools	2026-10-07T14:51:52.6035570Z 
+security	Install and inventory security tools	2026-10-07T14:51:52.6062953Z Successfully installed CacheControl-0.14.4 PyYAML-6.0.3 bandit-1.9.4 boolean.py-5.0 certifi-2026.7.22 charset_normalizer-3.5.2 cyclonedx-python-lib-11.12.0 defusedxml-0.7.1 filelock-4.0.12 idna-3.20 license-expression-30.4.4 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.3 packageurl-python-0.17.6 packaging-26.3 pip-api-0.0.35 pip-audit-2.10.1 pip-requirements-parser-32.0.1 platformdirs-4.12.3 py-serializable-2.1.0 pygments-2.21.0 pyparsing-3.3.3 requests-2.34.2 rich-15.0.0 sortedcontainers-2.4.0 stevedore-5.9.1 tomli-2.5.0 tomli-w-1.2.0 typing_extensions-4.16.0 urllib3-2.8.0
+security	Install and inventory security tools	2026-10-07T14:51:52.9029290Z bandit==1.9.4
+security	Install and inventory security tools	2026-10-07T14:51:52.9030161Z boolean.py==5.0
+security	Install and inventory security tools	2026-10-07T14:51:52.9030744Z CacheControl==0.14.4
+security	Install and inventory security tools	2026-10-07T14:51:52.9031530Z certifi==2026.7.22
+security	Install and inventory security tools	2026-10-07T14:51:52.9032121Z charset-normalizer==3.5.2
+security	Install and inventory security tools	2026-10-07T14:51:52.9032797Z cyclonedx-python-lib==11.12.0
+security	Install and inventory security tools	2026-10-07T14:51:52.9033512Z defusedxml==0.7.1
+security	Install and inventory security tools	2026-10-07T14:51:52.9034066Z filelock==4.0.12
+security	Install and inventory security tools	2026-10-07T14:51:52.9034602Z idna==3.20
+security	Install and inventory security tools	2026-10-07T14:51:52.9035144Z license-expression==30.4.4
+security	Install and inventory security tools	2026-10-07T14:51:52.9035810Z markdown-it-py==4.2.0
+security	Install and inventory security tools	2026-10-07T14:51:52.9036390Z mdurl==0.1.2
+security	Install and inventory security tools	2026-10-07T14:51:52.9036922Z msgpack==1.2.3
+security	Install and inventory security tools	2026-10-07T14:51:52.9037493Z packageurl-python==0.17.6
+security	Install and inventory security tools	2026-10-07T14:51:52.9038143Z packaging==26.3
+security	Install and inventory security tools	2026-10-07T14:51:52.9038755Z pip-requirements-parser==32.0.1
+security	Install and inventory security tools	2026-10-07T14:51:52.9039334Z pip_api==0.0.35
+security	Install and inventory security tools	2026-10-07T14:51:52.9039955Z pip_audit==2.10.1
+security	Install and inventory security tools	2026-10-07T14:51:52.9040270Z platformdirs==4.12.3
+security	Install and inventory security tools	2026-10-07T14:51:52.9040604Z py-serializable==2.1.0
+security	Install and inventory security tools	2026-10-07T14:51:52.9040926Z Pygments==2.21.0
+security	Install and inventory security tools	2026-10-07T14:51:52.9041237Z pyparsing==3.3.3
+security	Install and inventory security tools	2026-10-07T14:51:52.9041656Z PyYAML==6.0.3
+security	Install and inventory security tools	2026-10-07T14:51:52.9041947Z requests==2.34.2
+security	Install and inventory security tools	2026-10-07T14:51:52.9042225Z rich==15.0.0
+security	Install and inventory security tools	2026-10-07T14:51:52.9042527Z sortedcontainers==2.4.0
+security	Install and inventory security tools	2026-10-07T14:51:52.9042846Z stevedore==5.9.1
+security	Install and inventory security tools	2026-10-07T14:51:52.9043126Z tomli==2.5.0
+security	Install and inventory security tools	2026-10-07T14:51:52.9043398Z tomli_w==1.2.0
+security	Install and inventory security tools	2026-10-07T14:51:52.9043707Z typing_extensions==4.16.0
+security	Install and inventory security tools	2026-10-07T14:51:52.9044035Z urllib3==2.8.0
+security	SAST gate (Bandit)	﻿2026-10-07T14:51:52.9317884Z ##[group]Run bandit -r 16-devsecops/app -c 16-devsecops/.bandit.yaml -f json -o sast.json
+security	SAST gate (Bandit)	2026-10-07T14:51:52.9318501Z ^[[36;1mbandit -r 16-devsecops/app -c 16-devsecops/.bandit.yaml -f json -o sast.json^[[0m
+security	SAST gate (Bandit)	2026-10-07T14:51:52.9354210Z shell: /usr/bin/bash -e {0}
+security	SAST gate (Bandit)	2026-10-07T14:51:52.9354479Z env:
+security	SAST gate (Bandit)	2026-10-07T14:51:52.9354748Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	SAST gate (Bandit)	2026-10-07T14:51:52.9355205Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	SAST gate (Bandit)	2026-10-07T14:51:52.9355611Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	SAST gate (Bandit)	2026-10-07T14:51:52.9355980Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	SAST gate (Bandit)	2026-10-07T14:51:52.9356340Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	SAST gate (Bandit)	2026-10-07T14:51:52.9356703Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	SAST gate (Bandit)	2026-10-07T14:51:52.9357023Z ##[endgroup]
+security	SAST gate (Bandit)	2026-10-07T14:51:53.2672522Z [main]	INFO	profile include tests: None
+security	SAST gate (Bandit)	2026-10-07T14:51:53.2673416Z [main]	INFO	profile exclude tests: None
+security	SAST gate (Bandit)	2026-10-07T14:51:53.2674192Z [main]	INFO	cli include tests: None
+security	SAST gate (Bandit)	2026-10-07T14:51:53.2674803Z [main]	INFO	cli exclude tests: None
+security	SAST gate (Bandit)	2026-10-07T14:51:53.2743443Z [json]	INFO	JSON output written to file: sast.json
+security	SCA gate (installed Python toolchain)	﻿2026-10-07T14:51:53.2990499Z ##[group]Run pip-audit --format json --output sca.json
+security	SCA gate (installed Python toolchain)	2026-10-07T14:51:53.2991219Z ^[[36;1mpip-audit --format json --output sca.json^[[0m
+security	SCA gate (installed Python toolchain)	2026-10-07T14:51:53.3048410Z shell: /usr/bin/bash -e {0}
+security	SCA gate (installed Python toolchain)	2026-10-07T14:51:53.3048860Z env:
+security	SCA gate (installed Python toolchain)	2026-10-07T14:51:53.3049311Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	SCA gate (installed Python toolchain)	2026-10-07T14:51:53.3050057Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	SCA gate (installed Python toolchain)	2026-10-07T14:51:53.3050775Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	SCA gate (installed Python toolchain)	2026-10-07T14:51:53.3051618Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	SCA gate (installed Python toolchain)	2026-10-07T14:51:53.3052569Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	SCA gate (installed Python toolchain)	2026-10-07T14:51:53.3053260Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	SCA gate (installed Python toolchain)	2026-10-07T14:51:53.3053830Z ##[endgroup]
+security	SCA gate (installed Python toolchain)	2026-10-07T14:51:55.6354196Z No known vulnerabilities found
+security	Secret scanning gate (working tree)	﻿2026-10-07T14:51:55.7118624Z ##[group]Run aquasecurity/trivy-action@v0.36.0
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7118955Z with:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7119163Z   scan-type: fs
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7119376Z   scan-ref: .
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7119580Z   scanners: secret
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7119784Z   exit-code: 1
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7119973Z   format: json
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7120163Z   output: secrets.json
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7120379Z   ignore-unfixed: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7120603Z   vuln-type: os,library
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7120842Z   severity: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7121234Z   cache-dir: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7121773Z   list-all-pkgs: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7121983Z   version: v0.70.0
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7122202Z   cache: true
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7122404Z   skip-setup-trivy: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7125128Z   token-setup-trivy: ***
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7125338Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7125589Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7126043Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7126450Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7126816Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7127168Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7127524Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7127837Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7188860Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7299273Z ##[group]Run aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7299692Z with:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7299889Z   version: v0.70.0
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7300085Z   cache: true
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7303026Z   token: ***
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7303242Z   path: $HOME/.local/bin
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7303491Z   github-server-url: https://github.com
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7303766Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7304016Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7304428Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7304827Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7305182Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7305538Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7305899Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7306207Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7312664Z ##[start-action display=Binary dir;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7327910Z ##[group]Run echo "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7328369Z ^[[36;1mecho "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7365946Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7366301Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7366564Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7366983Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7367388Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7367751Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7368111Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7368479Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7368791Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7455041Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir;outcome=success;conclusion=success;duration_ms=14]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7460332Z ##[start-action display=Check the version for caching;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7467256Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7469746Z ##[start-action display=Restore Trivy binary from cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7517167Z ##[group]Run actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7517564Z with:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7517779Z   path: /home/runner/.local/bin/trivy-bin
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7518071Z   key: trivy-binary-v0.70.0-Linux-X64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7518341Z   enableCrossOsArchive: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7518590Z   fail-on-cache-miss: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7518826Z   lookup-only: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7519028Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7519389Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7519814Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7520234Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7520600Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7520977Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7521599Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:55.7521921Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:56.0817030Z Cache hit for: trivy-binary-v0.70.0-Linux-X64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.3174283Z Received 33554432 of 43751198 (76.7%), 32.0 MBs/sec
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.4682899Z Received 43751198 of 43751198 (100.0%), 36.2 MBs/sec
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.4683397Z Cache Size: ~42 MB (43751198 B)
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.4712492Z [command]/usr/bin/tar -xf /home/runner/work/_temp/1b04efb9-c3eb-4d58-a962-0bc1e6ec9b9f/cache.tzst -P -C /home/runner/work/devops-homework/devops-homework --use-compress-program unzstd
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.6827114Z Cache restored successfully
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.6917289Z Cache restored from key: trivy-binary-v0.70.0-Linux-X64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.6971031Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache;outcome=success;conclusion=success;duration_ms=1949]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.6974273Z ##[start-action display=Checkout install script;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.6980378Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout;outcome=skipped;conclusion=skipped;duration_ms=0]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.6982893Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.6988146Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.6990394Z ##[start-action display=Add Trivy binary to $GITHUB_PATH;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7006573Z ##[group]Run echo /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7007025Z ^[[36;1mecho /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7042929Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7043269Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7043534Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7043952Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7044373Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7044740Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7045107Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7045475Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7045795Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7106491Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3;outcome=success;conclusion=success;duration_ms=11]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7108966Z ##[start-action display=Save Trivy binary to cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7143432Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7156994Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=1996]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7159295Z ##[start-action display=Get current date;id=__aquasecurity_trivy-action.date]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7174759Z ##[group]Run echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7175191Z ^[[36;1mecho "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7210999Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7211553Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7211839Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7212267Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7212687Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7213079Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7213452Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7213822Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7214145Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7286508Z ##[end-action id=__aquasecurity_trivy-action.date;outcome=success;conclusion=success;duration_ms=12]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7288822Z ##[start-action display=Restore DB from cache;id=__aquasecurity_trivy-action.__actions_cache]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7323707Z ##[group]Run actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7324085Z with:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7324400Z   path: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7324793Z   key: cache-trivy-2026-10-07
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7325049Z   restore-keys: cache-trivy-
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7325298Z   enableCrossOsArchive: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7325546Z   fail-on-cache-miss: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7325802Z   lookup-only: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7326019Z   save-always: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7326222Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7326474Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7326893Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7327303Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7327667Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7328031Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7328412Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:57.7328724Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0603095Z Cache not found for input keys: cache-trivy-2026-10-07, cache-trivy-
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0667292Z ##[end-action id=__aquasecurity_trivy-action.__actions_cache;outcome=success;conclusion=success;duration_ms=337]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0670570Z ##[start-action display=Set GitHub Path;id=__aquasecurity_trivy-action.__run]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0686097Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0686497Z ^[[36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0722871Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0723220Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0723485Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0723909Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0724322Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0724695Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0725061Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0725593Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0726042Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/aquasecurity/trivy-action/v0.36.0
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0726431Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0786748Z ##[end-action id=__aquasecurity_trivy-action.__run;outcome=success;conclusion=success;duration_ms=11]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0788926Z ##[start-action display=Clear Trivy Envs file;id=__aquasecurity_trivy-action.__run_2]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0803166Z ##[group]Run rm -f trivy_envs.txt
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0803486Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0803747Z ^[[36;1mtouch trivy_envs.txt^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0837780Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0838111Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0838387Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0838805Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0839230Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0839596Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0839968Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0840346Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0840655Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0916618Z ##[end-action id=__aquasecurity_trivy-action.__run_2;outcome=success;conclusion=success;duration_ms=12]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0921840Z ##[start-action display=Set Trivy environment variables;id=__aquasecurity_trivy-action.__run_3]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0936098Z ##[group]Run # Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0936967Z ^[[36;1m# Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0937575Z ^[[36;1m# This limitation affects how we handle default values and empty inputs.^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0938100Z ^[[36;1m# For more information, see: https://github.com/actions/runner/issues/924^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0938470Z ^[[36;1m^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0938826Z ^[[36;1m# The following logic implements the configuration priority described in the README:^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0939245Z ^[[36;1m#^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0939439Z ^[[36;1m# Inputs^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0939657Z ^[[36;1m# Environment Variables^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0939915Z ^[[36;1m# Config File^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0940133Z ^[[36;1m# Defaults^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0940334Z ^[[36;1m#^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0940720Z ^[[36;1m# As noted above defaults are awkward to handle as GitHub Actions will inject those values as the input^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0941516Z ^[[36;1m# if the caller doesn't provide them, thus if the input matches the default we don't set it as we^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0942146Z ^[[36;1m# can't tell the difference.  Plus if we did set it when it was the default value then it could potentially^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0942836Z ^[[36;1m# override an external environment variable, or something in the callers configuration file, which then wouldn't^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0943402Z ^[[36;1m# match the configuration priority that is documented.^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0943744Z ^[[36;1mset_env_var_if_provided() {^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0944011Z ^[[36;1m  local var_name="$1"^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0944297Z ^[[36;1m  local input_value="$2"^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0944564Z ^[[36;1m  local default_value="$3"^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0944806Z ^[[36;1m^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0945095Z ^[[36;1m  if [ -n "$input_value" ] && [ "$input_value" != "$default_value" ]; then^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0945550Z ^[[36;1m    # If action was provided with explicit input by the caller set that^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0946056Z ^[[36;1m    # Use printf %q to safely escape special characters and prevent command injection^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0946554Z ^[[36;1m    printf 'export %s=%q\n' "$var_name" "$input_value" >> trivy_envs.txt^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0947073Z ^[[36;1m  fi^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0947274Z ^[[36;1m}^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0947481Z ^[[36;1m^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0947765Z ^[[36;1m# Set environment variables, handling those with default values^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0948395Z ^[[36;1m# cf. https://aquasecurity.github.io/trivy/latest/docs/configuration/#environment-variables^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0948919Z ^[[36;1mset_env_var_if_provided "TRIVY_INPUT" "$INPUT_INPUT" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0949322Z ^[[36;1mset_env_var_if_provided "TRIVY_EXIT_CODE" "$INPUT_EXIT_CODE" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0949790Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_UNFIXED" "$INPUT_IGNORE_UNFIXED" "false"^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0950290Z ^[[36;1mset_env_var_if_provided "TRIVY_PKG_TYPES" "$INPUT_VULN_TYPE" "os,library"^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0950854Z ^[[36;1mset_env_var_if_provided "TRIVY_SEVERITY" "$INPUT_SEVERITY" "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0951586Z ^[[36;1mset_env_var_if_provided "TRIVY_FORMAT" "$INPUT_FORMAT" "table"^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0952018Z ^[[36;1mset_env_var_if_provided "TRIVY_TEMPLATE" "$INPUT_TEMPLATE" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0952435Z ^[[36;1mset_env_var_if_provided "TRIVY_OUTPUT" "$INPUT_OUTPUT" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0952852Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_DIRS" "$INPUT_SKIP_DIRS" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0953285Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_FILES" "$INPUT_SKIP_FILES" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0953713Z ^[[36;1mset_env_var_if_provided "TRIVY_TIMEOUT" "$INPUT_TIMEOUT" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0954153Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_POLICY" "$INPUT_IGNORE_POLICY" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0954596Z ^[[36;1mset_env_var_if_provided "TRIVY_QUIET" "$INPUT_HIDE_PROGRESS" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0955056Z ^[[36;1mset_env_var_if_provided "TRIVY_LIST_ALL_PKGS" "$INPUT_LIST_ALL_PKGS" "false"^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0955520Z ^[[36;1mset_env_var_if_provided "TRIVY_SCANNERS" "$INPUT_SCANNERS" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0955942Z ^[[36;1mset_env_var_if_provided "TRIVY_CONFIG" "$INPUT_TRIVY_CONFIG" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0956351Z ^[[36;1mset_env_var_if_provided "TRIVY_TF_VARS" "$INPUT_TF_VARS" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0956772Z ^[[36;1mset_env_var_if_provided "TRIVY_DOCKER_HOST" "$INPUT_DOCKER_HOST" ""^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0991757Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0992096Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0992369Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0992794Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0993207Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0993579Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0993959Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0994328Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0994641Z   INPUT_INPUT: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0994866Z   INPUT_EXIT_CODE: 1
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0995103Z   INPUT_IGNORE_UNFIXED: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0995351Z   INPUT_VULN_TYPE: os,library
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0995633Z   INPUT_SEVERITY: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0995929Z   INPUT_FORMAT: json
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0996160Z   INPUT_TEMPLATE: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0996375Z   INPUT_OUTPUT: secrets.json
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0996610Z   INPUT_SKIP_DIRS: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0996814Z   INPUT_SKIP_FILES: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0997017Z   INPUT_TIMEOUT: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0997226Z   INPUT_IGNORE_POLICY: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0997446Z   INPUT_HIDE_PROGRESS: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0997673Z   INPUT_LIST_ALL_PKGS: false
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0997907Z   INPUT_SCANNERS: secret
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0998135Z   INPUT_TRIVY_CONFIG: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0998343Z   INPUT_TF_VARS: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0998541Z   INPUT_DOCKER_HOST: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.0998749Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1063250Z ##[end-action id=__aquasecurity_trivy-action.__run_3;outcome=success;conclusion=success;duration_ms=14]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1066882Z ##[start-action display=Run Trivy;id=__aquasecurity_trivy-action.__run_4]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1082597Z ##[group]Run entrypoint.sh
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1082885Z ^[[36;1mentrypoint.sh^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1116883Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1117241Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1117508Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1117931Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1118339Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1118724Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1119095Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1119467Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1119789Z   INPUT_SCAN_TYPE: fs
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1120020Z   INPUT_IMAGE_REF: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1120247Z   INPUT_SCAN_REF: .
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1120457Z   INPUT_TRIVYIGNORES: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1120681Z   INPUT_GITHUB_PAT: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1120919Z   INPUT_LIMIT_SEVERITIES_FOR_SARIF: 
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1121429Z   TRIVY_CACHE_DIR: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1121926Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1199504Z Running Trivy with options: trivy fs .
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1718758Z 2026-10-07T14:51:58Z	INFO	[secret] Secret scanning is enabled
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.1720914Z 2026-10-07T14:51:58Z	INFO	[secret] Please see https://trivy.dev/docs/v0.70/guide/scanner/secret#recommendation for faster secret detection
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2213549Z 2026-10-07T14:51:58Z	INFO	Number of language-specific files	num=0
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2229217Z ##[end-action id=__aquasecurity_trivy-action.__run_4;outcome=success;conclusion=success;duration_ms=116]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2231777Z ##[start-action display=Remove Trivy Envs file;id=__aquasecurity_trivy-action.__run_5]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2250910Z ##[group]Run rm -f trivy_envs.txt
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2251215Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2287954Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2288313Z env:
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2288614Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2289028Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2289439Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2289819Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2290190Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2290565Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2290880Z ##[endgroup]
+security	Secret scanning gate (working tree)	2026-10-07T14:51:58.2362850Z ##[end-action id=__aquasecurity_trivy-action.__run_5;outcome=success;conclusion=success;duration_ms=13]
+security	Preserve security reports	﻿2026-10-07T14:51:58.2401881Z ##[group]Run actions/upload-artifact@v4
+security	Preserve security reports	2026-10-07T14:51:58.2402178Z with:
+security	Preserve security reports	2026-10-07T14:51:58.2402392Z   name: source-security-reports
+security	Preserve security reports	2026-10-07T14:51:58.2402751Z   path: security-tool-versions.txt
+security	Preserve security reports	sast.json
+security	Preserve security reports	sca.json
+security	Preserve security reports	secrets.json
+security	Preserve security reports	
+security	Preserve security reports	2026-10-07T14:51:58.2403111Z   if-no-files-found: warn
+security	Preserve security reports	2026-10-07T14:51:58.2403345Z   compression-level: 6
+security	Preserve security reports	2026-10-07T14:51:58.2403568Z   overwrite: false
+security	Preserve security reports	2026-10-07T14:51:58.2403790Z   include-hidden-files: false
+security	Preserve security reports	2026-10-07T14:51:58.2404022Z env:
+security	Preserve security reports	2026-10-07T14:51:58.2404273Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Preserve security reports	2026-10-07T14:51:58.2404688Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+security	Preserve security reports	2026-10-07T14:51:58.2405107Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Preserve security reports	2026-10-07T14:51:58.2405478Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Preserve security reports	2026-10-07T14:51:58.2405842Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+security	Preserve security reports	2026-10-07T14:51:58.2406216Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+security	Preserve security reports	2026-10-07T14:51:58.2406712Z ##[endgroup]
+security	Preserve security reports	2026-10-07T14:51:58.4054679Z (node:2325) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+security	Preserve security reports	2026-10-07T14:51:58.4055893Z (Use `node --trace-deprecation ...` to show where the warning was created)
+security	Preserve security reports	2026-10-07T14:51:58.4142700Z Multiple search paths detected. Calculating the least common ancestor of all paths
+security	Preserve security reports	2026-10-07T14:51:58.4146238Z The least common ancestor is /home/runner/work/devops-homework/devops-homework. This will be the root directory of the artifact
+security	Preserve security reports	2026-10-07T14:51:58.4147583Z With the provided path, there will be 4 files uploaded
+security	Preserve security reports	2026-10-07T14:51:58.4148822Z Artifact name is valid!
+security	Preserve security reports	2026-10-07T14:51:58.4149420Z Root directory input is valid!
+security	Preserve security reports	2026-10-07T14:51:58.7493995Z Beginning upload of artifact content to blob storage
+security	Preserve security reports	2026-10-07T14:51:58.7722500Z (node:2325) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+security	Preserve security reports	2026-10-07T14:51:58.9731831Z Uploaded bytes 1996
+security	Preserve security reports	2026-10-07T14:51:59.0346024Z Finished uploading artifact content to blob storage!
+security	Preserve security reports	2026-10-07T14:51:59.0347055Z SHA256 digest of uploaded artifact zip is 0aa68b866e94c428391d622ccb1d61568386df655a33d236204d9c5e138ab1a6
+security	Preserve security reports	2026-10-07T14:51:59.0348745Z Finalizing artifact upload
+security	Preserve security reports	2026-10-07T14:51:59.2902496Z Artifact source-security-reports.zip successfully finalized. Artifact ID 11491846720
+security	Preserve security reports	2026-10-07T14:51:59.2903446Z Artifact source-security-reports has been successfully uploaded! Final size is 1996 bytes. Artifact ID is 11491846720
+security	Preserve security reports	2026-10-07T14:51:59.2910134Z Artifact download URL: https://github.com/AJ5831A/devops-homework/actions/runs/37640204904/artifacts/11491846720
+security	Post Secret scanning gate (working tree)	﻿2026-10-07T14:51:59.3180915Z Post job cleanup.
+security	Post Secret scanning gate (working tree)	2026-10-07T14:51:59.3185100Z ##[start-action display=Restore DB from cache;id=__eeaa5772-0a6e-4f8c-baf7-975c2f529a30.__actions_cache]
+security	Post Secret scanning gate (working tree)	2026-10-07T14:51:59.3220868Z Post job cleanup.
+security	Post Secret scanning gate (working tree)	2026-10-07T14:51:59.4585847Z [warning]Path Validation Error: Path(s) specified in the action for caching do(es) not exist, hence no cache is being saved.
+security	Post Secret scanning gate (working tree)	2026-10-07T14:51:59.4656428Z ##[end-action id=__eeaa5772-0a6e-4f8c-baf7-975c2f529a30.__actions_cache;outcome=success;conclusion=success;duration_ms=147]
+security	Post Secret scanning gate (working tree)	2026-10-07T14:51:59.4658795Z ##[start-action display=Install Trivy;id=__eeaa5772-0a6e-4f8c-baf7-975c2f529a30.__aquasecurity_setup-trivy]
+security	Post Secret scanning gate (working tree)	2026-10-07T14:51:59.4741827Z Post job cleanup.
+security	Post Secret scanning gate (working tree)	2026-10-07T14:51:59.4746344Z ##[end-action id=__eeaa5772-0a6e-4f8c-baf7-975c2f529a30.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=8]
+security	Post Run actions/setup-python@v5	﻿2026-10-07T14:51:59.4812414Z Post job cleanup.
+security	Post Run actions/setup-python@v5	2026-10-07T14:51:59.6003572Z (node:2350) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+security	Post Run actions/setup-python@v5	2026-10-07T14:51:59.6004487Z (Use `node --trace-deprecation ...` to show where the warning was created)
+security	Post Run actions/checkout@v4	﻿2026-10-07T14:51:59.6226478Z Post job cleanup.
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7098847Z [command]/usr/bin/git version
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7138181Z git version 2.55.0
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7174488Z Temporarily overriding HOME='/home/runner/work/_temp/60936a07-b9c3-4ae1-b84c-74bf0be9c870' before making global git config changes
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7176089Z Adding repository directory to the temporary git global config as a safe directory
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7183415Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7221612Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7256269Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7467539Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7493256Z http.https://github.com/.extraheader
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7504910Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7536671Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7809344Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+security	Post Run actions/checkout@v4	2026-10-07T14:51:59.7850870Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+security	Complete job	﻿2026-10-07T14:51:59.8198600Z Cleaning up orphan processes
+security	Complete job	2026-10-07T14:51:59.8434628Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+delivery	Set up job	﻿2026-10-07T14:52:10.0318677Z Current runner version: '2.337.0'
+delivery	Set up job	2026-10-07T14:52:10.0340955Z ##[group]Runner Image Provisioner
+delivery	Set up job	2026-10-07T14:52:10.0341722Z Hosted Compute Agent
+delivery	Set up job	2026-10-07T14:52:10.0342139Z Version: 20261002.596
+delivery	Set up job	2026-10-07T14:52:10.0342677Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+delivery	Set up job	2026-10-07T14:52:10.0343214Z Build Date: 2026-10-02T22:28:27Z
+delivery	Set up job	2026-10-07T14:52:10.0344007Z Worker ID: {ff336eed-ee48-4bdf-8f0c-70017d0ddbb7}
+delivery	Set up job	2026-10-07T14:52:10.0344555Z Region: centralus
+delivery	Set up job	2026-10-07T14:52:10.0344967Z Cloud: Azure
+delivery	Set up job	2026-10-07T14:52:10.0345731Z ##[endgroup]
+delivery	Set up job	2026-10-07T14:52:10.0346826Z ##[group]Operating System
+delivery	Set up job	2026-10-07T14:52:10.0347275Z Ubuntu
+delivery	Set up job	2026-10-07T14:52:10.0347680Z 24.04.5
+delivery	Set up job	2026-10-07T14:52:10.0348077Z LTS
+delivery	Set up job	2026-10-07T14:52:10.0348470Z ##[endgroup]
+delivery	Set up job	2026-10-07T14:52:10.0348884Z ##[group]Runner Image
+delivery	Set up job	2026-10-07T14:52:10.0349329Z Image: ubuntu-24.04
+delivery	Set up job	2026-10-07T14:52:10.0349765Z Version: 20261004.327.1
+delivery	Set up job	2026-10-07T14:52:10.0350634Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+delivery	Set up job	2026-10-07T14:52:10.0351908Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+delivery	Set up job	2026-10-07T14:52:10.0352591Z ##[endgroup]
+delivery	Set up job	2026-10-07T14:52:10.0353677Z ##[group]GITHUB_TOKEN Permissions
+delivery	Set up job	2026-10-07T14:52:10.0355685Z Contents: read
+delivery	Set up job	2026-10-07T14:52:10.0356152Z Metadata: read
+delivery	Set up job	2026-10-07T14:52:10.0356584Z Packages: write
+delivery	Set up job	2026-10-07T14:52:10.0357031Z ##[endgroup]
+delivery	Set up job	2026-10-07T14:52:10.0358631Z Secret source: Actions
+delivery	Set up job	2026-10-07T14:52:10.0359328Z Cache mode: write
+delivery	Set up job	2026-10-07T14:52:10.0359835Z Prepare workflow directory
+delivery	Set up job	2026-10-07T14:52:10.0651885Z Prepare all required actions
+delivery	Set up job	2026-10-07T14:52:10.0692726Z Getting action download info
+delivery	Set up job	2026-10-07T14:52:10.4757227Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+delivery	Set up job	2026-10-07T14:52:10.7778559Z Download action repository 'aquasecurity/trivy-action@v0.36.0' (SHA:ed142fd0673e97e23eac54620cfb913e5ce36c25)
+delivery	Set up job	2026-10-07T14:52:11.1080594Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+delivery	Set up job	2026-10-07T14:52:11.7006453Z Download action repository 'docker/login-action@v3' (SHA:c94ce9fb468520275223c153574b00df6fe4bcc9)
+delivery	Set up job	2026-10-07T14:52:12.8310022Z Download action repository 'helm/kind-action@v1' (SHA:ef37e7f390d99f746eb8b610417061a60e82a6cc)
+delivery	Set up job	2026-10-07T14:52:13.1139986Z Getting action download info
+delivery	Set up job	2026-10-07T14:52:13.2704493Z Download action repository 'aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514' (SHA:3fb12ec12f41e471780db15c232d5dd185dcb514)
+delivery	Set up job	2026-10-07T14:52:13.4554162Z Download action repository 'actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae' (SHA:27d5ce7f107fe9357f9df03efb73ab90386fccae)
+delivery	Set up job	2026-10-07T14:52:13.6574688Z Getting action download info
+delivery	Set up job	2026-10-07T14:52:13.8082939Z Download action repository 'actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb' (SHA:9255dc7a253b0ccc959486e2bca901246202afeb)
+delivery	Set up job	2026-10-07T14:52:14.0261219Z Download action repository 'actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
+delivery	Set up job	2026-10-07T14:52:14.1242470Z Complete job name: delivery
+delivery	Run actions/checkout@v4	﻿2026-10-07T14:52:14.1808934Z ##[group]Run actions/checkout@v4
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1809471Z with:
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1810151Z   repository: AJ5831A/devops-homework
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1812451Z   token: ***
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1812711Z   ssh-strict: true
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1813020Z   ssh-user: git
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1813512Z   persist-credentials: true
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1813849Z   clean: true
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1814129Z   sparse-checkout-cone-mode: true
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1814423Z   fetch-depth: 1
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1814702Z   fetch-tags: false
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1814985Z   show-progress: true
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1815242Z   lfs: false
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1815496Z   submodules: false
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1815749Z   set-safe-directory: true
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1816069Z   allow-unsafe-pr-checkout: false
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.1816578Z ##[endgroup]
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.2692130Z Syncing repository: AJ5831A/devops-homework
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.2695000Z ##[group]Getting Git version info
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.2695665Z Working directory is '/home/runner/work/devops-homework/devops-homework'
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.2696963Z [command]/usr/bin/git version
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.3534254Z git version 2.55.0
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.3551287Z ##[endgroup]
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.3564795Z Temporarily overriding HOME='/home/runner/work/_temp/8a95ddd9-9882-406e-96c3-4f77e8290309' before making global git config changes
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.3565830Z Adding repository directory to the temporary git global config as a safe directory
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.3569097Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.3614706Z Deleting the contents of '/home/runner/work/devops-homework/devops-homework'
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.3618614Z ##[group]Initializing the repository
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.3622013Z [command]/usr/bin/git init /home/runner/work/devops-homework/devops-homework
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4151475Z hint: Using 'master' as the name for the initial branch. This default branch name
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4164327Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4165234Z hint: to use in all of your new repositories, which will suppress this warning,
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4165728Z hint: call:
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4165963Z hint:
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4166394Z hint: 	git config --global init.defaultBranch <name>
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4166735Z hint:
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4167066Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4167524Z hint: 'development'. The just-created branch can be renamed via this command:
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4167897Z hint:
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4168157Z hint: 	git branch -m <name>
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4168455Z hint:
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4168783Z hint: Disable this message with "git config set advice.defaultBranchName false"
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4169292Z Initialized empty Git repository in /home/runner/work/devops-homework/devops-homework/.git/
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4170501Z [command]/usr/bin/git remote add origin https://github.com/AJ5831A/devops-homework
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4218797Z ##[endgroup]
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4219577Z ##[group]Disabling automatic garbage collection
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4222830Z [command]/usr/bin/git config --local gc.auto 0
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4250781Z ##[endgroup]
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4251466Z ##[group]Setting up auth
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4257490Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4282876Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4644301Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4670297Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4839906Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.4867365Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.5034561Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.5070986Z ##[endgroup]
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.5072568Z ##[group]Fetching the repository
+delivery	Run actions/checkout@v4	2026-10-07T14:52:14.5079563Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +be9442981c475a39475f4f14501e0fc95244b681:refs/remotes/origin/main
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0135118Z From https://github.com/AJ5831A/devops-homework
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0137977Z  * [new ref]         be9442981c475a39475f4f14501e0fc95244b681 -> origin/main
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0139697Z ##[endgroup]
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0140176Z ##[group]Determining the checkout info
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0141772Z ##[endgroup]
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0148067Z [command]/usr/bin/git sparse-checkout disable
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0197045Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0229668Z ##[group]Checking out the ref
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0230352Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0327474Z Switched to a new branch 'main'
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0333199Z branch 'main' set up to track 'origin/main'.
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0339005Z ##[endgroup]
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0553739Z [command]/usr/bin/git log -1 --format=%H
+delivery	Run actions/checkout@v4	2026-10-07T14:52:15.0575611Z be9442981c475a39475f4f14501e0fc95244b681
+delivery	Compute immutable image tag	﻿2026-10-07T14:52:15.0776859Z ##[group]Run echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}/secure-calculator:${GITHUB_SHA}" >> "$GITHUB_ENV"
+delivery	Compute immutable image tag	2026-10-07T14:52:15.0777670Z ^[[36;1mecho "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}/secure-calculator:${GITHUB_SHA}" >> "$GITHUB_ENV"^[[0m
+delivery	Compute immutable image tag	2026-10-07T14:52:15.2246663Z shell: /usr/bin/bash -e {0}
+delivery	Compute immutable image tag	2026-10-07T14:52:15.2247406Z ##[endgroup]
+delivery	Docker build	﻿2026-10-07T14:52:15.2379321Z ##[group]Run docker build --pull -t "$IMAGE" 16-devsecops
+delivery	Docker build	2026-10-07T14:52:15.2379830Z ^[[36;1mdocker build --pull -t "$IMAGE" 16-devsecops^[[0m
+delivery	Docker build	2026-10-07T14:52:15.2414905Z shell: /usr/bin/bash -e {0}
+delivery	Docker build	2026-10-07T14:52:15.2415246Z env:
+delivery	Docker build	2026-10-07T14:52:15.2415676Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Docker build	2026-10-07T14:52:15.2416155Z ##[endgroup]
+delivery	Docker build	2026-10-07T14:52:26.6572446Z #0 building with "default" instance using docker driver
+delivery	Docker build	2026-10-07T14:52:26.6572881Z 
+delivery	Docker build	2026-10-07T14:52:26.6573075Z #1 [internal] load build definition from Dockerfile
+delivery	Docker build	2026-10-07T14:52:26.6573700Z #1 transferring dockerfile: 337B 0.1s done
+delivery	Docker build	2026-10-07T14:52:26.9061688Z #1 DONE 0.2s
+delivery	Docker build	2026-10-07T14:52:26.9062069Z 
+delivery	Docker build	2026-10-07T14:52:26.9062322Z #2 [internal] load metadata for docker.io/library/python:3.12-alpine
+delivery	Docker build	2026-10-07T14:52:27.1803621Z #2 ...
+delivery	Docker build	2026-10-07T14:52:27.1804037Z 
+delivery	Docker build	2026-10-07T14:52:27.1804253Z #3 [auth] library/python:pull token for registry-1.docker.io
+delivery	Docker build	2026-10-07T14:52:27.1804727Z #3 DONE 0.0s
+delivery	Docker build	2026-10-07T14:52:27.3306272Z 
+delivery	Docker build	2026-10-07T14:52:27.3306847Z #2 [internal] load metadata for docker.io/library/python:3.12-alpine
+delivery	Docker build	2026-10-07T14:52:28.0732493Z #2 DONE 1.3s
+delivery	Docker build	2026-10-07T14:52:28.1730679Z 
+delivery	Docker build	2026-10-07T14:52:28.1732546Z #4 [internal] load .dockerignore
+delivery	Docker build	2026-10-07T14:52:28.1733110Z #4 transferring context: 70B done
+delivery	Docker build	2026-10-07T14:52:28.1733680Z #4 DONE 0.0s
+delivery	Docker build	2026-10-07T14:52:28.1733836Z 
+delivery	Docker build	2026-10-07T14:52:28.1733953Z #5 [internal] load build context
+delivery	Docker build	2026-10-07T14:52:28.2773551Z #5 transferring context: 2.05kB done
+delivery	Docker build	2026-10-07T14:52:28.2773987Z #5 DONE 0.0s
+delivery	Docker build	2026-10-07T14:52:28.2774100Z 
+delivery	Docker build	2026-10-07T14:52:28.2774442Z #6 [1/4] FROM docker.io/library/python:3.12-alpine@sha256:1b668429b3511ab407d8e00648891631b0b1a4d7e15e3ca70f38ab5b91ad4ab4
+delivery	Docker build	2026-10-07T14:52:28.2775080Z #6 resolve docker.io/library/python:3.12-alpine@sha256:1b668429b3511ab407d8e00648891631b0b1a4d7e15e3ca70f38ab5b91ad4ab4 0.0s done
+delivery	Docker build	2026-10-07T14:52:28.2775703Z #6 sha256:979e5a8a56846771598d47ebf1f8a75b46155104e168a0b237c0783c1dedff8a 5.43kB / 5.43kB done
+delivery	Docker build	2026-10-07T14:52:28.2776196Z #6 sha256:bce3d672089f7ccc5125c3f8f95542fa3971138f323fb7f77e338a14396c85aa 0B / 416.28kB 0.1s
+delivery	Docker build	2026-10-07T14:52:28.2776702Z #6 sha256:283ac05c32e67060aa59f8a841b02df4cc0bd7fbf8d880f67d9b622e1cbd1935 0B / 16.36MB 0.1s
+delivery	Docker build	2026-10-07T14:52:28.2777211Z #6 sha256:e203d50c86bd38d307585d33fd69e7e7fd91e7535b65af46aa1d663cfb80c0fa 0B / 248B 0.1s
+delivery	Docker build	2026-10-07T14:52:28.2777695Z #6 sha256:1b668429b3511ab407d8e00648891631b0b1a4d7e15e3ca70f38ab5b91ad4ab4 10.30kB / 10.30kB done
+delivery	Docker build	2026-10-07T14:52:28.2778176Z #6 sha256:2055081c860db8c842b663415b795b026e7e5cc63b59c5193fcc9997713ea5b8 1.74kB / 1.74kB done
+delivery	Docker build	2026-10-07T14:52:28.4766477Z #6 sha256:bce3d672089f7ccc5125c3f8f95542fa3971138f323fb7f77e338a14396c85aa 416.28kB / 416.28kB 0.2s done
+delivery	Docker build	2026-10-07T14:52:28.4767464Z #6 sha256:283ac05c32e67060aa59f8a841b02df4cc0bd7fbf8d880f67d9b622e1cbd1935 3.15MB / 16.36MB 0.3s
+delivery	Docker build	2026-10-07T14:52:28.4767998Z #6 sha256:e203d50c86bd38d307585d33fd69e7e7fd91e7535b65af46aa1d663cfb80c0fa 248B / 248B 0.2s done
+delivery	Docker build	2026-10-07T14:52:28.4768487Z #6 extracting sha256:bce3d672089f7ccc5125c3f8f95542fa3971138f323fb7f77e338a14396c85aa
+delivery	Docker build	2026-10-07T14:52:28.5998058Z #6 sha256:283ac05c32e67060aa59f8a841b02df4cc0bd7fbf8d880f67d9b622e1cbd1935 8.39MB / 16.36MB 0.4s
+delivery	Docker build	2026-10-07T14:52:28.5998682Z #6 extracting sha256:bce3d672089f7ccc5125c3f8f95542fa3971138f323fb7f77e338a14396c85aa 0.2s done
+delivery	Docker build	2026-10-07T14:52:28.7762537Z #6 sha256:283ac05c32e67060aa59f8a841b02df4cc0bd7fbf8d880f67d9b622e1cbd1935 16.36MB / 16.36MB 0.6s
+delivery	Docker build	2026-10-07T14:52:28.8769684Z #6 sha256:283ac05c32e67060aa59f8a841b02df4cc0bd7fbf8d880f67d9b622e1cbd1935 16.36MB / 16.36MB 0.7s done
+delivery	Docker build	2026-10-07T14:52:31.3694290Z #6 extracting sha256:283ac05c32e67060aa59f8a841b02df4cc0bd7fbf8d880f67d9b622e1cbd1935
+delivery	Docker build	2026-10-07T14:52:32.4277185Z #6 extracting sha256:283ac05c32e67060aa59f8a841b02df4cc0bd7fbf8d880f67d9b622e1cbd1935 0.9s done
+delivery	Docker build	2026-10-07T14:52:32.9715569Z #6 extracting sha256:e203d50c86bd38d307585d33fd69e7e7fd91e7535b65af46aa1d663cfb80c0fa
+delivery	Docker build	2026-10-07T14:52:33.1222306Z #6 extracting sha256:e203d50c86bd38d307585d33fd69e7e7fd91e7535b65af46aa1d663cfb80c0fa done
+delivery	Docker build	2026-10-07T14:52:34.3211436Z #6 DONE 6.2s
+delivery	Docker build	2026-10-07T14:52:34.4733777Z 
+delivery	Docker build	2026-10-07T14:52:34.4734760Z #7 [2/4] RUN apk upgrade --no-cache
+delivery	Docker build	2026-10-07T14:52:35.9789669Z #7 1.657 (1/2) Upgrading zlib (1.3.2-r0 -> 1.3.2-r1)
+delivery	Docker build	2026-10-07T14:52:36.1402786Z #7 1.667 (2/2) Upgrading tzdata (2026d-r0 -> 2026e-r0)
+delivery	Docker build	2026-10-07T14:52:36.2016614Z #7 1.879 OK: 13.5 MiB in 38 packages
+delivery	Docker build	2026-10-07T14:52:36.3334490Z #7 DONE 2.0s
+delivery	Docker build	2026-10-07T14:52:36.3334860Z 
+delivery	Docker build	2026-10-07T14:52:36.3334966Z #8 [3/4] WORKDIR /app
+delivery	Docker build	2026-10-07T14:52:36.7912281Z #8 DONE 0.5s
+delivery	Docker build	2026-10-07T14:52:37.0306437Z 
+delivery	Docker build	2026-10-07T14:52:37.0307604Z #9 [4/4] COPY --chown=10001:10001 app/ ./app/
+delivery	Docker build	2026-10-07T14:52:37.0308044Z #9 DONE 0.1s
+delivery	Docker build	2026-10-07T14:52:37.0308184Z 
+delivery	Docker build	2026-10-07T14:52:37.0308352Z #10 exporting to image
+delivery	Docker build	2026-10-07T14:52:37.0308670Z #10 exporting layers
+delivery	Docker build	2026-10-07T14:52:37.4051105Z #10 exporting layers 0.5s done
+delivery	Docker build	2026-10-07T14:52:37.4889527Z #10 writing image sha256:7cd6dd59a3420241bde1a275db72a883f71c153f50a9e58e42ac76bc09391018 done
+delivery	Docker build	2026-10-07T14:52:37.4891483Z #10 naming to ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681 done
+delivery	Docker build	2026-10-07T14:52:37.4892780Z #10 DONE 0.6s
+delivery	Container security gate (HIGH and CRITICAL)	﻿2026-10-07T14:52:37.5149932Z ##[group]Run aquasecurity/trivy-action@v0.36.0
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5150260Z with:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5150620Z   image-ref: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5151071Z   scanners: vuln
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5151273Z   severity: HIGH,CRITICAL
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5151473Z   ignore-unfixed: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5151664Z   exit-code: 1
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5151840Z   format: json
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5152019Z   output: container-scan.json
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5152243Z   scan-type: image
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5152417Z   scan-ref: .
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5152686Z   vuln-type: os,library
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5152983Z   cache-dir: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5153562Z   list-all-pkgs: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5153803Z   version: v0.70.0
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5153975Z   cache: true
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5154143Z   skip-setup-trivy: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5156353Z   token-setup-trivy: ***
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5156614Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5156916Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5157268Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5218758Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5304624Z ##[group]Run aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5305019Z with:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5305198Z   version: v0.70.0
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5305553Z   cache: true
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5307582Z   token: ***
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5307786Z   path: $HOME/.local/bin
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5308033Z   github-server-url: https://github.com
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5308293Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5308642Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5309046Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5315074Z ##[start-action display=Binary dir;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5331595Z ##[group]Run echo "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5332004Z ^[[36;1mecho "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5372450Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5372744Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5373072Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5373567Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5450381Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir;outcome=success;conclusion=success;duration_ms=13]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5454466Z ##[start-action display=Check the version for caching;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5459975Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5461789Z ##[start-action display=Restore Trivy binary from cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5497802Z ##[group]Run actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5498145Z with:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5498341Z   path: /home/runner/.local/bin/trivy-bin
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5498596Z   key: trivy-binary-v0.70.0-Linux-X64
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5498840Z   enableCrossOsArchive: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5499060Z   fail-on-cache-miss: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5499291Z   lookup-only: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5499474Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5499804Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.5500178Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:37.8293168Z Cache hit for: trivy-binary-v0.70.0-Linux-X64
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.7006989Z Received 43751198 of 43751198 (100.0%), 58.0 MBs/sec
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.7007496Z Cache Size: ~42 MB (43751198 B)
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.7033248Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c4e22b88-f090-41db-abe6-09b8cae9baf0/cache.tzst -P -C /home/runner/work/devops-homework/devops-homework --use-compress-program unzstd
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8792175Z Cache restored successfully
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8868756Z Cache restored from key: trivy-binary-v0.70.0-Linux-X64
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8918532Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache;outcome=success;conclusion=success;duration_ms=1345]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8921350Z ##[start-action display=Checkout install script;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8927259Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout;outcome=skipped;conclusion=skipped;duration_ms=0]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8928964Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8933190Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8935183Z ##[start-action display=Add Trivy binary to $GITHUB_PATH;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8952822Z ##[group]Run echo /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8953219Z ^[[36;1mecho /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8989325Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8989622Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8990120Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.8990478Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9046324Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3;outcome=success;conclusion=success;duration_ms=11]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9048346Z ##[start-action display=Save Trivy binary to cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9054344Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9064721Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=1384]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9066577Z ##[start-action display=Get current date;id=__aquasecurity_trivy-action.date]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9081194Z ##[group]Run echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9081555Z ^[[36;1mecho "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9111257Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9111539Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9111876Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9112235Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9171089Z ##[end-action id=__aquasecurity_trivy-action.date;outcome=success;conclusion=success;duration_ms=10]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9172921Z ##[start-action display=Restore DB from cache;id=__aquasecurity_trivy-action.__actions_cache]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9206278Z ##[group]Run actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9206580Z with:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9206836Z   path: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9207158Z   key: cache-trivy-2026-10-07
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9207377Z   restore-keys: cache-trivy-
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9207595Z   enableCrossOsArchive: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9207825Z   fail-on-cache-miss: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9208031Z   lookup-only: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9208232Z   save-always: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9208444Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9208769Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:38.9209205Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:39.1611612Z Cache hit for: cache-trivy-2026-10-07
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:40.3429159Z Received 80091105 of 88479713 (90.5%), 76.3 MBs/sec
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:40.4001898Z Received 88479713 of 88479713 (100.0%), 79.8 MBs/sec
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:40.4004774Z Cache Size: ~84 MB (88479713 B)
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:40.4040333Z [command]/usr/bin/tar -xf /home/runner/work/_temp/87b35e16-a2a0-48dc-a710-b84ef41574d4/cache.tzst -P -C /home/runner/work/devops-homework/devops-homework --use-compress-program unzstd
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.4283125Z Cache restored successfully
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.4771131Z Cache restored from key: cache-trivy-2026-10-07
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.4827501Z ##[end-action id=__aquasecurity_trivy-action.__actions_cache;outcome=success;conclusion=success;duration_ms=2565]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.4831365Z ##[start-action display=Set GitHub Path;id=__aquasecurity_trivy-action.__run]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.5101278Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.5101859Z ^[[36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.5144019Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.5144387Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.5144732Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.5145228Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/aquasecurity/trivy-action/v0.36.0
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.5145547Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.6235455Z ##[end-action id=__aquasecurity_trivy-action.__run;outcome=success;conclusion=success;duration_ms=140]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.6237622Z ##[start-action display=Clear Trivy Envs file;id=__aquasecurity_trivy-action.__run_2]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.9839559Z ##[group]Run rm -f trivy_envs.txt
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.9839889Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.9840100Z ^[[36;1mtouch trivy_envs.txt^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.9877743Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.9878060Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.9878401Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:41.9878768Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.0980062Z ##[end-action id=__aquasecurity_trivy-action.__run_2;outcome=success;conclusion=success;duration_ms=474]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.0985540Z ##[start-action display=Set Trivy environment variables;id=__aquasecurity_trivy-action.__run_3]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2132787Z ##[group]Run # Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2133904Z ^[[36;1m# Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2134570Z ^[[36;1m# This limitation affects how we handle default values and empty inputs.^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2135118Z ^[[36;1m# For more information, see: https://github.com/actions/runner/issues/924^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2135503Z ^[[36;1m^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2135887Z ^[[36;1m# The following logic implements the configuration priority described in the README:^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2136295Z ^[[36;1m#^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2136477Z ^[[36;1m# Inputs^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2136670Z ^[[36;1m# Environment Variables^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2136895Z ^[[36;1m# Config File^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2137095Z ^[[36;1m# Defaults^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2137272Z ^[[36;1m#^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2137611Z ^[[36;1m# As noted above defaults are awkward to handle as GitHub Actions will inject those values as the input^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2138121Z ^[[36;1m# if the caller doesn't provide them, thus if the input matches the default we don't set it as we^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2138638Z ^[[36;1m# can't tell the difference.  Plus if we did set it when it was the default value then it could potentially^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2139206Z ^[[36;1m# override an external environment variable, or something in the callers configuration file, which then wouldn't^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2139667Z ^[[36;1m# match the configuration priority that is documented.^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2139951Z ^[[36;1mset_env_var_if_provided() {^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2140466Z ^[[36;1m  local var_name="$1"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2140689Z ^[[36;1m  local input_value="$2"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2140926Z ^[[36;1m  local default_value="$3"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2141137Z ^[[36;1m^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2141389Z ^[[36;1m  if [ -n "$input_value" ] && [ "$input_value" != "$default_value" ]; then^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2141763Z ^[[36;1m    # If action was provided with explicit input by the caller set that^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2142183Z ^[[36;1m    # Use printf %q to safely escape special characters and prevent command injection^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2142594Z ^[[36;1m    printf 'export %s=%q\n' "$var_name" "$input_value" >> trivy_envs.txt^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2142893Z ^[[36;1m  fi^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2143060Z ^[[36;1m}^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2143221Z ^[[36;1m^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2143683Z ^[[36;1m# Set environment variables, handling those with default values^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2144156Z ^[[36;1m# cf. https://aquasecurity.github.io/trivy/latest/docs/configuration/#environment-variables^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2144610Z ^[[36;1mset_env_var_if_provided "TRIVY_INPUT" "$INPUT_INPUT" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2144961Z ^[[36;1mset_env_var_if_provided "TRIVY_EXIT_CODE" "$INPUT_EXIT_CODE" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2145363Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_UNFIXED" "$INPUT_IGNORE_UNFIXED" "false"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2145776Z ^[[36;1mset_env_var_if_provided "TRIVY_PKG_TYPES" "$INPUT_VULN_TYPE" "os,library"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2146227Z ^[[36;1mset_env_var_if_provided "TRIVY_SEVERITY" "$INPUT_SEVERITY" "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2146851Z ^[[36;1mset_env_var_if_provided "TRIVY_FORMAT" "$INPUT_FORMAT" "table"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2147195Z ^[[36;1mset_env_var_if_provided "TRIVY_TEMPLATE" "$INPUT_TEMPLATE" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2147543Z ^[[36;1mset_env_var_if_provided "TRIVY_OUTPUT" "$INPUT_OUTPUT" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2147896Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_DIRS" "$INPUT_SKIP_DIRS" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2148252Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_FILES" "$INPUT_SKIP_FILES" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2148619Z ^[[36;1mset_env_var_if_provided "TRIVY_TIMEOUT" "$INPUT_TIMEOUT" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2148984Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_POLICY" "$INPUT_IGNORE_POLICY" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2149370Z ^[[36;1mset_env_var_if_provided "TRIVY_QUIET" "$INPUT_HIDE_PROGRESS" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2149797Z ^[[36;1mset_env_var_if_provided "TRIVY_LIST_ALL_PKGS" "$INPUT_LIST_ALL_PKGS" "false"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2150259Z ^[[36;1mset_env_var_if_provided "TRIVY_SCANNERS" "$INPUT_SCANNERS" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2150633Z ^[[36;1mset_env_var_if_provided "TRIVY_CONFIG" "$INPUT_TRIVY_CONFIG" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2151014Z ^[[36;1mset_env_var_if_provided "TRIVY_TF_VARS" "$INPUT_TF_VARS" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2151383Z ^[[36;1mset_env_var_if_provided "TRIVY_DOCKER_HOST" "$INPUT_DOCKER_HOST" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2190363Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2190696Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2191065Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2191437Z   INPUT_INPUT: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2191625Z   INPUT_EXIT_CODE: 1
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2191823Z   INPUT_IGNORE_UNFIXED: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2192044Z   INPUT_VULN_TYPE: os,library
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2192274Z   INPUT_SEVERITY: HIGH,CRITICAL
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2192489Z   INPUT_FORMAT: json
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2192678Z   INPUT_TEMPLATE: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2192896Z   INPUT_OUTPUT: container-scan.json
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2193121Z   INPUT_SKIP_DIRS: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2193467Z   INPUT_SKIP_FILES: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2193666Z   INPUT_TIMEOUT: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2193992Z   INPUT_IGNORE_POLICY: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2194219Z   INPUT_HIDE_PROGRESS: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2194420Z   INPUT_LIST_ALL_PKGS: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2194639Z   INPUT_SCANNERS: vuln
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2194828Z   INPUT_TRIVY_CONFIG: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2195144Z   INPUT_TF_VARS: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2195339Z   INPUT_DOCKER_HOST: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.2195530Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.3312554Z ##[end-action id=__aquasecurity_trivy-action.__run_3;outcome=success;conclusion=success;duration_ms=232]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.3316640Z ##[start-action display=Run Trivy;id=__aquasecurity_trivy-action.__run_4]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4478560Z ##[group]Run entrypoint.sh
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4578792Z ^[[36;1mentrypoint.sh^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4615910Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4616211Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4616531Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4616885Z   INPUT_SCAN_TYPE: image
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4617224Z   INPUT_IMAGE_REF: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4617581Z   INPUT_SCAN_REF: .
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4617759Z   INPUT_TRIVYIGNORES: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4617951Z   INPUT_GITHUB_PAT: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4618131Z   INPUT_LIMIT_SEVERITIES_FOR_SARIF: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4618437Z   TRIVY_CACHE_DIR: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.4618736Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.5816106Z Running Trivy with options: trivy image ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:42.7239623Z 2026-10-07T14:52:42Z	INFO	[vuln] Vulnerability scanning is enabled
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.0908854Z 2026-10-07T14:52:51Z	INFO	Detected OS	family="alpine" version="3.24.2"
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.0909853Z 2026-10-07T14:52:51Z	WARN	This OS version is not on the EOL list	family="alpine" version="3.24"
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.0910354Z 2026-10-07T14:52:51Z	INFO	[alpine] Detecting vulnerabilities...	os_version="3.24" repository="3.24" pkg_num=38
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.0921375Z 2026-10-07T14:52:51Z	INFO	Number of language-specific files	num=1
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.0921812Z 2026-10-07T14:52:51Z	INFO	[python-pkg] Detecting vulnerabilities...
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.0982083Z 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.0982873Z 📣 ^[[34mNotices:^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.0983214Z   - Version 0.75.0 of Trivy is now available, current version is 0.70.0
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.0983608Z 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.0983792Z To suppress version checks, run Trivy scans with the --skip-version-check flag
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.0984021Z 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.1016287Z ##[end-action id=__aquasecurity_trivy-action.__run_4;outcome=success;conclusion=success;duration_ms=8769]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.1018487Z ##[start-action display=Remove Trivy Envs file;id=__aquasecurity_trivy-action.__run_5]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.1038769Z ##[group]Run rm -f trivy_envs.txt
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.1039025Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.1075031Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.1075314Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.1075644Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.1076025Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:52:51.1204181Z ##[end-action id=__aquasecurity_trivy-action.__run_5;outcome=success;conclusion=success;duration_ms=18]
+delivery	Preserve container report	﻿2026-10-07T14:52:51.1242081Z ##[group]Run actions/upload-artifact@v4
+delivery	Preserve container report	2026-10-07T14:52:51.1242343Z with:
+delivery	Preserve container report	2026-10-07T14:52:51.1242537Z   name: container-security-report
+delivery	Preserve container report	2026-10-07T14:52:51.1242769Z   path: container-scan.json
+delivery	Preserve container report	2026-10-07T14:52:51.1242988Z   if-no-files-found: warn
+delivery	Preserve container report	2026-10-07T14:52:51.1243190Z   compression-level: 6
+delivery	Preserve container report	2026-10-07T14:52:51.1243587Z   overwrite: false
+delivery	Preserve container report	2026-10-07T14:52:51.1243799Z   include-hidden-files: false
+delivery	Preserve container report	2026-10-07T14:52:51.1244005Z env:
+delivery	Preserve container report	2026-10-07T14:52:51.1244338Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Preserve container report	2026-10-07T14:52:51.1244703Z ##[endgroup]
+delivery	Preserve container report	2026-10-07T14:52:51.2576920Z (node:2328) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+delivery	Preserve container report	2026-10-07T14:52:51.2578149Z (Use `node --trace-deprecation ...` to show where the warning was created)
+delivery	Preserve container report	2026-10-07T14:52:51.2635569Z With the provided path, there will be 1 file uploaded
+delivery	Preserve container report	2026-10-07T14:52:51.2640850Z Artifact name is valid!
+delivery	Preserve container report	2026-10-07T14:52:51.2642441Z Root directory input is valid!
+delivery	Preserve container report	2026-10-07T14:52:51.5287642Z Beginning upload of artifact content to blob storage
+delivery	Preserve container report	2026-10-07T14:52:51.5437476Z (node:2328) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+delivery	Preserve container report	2026-10-07T14:52:51.7743740Z Uploaded bytes 14393
+delivery	Preserve container report	2026-10-07T14:52:51.8179691Z Finished uploading artifact content to blob storage!
+delivery	Preserve container report	2026-10-07T14:52:51.8180428Z SHA256 digest of uploaded artifact zip is 3f4514d1192694831000396255bedb0856fb31c7d319b94e4e8611dbdfad667c
+delivery	Preserve container report	2026-10-07T14:52:51.8180982Z Finalizing artifact upload
+delivery	Preserve container report	2026-10-07T14:52:52.0443161Z Artifact container-security-report.zip successfully finalized. Artifact ID 11491422307
+delivery	Preserve container report	2026-10-07T14:52:52.0444056Z Artifact container-security-report has been successfully uploaded! Final size is 14393 bytes. Artifact ID is 11491422307
+delivery	Preserve container report	2026-10-07T14:52:52.0450037Z Artifact download URL: https://github.com/AJ5831A/devops-homework/actions/runs/37640204904/artifacts/11491422307
+delivery	Log in to GitHub Container Registry	﻿2026-10-07T14:52:52.0563959Z ##[group]Run docker/login-action@v3
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.0564339Z with:
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.0564596Z   registry: ghcr.io
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.0564877Z   username: AJ5831A
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.0567935Z   password: ***
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.0568458Z   logout: true
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.0568699Z env:
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.0569175Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.0569736Z ##[endgroup]
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.2965676Z Logging into ghcr.io...
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.2981966Z (node:2340) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.2982608Z (Use `node --trace-deprecation ...` to show where the warning was created)
+delivery	Log in to GitHub Container Registry	2026-10-07T14:52:52.7070895Z Login Succeeded!
+delivery	Publish tested image	﻿2026-10-07T14:52:52.7171271Z ##[group]Run docker push "$IMAGE"
+delivery	Publish tested image	2026-10-07T14:52:52.7171542Z ^[[36;1mdocker push "$IMAGE"^[[0m
+delivery	Publish tested image	2026-10-07T14:52:52.7208662Z shell: /usr/bin/bash -e {0}
+delivery	Publish tested image	2026-10-07T14:52:52.7208908Z env:
+delivery	Publish tested image	2026-10-07T14:52:52.7209249Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Publish tested image	2026-10-07T14:52:52.7209612Z ##[endgroup]
+delivery	Publish tested image	2026-10-07T14:52:52.7635514Z The push refers to repository [ghcr.io/aj5831a/devops-homework/secure-calculator]
+delivery	Publish tested image	2026-10-07T14:52:52.8769419Z a8f43e4b2d4a: Preparing
+delivery	Publish tested image	2026-10-07T14:52:52.8769792Z 6a6195b64cf5: Preparing
+delivery	Publish tested image	2026-10-07T14:52:52.8770035Z 9ef318a44b3e: Preparing
+delivery	Publish tested image	2026-10-07T14:52:52.8770264Z 4d211c3f1c45: Preparing
+delivery	Publish tested image	2026-10-07T14:52:52.8770444Z 7e9021171c27: Preparing
+delivery	Publish tested image	2026-10-07T14:52:52.8770629Z 41366f7f4879: Preparing
+delivery	Publish tested image	2026-10-07T14:52:52.8770850Z 74d97c428c51: Preparing
+delivery	Publish tested image	2026-10-07T14:52:52.9363118Z 41366f7f4879: Waiting
+delivery	Publish tested image	2026-10-07T14:52:52.9363557Z 74d97c428c51: Waiting
+delivery	Publish tested image	2026-10-07T14:52:54.4672302Z 4d211c3f1c45: Pushed
+delivery	Publish tested image	2026-10-07T14:52:54.9652258Z 6a6195b64cf5: Pushed
+delivery	Publish tested image	2026-10-07T14:52:54.9841752Z 9ef318a44b3e: Pushed
+delivery	Publish tested image	2026-10-07T14:52:54.9961218Z a8f43e4b2d4a: Pushed
+delivery	Publish tested image	2026-10-07T14:52:55.8469221Z 74d97c428c51: Mounted from github/gh-aw-firewall/squid
+delivery	Publish tested image	2026-10-07T14:52:56.1423906Z 41366f7f4879: Pushed
+delivery	Publish tested image	2026-10-07T14:52:56.2132157Z 7e9021171c27: Pushed
+delivery	Publish tested image	2026-10-07T14:52:58.7416039Z be9442981c475a39475f4f14501e0fc95244b681: digest: sha256:4ff48a7ca779138f7f8691246fe40da51f93857297251b5ce268f2509cf4d0bf size: 1780
+delivery	Create ephemeral Kubernetes cluster	﻿2026-10-07T14:52:58.7791581Z ##[group]Run helm/kind-action@v1
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7791854Z with:
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7792067Z   cluster_name: pipeline
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7792285Z   version: v0.31.0
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7792493Z   wait: 60s
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7792675Z   verbosity: 0
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7792879Z   kubectl_version: v1.35.0
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7793102Z   registry: false
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7793488Z   registry_image: registry:2
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7793767Z   registry_name: kind-registry
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7794020Z   registry_port: 5000
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7794236Z   registry_enable_delete: false
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7794481Z   install_only: false
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7794695Z   ignore_failed_clean: false
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7794929Z   cloud_provider: false
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7795134Z env:
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7795497Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.7795930Z ##[endgroup]
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.8113613Z Installing kind...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:58.8124795Z /opt/hostedtoolcache/kind/v0.31.0/amd64/kind/bin ~/work/devops-homework/devops-homework
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.4435792Z kind-linux-amd64: OK
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.4470225Z ~/work/devops-homework/devops-homework
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.4470625Z Adding kind directory to PATH...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.4470845Z Installing kubectl...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.4481776Z /opt/hostedtoolcache/kind/v0.31.0/amd64/kubectl/bin ~/work/devops-homework/devops-homework
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.9296594Z kubectl: OK
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.9310404Z ~/work/devops-homework/devops-homework
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.9310859Z Adding kubectl directory to PATH...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.9333946Z kind v0.31.0 go1.25.5 linux/amd64
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.9638979Z Client Version: v1.35.0
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.9639376Z Kustomize Version: v5.7.1
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:52:59.9647029Z Creating kind cluster...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:06.4394105Z Creating cluster "pipeline" ...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:06.4394862Z  • Ensuring node image (kindest/node:v1.35.0) 🖼  ...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:23.4526447Z  ✓ Ensuring node image (kindest/node:v1.35.0) 🖼
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:23.4527020Z  • Preparing nodes 📦   ...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:29.4837381Z  ✓ Preparing nodes 📦 
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:29.6527588Z  • Writing configuration 📜  ...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:29.9174936Z  ✓ Writing configuration 📜
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:29.9175467Z  • Starting control-plane 🕹️  ...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:41.2508714Z  ✓ Starting control-plane 🕹️
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:41.2509182Z  • Installing CNI 🔌  ...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:41.5762026Z  ✓ Installing CNI 🔌
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:41.5762586Z  • Installing StorageClass 💾  ...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:41.8571737Z  ✓ Installing StorageClass 💾
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:41.8815173Z  • Waiting ≤ 1m0s for control-plane = Ready ⏳  ...
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:59.9705464Z  ✓ Waiting ≤ 1m0s for control-plane = Ready ⏳
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:53:59.9706006Z  • Ready after 18s 💚
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:54:00.0917047Z Set kubectl context to "kind-pipeline"
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:54:00.0917798Z You can now use your cluster with:
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:54:00.0918192Z 
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:54:00.0919040Z kubectl cluster-info --context kind-pipeline
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:54:00.0919436Z 
+delivery	Create ephemeral Kubernetes cluster	2026-10-07T14:54:00.0920204Z Have a question, bug, or feature request? Let us know! https://kind.sigs.k8s.io/#community 🙂
+delivery	Deploy and verify	﻿2026-10-07T14:54:00.1121553Z ##[group]Run set -euo pipefail
+delivery	Deploy and verify	2026-10-07T14:54:00.1122887Z ^[[36;1mset -euo pipefail^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1123478Z ^[[36;1m# Pull the published tag before loading it; no registry credentials enter the cluster.^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1123960Z ^[[36;1mdocker pull "$IMAGE"^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1124286Z ^[[36;1mkind load docker-image "$IMAGE" --name pipeline^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1124722Z ^[[36;1mkubectl apply -f 16-devsecops/k8s/deployment.yaml^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1125194Z ^[[36;1mkubectl set image deployment/secure-calculator calculator="$IMAGE"^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1125609Z ^[[36;1mkubectl rollout status deployment/secure-calculator --timeout=180s^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1125984Z ^[[36;1mkubectl get pods -o wide | tee deployment-evidence.txt^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1126552Z ^[[36;1mkubectl port-forward service/secure-calculator 8080:80 >port-forward.log 2>&1 &^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1127024Z ^[[36;1mFORWARD_PID=$!^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1127312Z ^[[36;1mtrap 'kill "$FORWARD_PID" || true' EXIT^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1127973Z ^[[36;1mcurl --fail --retry 20 --retry-all-errors --retry-delay 2 http://127.0.0.1:8080/health | tee health.json^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1128689Z ^[[36;1mpython3 -c 'import json; assert json.load(open("health.json"))["status"] == "ok"'^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1129323Z ^[[36;1mcurl --fail 'http://127.0.0.1:8080/calculate?op=add&a=2&b=3' | tee calculator.json^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1129967Z ^[[36;1mpython3 -c 'import json; assert json.load(open("calculator.json"))["result"] == 5'^[[0m
+delivery	Deploy and verify	2026-10-07T14:54:00.1199602Z shell: /usr/bin/bash -e {0}
+delivery	Deploy and verify	2026-10-07T14:54:00.1199944Z env:
+delivery	Deploy and verify	2026-10-07T14:54:00.1200414Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Deploy and verify	2026-10-07T14:54:00.1201175Z ##[endgroup]
+delivery	Deploy and verify	2026-10-07T14:54:01.0224682Z be9442981c475a39475f4f14501e0fc95244b681: Pulling from aj5831a/devops-homework/secure-calculator
+delivery	Deploy and verify	2026-10-07T14:54:01.0782480Z Digest: sha256:4ff48a7ca779138f7f8691246fe40da51f93857297251b5ce268f2509cf4d0bf
+delivery	Deploy and verify	2026-10-07T14:54:01.0784689Z Status: Image is up to date for ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Deploy and verify	2026-10-07T14:54:01.2582506Z ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Deploy and verify	2026-10-07T14:54:01.5799747Z Image: "ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681" with ID "sha256:7cd6dd59a3420241bde1a275db72a883f71c153f50a9e58e42ac76bc09391018" not yet present on node "pipeline-control-plane", loading...
+delivery	Deploy and verify	2026-10-07T14:54:06.8829790Z deployment.apps/secure-calculator created
+delivery	Deploy and verify	2026-10-07T14:54:06.8978040Z service/secure-calculator created
+delivery	Deploy and verify	2026-10-07T14:54:07.0217946Z deployment.apps/secure-calculator image updated
+delivery	Deploy and verify	2026-10-07T14:54:07.2131120Z Waiting for deployment spec update to be observed...
+delivery	Deploy and verify	2026-10-07T14:54:07.2132147Z Waiting for deployment "secure-calculator" rollout to finish: 0 out of 2 new replicas have been updated...
+delivery	Deploy and verify	2026-10-07T14:54:07.2162445Z Waiting for deployment "secure-calculator" rollout to finish: 1 out of 2 new replicas have been updated...
+delivery	Deploy and verify	2026-10-07T14:54:09.1995528Z Waiting for deployment "secure-calculator" rollout to finish: 1 out of 2 new replicas have been updated...
+delivery	Deploy and verify	2026-10-07T14:54:09.2187361Z Waiting for deployment "secure-calculator" rollout to finish: 1 out of 2 new replicas have been updated...
+delivery	Deploy and verify	2026-10-07T14:54:10.0508330Z Waiting for deployment "secure-calculator" rollout to finish: 1 out of 2 new replicas have been updated...
+delivery	Deploy and verify	2026-10-07T14:54:10.1707348Z Waiting for deployment "secure-calculator" rollout to finish: 1 old replicas are pending termination...
+delivery	Deploy and verify	2026-10-07T14:54:11.1938278Z Waiting for deployment "secure-calculator" rollout to finish: 1 old replicas are pending termination...
+delivery	Deploy and verify	2026-10-07T14:54:12.1512701Z Waiting for deployment "secure-calculator" rollout to finish: 1 old replicas are pending termination...
+delivery	Deploy and verify	2026-10-07T14:54:12.1614266Z Waiting for deployment "secure-calculator" rollout to finish: 1 old replicas are pending termination...
+delivery	Deploy and verify	2026-10-07T14:54:12.1750201Z deployment "secure-calculator" successfully rolled out
+delivery	Deploy and verify	2026-10-07T14:54:12.2490427Z NAME                                 READY   STATUS        RESTARTS   AGE   IP           NODE                     NOMINATED NODE   READINESS GATES
+delivery	Deploy and verify	2026-10-07T14:54:12.2492067Z secure-calculator-58cbcccdd9-hs6hw   1/1     Running       0          3s    10.244.0.8   pipeline-control-plane   <none>           <none>
+delivery	Deploy and verify	2026-10-07T14:54:12.2493628Z secure-calculator-58cbcccdd9-q6fpj   1/1     Running       0          5s    10.244.0.7   pipeline-control-plane   <none>           <none>
+delivery	Deploy and verify	2026-10-07T14:54:12.2494927Z secure-calculator-5fb89cfb4-ws8gb    0/1     Terminating   0          6s    10.244.0.6   pipeline-control-plane   <none>           <none>
+delivery	Deploy and verify	2026-10-07T14:54:12.2559347Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+delivery	Deploy and verify	2026-10-07T14:54:12.2571555Z                                  Dload  Upload   Total   Spent    Left  Speed
+delivery	Deploy and verify	2026-10-07T14:54:12.2572629Z 
+delivery	Deploy and verify	2026-10-07T14:54:12.2574070Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+delivery	Deploy and verify	2026-10-07T14:54:12.2574645Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+delivery	Deploy and verify	2026-10-07T14:54:12.2575195Z curl: (7) Failed to connect to 127.0.0.1 port 8080 after 0 ms: Couldn't connect to server
+delivery	Deploy and verify	2026-10-07T14:54:12.2575799Z Warning: Problem (retrying all errors). Will retry in 2 seconds. 20 retries 
+delivery	Deploy and verify	2026-10-07T14:54:12.2576245Z Warning: left.
+delivery	Deploy and verify	2026-10-07T14:54:14.2575115Z 
+delivery	Deploy and verify	2026-10-07T14:54:14.2642672Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+delivery	Deploy and verify	2026-10-07T14:54:14.2643952Z 100    16  100    16    0     0   2410      0 --:--:-- --:--:-- --:--:--  2666
+delivery	Deploy and verify	2026-10-07T14:54:14.2933691Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+delivery	Deploy and verify	2026-10-07T14:54:14.2934305Z                                  Dload  Upload   Total   Spent    Left  Speed
+delivery	Deploy and verify	2026-10-07T14:54:14.2934568Z 
+delivery	Deploy and verify	2026-10-07T14:54:14.2964178Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+delivery	Deploy and verify	2026-10-07T14:54:14.2966447Z 100    15  100    15    0     0   5142      0 --:--:-- --:--:-- --:--:--  7500
+delivery	Deploy and verify	2026-10-07T14:54:14.3162379Z {"status": "ok"}{"result": 5.0}
+delivery	Save deployment evidence	﻿2026-10-07T14:54:14.3210562Z ##[group]Run actions/upload-artifact@v4
+delivery	Save deployment evidence	2026-10-07T14:54:14.3210828Z with:
+delivery	Save deployment evidence	2026-10-07T14:54:14.3211022Z   name: secure-calculator-deployment
+delivery	Save deployment evidence	2026-10-07T14:54:14.3211276Z   if-no-files-found: ignore
+delivery	Save deployment evidence	2026-10-07T14:54:14.3211622Z   path: deployment-evidence.txt
+delivery	Save deployment evidence	health.json
+delivery	Save deployment evidence	calculator.json
+delivery	Save deployment evidence	port-forward.log
+delivery	Save deployment evidence	
+delivery	Save deployment evidence	2026-10-07T14:54:14.3211973Z   compression-level: 6
+delivery	Save deployment evidence	2026-10-07T14:54:14.3212225Z   overwrite: false
+delivery	Save deployment evidence	2026-10-07T14:54:14.3212420Z   include-hidden-files: false
+delivery	Save deployment evidence	2026-10-07T14:54:14.3212803Z env:
+delivery	Save deployment evidence	2026-10-07T14:54:14.3213135Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:be9442981c475a39475f4f14501e0fc95244b681
+delivery	Save deployment evidence	2026-10-07T14:54:14.3213761Z ##[endgroup]
+delivery	Save deployment evidence	2026-10-07T14:54:14.4795851Z (node:12398) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+delivery	Save deployment evidence	2026-10-07T14:54:14.4796450Z (Use `node --trace-deprecation ...` to show where the warning was created)
+delivery	Save deployment evidence	2026-10-07T14:54:14.4889588Z Multiple search paths detected. Calculating the least common ancestor of all paths
+delivery	Save deployment evidence	2026-10-07T14:54:14.4892206Z The least common ancestor is /home/runner/work/devops-homework/devops-homework. This will be the root directory of the artifact
+delivery	Save deployment evidence	2026-10-07T14:54:14.4893428Z With the provided path, there will be 4 files uploaded
+delivery	Save deployment evidence	2026-10-07T14:54:14.4894360Z Artifact name is valid!
+delivery	Save deployment evidence	2026-10-07T14:54:14.4914341Z Root directory input is valid!
+delivery	Save deployment evidence	2026-10-07T14:54:14.7696543Z Beginning upload of artifact content to blob storage
+delivery	Save deployment evidence	2026-10-07T14:54:14.7878178Z (node:12398) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+delivery	Save deployment evidence	2026-10-07T14:54:14.9509827Z Uploaded bytes 848
+delivery	Save deployment evidence	2026-10-07T14:54:14.9969862Z Finished uploading artifact content to blob storage!
+delivery	Save deployment evidence	2026-10-07T14:54:14.9970518Z SHA256 digest of uploaded artifact zip is 8424d85b974ce06aeef3f7c2a108cbcf12d72ab301cd51c84b640d92be2125d5
+delivery	Save deployment evidence	2026-10-07T14:54:14.9973148Z Finalizing artifact upload
+delivery	Save deployment evidence	2026-10-07T14:54:15.2409929Z Artifact secure-calculator-deployment.zip successfully finalized. Artifact ID 11491377500
+delivery	Save deployment evidence	2026-10-07T14:54:15.2410924Z Artifact secure-calculator-deployment has been successfully uploaded! Final size is 848 bytes. Artifact ID is 11491377500
+delivery	Save deployment evidence	2026-10-07T14:54:15.2416377Z Artifact download URL: https://github.com/AJ5831A/devops-homework/actions/runs/37640204904/artifacts/11491377500
+delivery	Post Create ephemeral Kubernetes cluster	﻿2026-10-07T14:54:15.2547062Z Post job cleanup.
+delivery	Post Create ephemeral Kubernetes cluster	2026-10-07T14:54:15.2920520Z Error response from daemon: No such container: kind-registry
+delivery	Post Create ephemeral Kubernetes cluster	2026-10-07T14:54:15.3058652Z Deleting cluster "pipeline" ...
+delivery	Post Create ephemeral Kubernetes cluster	2026-10-07T14:54:19.2380841Z Deleted nodes: ["pipeline-control-plane"]
+delivery	Post Log in to GitHub Container Registry	﻿2026-10-07T14:54:19.2453745Z Post job cleanup.
+delivery	Post Log in to GitHub Container Registry	2026-10-07T14:54:19.4921311Z ##[group]Logout from ghcr.io
+delivery	Post Log in to GitHub Container Registry	2026-10-07T14:54:19.4937206Z (node:12508) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+delivery	Post Log in to GitHub Container Registry	2026-10-07T14:54:19.4937823Z (Use `node --trace-deprecation ...` to show where the warning was created)
+delivery	Post Log in to GitHub Container Registry	2026-10-07T14:54:19.4974504Z [command]/usr/bin/docker logout ghcr.io
+delivery	Post Log in to GitHub Container Registry	2026-10-07T14:54:19.5116920Z Removing login credentials for ghcr.io
+delivery	Post Log in to GitHub Container Registry	2026-10-07T14:54:19.5141145Z ##[endgroup]
+delivery	Post Log in to GitHub Container Registry	2026-10-07T14:54:19.5142018Z ##[group]Post cache
+delivery	Post Log in to GitHub Container Registry	2026-10-07T14:54:19.5142553Z State not set
+delivery	Post Log in to GitHub Container Registry	2026-10-07T14:54:19.5143460Z ##[endgroup]
+delivery	Post Container security gate (HIGH and CRITICAL)	﻿2026-10-07T14:54:19.5436978Z Post job cleanup.
+delivery	Post Container security gate (HIGH and CRITICAL)	2026-10-07T14:54:19.5449176Z ##[start-action display=Restore DB from cache;id=__f5dcfbe3-7265-4794-8b18-ea0a290b7d09.__actions_cache]
+delivery	Post Container security gate (HIGH and CRITICAL)	2026-10-07T14:54:19.5497693Z Post job cleanup.
+delivery	Post Container security gate (HIGH and CRITICAL)	2026-10-07T14:54:19.6615737Z Cache hit occurred on the primary key cache-trivy-2026-10-07, not saving cache.
+delivery	Post Container security gate (HIGH and CRITICAL)	2026-10-07T14:54:19.6661225Z ##[end-action id=__f5dcfbe3-7265-4794-8b18-ea0a290b7d09.__actions_cache;outcome=success;conclusion=success;duration_ms=121]
+delivery	Post Container security gate (HIGH and CRITICAL)	2026-10-07T14:54:19.6663881Z ##[start-action display=Install Trivy;id=__f5dcfbe3-7265-4794-8b18-ea0a290b7d09.__aquasecurity_setup-trivy]
+delivery	Post Container security gate (HIGH and CRITICAL)	2026-10-07T14:54:19.6732068Z Post job cleanup.
+delivery	Post Container security gate (HIGH and CRITICAL)	2026-10-07T14:54:19.6736689Z ##[end-action id=__f5dcfbe3-7265-4794-8b18-ea0a290b7d09.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=7]
+delivery	Post Run actions/checkout@v4	﻿2026-10-07T14:54:19.6792052Z Post job cleanup.
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:19.7528883Z [command]/usr/bin/git version
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:19.7564142Z git version 2.55.0
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:19.7607441Z Temporarily overriding HOME='/home/runner/work/_temp/0d1efe2f-87b5-4116-b31d-1d118c2c941f' before making global git config changes
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:19.7624395Z Adding repository directory to the temporary git global config as a safe directory
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:19.7625697Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:19.7635164Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:19.7663820Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:19.7857263Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:20.1472066Z http.https://github.com/.extraheader
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:20.1485720Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:20.1528585Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:20.1708367Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+delivery	Post Run actions/checkout@v4	2026-10-07T14:54:20.1736046Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+delivery	Complete job	﻿2026-10-07T14:54:20.2025660Z Cleaning up orphan processes
+delivery	Complete job	2026-10-07T14:54:20.2291217Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4, docker/login-action@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

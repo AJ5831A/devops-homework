@@ -1,0 +1,1260 @@
+test-security	Set up job	﻿2026-10-07T14:51:21.4614717Z Current runner version: '2.337.0'
+test-security	Set up job	2026-10-07T14:51:21.4644516Z ##[group]Runner Image Provisioner
+test-security	Set up job	2026-10-07T14:51:21.4645532Z Hosted Compute Agent
+test-security	Set up job	2026-10-07T14:51:21.4646148Z Version: 20261002.596
+test-security	Set up job	2026-10-07T14:51:21.4646785Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+test-security	Set up job	2026-10-07T14:51:21.4647534Z Build Date: 2026-10-02T22:28:27Z
+test-security	Set up job	2026-10-07T14:51:21.4648242Z Worker ID: {3beb73de-3b5b-4d35-8714-c09c0cc8de01}
+test-security	Set up job	2026-10-07T14:51:21.4649159Z Region: centralus
+test-security	Set up job	2026-10-07T14:51:21.4649698Z Cloud: Azure
+test-security	Set up job	2026-10-07T14:51:21.4650276Z ##[endgroup]
+test-security	Set up job	2026-10-07T14:51:21.4651764Z ##[group]Operating System
+test-security	Set up job	2026-10-07T14:51:21.4652440Z Ubuntu
+test-security	Set up job	2026-10-07T14:51:21.4652966Z 24.04.5
+test-security	Set up job	2026-10-07T14:51:21.4653457Z LTS
+test-security	Set up job	2026-10-07T14:51:21.4654069Z ##[endgroup]
+test-security	Set up job	2026-10-07T14:51:21.4654669Z ##[group]Runner Image
+test-security	Set up job	2026-10-07T14:51:21.4655270Z Image: ubuntu-24.04
+test-security	Set up job	2026-10-07T14:51:21.4655839Z Version: 20261004.327.1
+test-security	Set up job	2026-10-07T14:51:21.4656875Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+test-security	Set up job	2026-10-07T14:51:21.4658850Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+test-security	Set up job	2026-10-07T14:51:21.4660269Z ##[endgroup]
+test-security	Set up job	2026-10-07T14:51:21.4661396Z ##[group]GITHUB_TOKEN Permissions
+test-security	Set up job	2026-10-07T14:51:21.4663896Z Contents: read
+test-security	Set up job	2026-10-07T14:51:21.4664534Z Metadata: read
+test-security	Set up job	2026-10-07T14:51:21.4665054Z ##[endgroup]
+test-security	Set up job	2026-10-07T14:51:21.4667303Z Secret source: Actions
+test-security	Set up job	2026-10-07T14:51:21.4668162Z Cache mode: write
+test-security	Set up job	2026-10-07T14:51:21.4669664Z Prepare workflow directory
+test-security	Set up job	2026-10-07T14:51:21.5009712Z Prepare all required actions
+test-security	Set up job	2026-10-07T14:51:21.5062043Z Getting action download info
+test-security	Set up job	2026-10-07T14:51:21.8388880Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+test-security	Set up job	2026-10-07T14:51:21.9376130Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+test-security	Set up job	2026-10-07T14:51:22.0474848Z Download action repository 'azure/setup-helm@v5.0.0' (SHA:dda3372f752e03dde6b3237bc9431cdc2f7a02a2)
+test-security	Set up job	2026-10-07T14:51:22.3834274Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+test-security	Set up job	2026-10-07T14:51:22.6676732Z Complete job name: test-security
+test-security	Run actions/checkout@v4	﻿2026-10-07T14:51:22.7704587Z ##[group]Run actions/checkout@v4
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7705906Z with:
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7706631Z   repository: AJ5831A/devops-homework
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7712396Z   token: ***
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7713157Z   ssh-strict: true
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7713828Z   ssh-user: git
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7714823Z   persist-credentials: true
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7715556Z   clean: true
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7716260Z   sparse-checkout-cone-mode: true
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7717091Z   fetch-depth: 1
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7717739Z   fetch-tags: false
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7718423Z   show-progress: true
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7719270Z   lfs: false
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7719946Z   submodules: false
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7720703Z   set-safe-directory: true
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7721444Z   allow-unsafe-pr-checkout: false
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.7722485Z ##[endgroup]
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9077816Z Syncing repository: AJ5831A/devops-homework
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9081788Z ##[group]Getting Git version info
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9083455Z Working directory is '/home/runner/work/devops-homework/devops-homework'
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9085891Z [command]/usr/bin/git version
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9131381Z git version 2.55.0
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9155913Z ##[endgroup]
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9170868Z Temporarily overriding HOME='/home/runner/work/_temp/1eb19a56-9ce3-4b47-b48b-376d2d878795' before making global git config changes
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9178424Z Adding repository directory to the temporary git global config as a safe directory
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9181819Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9256730Z Deleting the contents of '/home/runner/work/devops-homework/devops-homework'
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9271444Z ##[group]Initializing the repository
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9276846Z [command]/usr/bin/git init /home/runner/work/devops-homework/devops-homework
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9435602Z hint: Using 'master' as the name for the initial branch. This default branch name
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9437923Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9440580Z hint: to use in all of your new repositories, which will suppress this warning,
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9442304Z hint: call:
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9443715Z hint:
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9444953Z hint: 	git config --global init.defaultBranch <name>
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9446194Z hint:
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9447435Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9449617Z hint: 'development'. The just-created branch can be renamed via this command:
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9451147Z hint:
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9452146Z hint: 	git branch -m <name>
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9453207Z hint:
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9454576Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9456951Z Initialized empty Git repository in /home/runner/work/devops-homework/devops-homework/.git/
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9475991Z [command]/usr/bin/git remote add origin https://github.com/AJ5831A/devops-homework
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9553484Z ##[endgroup]
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9555481Z ##[group]Disabling automatic garbage collection
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9557408Z [command]/usr/bin/git config --local gc.auto 0
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9606933Z ##[endgroup]
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9609539Z ##[group]Setting up auth
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9615574Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test-security	Run actions/checkout@v4	2026-10-07T14:51:22.9660248Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.0106094Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.0165462Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.0420615Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.0464361Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.0708014Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.0764197Z ##[endgroup]
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.0766214Z ##[group]Fetching the repository
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.0779455Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +be9442981c475a39475f4f14501e0fc95244b681:refs/remotes/origin/main
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5323450Z From https://github.com/AJ5831A/devops-homework
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5326918Z  * [new ref]         be9442981c475a39475f4f14501e0fc95244b681 -> origin/main
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5334364Z ##[endgroup]
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5337194Z ##[group]Determining the checkout info
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5341060Z ##[endgroup]
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5342965Z [command]/usr/bin/git sparse-checkout disable
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5405450Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5447654Z ##[group]Checking out the ref
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5451659Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5576702Z Switched to a new branch 'main'
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5581976Z branch 'main' set up to track 'origin/main'.
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5587796Z ##[endgroup]
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5628265Z [command]/usr/bin/git log -1 --format=%H
+test-security	Run actions/checkout@v4	2026-10-07T14:51:23.5652004Z be9442981c475a39475f4f14501e0fc95244b681
+test-security	Run actions/setup-python@v5	﻿2026-10-07T14:51:23.6062174Z ##[group]Run actions/setup-python@v5
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.6063769Z with:
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.6064807Z   python-version: 3.12
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.6065962Z   check-latest: false
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.6076028Z   token: ***
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.6077156Z   update-environment: true
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.6078386Z   allow-prereleases: false
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.6079675Z   freethreaded: false
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.6080773Z ##[endgroup]
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.7464969Z ##[group]Installed versions
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.7575626Z (node:2296) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.7580459Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.7583273Z Successfully set up CPython (3.12.15)
+test-security	Run actions/setup-python@v5	2026-10-07T14:51:23.7586166Z ##[endgroup]
+test-security	Unit tests and build check	﻿2026-10-07T14:51:23.7846256Z ##[group]Run python -m unittest discover -s final-devops-project/application -v
+test-security	Unit tests and build check	2026-10-07T14:51:23.7850406Z ^[[36;1mpython -m unittest discover -s final-devops-project/application -v^[[0m
+test-security	Unit tests and build check	2026-10-07T14:51:23.7852805Z ^[[36;1mpython -m compileall -q final-devops-project/application^[[0m
+test-security	Unit tests and build check	2026-10-07T14:51:23.8159869Z shell: /usr/bin/bash -e {0}
+test-security	Unit tests and build check	2026-10-07T14:51:23.8161256Z env:
+test-security	Unit tests and build check	2026-10-07T14:51:23.8162554Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Unit tests and build check	2026-10-07T14:51:23.8164568Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test-security	Unit tests and build check	2026-10-07T14:51:23.8166462Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Unit tests and build check	2026-10-07T14:51:23.8168984Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Unit tests and build check	2026-10-07T14:51:23.8170751Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Unit tests and build check	2026-10-07T14:51:23.8173008Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test-security	Unit tests and build check	2026-10-07T14:51:23.8174570Z ##[endgroup]
+test-security	Unit tests and build check	2026-10-07T14:51:24.2283315Z test_auth_denies_missing_and_wrong_tokens (test_app.AppTests.test_auth_denies_missing_and_wrong_tokens) ... ok
+test-security	Unit tests and build check	2026-10-07T14:51:24.2290095Z test_empty_secret_never_authorizes (test_app.AppTests.test_empty_secret_never_authorizes) ... ok
+test-security	Unit tests and build check	2026-10-07T14:51:24.2293469Z test_health (test_app.AppTests.test_health) ... ok
+test-security	Unit tests and build check	2026-10-07T14:51:24.2301356Z test_html_escapes_configuration (test_app.AppTests.test_html_escapes_configuration) ... ok
+test-security	Unit tests and build check	2026-10-07T14:51:24.2305929Z test_malformed_path_returns_client_error (test_app.AppTests.test_malformed_path_returns_client_error) ... ok
+test-security	Unit tests and build check	2026-10-07T14:51:24.2310326Z test_metrics_are_prometheus_text (test_app.AppTests.test_metrics_are_prometheus_text) ... ok
+test-security	Unit tests and build check	2026-10-07T14:51:24.2318381Z test_non_ascii_auth_is_rejected_without_crashing (test_app.AppTests.test_non_ascii_auth_is_rejected_without_crashing) ... ok
+test-security	Unit tests and build check	2026-10-07T14:51:24.2322622Z test_not_found (test_app.AppTests.test_not_found) ... ok
+test-security	Unit tests and build check	2026-10-07T14:51:24.2333428Z test_readiness_requires_secret (test_app.AppTests.test_readiness_requires_secret) ... ok
+test-security	Unit tests and build check	2026-10-07T14:51:24.2337420Z test_work_validates_bounds (test_app.AppTests.test_work_validates_bounds) ... ok
+test-security	Unit tests and build check	2026-10-07T14:51:24.2339597Z 
+test-security	Unit tests and build check	2026-10-07T14:51:24.2343498Z ----------------------------------------------------------------------
+test-security	Unit tests and build check	2026-10-07T14:51:24.2345202Z Ran 10 tests in 0.006s
+test-security	Unit tests and build check	2026-10-07T14:51:24.2345812Z 
+test-security	Unit tests and build check	2026-10-07T14:51:24.2346264Z OK
+test-security	Install security tools	﻿2026-10-07T14:51:24.2994986Z ##[group]Run python -m pip install bandit pip-audit
+test-security	Install security tools	2026-10-07T14:51:24.2996562Z ^[[36;1mpython -m pip install bandit pip-audit^[[0m
+test-security	Install security tools	2026-10-07T14:51:24.3047062Z shell: /usr/bin/bash -e {0}
+test-security	Install security tools	2026-10-07T14:51:24.3048275Z env:
+test-security	Install security tools	2026-10-07T14:51:24.3049533Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Install security tools	2026-10-07T14:51:24.3051385Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test-security	Install security tools	2026-10-07T14:51:24.3053208Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Install security tools	2026-10-07T14:51:24.3054794Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Install security tools	2026-10-07T14:51:24.3056449Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Install security tools	2026-10-07T14:51:24.3058091Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test-security	Install security tools	2026-10-07T14:51:24.3059584Z ##[endgroup]
+test-security	Install security tools	2026-10-07T14:51:25.1795923Z Collecting bandit
+test-security	Install security tools	2026-10-07T14:51:25.2553418Z   Downloading bandit-1.9.4-py3-none-any.whl.metadata (7.1 kB)
+test-security	Install security tools	2026-10-07T14:51:25.2867337Z Collecting pip-audit
+test-security	Install security tools	2026-10-07T14:51:25.2977226Z   Downloading pip_audit-2.10.1-py3-none-any.whl.metadata (28 kB)
+test-security	Install security tools	2026-10-07T14:51:25.3573764Z Collecting PyYAML>=5.3.1 (from bandit)
+test-security	Install security tools	2026-10-07T14:51:25.3697498Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+test-security	Install security tools	2026-10-07T14:51:25.3952916Z Collecting stevedore>=1.20.0 (from bandit)
+test-security	Install security tools	2026-10-07T14:51:25.4062955Z   Downloading stevedore-5.9.1-py3-none-any.whl.metadata (2.3 kB)
+test-security	Install security tools	2026-10-07T14:51:25.4449675Z Collecting rich (from bandit)
+test-security	Install security tools	2026-10-07T14:51:25.4565296Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+test-security	Install security tools	2026-10-07T14:51:25.4792366Z Collecting CacheControl>=0.13.0 (from CacheControl[filecache]>=0.13.0->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.4906340Z   Downloading cachecontrol-0.14.4-py3-none-any.whl.metadata (3.1 kB)
+test-security	Install security tools	2026-10-07T14:51:25.5543801Z Collecting cyclonedx-python-lib<12,>=5 (from pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.5652434Z   Downloading cyclonedx_python_lib-11.12.0-py3-none-any.whl.metadata (6.9 kB)
+test-security	Install security tools	2026-10-07T14:51:25.5879191Z Collecting packaging>=23.0.0 (from pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.5985091Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+test-security	Install security tools	2026-10-07T14:51:25.6212367Z Collecting pip-api>=0.0.28 (from pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.6329370Z   Downloading pip_api-0.0.35-py3-none-any.whl.metadata (17 kB)
+test-security	Install security tools	2026-10-07T14:51:25.6591762Z Collecting pip-requirements-parser>=32.0.0 (from pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.6707199Z   Downloading pip_requirements_parser-32.0.1-py3-none-any.whl.metadata (9.3 kB)
+test-security	Install security tools	2026-10-07T14:51:25.7229506Z Collecting requests>=2.31.0 (from pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.7344727Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+test-security	Install security tools	2026-10-07T14:51:25.7802700Z Collecting tomli>=2.2.1 (from pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.7909976Z   Downloading tomli-2.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)
+test-security	Install security tools	2026-10-07T14:51:25.8140227Z Collecting tomli-w>=1.2.0 (from pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.8258748Z   Downloading tomli_w-1.2.0-py3-none-any.whl.metadata (5.7 kB)
+test-security	Install security tools	2026-10-07T14:51:25.8593014Z Collecting platformdirs>=4.2.0 (from pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.8705513Z   Downloading platformdirs-4.12.3-py3-none-any.whl.metadata (5.5 kB)
+test-security	Install security tools	2026-10-07T14:51:25.8991689Z Collecting license-expression<31,>=30 (from cyclonedx-python-lib<12,>=5->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.9105352Z   Downloading license_expression-30.4.4-py3-none-any.whl.metadata (11 kB)
+test-security	Install security tools	2026-10-07T14:51:25.9466853Z Collecting packageurl-python<2,>=0.11 (from cyclonedx-python-lib<12,>=5->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.9582298Z   Downloading packageurl_python-0.17.6-py3-none-any.whl.metadata (5.1 kB)
+test-security	Install security tools	2026-10-07T14:51:25.9880582Z Collecting py-serializable<3.0.0,>=2.1.0 (from cyclonedx-python-lib<12,>=5->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:25.9992401Z   Downloading py_serializable-2.1.0-py3-none-any.whl.metadata (4.3 kB)
+test-security	Install security tools	2026-10-07T14:51:26.0241656Z Collecting sortedcontainers<3.0.0,>=2.4.0 (from cyclonedx-python-lib<12,>=5->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:26.0362318Z   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+test-security	Install security tools	2026-10-07T14:51:26.0625051Z Collecting typing_extensions<5.0,>=4.6 (from cyclonedx-python-lib<12,>=5->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:26.0732399Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+test-security	Install security tools	2026-10-07T14:51:26.0940493Z Collecting boolean.py>=4.0 (from license-expression<31,>=30->cyclonedx-python-lib<12,>=5->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:26.1046417Z   Downloading boolean_py-5.0-py3-none-any.whl.metadata (2.3 kB)
+test-security	Install security tools	2026-10-07T14:51:26.1425804Z Collecting defusedxml<0.8.0,>=0.7.1 (from py-serializable<3.0.0,>=2.1.0->cyclonedx-python-lib<12,>=5->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:26.1537120Z   Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+test-security	Install security tools	2026-10-07T14:51:26.2420052Z Collecting msgpack<2.0.0,>=0.5.2 (from CacheControl>=0.13.0->CacheControl[filecache]>=0.13.0->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:26.2530573Z   Downloading msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+test-security	Install security tools	2026-10-07T14:51:26.2840471Z Collecting filelock>=3.8.0 (from CacheControl[filecache]>=0.13.0->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:26.2945946Z   Downloading filelock-4.0.12-py3-none-any.whl.metadata (2.0 kB)
+test-security	Install security tools	2026-10-07T14:51:26.2996029Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages (from pip-api>=0.0.28->pip-audit) (26.2.1)
+test-security	Install security tools	2026-10-07T14:51:26.3418834Z Collecting pyparsing (from pip-requirements-parser>=32.0.0->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:26.3534297Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+test-security	Install security tools	2026-10-07T14:51:26.4733621Z Collecting charset_normalizer<4,>=2 (from requests>=2.31.0->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:26.4840785Z   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+test-security	Install security tools	2026-10-07T14:51:26.5094870Z Collecting idna<4,>=2.5 (from requests>=2.31.0->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:26.5203397Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+test-security	Install security tools	2026-10-07T14:51:26.5655324Z Collecting urllib3<3,>=1.26 (from requests>=2.31.0->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:26.5770100Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+test-security	Install security tools	2026-10-07T14:51:26.6017632Z Collecting certifi>=2023.5.7 (from requests>=2.31.0->pip-audit)
+test-security	Install security tools	2026-10-07T14:51:26.6126701Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+test-security	Install security tools	2026-10-07T14:51:26.6371113Z Collecting markdown-it-py>=2.2.0 (from rich->bandit)
+test-security	Install security tools	2026-10-07T14:51:26.6483395Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+test-security	Install security tools	2026-10-07T14:51:26.6760576Z Collecting pygments<3.0.0,>=2.13.0 (from rich->bandit)
+test-security	Install security tools	2026-10-07T14:51:26.6871024Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+test-security	Install security tools	2026-10-07T14:51:26.7069495Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->bandit)
+test-security	Install security tools	2026-10-07T14:51:26.7176213Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+test-security	Install security tools	2026-10-07T14:51:26.7358294Z Downloading bandit-1.9.4-py3-none-any.whl (134 kB)
+test-security	Install security tools	2026-10-07T14:51:26.7593294Z Downloading pip_audit-2.10.1-py3-none-any.whl (62 kB)
+test-security	Install security tools	2026-10-07T14:51:26.7731280Z Downloading cyclonedx_python_lib-11.12.0-py3-none-any.whl (529 kB)
+test-security	Install security tools	2026-10-07T14:51:26.7971444Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 529.5/529.5 kB 23.1 MB/s  0:00:00
+test-security	Install security tools	2026-10-07T14:51:26.8077496Z Downloading license_expression-30.4.4-py3-none-any.whl (120 kB)
+test-security	Install security tools	2026-10-07T14:51:26.8212115Z Downloading packageurl_python-0.17.6-py3-none-any.whl (36 kB)
+test-security	Install security tools	2026-10-07T14:51:26.8344588Z Downloading py_serializable-2.1.0-py3-none-any.whl (23 kB)
+test-security	Install security tools	2026-10-07T14:51:26.8484674Z Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+test-security	Install security tools	2026-10-07T14:51:26.8620920Z Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+test-security	Install security tools	2026-10-07T14:51:26.8756682Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+test-security	Install security tools	2026-10-07T14:51:26.8907554Z Downloading boolean_py-5.0-py3-none-any.whl (26 kB)
+test-security	Install security tools	2026-10-07T14:51:26.9041822Z Downloading cachecontrol-0.14.4-py3-none-any.whl (22 kB)
+test-security	Install security tools	2026-10-07T14:51:26.9181263Z Downloading msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (472 kB)
+test-security	Install security tools	2026-10-07T14:51:26.9420009Z Downloading filelock-4.0.12-py3-none-any.whl (111 kB)
+test-security	Install security tools	2026-10-07T14:51:26.9682717Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+test-security	Install security tools	2026-10-07T14:51:26.9826798Z Downloading pip_api-0.0.35-py3-none-any.whl (123 kB)
+test-security	Install security tools	2026-10-07T14:51:26.9964838Z Downloading pip_requirements_parser-32.0.1-py3-none-any.whl (35 kB)
+test-security	Install security tools	2026-10-07T14:51:27.0129596Z Downloading platformdirs-4.12.3-py3-none-any.whl (32 kB)
+test-security	Install security tools	2026-10-07T14:51:27.0271328Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+test-security	Install security tools	2026-10-07T14:51:27.0461974Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 33.4 MB/s  0:00:00
+test-security	Install security tools	2026-10-07T14:51:27.0584524Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+test-security	Install security tools	2026-10-07T14:51:27.0730395Z Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+test-security	Install security tools	2026-10-07T14:51:27.0899198Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+test-security	Install security tools	2026-10-07T14:51:27.1041286Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+test-security	Install security tools	2026-10-07T14:51:27.1176744Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+test-security	Install security tools	2026-10-07T14:51:27.1313099Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+test-security	Install security tools	2026-10-07T14:51:27.1453314Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+test-security	Install security tools	2026-10-07T14:51:27.1632156Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 65.4 MB/s  0:00:00
+test-security	Install security tools	2026-10-07T14:51:27.1743836Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+test-security	Install security tools	2026-10-07T14:51:27.1880714Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+test-security	Install security tools	2026-10-07T14:51:27.2035796Z Downloading stevedore-5.9.1-py3-none-any.whl (54 kB)
+test-security	Install security tools	2026-10-07T14:51:27.2186528Z Downloading tomli-2.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (286 kB)
+test-security	Install security tools	2026-10-07T14:51:27.2346084Z Downloading tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
+test-security	Install security tools	2026-10-07T14:51:27.2494913Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+test-security	Install security tools	2026-10-07T14:51:27.4010008Z Installing collected packages: sortedcontainers, boolean.py, urllib3, typing_extensions, tomli-w, tomli, stevedore, PyYAML, pyparsing, pygments, platformdirs, pip-api, packaging, packageurl-python, msgpack, mdurl, license-expression, idna, filelock, defusedxml, charset_normalizer, certifi, requests, py-serializable, pip-requirements-parser, markdown-it-py, rich, cyclonedx-python-lib, CacheControl, bandit, pip-audit
+test-security	Install security tools	2026-10-07T14:51:29.4423235Z 
+test-security	Install security tools	2026-10-07T14:51:29.4452280Z Successfully installed CacheControl-0.14.4 PyYAML-6.0.3 bandit-1.9.4 boolean.py-5.0 certifi-2026.7.22 charset_normalizer-3.5.2 cyclonedx-python-lib-11.12.0 defusedxml-0.7.1 filelock-4.0.12 idna-3.20 license-expression-30.4.4 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.3 packageurl-python-0.17.6 packaging-26.3 pip-api-0.0.35 pip-audit-2.10.1 pip-requirements-parser-32.0.1 platformdirs-4.12.3 py-serializable-2.1.0 pygments-2.21.0 pyparsing-3.3.3 requests-2.34.2 rich-15.0.0 sortedcontainers-2.4.0 stevedore-5.9.1 tomli-2.5.0 tomli-w-1.2.0 typing_extensions-4.16.0 urllib3-2.8.0
+test-security	SAST	﻿2026-10-07T14:51:29.5473683Z ##[group]Run bandit -r final-devops-project/application/app.py -c final-devops-project/security/bandit.yaml
+test-security	SAST	2026-10-07T14:51:29.5474645Z ^[[36;1mbandit -r final-devops-project/application/app.py -c final-devops-project/security/bandit.yaml^[[0m
+test-security	SAST	2026-10-07T14:51:29.5516970Z shell: /usr/bin/bash -e {0}
+test-security	SAST	2026-10-07T14:51:29.5517368Z env:
+test-security	SAST	2026-10-07T14:51:29.5517757Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	SAST	2026-10-07T14:51:29.5518287Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test-security	SAST	2026-10-07T14:51:29.5519003Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	SAST	2026-10-07T14:51:29.5519506Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	SAST	2026-10-07T14:51:29.5519967Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	SAST	2026-10-07T14:51:29.5520497Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test-security	SAST	2026-10-07T14:51:29.5520906Z ##[endgroup]
+test-security	SAST	2026-10-07T14:51:29.7115466Z [main]	INFO	profile include tests: None
+test-security	SAST	2026-10-07T14:51:29.7116798Z [main]	INFO	profile exclude tests: B104
+test-security	SAST	2026-10-07T14:51:29.7117489Z [main]	INFO	cli include tests: None
+test-security	SAST	2026-10-07T14:51:29.7118124Z [main]	INFO	cli exclude tests: None
+test-security	SAST	2026-10-07T14:51:29.7119073Z [main]	INFO	using config: final-devops-project/security/bandit.yaml
+test-security	SAST	2026-10-07T14:51:29.7119864Z [main]	INFO	running on Python 3.12.15
+test-security	SAST	2026-10-07T14:51:29.7226989Z Run started:2026-10-07 14:51:29.722434+00:00
+test-security	SAST	2026-10-07T14:51:29.7227355Z 
+test-security	SAST	2026-10-07T14:51:29.7227458Z Test results:
+test-security	SAST	2026-10-07T14:51:29.7228008Z 	No issues identified.
+test-security	SAST	2026-10-07T14:51:29.7228223Z 
+test-security	SAST	2026-10-07T14:51:29.7228377Z Code scanned:
+test-security	SAST	2026-10-07T14:51:29.7228802Z 	Total lines of code: 82
+test-security	SAST	2026-10-07T14:51:29.7229141Z 	Total lines skipped (#nosec): 0
+test-security	SAST	2026-10-07T14:51:29.7230002Z 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+test-security	SAST	2026-10-07T14:51:29.7230448Z 
+test-security	SAST	2026-10-07T14:51:29.7230558Z Run metrics:
+test-security	SAST	2026-10-07T14:51:29.7230856Z 	Total issues (by severity):
+test-security	SAST	2026-10-07T14:51:29.7231179Z 		Undefined: 0
+test-security	SAST	2026-10-07T14:51:29.7231484Z 		Low: 0
+test-security	SAST	2026-10-07T14:51:29.7231754Z 		Medium: 0
+test-security	SAST	2026-10-07T14:51:29.7232101Z 		High: 0
+test-security	SAST	2026-10-07T14:51:29.7232391Z 	Total issues (by confidence):
+test-security	SAST	2026-10-07T14:51:29.7232713Z 		Undefined: 0
+test-security	SAST	2026-10-07T14:51:29.7233001Z 		Low: 0
+test-security	SAST	2026-10-07T14:51:29.7233266Z 		Medium: 0
+test-security	SAST	2026-10-07T14:51:29.7233612Z 		High: 0
+test-security	SAST	2026-10-07T14:51:29.7233886Z Files skipped (0):
+test-security	SCA	﻿2026-10-07T14:51:29.7505661Z ##[group]Run pip-audit -r final-devops-project/application/requirements.txt
+test-security	SCA	2026-10-07T14:51:29.7506306Z ^[[36;1mpip-audit -r final-devops-project/application/requirements.txt^[[0m
+test-security	SCA	2026-10-07T14:51:29.7506960Z ^[[36;1mecho 'Runtime dependencies are standard library only; Trivy audits the base image.'^[[0m
+test-security	SCA	2026-10-07T14:51:29.7549156Z shell: /usr/bin/bash -e {0}
+test-security	SCA	2026-10-07T14:51:29.7549557Z env:
+test-security	SCA	2026-10-07T14:51:29.7549909Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	SCA	2026-10-07T14:51:29.7550547Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test-security	SCA	2026-10-07T14:51:29.7551051Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	SCA	2026-10-07T14:51:29.7551525Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	SCA	2026-10-07T14:51:29.7551977Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	SCA	2026-10-07T14:51:29.7552440Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test-security	SCA	2026-10-07T14:51:29.7552883Z ##[endgroup]
+test-security	SCA	2026-10-07T14:51:35.4037568Z No known vulnerabilities found
+test-security	SCA	2026-10-07T14:51:35.4734400Z Runtime dependencies are standard library only; Trivy audits the base image.
+test-security	Secret scan	﻿2026-10-07T14:51:35.4781840Z ##[group]Run docker run --rm -v "$PWD:/repo:ro" ghcr.io/gitleaks/gitleaks:v8.24.2 dir /repo --config /repo/final-devops-project/security/gitleaks.toml --redact
+test-security	Secret scan	2026-10-07T14:51:35.4783023Z ^[[36;1mdocker run --rm -v "$PWD:/repo:ro" ghcr.io/gitleaks/gitleaks:v8.24.2 dir /repo --config /repo/final-devops-project/security/gitleaks.toml --redact^[[0m
+test-security	Secret scan	2026-10-07T14:51:35.4827924Z shell: /usr/bin/bash -e {0}
+test-security	Secret scan	2026-10-07T14:51:35.4828321Z env:
+test-security	Secret scan	2026-10-07T14:51:35.4828983Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Secret scan	2026-10-07T14:51:35.4829557Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test-security	Secret scan	2026-10-07T14:51:35.4830186Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Secret scan	2026-10-07T14:51:35.4830663Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Secret scan	2026-10-07T14:51:35.4831114Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Secret scan	2026-10-07T14:51:35.4831624Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test-security	Secret scan	2026-10-07T14:51:35.4832059Z ##[endgroup]
+test-security	Secret scan	2026-10-07T14:51:35.5998163Z Unable to find image 'ghcr.io/gitleaks/gitleaks:v8.24.2' locally
+test-security	Secret scan	2026-10-07T14:51:36.1995282Z v8.24.2: Pulling from gitleaks/gitleaks
+test-security	Secret scan	2026-10-07T14:51:36.3578655Z 83abf496f1b8: Pulling fs layer
+test-security	Secret scan	2026-10-07T14:51:36.3579365Z ca84326b140f: Pulling fs layer
+test-security	Secret scan	2026-10-07T14:51:36.3580118Z 0d6c2d91852b: Pulling fs layer
+test-security	Secret scan	2026-10-07T14:51:36.3580693Z 5f3dea6ea896: Pulling fs layer
+test-security	Secret scan	2026-10-07T14:51:36.3581113Z 5f3dea6ea896: Waiting
+test-security	Secret scan	2026-10-07T14:51:36.6206792Z 83abf496f1b8: Verifying Checksum
+test-security	Secret scan	2026-10-07T14:51:36.6208058Z 83abf496f1b8: Download complete
+test-security	Secret scan	2026-10-07T14:51:36.6581634Z ca84326b140f: Verifying Checksum
+test-security	Secret scan	2026-10-07T14:51:36.6582827Z ca84326b140f: Download complete
+test-security	Secret scan	2026-10-07T14:51:36.6985446Z 0d6c2d91852b: Verifying Checksum
+test-security	Secret scan	2026-10-07T14:51:36.6986421Z 0d6c2d91852b: Download complete
+test-security	Secret scan	2026-10-07T14:51:36.9284258Z 5f3dea6ea896: Verifying Checksum
+test-security	Secret scan	2026-10-07T14:51:36.9285209Z 5f3dea6ea896: Download complete
+test-security	Secret scan	2026-10-07T14:51:36.9498774Z 83abf496f1b8: Pull complete
+test-security	Secret scan	2026-10-07T14:51:43.7054622Z ca84326b140f: Pull complete
+test-security	Secret scan	2026-10-07T14:51:43.8923290Z 0d6c2d91852b: Pull complete
+test-security	Secret scan	2026-10-07T14:51:43.9051462Z 5f3dea6ea896: Pull complete
+test-security	Secret scan	2026-10-07T14:51:43.9125921Z Digest: sha256:b5918eb91b8d2473cec722f066abb4352e4ffdc4ec9f4283ec143aba9ec9ebc4
+test-security	Secret scan	2026-10-07T14:51:43.9147477Z Status: Downloaded newer image for ghcr.io/gitleaks/gitleaks:v8.24.2
+test-security	Secret scan	2026-10-07T14:51:44.1365554Z 
+test-security	Secret scan	2026-10-07T14:51:44.1366960Z     ○
+test-security	Secret scan	2026-10-07T14:51:44.1367557Z     │╲
+test-security	Secret scan	2026-10-07T14:51:44.1368046Z     │ ○
+test-security	Secret scan	2026-10-07T14:51:44.1369378Z     ○ ░
+test-security	Secret scan	2026-10-07T14:51:44.1369757Z     ░    gitleaks
+test-security	Secret scan	2026-10-07T14:51:44.1370056Z 
+test-security	Secret scan	2026-10-07T14:51:44.2477875Z ^[[90m2:51PM^[[0m ^[[32mINF^[[0m ^[[1mscanned ~365162 bytes (365.16 KB) in 89.2ms^[[0m
+test-security	Secret scan	2026-10-07T14:51:44.2478872Z ^[[90m2:51PM^[[0m ^[[32mINF^[[0m ^[[1mno leaks found^[[0m
+test-security	Run azure/setup-helm@v5.0.0	﻿2026-10-07T14:51:44.3583166Z ##[group]Run azure/setup-helm@v5.0.0
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3583623Z with:
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3583970Z   version: v3.17.3
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3586567Z   token: ***
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3586904Z   downloadBaseURL: https://get.helm.sh
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3587296Z env:
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3587658Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3588270Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3589099Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3589602Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3590078Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3590541Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.3590948Z ##[endgroup]
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.4360491Z ##[group]Installing v3.17.3
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.4370661Z Downloading 'v3.17.3' from 'https://get.helm.sh'
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:44.6192525Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/c6560604-5574-45d1-a957-acc8fdd15c7c -f /home/runner/work/_temp/759114d5-010c-43af-8cad-f87f3082eb02
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:45.2355029Z ##[endgroup]
+test-security	Run azure/setup-helm@v5.0.0	2026-10-07T14:51:45.2356994Z Helm tool version 'v3.17.3' has been cached at /opt/hostedtoolcache/helm/3.17.3/x64/linux-amd64/helm
+test-security	Check chart	﻿2026-10-07T14:51:45.2460231Z ##[group]Run helm lint final-devops-project/helm/devops-demo
+test-security	Check chart	2026-10-07T14:51:45.2460850Z ^[[36;1mhelm lint final-devops-project/helm/devops-demo^[[0m
+test-security	Check chart	2026-10-07T14:51:45.2461625Z ^[[36;1mhelm template devops-demo final-devops-project/helm/devops-demo --set hpa.enabled=true --set ingress.enabled=true > /tmp/final-rendered.yaml^[[0m
+test-security	Check chart	2026-10-07T14:51:45.2506237Z shell: /usr/bin/bash -e {0}
+test-security	Check chart	2026-10-07T14:51:45.2506760Z env:
+test-security	Check chart	2026-10-07T14:51:45.2507175Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Check chart	2026-10-07T14:51:45.2507696Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test-security	Check chart	2026-10-07T14:51:45.2508181Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Check chart	2026-10-07T14:51:45.2508977Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Check chart	2026-10-07T14:51:45.2509464Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Check chart	2026-10-07T14:51:45.2509953Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test-security	Check chart	2026-10-07T14:51:45.2510408Z ##[endgroup]
+test-security	Check chart	2026-10-07T14:51:45.2979679Z ==> Linting final-devops-project/helm/devops-demo
+test-security	Check chart	2026-10-07T14:51:45.2980434Z [INFO] Chart.yaml: icon is recommended
+test-security	Check chart	2026-10-07T14:51:45.2980667Z 
+test-security	Check chart	2026-10-07T14:51:45.2980996Z 1 chart(s) linted, 0 chart(s) failed
+test-security	Run actions/upload-artifact@v4	﻿2026-10-07T14:51:45.4157776Z ##[group]Run actions/upload-artifact@v4
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4158176Z with:
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4158632Z   name: final-rendered-manifests
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4159005Z   path: /tmp/final-rendered.yaml
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4159386Z   if-no-files-found: warn
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4159712Z   compression-level: 6
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4160007Z   overwrite: false
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4160396Z   include-hidden-files: false
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4160741Z env:
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4161104Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4161599Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4162077Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4162731Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4163212Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4163690Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.4164223Z ##[endgroup]
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.6026266Z (node:2582) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.6027852Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.6090771Z With the provided path, there will be 1 file uploaded
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.6095732Z Artifact name is valid!
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.6096696Z Root directory input is valid!
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.9186406Z Beginning upload of artifact content to blob storage
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:45.9374542Z (node:2582) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:46.1097727Z Uploaded bytes 1116
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:46.1553626Z Finished uploading artifact content to blob storage!
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:46.1554920Z SHA256 digest of uploaded artifact zip is ea6f1fe0026be6b1b55899c1a4f492a30713aa5b6cf473324d98eb404efa08c6
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:46.1555755Z Finalizing artifact upload
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:46.3923172Z Artifact final-rendered-manifests.zip successfully finalized. Artifact ID 11491412157
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:46.3924540Z Artifact final-rendered-manifests has been successfully uploaded! Final size is 1116 bytes. Artifact ID is 11491412157
+test-security	Run actions/upload-artifact@v4	2026-10-07T14:51:46.3930991Z Artifact download URL: https://github.com/AJ5831A/devops-homework/actions/runs/37640204903/artifacts/11491412157
+test-security	Post Run actions/setup-python@v5	﻿2026-10-07T14:51:46.4110252Z Post job cleanup.
+test-security	Post Run actions/setup-python@v5	2026-10-07T14:51:46.5439383Z (node:2594) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test-security	Post Run actions/setup-python@v5	2026-10-07T14:51:46.5440323Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test-security	Post Run actions/checkout@v4	﻿2026-10-07T14:51:46.5594547Z Post job cleanup.
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.6543117Z [command]/usr/bin/git version
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.6584091Z git version 2.55.0
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.6620944Z Temporarily overriding HOME='/home/runner/work/_temp/7e39c256-5ba3-4447-9dee-27158840d2c8' before making global git config changes
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.6622336Z Adding repository directory to the temporary git global config as a safe directory
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.6629695Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.6671833Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.6708740Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.6968794Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.7011442Z http.https://github.com/.extraheader
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.7032925Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.7093568Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.7336622Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test-security	Post Run actions/checkout@v4	2026-10-07T14:51:46.7374780Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test-security	Complete job	﻿2026-10-07T14:51:46.7779381Z Cleaning up orphan processes
+test-security	Complete job	2026-10-07T14:51:46.8090826Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+image	Set up job	﻿2026-10-07T14:51:53.7784824Z Current runner version: '2.337.0'
+image	Set up job	2026-10-07T14:51:53.7810059Z ##[group]Runner Image Provisioner
+image	Set up job	2026-10-07T14:51:53.7811038Z Hosted Compute Agent
+image	Set up job	2026-10-07T14:51:53.7811579Z Version: 20261002.596
+image	Set up job	2026-10-07T14:51:53.7812182Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+image	Set up job	2026-10-07T14:51:53.7813178Z Build Date: 2026-10-02T22:28:27Z
+image	Set up job	2026-10-07T14:51:53.7813816Z Worker ID: {2a4f6840-102d-48c7-a68c-dcb0f32043a7}
+image	Set up job	2026-10-07T14:51:53.7814528Z Region: westus3
+image	Set up job	2026-10-07T14:51:53.7815035Z Cloud: Azure
+image	Set up job	2026-10-07T14:51:53.7815540Z ##[endgroup]
+image	Set up job	2026-10-07T14:51:53.7817150Z ##[group]Operating System
+image	Set up job	2026-10-07T14:51:53.7817769Z Ubuntu
+image	Set up job	2026-10-07T14:51:53.7818302Z 24.04.5
+image	Set up job	2026-10-07T14:51:53.7818820Z LTS
+image	Set up job	2026-10-07T14:51:53.7819330Z ##[endgroup]
+image	Set up job	2026-10-07T14:51:53.7819904Z ##[group]Runner Image
+image	Set up job	2026-10-07T14:51:53.7820472Z Image: ubuntu-24.04
+image	Set up job	2026-10-07T14:51:53.7821014Z Version: 20261004.327.1
+image	Set up job	2026-10-07T14:51:53.7821978Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+image	Set up job	2026-10-07T14:51:53.7824155Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+image	Set up job	2026-10-07T14:51:53.7825035Z ##[endgroup]
+image	Set up job	2026-10-07T14:51:53.7826086Z ##[group]GITHUB_TOKEN Permissions
+image	Set up job	2026-10-07T14:51:53.7828312Z Contents: read
+image	Set up job	2026-10-07T14:51:53.7828933Z Metadata: read
+image	Set up job	2026-10-07T14:51:53.7829453Z ##[endgroup]
+image	Set up job	2026-10-07T14:51:53.7831620Z Secret source: Actions
+image	Set up job	2026-10-07T14:51:53.7832477Z Cache mode: write
+image	Set up job	2026-10-07T14:51:53.7833402Z Prepare workflow directory
+image	Set up job	2026-10-07T14:51:53.8167150Z Prepare all required actions
+image	Set up job	2026-10-07T14:51:53.8218035Z Getting action download info
+image	Set up job	2026-10-07T14:51:54.2487202Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+image	Set up job	2026-10-07T14:51:54.3351506Z Download action repository 'aquasecurity/trivy-action@v0.36.0' (SHA:ed142fd0673e97e23eac54620cfb913e5ce36c25)
+image	Set up job	2026-10-07T14:51:54.8955405Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+image	Set up job	2026-10-07T14:51:55.0869761Z Getting action download info
+image	Set up job	2026-10-07T14:51:55.2439910Z Download action repository 'aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514' (SHA:3fb12ec12f41e471780db15c232d5dd185dcb514)
+image	Set up job	2026-10-07T14:51:55.4876458Z Download action repository 'actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae' (SHA:27d5ce7f107fe9357f9df03efb73ab90386fccae)
+image	Set up job	2026-10-07T14:51:55.6984297Z Getting action download info
+image	Set up job	2026-10-07T14:51:55.8511703Z Download action repository 'actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb' (SHA:9255dc7a253b0ccc959486e2bca901246202afeb)
+image	Set up job	2026-10-07T14:51:56.1579602Z Download action repository 'actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
+image	Set up job	2026-10-07T14:51:56.3376776Z Complete job name: image
+image	Run actions/checkout@v4	﻿2026-10-07T14:51:56.4127139Z ##[group]Run actions/checkout@v4
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4128743Z with:
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4129605Z   repository: AJ5831A/devops-homework
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4137024Z   token: ***
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4137799Z   ssh-strict: true
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4138571Z   ssh-user: git
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4139365Z   persist-credentials: true
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4140227Z   clean: true
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4141019Z   sparse-checkout-cone-mode: true
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4141936Z   fetch-depth: 1
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4142783Z   fetch-tags: false
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4143562Z   show-progress: true
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4144341Z   lfs: false
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4145066Z   submodules: false
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4145852Z   set-safe-directory: true
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4146744Z   allow-unsafe-pr-checkout: false
+image	Run actions/checkout@v4	2026-10-07T14:51:56.4147979Z ##[endgroup]
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5214423Z Syncing repository: AJ5831A/devops-homework
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5218886Z ##[group]Getting Git version info
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5221341Z Working directory is '/home/runner/work/devops-homework/devops-homework'
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5225389Z [command]/usr/bin/git version
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5243432Z git version 2.55.0
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5265504Z ##[endgroup]
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5279462Z Temporarily overriding HOME='/home/runner/work/_temp/d343a540-0c8f-4ce5-b2ba-41f8b54f6c08' before making global git config changes
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5284651Z Adding repository directory to the temporary git global config as a safe directory
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5288926Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5331389Z Deleting the contents of '/home/runner/work/devops-homework/devops-homework'
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5353390Z ##[group]Initializing the repository
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5356519Z [command]/usr/bin/git init /home/runner/work/devops-homework/devops-homework
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5434042Z hint: Using 'master' as the name for the initial branch. This default branch name
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5437856Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5441453Z hint: to use in all of your new repositories, which will suppress this warning,
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5445788Z hint: call:
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5447803Z hint:
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5449721Z hint: 	git config --global init.defaultBranch <name>
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5452312Z hint:
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5454605Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5458057Z hint: 'development'. The just-created branch can be renamed via this command:
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5460827Z hint:
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5462390Z hint: 	git branch -m <name>
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5464329Z hint:
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5466604Z hint: Disable this message with "git config set advice.defaultBranchName false"
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5470772Z Initialized empty Git repository in /home/runner/work/devops-homework/devops-homework/.git/
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5477376Z [command]/usr/bin/git remote add origin https://github.com/AJ5831A/devops-homework
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5489651Z ##[endgroup]
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5491817Z ##[group]Disabling automatic garbage collection
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5494036Z [command]/usr/bin/git config --local gc.auto 0
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5525733Z ##[endgroup]
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5527901Z ##[group]Setting up auth
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5533294Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5567003Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5883582Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+image	Run actions/checkout@v4	2026-10-07T14:51:56.5918640Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+image	Run actions/checkout@v4	2026-10-07T14:51:56.6128540Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+image	Run actions/checkout@v4	2026-10-07T14:51:56.6171109Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+image	Run actions/checkout@v4	2026-10-07T14:51:56.6361804Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+image	Run actions/checkout@v4	2026-10-07T14:51:56.6396309Z ##[endgroup]
+image	Run actions/checkout@v4	2026-10-07T14:51:56.6397861Z ##[group]Fetching the repository
+image	Run actions/checkout@v4	2026-10-07T14:51:56.6406364Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +be9442981c475a39475f4f14501e0fc95244b681:refs/remotes/origin/main
+image	Run actions/checkout@v4	2026-10-07T14:51:57.1908076Z From https://github.com/AJ5831A/devops-homework
+image	Run actions/checkout@v4	2026-10-07T14:51:57.1910108Z  * [new ref]         be9442981c475a39475f4f14501e0fc95244b681 -> origin/main
+image	Run actions/checkout@v4	2026-10-07T14:51:57.1913926Z ##[endgroup]
+image	Run actions/checkout@v4	2026-10-07T14:51:57.1915501Z ##[group]Determining the checkout info
+image	Run actions/checkout@v4	2026-10-07T14:51:57.1917082Z ##[endgroup]
+image	Run actions/checkout@v4	2026-10-07T14:51:57.1920685Z [command]/usr/bin/git sparse-checkout disable
+image	Run actions/checkout@v4	2026-10-07T14:51:57.1981680Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+image	Run actions/checkout@v4	2026-10-07T14:51:57.2012458Z ##[group]Checking out the ref
+image	Run actions/checkout@v4	2026-10-07T14:51:57.2018391Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+image	Run actions/checkout@v4	2026-10-07T14:51:57.2132353Z Switched to a new branch 'main'
+image	Run actions/checkout@v4	2026-10-07T14:51:57.2135858Z branch 'main' set up to track 'origin/main'.
+image	Run actions/checkout@v4	2026-10-07T14:51:57.2141790Z ##[endgroup]
+image	Run actions/checkout@v4	2026-10-07T14:51:57.2188726Z [command]/usr/bin/git log -1 --format=%H
+image	Run actions/checkout@v4	2026-10-07T14:51:57.2211979Z be9442981c475a39475f4f14501e0fc95244b681
+image	Build image	﻿2026-10-07T14:51:57.2445163Z ##[group]Run docker build --pull -t devops-final:be9442981c475a39475f4f14501e0fc95244b681 -f final-devops-project/docker/Dockerfile final-devops-project
+image	Build image	2026-10-07T14:51:57.2448472Z ^[[36;1mdocker build --pull -t devops-final:be9442981c475a39475f4f14501e0fc95244b681 -f final-devops-project/docker/Dockerfile final-devops-project^[[0m
+image	Build image	2026-10-07T14:51:57.2626393Z shell: /usr/bin/bash -e {0}
+image	Build image	2026-10-07T14:51:57.2627410Z ##[endgroup]
+image	Build image	2026-10-07T14:52:03.4746211Z #0 building with "default" instance using docker driver
+image	Build image	2026-10-07T14:52:03.4746626Z 
+image	Build image	2026-10-07T14:52:03.4746812Z #1 [internal] load build definition from Dockerfile
+image	Build image	2026-10-07T14:52:03.4747199Z #1 transferring dockerfile: 476B 0.0s done
+image	Build image	2026-10-07T14:52:03.4747506Z #1 DONE 0.1s
+image	Build image	2026-10-07T14:52:03.4747652Z 
+image	Build image	2026-10-07T14:52:03.4747887Z #2 [internal] load metadata for docker.io/library/python:3.12-alpine
+image	Build image	2026-10-07T14:52:03.6827046Z #2 ...
+image	Build image	2026-10-07T14:52:03.6827600Z 
+image	Build image	2026-10-07T14:52:03.6827946Z #3 [auth] library/python:pull token for registry-1.docker.io
+image	Build image	2026-10-07T14:52:03.6828444Z #3 DONE 0.0s
+image	Build image	2026-10-07T14:52:03.8321266Z 
+image	Build image	2026-10-07T14:52:03.8322166Z #2 [internal] load metadata for docker.io/library/python:3.12-alpine
+image	Build image	2026-10-07T14:52:04.1393817Z #2 DONE 0.8s
+image	Build image	2026-10-07T14:52:04.2927880Z 
+image	Build image	2026-10-07T14:52:04.2929022Z #4 [internal] load .dockerignore
+image	Build image	2026-10-07T14:52:04.2929693Z #4 transferring context: 104B done
+image	Build image	2026-10-07T14:52:04.2930942Z #4 DONE 0.0s
+image	Build image	2026-10-07T14:52:04.2931202Z 
+image	Build image	2026-10-07T14:52:04.2931516Z #5 [internal] load build context
+image	Build image	2026-10-07T14:52:04.2932073Z #5 transferring context: 4.30kB done
+image	Build image	2026-10-07T14:52:04.2933225Z #5 DONE 0.0s
+image	Build image	2026-10-07T14:52:04.2933526Z 
+image	Build image	2026-10-07T14:52:04.2934255Z #6 [1/4] FROM docker.io/library/python:3.12-alpine@sha256:1b668429b3511ab407d8e00648891631b0b1a4d7e15e3ca70f38ab5b91ad4ab4
+image	Build image	2026-10-07T14:52:04.2936068Z #6 resolve docker.io/library/python:3.12-alpine@sha256:1b668429b3511ab407d8e00648891631b0b1a4d7e15e3ca70f38ab5b91ad4ab4 done
+image	Build image	2026-10-07T14:52:04.2937939Z #6 sha256:bce3d672089f7ccc5125c3f8f95542fa3971138f323fb7f77e338a14396c85aa 0B / 416.28kB 0.1s
+image	Build image	2026-10-07T14:52:04.2939679Z #6 sha256:283ac05c32e67060aa59f8a841b02df4cc0bd7fbf8d880f67d9b622e1cbd1935 6.29MB / 16.36MB 0.1s
+image	Build image	2026-10-07T14:52:04.2941177Z #6 sha256:e203d50c86bd38d307585d33fd69e7e7fd91e7535b65af46aa1d663cfb80c0fa 0B / 248B 0.1s
+image	Build image	2026-10-07T14:52:04.2942914Z #6 sha256:1b668429b3511ab407d8e00648891631b0b1a4d7e15e3ca70f38ab5b91ad4ab4 10.30kB / 10.30kB done
+image	Build image	2026-10-07T14:52:04.2944214Z #6 sha256:2055081c860db8c842b663415b795b026e7e5cc63b59c5193fcc9997713ea5b8 1.74kB / 1.74kB done
+image	Build image	2026-10-07T14:52:04.2946187Z #6 sha256:979e5a8a56846771598d47ebf1f8a75b46155104e168a0b237c0783c1dedff8a 5.43kB / 5.43kB done
+image	Build image	2026-10-07T14:52:04.4384394Z #6 sha256:bce3d672089f7ccc5125c3f8f95542fa3971138f323fb7f77e338a14396c85aa 416.28kB / 416.28kB 0.1s done
+image	Build image	2026-10-07T14:52:04.4385523Z #6 sha256:283ac05c32e67060aa59f8a841b02df4cc0bd7fbf8d880f67d9b622e1cbd1935 16.36MB / 16.36MB 0.1s done
+image	Build image	2026-10-07T14:52:04.4386262Z #6 sha256:e203d50c86bd38d307585d33fd69e7e7fd91e7535b65af46aa1d663cfb80c0fa 248B / 248B 0.2s done
+image	Build image	2026-10-07T14:52:04.4386957Z #6 extracting sha256:bce3d672089f7ccc5125c3f8f95542fa3971138f323fb7f77e338a14396c85aa 0.1s
+image	Build image	2026-10-07T14:52:04.6166587Z #6 extracting sha256:bce3d672089f7ccc5125c3f8f95542fa3971138f323fb7f77e338a14396c85aa 0.1s done
+image	Build image	2026-10-07T14:52:04.7993751Z #6 extracting sha256:283ac05c32e67060aa59f8a841b02df4cc0bd7fbf8d880f67d9b622e1cbd1935
+image	Build image	2026-10-07T14:52:05.3456682Z #6 extracting sha256:283ac05c32e67060aa59f8a841b02df4cc0bd7fbf8d880f67d9b622e1cbd1935 0.5s done
+image	Build image	2026-10-07T14:52:05.3460983Z #6 extracting sha256:e203d50c86bd38d307585d33fd69e7e7fd91e7535b65af46aa1d663cfb80c0fa done
+image	Build image	2026-10-07T14:52:05.3462051Z #6 DONE 1.2s
+image	Build image	2026-10-07T14:52:05.4964688Z 
+image	Build image	2026-10-07T14:52:05.4965212Z #7 [2/4] RUN apk upgrade --no-cache
+image	Build image	2026-10-07T14:52:06.0275205Z #7 0.681 (1/2) Upgrading zlib (1.3.2-r0 -> 1.3.2-r1)
+image	Build image	2026-10-07T14:52:06.1326307Z #7 0.687 (2/2) Upgrading tzdata (2026d-r0 -> 2026e-r0)
+image	Build image	2026-10-07T14:52:06.1332879Z #7 0.730 OK: 13.5 MiB in 38 packages
+image	Build image	2026-10-07T14:52:06.1333711Z #7 DONE 0.8s
+image	Build image	2026-10-07T14:52:06.1333901Z 
+image	Build image	2026-10-07T14:52:06.1334044Z #8 [3/4] WORKDIR /app
+image	Build image	2026-10-07T14:52:06.1334345Z #8 DONE 0.0s
+image	Build image	2026-10-07T14:52:06.2943960Z 
+image	Build image	2026-10-07T14:52:06.2944996Z #9 [4/4] COPY application/app.py /app/app.py
+image	Build image	2026-10-07T14:52:06.2945782Z #9 DONE 0.0s
+image	Build image	2026-10-07T14:52:06.2946211Z 
+image	Build image	2026-10-07T14:52:06.2946728Z #10 exporting to image
+image	Build image	2026-10-07T14:52:06.2947298Z #10 exporting layers
+image	Build image	2026-10-07T14:52:07.0079204Z #10 exporting layers 0.9s done
+image	Build image	2026-10-07T14:52:07.0243249Z #10 writing image sha256:7bf33b256f9cd178b1253d2d71a5862fee15ae6a39ffda3914f47628bf012d51 done
+image	Build image	2026-10-07T14:52:07.0244253Z #10 naming to docker.io/library/devops-final:be9442981c475a39475f4f14501e0fc95244b681 done
+image	Build image	2026-10-07T14:52:07.0244916Z #10 DONE 0.9s
+image	Image security gate	﻿2026-10-07T14:52:07.0625146Z ##[group]Run aquasecurity/trivy-action@v0.36.0
+image	Image security gate	2026-10-07T14:52:07.0625477Z with:
+image	Image security gate	2026-10-07T14:52:07.0625761Z   image-ref: devops-final:be9442981c475a39475f4f14501e0fc95244b681
+image	Image security gate	2026-10-07T14:52:07.0626098Z   scanners: vuln
+image	Image security gate	2026-10-07T14:52:07.0626310Z   ignore-unfixed: false
+image	Image security gate	2026-10-07T14:52:07.0626535Z   severity: HIGH,CRITICAL
+image	Image security gate	2026-10-07T14:52:07.0626763Z   exit-code: 1
+image	Image security gate	2026-10-07T14:52:07.0626957Z   format: table
+image	Image security gate	2026-10-07T14:52:07.0627151Z   scan-type: image
+image	Image security gate	2026-10-07T14:52:07.0627348Z   scan-ref: .
+image	Image security gate	2026-10-07T14:52:07.0627541Z   vuln-type: os,library
+image	Image security gate	2026-10-07T14:52:07.0627880Z   cache-dir: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+image	Image security gate	2026-10-07T14:52:07.0628274Z   list-all-pkgs: false
+image	Image security gate	2026-10-07T14:52:07.0628488Z   version: v0.70.0
+image	Image security gate	2026-10-07T14:52:07.0628678Z   cache: true
+image	Image security gate	2026-10-07T14:52:07.0628872Z   skip-setup-trivy: false
+image	Image security gate	2026-10-07T14:52:07.0631390Z   token-setup-trivy: ***
+image	Image security gate	2026-10-07T14:52:07.0631613Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:07.0701046Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy]
+image	Image security gate	2026-10-07T14:52:07.0914784Z ##[group]Run aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514
+image	Image security gate	2026-10-07T14:52:07.0915180Z with:
+image	Image security gate	2026-10-07T14:52:07.0915367Z   version: v0.70.0
+image	Image security gate	2026-10-07T14:52:07.0915564Z   cache: true
+image	Image security gate	2026-10-07T14:52:07.0918027Z   token: ***
+image	Image security gate	2026-10-07T14:52:07.0918229Z   path: $HOME/.local/bin
+image	Image security gate	2026-10-07T14:52:07.0918474Z   github-server-url: https://github.com
+image	Image security gate	2026-10-07T14:52:07.0918735Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:07.0926654Z ##[start-action display=Binary dir;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir]
+image	Image security gate	2026-10-07T14:52:07.0944374Z ##[group]Run echo "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT
+image	Image security gate	2026-10-07T14:52:07.0944831Z ^[[36;1mecho "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT^[[0m
+image	Image security gate	2026-10-07T14:52:07.0984633Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:52:07.0984982Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:07.1073816Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir;outcome=success;conclusion=success;duration_ms=14]
+image	Image security gate	2026-10-07T14:52:07.1078696Z ##[start-action display=Check the version for caching;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run]
+image	Image security gate	2026-10-07T14:52:07.1086168Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+image	Image security gate	2026-10-07T14:52:07.1088632Z ##[start-action display=Restore Trivy binary from cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache]
+image	Image security gate	2026-10-07T14:52:07.1144771Z ##[group]Run actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb
+image	Image security gate	2026-10-07T14:52:07.1145341Z with:
+image	Image security gate	2026-10-07T14:52:07.1145554Z   path: /home/runner/.local/bin/trivy-bin
+image	Image security gate	2026-10-07T14:52:07.1145834Z   key: trivy-binary-v0.70.0-Linux-X64
+image	Image security gate	2026-10-07T14:52:07.1146108Z   enableCrossOsArchive: false
+image	Image security gate	2026-10-07T14:52:07.1146349Z   fail-on-cache-miss: false
+image	Image security gate	2026-10-07T14:52:07.1146575Z   lookup-only: false
+image	Image security gate	2026-10-07T14:52:07.1146788Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:07.4995247Z Cache hit for: trivy-binary-v0.70.0-Linux-X64
+image	Image security gate	2026-10-07T14:52:08.7409496Z Received 25165824 of 43751198 (57.5%), 24.0 MBs/sec
+image	Image security gate	2026-10-07T14:52:08.9257604Z Received 43751198 of 43751198 (100.0%), 35.2 MBs/sec
+image	Image security gate	2026-10-07T14:52:08.9258400Z Cache Size: ~42 MB (43751198 B)
+image	Image security gate	2026-10-07T14:52:08.9316582Z [command]/usr/bin/tar -xf /home/runner/work/_temp/57afd81f-ac00-4761-8ba9-c9542c75d40d/cache.tzst -P -C /home/runner/work/devops-homework/devops-homework --use-compress-program unzstd
+image	Image security gate	2026-10-07T14:52:09.1328266Z Cache restored successfully
+image	Image security gate	2026-10-07T14:52:09.1420339Z Cache restored from key: trivy-binary-v0.70.0-Linux-X64
+image	Image security gate	2026-10-07T14:52:09.1475421Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache;outcome=success;conclusion=success;duration_ms=2038]
+image	Image security gate	2026-10-07T14:52:09.1478432Z ##[start-action display=Checkout install script;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout]
+image	Image security gate	2026-10-07T14:52:09.1484697Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout;outcome=skipped;conclusion=skipped;duration_ms=0]
+image	Image security gate	2026-10-07T14:52:09.1487167Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2]
+image	Image security gate	2026-10-07T14:52:09.1491399Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+image	Image security gate	2026-10-07T14:52:09.1494033Z ##[start-action display=Add Trivy binary to $GITHUB_PATH;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3]
+image	Image security gate	2026-10-07T14:52:09.1513166Z ##[group]Run echo /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH
+image	Image security gate	2026-10-07T14:52:09.1513663Z ^[[36;1mecho /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH^[[0m
+image	Image security gate	2026-10-07T14:52:09.1550372Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:52:09.1550738Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:09.1614750Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3;outcome=success;conclusion=success;duration_ms=11]
+image	Image security gate	2026-10-07T14:52:09.1617277Z ##[start-action display=Save Trivy binary to cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache]
+image	Image security gate	2026-10-07T14:52:09.1624583Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+image	Image security gate	2026-10-07T14:52:09.1638125Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=2093]
+image	Image security gate	2026-10-07T14:52:09.1640199Z ##[start-action display=Get current date;id=__aquasecurity_trivy-action.date]
+image	Image security gate	2026-10-07T14:52:09.1655680Z ##[group]Run echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+image	Image security gate	2026-10-07T14:52:09.1656128Z ^[[36;1mecho "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT^[[0m
+image	Image security gate	2026-10-07T14:52:09.1695241Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:52:09.1695588Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:09.1769991Z ##[end-action id=__aquasecurity_trivy-action.date;outcome=success;conclusion=success;duration_ms=12]
+image	Image security gate	2026-10-07T14:52:09.1772259Z ##[start-action display=Restore DB from cache;id=__aquasecurity_trivy-action.__actions_cache]
+image	Image security gate	2026-10-07T14:52:09.1809028Z ##[group]Run actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae
+image	Image security gate	2026-10-07T14:52:09.1809402Z with:
+image	Image security gate	2026-10-07T14:52:09.1809708Z   path: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+image	Image security gate	2026-10-07T14:52:09.1810083Z   key: cache-trivy-2026-10-07
+image	Image security gate	2026-10-07T14:52:09.1810338Z   restore-keys: cache-trivy-
+image	Image security gate	2026-10-07T14:52:09.1810596Z   enableCrossOsArchive: false
+image	Image security gate	2026-10-07T14:52:09.1810844Z   fail-on-cache-miss: false
+image	Image security gate	2026-10-07T14:52:09.1811078Z   lookup-only: false
+image	Image security gate	2026-10-07T14:52:09.1811444Z   save-always: false
+image	Image security gate	2026-10-07T14:52:09.1811667Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:09.5112308Z Cache not found for input keys: cache-trivy-2026-10-07, cache-trivy-
+image	Image security gate	2026-10-07T14:52:09.5164536Z ##[end-action id=__aquasecurity_trivy-action.__actions_cache;outcome=success;conclusion=success;duration_ms=339]
+image	Image security gate	2026-10-07T14:52:09.5181276Z ##[start-action display=Set GitHub Path;id=__aquasecurity_trivy-action.__run]
+image	Image security gate	2026-10-07T14:52:09.5206417Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+image	Image security gate	2026-10-07T14:52:09.5206807Z ^[[36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH^[[0m
+image	Image security gate	2026-10-07T14:52:09.5244455Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:52:09.5244800Z env:
+image	Image security gate	2026-10-07T14:52:09.5245128Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/aquasecurity/trivy-action/v0.36.0
+image	Image security gate	2026-10-07T14:52:09.5245518Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:09.5311088Z ##[end-action id=__aquasecurity_trivy-action.__run;outcome=success;conclusion=success;duration_ms=12]
+image	Image security gate	2026-10-07T14:52:09.5313514Z ##[start-action display=Clear Trivy Envs file;id=__aquasecurity_trivy-action.__run_2]
+image	Image security gate	2026-10-07T14:52:09.5328236Z ##[group]Run rm -f trivy_envs.txt
+image	Image security gate	2026-10-07T14:52:09.5328555Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+image	Image security gate	2026-10-07T14:52:09.5328801Z ^[[36;1mtouch trivy_envs.txt^[[0m
+image	Image security gate	2026-10-07T14:52:09.5364015Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:52:09.5364553Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:09.5443087Z ##[end-action id=__aquasecurity_trivy-action.__run_2;outcome=success;conclusion=success;duration_ms=12]
+image	Image security gate	2026-10-07T14:52:09.5449290Z ##[start-action display=Set Trivy environment variables;id=__aquasecurity_trivy-action.__run_3]
+image	Image security gate	2026-10-07T14:52:09.5464877Z ##[group]Run # Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.
+image	Image security gate	2026-10-07T14:52:09.5465770Z ^[[36;1m# Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.^[[0m
+image	Image security gate	2026-10-07T14:52:09.5466419Z ^[[36;1m# This limitation affects how we handle default values and empty inputs.^[[0m
+image	Image security gate	2026-10-07T14:52:09.5466944Z ^[[36;1m# For more information, see: https://github.com/actions/runner/issues/924^[[0m
+image	Image security gate	2026-10-07T14:52:09.5467327Z ^[[36;1m^[[0m
+image	Image security gate	2026-10-07T14:52:09.5467732Z ^[[36;1m# The following logic implements the configuration priority described in the README:^[[0m
+image	Image security gate	2026-10-07T14:52:09.5468154Z ^[[36;1m#^[[0m
+image	Image security gate	2026-10-07T14:52:09.5468345Z ^[[36;1m# Inputs^[[0m
+image	Image security gate	2026-10-07T14:52:09.5468559Z ^[[36;1m# Environment Variables^[[0m
+image	Image security gate	2026-10-07T14:52:09.5468821Z ^[[36;1m# Config File^[[0m
+image	Image security gate	2026-10-07T14:52:09.5469037Z ^[[36;1m# Defaults^[[0m
+image	Image security gate	2026-10-07T14:52:09.5469238Z ^[[36;1m#^[[0m
+image	Image security gate	2026-10-07T14:52:09.5469645Z ^[[36;1m# As noted above defaults are awkward to handle as GitHub Actions will inject those values as the input^[[0m
+image	Image security gate	2026-10-07T14:52:09.5470291Z ^[[36;1m# if the caller doesn't provide them, thus if the input matches the default we don't set it as we^[[0m
+image	Image security gate	2026-10-07T14:52:09.5470939Z ^[[36;1m# can't tell the difference.  Plus if we did set it when it was the default value then it could potentially^[[0m
+image	Image security gate	2026-10-07T14:52:09.5471675Z ^[[36;1m# override an external environment variable, or something in the callers configuration file, which then wouldn't^[[0m
+image	Image security gate	2026-10-07T14:52:09.5472246Z ^[[36;1m# match the configuration priority that is documented.^[[0m
+image	Image security gate	2026-10-07T14:52:09.5472790Z ^[[36;1mset_env_var_if_provided() {^[[0m
+image	Image security gate	2026-10-07T14:52:09.5473071Z ^[[36;1m  local var_name="$1"^[[0m
+image	Image security gate	2026-10-07T14:52:09.5473334Z ^[[36;1m  local input_value="$2"^[[0m
+image	Image security gate	2026-10-07T14:52:09.5473598Z ^[[36;1m  local default_value="$3"^[[0m
+image	Image security gate	2026-10-07T14:52:09.5473857Z ^[[36;1m^[[0m
+image	Image security gate	2026-10-07T14:52:09.5474155Z ^[[36;1m  if [ -n "$input_value" ] && [ "$input_value" != "$default_value" ]; then^[[0m
+image	Image security gate	2026-10-07T14:52:09.5474617Z ^[[36;1m    # If action was provided with explicit input by the caller set that^[[0m
+image	Image security gate	2026-10-07T14:52:09.5475128Z ^[[36;1m    # Use printf %q to safely escape special characters and prevent command injection^[[0m
+image	Image security gate	2026-10-07T14:52:09.5475651Z ^[[36;1m    printf 'export %s=%q\n' "$var_name" "$input_value" >> trivy_envs.txt^[[0m
+image	Image security gate	2026-10-07T14:52:09.5476167Z ^[[36;1m  fi^[[0m
+image	Image security gate	2026-10-07T14:52:09.5476358Z ^[[36;1m}^[[0m
+image	Image security gate	2026-10-07T14:52:09.5476545Z ^[[36;1m^[[0m
+image	Image security gate	2026-10-07T14:52:09.5476838Z ^[[36;1m# Set environment variables, handling those with default values^[[0m
+image	Image security gate	2026-10-07T14:52:09.5477411Z ^[[36;1m# cf. https://aquasecurity.github.io/trivy/latest/docs/configuration/#environment-variables^[[0m
+image	Image security gate	2026-10-07T14:52:09.5477946Z ^[[36;1mset_env_var_if_provided "TRIVY_INPUT" "$INPUT_INPUT" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5478363Z ^[[36;1mset_env_var_if_provided "TRIVY_EXIT_CODE" "$INPUT_EXIT_CODE" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5478837Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_UNFIXED" "$INPUT_IGNORE_UNFIXED" "false"^[[0m
+image	Image security gate	2026-10-07T14:52:09.5479342Z ^[[36;1mset_env_var_if_provided "TRIVY_PKG_TYPES" "$INPUT_VULN_TYPE" "os,library"^[[0m
+image	Image security gate	2026-10-07T14:52:09.5479903Z ^[[36;1mset_env_var_if_provided "TRIVY_SEVERITY" "$INPUT_SEVERITY" "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"^[[0m
+image	Image security gate	2026-10-07T14:52:09.5480438Z ^[[36;1mset_env_var_if_provided "TRIVY_FORMAT" "$INPUT_FORMAT" "table"^[[0m
+image	Image security gate	2026-10-07T14:52:09.5480861Z ^[[36;1mset_env_var_if_provided "TRIVY_TEMPLATE" "$INPUT_TEMPLATE" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5481274Z ^[[36;1mset_env_var_if_provided "TRIVY_OUTPUT" "$INPUT_OUTPUT" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5481697Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_DIRS" "$INPUT_SKIP_DIRS" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5482230Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_FILES" "$INPUT_SKIP_FILES" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5482806Z ^[[36;1mset_env_var_if_provided "TRIVY_TIMEOUT" "$INPUT_TIMEOUT" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5483262Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_POLICY" "$INPUT_IGNORE_POLICY" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5483731Z ^[[36;1mset_env_var_if_provided "TRIVY_QUIET" "$INPUT_HIDE_PROGRESS" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5484203Z ^[[36;1mset_env_var_if_provided "TRIVY_LIST_ALL_PKGS" "$INPUT_LIST_ALL_PKGS" "false"^[[0m
+image	Image security gate	2026-10-07T14:52:09.5484675Z ^[[36;1mset_env_var_if_provided "TRIVY_SCANNERS" "$INPUT_SCANNERS" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5485116Z ^[[36;1mset_env_var_if_provided "TRIVY_CONFIG" "$INPUT_TRIVY_CONFIG" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5485691Z ^[[36;1mset_env_var_if_provided "TRIVY_TF_VARS" "$INPUT_TF_VARS" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5486155Z ^[[36;1mset_env_var_if_provided "TRIVY_DOCKER_HOST" "$INPUT_DOCKER_HOST" ""^[[0m
+image	Image security gate	2026-10-07T14:52:09.5522993Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:52:09.5523360Z env:
+image	Image security gate	2026-10-07T14:52:09.5523558Z   INPUT_INPUT: 
+image	Image security gate	2026-10-07T14:52:09.5523785Z   INPUT_EXIT_CODE: 1
+image	Image security gate	2026-10-07T14:52:09.5524008Z   INPUT_IGNORE_UNFIXED: false
+image	Image security gate	2026-10-07T14:52:09.5524254Z   INPUT_VULN_TYPE: os,library
+image	Image security gate	2026-10-07T14:52:09.5524493Z   INPUT_SEVERITY: HIGH,CRITICAL
+image	Image security gate	2026-10-07T14:52:09.5524735Z   INPUT_FORMAT: table
+image	Image security gate	2026-10-07T14:52:09.5524945Z   INPUT_TEMPLATE: 
+image	Image security gate	2026-10-07T14:52:09.5525149Z   INPUT_OUTPUT: 
+image	Image security gate	2026-10-07T14:52:09.5525346Z   INPUT_SKIP_DIRS: 
+image	Image security gate	2026-10-07T14:52:09.5525546Z   INPUT_SKIP_FILES: 
+image	Image security gate	2026-10-07T14:52:09.5525753Z   INPUT_TIMEOUT: 
+image	Image security gate	2026-10-07T14:52:09.5525975Z   INPUT_IGNORE_POLICY: 
+image	Image security gate	2026-10-07T14:52:09.5526190Z   INPUT_HIDE_PROGRESS: 
+image	Image security gate	2026-10-07T14:52:09.5526410Z   INPUT_LIST_ALL_PKGS: false
+image	Image security gate	2026-10-07T14:52:09.5526649Z   INPUT_SCANNERS: vuln
+image	Image security gate	2026-10-07T14:52:09.5526854Z   INPUT_TRIVY_CONFIG: 
+image	Image security gate	2026-10-07T14:52:09.5527054Z   INPUT_TF_VARS: 
+image	Image security gate	2026-10-07T14:52:09.5527247Z   INPUT_DOCKER_HOST: 
+image	Image security gate	2026-10-07T14:52:09.5527459Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:09.5593571Z ##[end-action id=__aquasecurity_trivy-action.__run_3;outcome=success;conclusion=success;duration_ms=14]
+image	Image security gate	2026-10-07T14:52:09.5597342Z ##[start-action display=Run Trivy;id=__aquasecurity_trivy-action.__run_4]
+image	Image security gate	2026-10-07T14:52:09.5611752Z ##[group]Run entrypoint.sh
+image	Image security gate	2026-10-07T14:52:09.5612051Z ^[[36;1mentrypoint.sh^[[0m
+image	Image security gate	2026-10-07T14:52:09.5647612Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:52:09.5647953Z env:
+image	Image security gate	2026-10-07T14:52:09.5648164Z   INPUT_SCAN_TYPE: image
+image	Image security gate	2026-10-07T14:52:09.5648492Z   INPUT_IMAGE_REF: devops-final:be9442981c475a39475f4f14501e0fc95244b681
+image	Image security gate	2026-10-07T14:52:09.5649063Z   INPUT_SCAN_REF: .
+image	Image security gate	2026-10-07T14:52:09.5649277Z   INPUT_TRIVYIGNORES: 
+image	Image security gate	2026-10-07T14:52:09.5649508Z   INPUT_GITHUB_PAT: 
+image	Image security gate	2026-10-07T14:52:09.5649734Z   INPUT_LIMIT_SEVERITIES_FOR_SARIF: 
+image	Image security gate	2026-10-07T14:52:09.5650123Z   TRIVY_CACHE_DIR: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+image	Image security gate	2026-10-07T14:52:09.5650512Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:09.5732090Z Running Trivy with options: trivy image devops-final:be9442981c475a39475f4f14501e0fc95244b681
+image	Image security gate	2026-10-07T14:52:09.6252013Z 2026-10-07T14:52:09Z	INFO	[vulndb] Need to update DB
+image	Image security gate	2026-10-07T14:52:09.6252805Z 2026-10-07T14:52:09Z	INFO	[vulndb] Downloading vulnerability DB...
+image	Image security gate	2026-10-07T14:52:09.6253369Z 2026-10-07T14:52:09Z	INFO	[vulndb] Downloading artifact...	repo="mirror.gcr.io/aquasec/trivy-db:2"
+image	Image security gate	2026-10-07T14:52:16.0191495Z 20.80 MiB / 119.53 MiB [---------->_________________________________________________] 17.40% ? p/s ?48.76 MiB / 119.53 MiB [------------------------>___________________________________] 40.79% ? p/s ?83.31 MiB / 119.53 MiB [----------------------------------------->__________________] 69.69% ? p/s ?119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 164.32 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 164.32 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 164.32 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 153.72 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 153.72 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 153.72 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 143.80 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 143.80 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 143.80 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 134.52 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 134.52 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 134.52 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 125.84 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 125.84 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 125.84 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 117.73 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [-----------------------------------------------] 100.00% 32.81 MiB p/s 3.8s2026-10-07T14:52:16Z	INFO	[vulndb] Artifact successfully downloaded	repo="mirror.gcr.io/aquasec/trivy-db:2"
+image	Image security gate	2026-10-07T14:52:16.0198280Z 2026-10-07T14:52:16Z	INFO	[vuln] Vulnerability scanning is enabled
+image	Image security gate	2026-10-07T14:52:19.9240435Z 2026-10-07T14:52:19Z	INFO	[python] Licenses acquired from one or more METADATA files may be subject to additional terms. Use `--debug` flag to see all affected packages.
+image	Image security gate	2026-10-07T14:52:19.9315045Z 2026-10-07T14:52:19Z	INFO	Detected OS	family="alpine" version="3.24.2"
+image	Image security gate	2026-10-07T14:52:19.9315643Z 2026-10-07T14:52:19Z	WARN	This OS version is not on the EOL list	family="alpine" version="3.24"
+image	Image security gate	2026-10-07T14:52:19.9316307Z 2026-10-07T14:52:19Z	INFO	[alpine] Detecting vulnerabilities...	os_version="3.24" repository="3.24" pkg_num=38
+image	Image security gate	2026-10-07T14:52:19.9336536Z 2026-10-07T14:52:19Z	INFO	Number of language-specific files	num=1
+image	Image security gate	2026-10-07T14:52:19.9337063Z 2026-10-07T14:52:19Z	INFO	[python-pkg] Detecting vulnerabilities...
+image	Image security gate	2026-10-07T14:52:19.9393864Z 
+image	Image security gate	2026-10-07T14:52:19.9394319Z Report Summary
+image	Image security gate	2026-10-07T14:52:19.9394575Z 
+image	Image security gate	2026-10-07T14:52:19.9395306Z ┌───────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┐
+image	Image security gate	2026-10-07T14:52:19.9395954Z │                                Target                                 │    Type    │ Vulnerabilities │
+image	Image security gate	2026-10-07T14:52:19.9396940Z ├───────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+image	Image security gate	2026-10-07T14:52:19.9397612Z │ devops-final:be9442981c475a39475f4f14501e0fc95244b681 (alpine 3.24.2) │   alpine   │        0        │
+image	Image security gate	2026-10-07T14:52:19.9398297Z ├───────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+image	Image security gate	2026-10-07T14:52:19.9398965Z │ usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA  │ python-pkg │        0        │
+image	Image security gate	2026-10-07T14:52:19.9399629Z └───────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┘
+image	Image security gate	2026-10-07T14:52:19.9399986Z Legend:
+image	Image security gate	2026-10-07T14:52:19.9400189Z - '-': Not scanned
+image	Image security gate	2026-10-07T14:52:19.9400462Z - '0': Clean (no security findings detected)
+image	Image security gate	2026-10-07T14:52:19.9400658Z 
+image	Image security gate	2026-10-07T14:52:19.9401012Z 
+image	Image security gate	2026-10-07T14:52:19.9422855Z 📣 ^[[34mNotices:^[[0m
+image	Image security gate	2026-10-07T14:52:19.9423631Z   - Version 0.75.0 of Trivy is now available, current version is 0.70.0
+image	Image security gate	2026-10-07T14:52:19.9424279Z 
+image	Image security gate	2026-10-07T14:52:19.9424866Z To suppress version checks, run Trivy scans with the --skip-version-check flag
+image	Image security gate	2026-10-07T14:52:19.9425299Z 
+image	Image security gate	2026-10-07T14:52:19.9434036Z ##[end-action id=__aquasecurity_trivy-action.__run_4;outcome=success;conclusion=success;duration_ms=10383]
+image	Image security gate	2026-10-07T14:52:19.9436774Z ##[start-action display=Remove Trivy Envs file;id=__aquasecurity_trivy-action.__run_5]
+image	Image security gate	2026-10-07T14:52:19.9455861Z ##[group]Run rm -f trivy_envs.txt
+image	Image security gate	2026-10-07T14:52:19.9456166Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+image	Image security gate	2026-10-07T14:52:19.9493451Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:52:19.9493795Z ##[endgroup]
+image	Image security gate	2026-10-07T14:52:19.9567964Z ##[end-action id=__aquasecurity_trivy-action.__run_5;outcome=success;conclusion=success;duration_ms=13]
+image	Run docker save devops-final:be9442981c475a39475f4f14501e0fc95244b681 -o /tmp/final-image.tar	﻿2026-10-07T14:52:19.9595371Z ##[group]Run docker save devops-final:be9442981c475a39475f4f14501e0fc95244b681 -o /tmp/final-image.tar
+image	Run docker save devops-final:be9442981c475a39475f4f14501e0fc95244b681 -o /tmp/final-image.tar	2026-10-07T14:52:19.9596084Z ^[[36;1mdocker save devops-final:be9442981c475a39475f4f14501e0fc95244b681 -o /tmp/final-image.tar^[[0m
+image	Run docker save devops-final:be9442981c475a39475f4f14501e0fc95244b681 -o /tmp/final-image.tar	2026-10-07T14:52:19.9633287Z shell: /usr/bin/bash -e {0}
+image	Run docker save devops-final:be9442981c475a39475f4f14501e0fc95244b681 -o /tmp/final-image.tar	2026-10-07T14:52:19.9633570Z ##[endgroup]
+image	Run actions/upload-artifact@v4	﻿2026-10-07T14:52:20.3461948Z ##[group]Run actions/upload-artifact@v4
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.3462249Z with:
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.3462453Z   name: final-image
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.3462866Z   path: /tmp/final-image.tar
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.3463107Z   retention-days: 3
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.3463319Z   if-no-files-found: warn
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.3463551Z   compression-level: 6
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.3463774Z   overwrite: false
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.3463991Z   include-hidden-files: false
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.3464233Z ##[endgroup]
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.5167537Z (node:2446) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.5168376Z (Use `node --trace-deprecation ...` to show where the warning was created)
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.5218989Z With the provided path, there will be 1 file uploaded
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.5224886Z Artifact name is valid!
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.5225723Z Root directory input is valid!
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:20.8970661Z Beginning upload of artifact content to blob storage
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:21.5159874Z (node:2446) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:22.2296636Z Uploaded bytes 8388608
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:22.8763023Z Uploaded bytes 16777216
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:23.0564873Z Uploaded bytes 20787947
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:23.1208519Z Finished uploading artifact content to blob storage!
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:23.1209694Z SHA256 digest of uploaded artifact zip is da84ae05b3b43c63d6f675567dcbbc2992350a8f0ee43ea5862e505496a0d378
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:23.1212872Z Finalizing artifact upload
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:23.7307418Z Artifact final-image.zip successfully finalized. Artifact ID 11491995678
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:23.7308972Z Artifact final-image has been successfully uploaded! Final size is 20787947 bytes. Artifact ID is 11491995678
+image	Run actions/upload-artifact@v4	2026-10-07T14:52:23.7314742Z Artifact download URL: https://github.com/AJ5831A/devops-homework/actions/runs/37640204903/artifacts/11491995678
+image	Post Image security gate	﻿2026-10-07T14:52:23.7586384Z Post job cleanup.
+image	Post Image security gate	2026-10-07T14:52:23.7590335Z ##[start-action display=Restore DB from cache;id=__294f5146-11c3-4861-9ebc-bc368dad2721.__actions_cache]
+image	Post Image security gate	2026-10-07T14:52:23.7625539Z Post job cleanup.
+image	Post Image security gate	2026-10-07T14:52:23.9046338Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/devops-homework/devops-homework --files-from manifest.txt --use-compress-program zstdmt
+image	Post Image security gate	2026-10-07T14:52:26.6166032Z Sent 34734080 of 88479713 (39.3%), 33.0 MBs/sec
+image	Post Image security gate	2026-10-07T14:52:27.6171911Z Sent 88479713 of 88479713 (100.0%), 42.1 MBs/sec
+image	Post Image security gate	2026-10-07T14:52:27.9213599Z Cache saved with key: cache-trivy-2026-10-07
+image	Post Image security gate	2026-10-07T14:52:27.9273292Z ##[end-action id=__294f5146-11c3-4861-9ebc-bc368dad2721.__actions_cache;outcome=success;conclusion=success;duration_ms=4168]
+image	Post Image security gate	2026-10-07T14:52:27.9277091Z ##[start-action display=Install Trivy;id=__294f5146-11c3-4861-9ebc-bc368dad2721.__aquasecurity_setup-trivy]
+image	Post Image security gate	2026-10-07T14:52:27.9399412Z Post job cleanup.
+image	Post Image security gate	2026-10-07T14:52:27.9406834Z ##[end-action id=__294f5146-11c3-4861-9ebc-bc368dad2721.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=12]
+image	Post Run actions/checkout@v4	﻿2026-10-07T14:52:27.9513053Z Post job cleanup.
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.0378350Z [command]/usr/bin/git version
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.0417996Z git version 2.55.0
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.0457137Z Temporarily overriding HOME='/home/runner/work/_temp/53eb6deb-f645-413d-8ad1-1d35caef3cfe' before making global git config changes
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.0460537Z Adding repository directory to the temporary git global config as a safe directory
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.0465865Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.0507471Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.0545777Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.0768499Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.0790856Z http.https://github.com/.extraheader
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.0802168Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.0831923Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.1035418Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+image	Post Run actions/checkout@v4	2026-10-07T14:52:28.1067823Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+image	Complete job	﻿2026-10-07T14:52:28.1431550Z Cleaning up orphan processes
+image	Complete job	2026-10-07T14:52:28.1716362Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+publish-deploy	Set up job	﻿2026-10-07T14:52:35.9042134Z Current runner version: '2.337.0'
+publish-deploy	Set up job	2026-10-07T14:52:35.9067880Z ##[group]Runner Image Provisioner
+publish-deploy	Set up job	2026-10-07T14:52:35.9068964Z Hosted Compute Agent
+publish-deploy	Set up job	2026-10-07T14:52:35.9069562Z Version: 20260901.588
+publish-deploy	Set up job	2026-10-07T14:52:35.9070227Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+publish-deploy	Set up job	2026-10-07T14:52:35.9071021Z Build Date: 2026-09-01T19:56:44Z
+publish-deploy	Set up job	2026-10-07T14:52:35.9071707Z Worker ID: {76395101-3e43-4c80-9764-cf7d9371b342}
+publish-deploy	Set up job	2026-10-07T14:52:35.9072540Z Azure Region: westus
+publish-deploy	Set up job	2026-10-07T14:52:35.9073110Z ##[endgroup]
+publish-deploy	Set up job	2026-10-07T14:52:35.9074718Z ##[group]Operating System
+publish-deploy	Set up job	2026-10-07T14:52:35.9075459Z Ubuntu
+publish-deploy	Set up job	2026-10-07T14:52:35.9075978Z 24.04.5
+publish-deploy	Set up job	2026-10-07T14:52:35.9076561Z LTS
+publish-deploy	Set up job	2026-10-07T14:52:35.9077089Z ##[endgroup]
+publish-deploy	Set up job	2026-10-07T14:52:35.9077825Z ##[group]Runner Image
+publish-deploy	Set up job	2026-10-07T14:52:35.9078873Z Image: ubuntu-24.04
+publish-deploy	Set up job	2026-10-07T14:52:35.9079457Z Version: 20260927.320.1
+publish-deploy	Set up job	2026-10-07T14:52:35.9080615Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+publish-deploy	Set up job	2026-10-07T14:52:35.9082333Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+publish-deploy	Set up job	2026-10-07T14:52:35.9083375Z ##[endgroup]
+publish-deploy	Set up job	2026-10-07T14:52:35.9084674Z ##[group]GITHUB_TOKEN Permissions
+publish-deploy	Set up job	2026-10-07T14:52:35.9086881Z Contents: read
+publish-deploy	Set up job	2026-10-07T14:52:35.9087501Z Metadata: read
+publish-deploy	Set up job	2026-10-07T14:52:35.9088468Z Packages: write
+publish-deploy	Set up job	2026-10-07T14:52:35.9089045Z ##[endgroup]
+publish-deploy	Set up job	2026-10-07T14:52:35.9091174Z Secret source: Actions
+publish-deploy	Set up job	2026-10-07T14:52:35.9092229Z Cache mode: write
+publish-deploy	Set up job	2026-10-07T14:52:35.9092930Z Prepare workflow directory
+publish-deploy	Set up job	2026-10-07T14:52:35.9459603Z Prepare all required actions
+publish-deploy	Set up job	2026-10-07T14:52:35.9534338Z Getting action download info
+publish-deploy	Set up job	2026-10-07T14:52:36.4285835Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+publish-deploy	Set up job	2026-10-07T14:52:36.5326522Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+publish-deploy	Set up job	2026-10-07T14:52:36.9591939Z Download action repository 'docker/login-action@v3' (SHA:c94ce9fb468520275223c153574b00df6fe4bcc9)
+publish-deploy	Set up job	2026-10-07T14:52:37.5500423Z Download action repository 'helm/kind-action@v1' (SHA:ef37e7f390d99f746eb8b610417061a60e82a6cc)
+publish-deploy	Set up job	2026-10-07T14:52:37.7665133Z Download action repository 'azure/setup-helm@v5.0.0' (SHA:dda3372f752e03dde6b3237bc9431cdc2f7a02a2)
+publish-deploy	Set up job	2026-10-07T14:52:38.0690269Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+publish-deploy	Set up job	2026-10-07T14:52:38.2871053Z Complete job name: publish-deploy
+publish-deploy	Run actions/checkout@v4	﻿2026-10-07T14:52:38.3740007Z ##[group]Run actions/checkout@v4
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3740697Z with:
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3740984Z   repository: AJ5831A/devops-homework
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3743728Z   token: ***
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3743988Z   ssh-strict: true
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3744250Z   ssh-user: git
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3744519Z   persist-credentials: true
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3744818Z   clean: true
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3745354Z   sparse-checkout-cone-mode: true
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3745935Z   fetch-depth: 1
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3746421Z   fetch-tags: false
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3746912Z   show-progress: true
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3747356Z   lfs: false
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3747900Z   submodules: false
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3748189Z   set-safe-directory: true
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3748501Z   allow-unsafe-pr-checkout: false
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.3749205Z ##[endgroup]
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4878437Z Syncing repository: AJ5831A/devops-homework
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4880523Z ##[group]Getting Git version info
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4881338Z Working directory is '/home/runner/work/devops-homework/devops-homework'
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4882592Z [command]/usr/bin/git version
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4883093Z git version 2.55.0
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4885978Z ##[endgroup]
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4891240Z Temporarily overriding HOME='/home/runner/work/_temp/997ac18b-6685-463e-a310-07eca7ed290f' before making global git config changes
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4892712Z Adding repository directory to the temporary git global config as a safe directory
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4893993Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4977306Z Deleting the contents of '/home/runner/work/devops-homework/devops-homework'
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4979049Z ##[group]Initializing the repository
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.4980106Z [command]/usr/bin/git init /home/runner/work/devops-homework/devops-homework
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5075059Z hint: Using 'master' as the name for the initial branch. This default branch name
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5076946Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5078624Z hint: to use in all of your new repositories, which will suppress this warning,
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5079765Z hint: call:
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5080343Z hint:
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5081083Z hint: 	git config --global init.defaultBranch <name>
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5081807Z hint:
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5082433Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5083206Z hint: 'development'. The just-created branch can be renamed via this command:
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5083778Z hint:
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5084081Z hint: 	git branch -m <name>
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5084419Z hint:
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5084879Z hint: Disable this message with "git config set advice.defaultBranchName false"
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5091566Z Initialized empty Git repository in /home/runner/work/devops-homework/devops-homework/.git/
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5098362Z [command]/usr/bin/git remote add origin https://github.com/AJ5831A/devops-homework
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5148070Z ##[endgroup]
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5149094Z ##[group]Disabling automatic garbage collection
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5153809Z [command]/usr/bin/git config --local gc.auto 0
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5186516Z ##[endgroup]
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5187298Z ##[group]Setting up auth
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5195768Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5230317Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5615092Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5654605Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5897173Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.5934723Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.6166873Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.6211624Z ##[endgroup]
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.6212413Z ##[group]Fetching the repository
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:38.6222426Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +be9442981c475a39475f4f14501e0fc95244b681:refs/remotes/origin/main
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2191976Z From https://github.com/AJ5831A/devops-homework
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2193151Z  * [new ref]         be9442981c475a39475f4f14501e0fc95244b681 -> origin/main
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2225334Z ##[endgroup]
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2226060Z ##[group]Determining the checkout info
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2227424Z ##[endgroup]
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2228377Z [command]/usr/bin/git sparse-checkout disable
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2271552Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2306565Z ##[group]Checking out the ref
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2311408Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2481231Z Switched to a new branch 'main'
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2486370Z branch 'main' set up to track 'origin/main'.
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2493925Z ##[endgroup]
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2541465Z [command]/usr/bin/git log -1 --format=%H
+publish-deploy	Run actions/checkout@v4	2026-10-07T14:52:39.2571880Z be9442981c475a39475f4f14501e0fc95244b681
+publish-deploy	Run actions/download-artifact@v4	﻿2026-10-07T14:52:39.2820624Z ##[group]Run actions/download-artifact@v4
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.2821044Z with:
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.2821291Z   name: final-image
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.2821551Z   path: /tmp
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.2821808Z   merge-multiple: false
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.2822108Z   repository: AJ5831A/devops-homework
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.2822434Z   run-id: 37640204903
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.2822695Z ##[endgroup]
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.4365191Z Downloading single artifact
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.4522188Z (node:2313) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.4524197Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.7272622Z Preparing to download the following artifacts:
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.7274244Z - final-image (ID: 11491995678, Size: 20787947, Expected Digest: sha256:da84ae05b3b43c63d6f675567dcbbc2992350a8f0ee43ea5862e505496a0d378)
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.9981836Z Redirecting to blob download url: https://productionresultssa0.blob.core.windows.net/actions-results/2ee4f37b-5be9-852d-bdf5-98d3091c1b0e/workflow-job-run-cab022a9-6b7d-5062-b92a-5808c72ab870/artifacts/1a57e969a44228333b20a98ff314f47acf3e6ea8c53e35c62258271986d8b12e.zip
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:39.9983845Z Starting download of artifact to: /tmp
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:40.3359948Z (node:2313) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:42.0656905Z SHA256 digest of downloaded artifact is da84ae05b3b43c63d6f675567dcbbc2992350a8f0ee43ea5862e505496a0d378
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:42.0658365Z Artifact download completed successfully.
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:42.0658952Z Total of 1 artifact(s) downloaded
+publish-deploy	Run actions/download-artifact@v4	2026-10-07T14:52:42.0662687Z Download artifact has finished successfully
+publish-deploy	Run docker/login-action@v3	﻿2026-10-07T14:52:42.0856011Z ##[group]Run docker/login-action@v3
+publish-deploy	Run docker/login-action@v3	2026-10-07T14:52:42.0856391Z with:
+publish-deploy	Run docker/login-action@v3	2026-10-07T14:52:42.0856639Z   registry: ghcr.io
+publish-deploy	Run docker/login-action@v3	2026-10-07T14:52:42.0856889Z   username: AJ5831A
+publish-deploy	Run docker/login-action@v3	2026-10-07T14:52:42.0859906Z   password: ***
+publish-deploy	Run docker/login-action@v3	2026-10-07T14:52:42.0860305Z   logout: true
+publish-deploy	Run docker/login-action@v3	2026-10-07T14:52:42.0860547Z ##[endgroup]
+publish-deploy	Run docker/login-action@v3	2026-10-07T14:52:42.4032831Z Logging into ghcr.io...
+publish-deploy	Run docker/login-action@v3	2026-10-07T14:52:42.4056986Z (node:2327) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publish-deploy	Run docker/login-action@v3	2026-10-07T14:52:42.4059121Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publish-deploy	Run docker/login-action@v3	2026-10-07T14:52:42.9393896Z Login Succeeded!
+publish-deploy	Publish the scanned image	﻿2026-10-07T14:52:42.9543865Z ##[group]Run docker load -i /tmp/final-image.tar
+publish-deploy	Publish the scanned image	2026-10-07T14:52:42.9544371Z ^[[36;1mdocker load -i /tmp/final-image.tar^[[0m
+publish-deploy	Publish the scanned image	2026-10-07T14:52:42.9544824Z ^[[36;1mIMAGE="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/devops-final"^[[0m
+publish-deploy	Publish the scanned image	2026-10-07T14:52:42.9545341Z ^[[36;1mdocker tag "devops-final:$GITHUB_SHA" "$IMAGE:$GITHUB_SHA"^[[0m
+publish-deploy	Publish the scanned image	2026-10-07T14:52:42.9545767Z ^[[36;1mdocker push "$IMAGE:$GITHUB_SHA"^[[0m
+publish-deploy	Publish the scanned image	2026-10-07T14:52:42.9546112Z ^[[36;1mecho "IMAGE=$IMAGE" >> "$GITHUB_ENV"^[[0m
+publish-deploy	Publish the scanned image	2026-10-07T14:52:42.9789773Z shell: /usr/bin/bash -e {0}
+publish-deploy	Publish the scanned image	2026-10-07T14:52:42.9790190Z ##[endgroup]
+publish-deploy	Publish the scanned image	2026-10-07T14:52:46.2550699Z Loaded image: devops-final:be9442981c475a39475f4f14501e0fc95244b681
+publish-deploy	Publish the scanned image	2026-10-07T14:52:46.2988739Z The push refers to repository [ghcr.io/aj5831a/devops-final]
+publish-deploy	Publish the scanned image	2026-10-07T14:52:46.4128771Z bf970039e404: Preparing
+publish-deploy	Publish the scanned image	2026-10-07T14:52:46.4129573Z ac3552c6d64f: Preparing
+publish-deploy	Publish the scanned image	2026-10-07T14:52:46.4129931Z 0051fc935510: Preparing
+publish-deploy	Publish the scanned image	2026-10-07T14:52:46.4131061Z 4d211c3f1c45: Preparing
+publish-deploy	Publish the scanned image	2026-10-07T14:52:46.4131463Z 7e9021171c27: Preparing
+publish-deploy	Publish the scanned image	2026-10-07T14:52:46.4131986Z 41366f7f4879: Preparing
+publish-deploy	Publish the scanned image	2026-10-07T14:52:46.4132380Z 74d97c428c51: Preparing
+publish-deploy	Publish the scanned image	2026-10-07T14:52:46.4132995Z 41366f7f4879: Waiting
+publish-deploy	Publish the scanned image	2026-10-07T14:52:47.8528020Z 4d211c3f1c45: Pushed
+publish-deploy	Publish the scanned image	2026-10-07T14:52:48.4268858Z 0051fc935510: Pushed
+publish-deploy	Publish the scanned image	2026-10-07T14:52:48.4335395Z bf970039e404: Pushed
+publish-deploy	Publish the scanned image	2026-10-07T14:52:48.4938355Z ac3552c6d64f: Pushed
+publish-deploy	Publish the scanned image	2026-10-07T14:52:49.0730016Z 41366f7f4879: Pushed
+publish-deploy	Publish the scanned image	2026-10-07T14:52:49.1680451Z 74d97c428c51: Mounted from github/gh-aw-firewall/squid
+publish-deploy	Publish the scanned image	2026-10-07T14:52:49.8908639Z 7e9021171c27: Pushed
+publish-deploy	Publish the scanned image	2026-10-07T14:52:52.3988616Z be9442981c475a39475f4f14501e0fc95244b681: digest: sha256:e3b9e0d037e8b27d11f671b7503bbcc3f762ce098dfd150894ce9a9ba2b7bf40 size: 1781
+publish-deploy	Run helm/kind-action@v1	﻿2026-10-07T14:52:52.4101801Z ##[group]Run helm/kind-action@v1
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4102121Z with:
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4102330Z   cluster_name: final-ci
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4102571Z   version: v0.31.0
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4102788Z   wait: 60s
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4102975Z   verbosity: 0
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4103179Z   kubectl_version: v1.35.0
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4103423Z   registry: false
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4103647Z   registry_image: registry:2
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4103906Z   registry_name: kind-registry
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4104159Z   registry_port: 5000
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4104391Z   registry_enable_delete: false
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4104664Z   install_only: false
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4104898Z   ignore_failed_clean: false
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4105145Z   cloud_provider: false
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4105362Z env:
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4105563Z   IMAGE: ghcr.io/aj5831a/devops-final
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4105845Z ##[endgroup]
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4516908Z Installing kind...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.4531603Z /opt/hostedtoolcache/kind/v0.31.0/amd64/kind/bin ~/work/devops-homework/devops-homework
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.7065753Z kind-linux-amd64: OK
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.7105411Z ~/work/devops-homework/devops-homework
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.7106092Z Adding kind directory to PATH...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.7106587Z Installing kubectl...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:52.7121970Z /opt/hostedtoolcache/kind/v0.31.0/amd64/kubectl/bin ~/work/devops-homework/devops-homework
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:53.1178544Z kubectl: OK
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:53.1194099Z ~/work/devops-homework/devops-homework
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:53.1194698Z Adding kubectl directory to PATH...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:53.1221760Z kind v0.31.0 go1.25.5 linux/amd64
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:53.1566604Z Client Version: v1.35.0
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:53.1567386Z Kustomize Version: v5.7.1
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:53.1582457Z Creating kind cluster...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:53.5263469Z Creating cluster "final-ci" ...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:52:53.5264288Z  • Ensuring node image (kindest/node:v1.35.0) 🖼  ...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:02.8527550Z  ✓ Ensuring node image (kindest/node:v1.35.0) 🖼
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:02.8530183Z  • Preparing nodes 📦   ...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:04.7580862Z  ✓ Preparing nodes 📦 
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:04.7868453Z  • Writing configuration 📜  ...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:04.9805500Z  ✓ Writing configuration 📜
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:04.9806150Z  • Starting control-plane 🕹️  ...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:13.0752950Z  ✓ Starting control-plane 🕹️
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:13.0753958Z  • Installing CNI 🔌  ...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:13.3594913Z  ✓ Installing CNI 🔌
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:13.3595448Z  • Installing StorageClass 💾  ...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:13.6942098Z  ✓ Installing StorageClass 💾
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:13.7221672Z  • Waiting ≤ 1m0s for control-plane = Ready ⏳  ...
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:31.0935381Z  ✓ Waiting ≤ 1m0s for control-plane = Ready ⏳
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:31.0939729Z  • Ready after 17s 💚
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:31.2340966Z Set kubectl context to "kind-final-ci"
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:31.2341622Z You can now use your cluster with:
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:31.2341832Z 
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:31.2342094Z kubectl cluster-info --context kind-final-ci
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:31.2342551Z 
+publish-deploy	Run helm/kind-action@v1	2026-10-07T14:53:31.2342973Z Thanks for using kind! 😊
+publish-deploy	Run azure/setup-helm@v5.0.0	﻿2026-10-07T14:53:31.2441705Z ##[group]Run azure/setup-helm@v5.0.0
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:31.2442024Z with:
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:31.2442234Z   version: v3.17.3
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:31.2444742Z   token: ***
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:31.2444984Z   downloadBaseURL: https://get.helm.sh
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:31.2445271Z env:
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:31.2445475Z   IMAGE: ghcr.io/aj5831a/devops-final
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:31.2445743Z ##[endgroup]
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:31.3237690Z ##[group]Installing v3.17.3
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:31.3249354Z Downloading 'v3.17.3' from 'https://get.helm.sh'
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:31.5781260Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/098c47c7-5f5f-4bfa-b6ab-c3caa427d7aa -f /home/runner/work/_temp/206251f8-fdb7-4bec-a0d4-329a2f21eda4
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:32.1619939Z ##[endgroup]
+publish-deploy	Run azure/setup-helm@v5.0.0	2026-10-07T14:53:32.1620708Z Helm tool version 'v3.17.3' has been cached at /opt/hostedtoolcache/helm/3.17.3/x64/linux-amd64/helm
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	﻿2026-10-07T14:53:32.1788639Z ##[group]Run docker pull "$IMAGE:$GITHUB_SHA"
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1789367Z ^[[36;1mdocker pull "$IMAGE:$GITHUB_SHA"^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1790040Z ^[[36;1mkind load docker-image "$IMAGE:$GITHUB_SHA" --name final-ci^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1790753Z ^[[36;1mkubectl create namespace devops-final^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1791337Z ^[[36;1mTOKEN="$(openssl rand -hex 24)"^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1791854Z ^[[36;1mecho "::add-mask::$TOKEN"^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1792745Z ^[[36;1mkubectl -n devops-final create secret generic devops-demo-secret --from-literal=API_TOKEN="$TOKEN"^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1793983Z ^[[36;1mhelm upgrade --install devops-demo final-devops-project/helm/devops-demo \^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1795068Z ^[[36;1m  -n devops-final --set image.repository="$IMAGE" --set image.tag="$GITHUB_SHA" \^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1795842Z ^[[36;1m  --wait --timeout 180s^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1796572Z ^[[36;1mkubectl -n devops-final rollout status deployment/devops-demo --timeout=180s^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1798259Z ^[[36;1mkubectl -n devops-final run smoke --image=curlimages/curl:8.12.1 --restart=Never --attach \^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1799583Z ^[[36;1m  --command -- curl --fail --retry 10 --retry-all-errors --retry-delay 2 http://devops-demo/readyz^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1800677Z ^[[36;1mkubectl -n devops-final get pods,svc > /tmp/deployment-evidence.txt^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1801846Z ^[[36;1mhelm -n devops-final list >> /tmp/deployment-evidence.txt^[[0m
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1893408Z shell: /usr/bin/bash -e {0}
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1893695Z env:
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1893924Z   IMAGE: ghcr.io/aj5831a/devops-final
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.1894233Z ##[endgroup]
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.8547536Z be9442981c475a39475f4f14501e0fc95244b681: Pulling from aj5831a/devops-final
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.8561288Z Digest: sha256:e3b9e0d037e8b27d11f671b7503bbcc3f762ce098dfd150894ce9a9ba2b7bf40
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.8563505Z Status: Image is up to date for ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:32.8572560Z ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:33.0262352Z Image: "ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681" with ID "sha256:7bf33b256f9cd178b1253d2d71a5862fee15ae6a39ffda3914f47628bf012d51" not yet present on node "final-ci-control-plane", loading...
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:36.0285417Z namespace/devops-final created
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:36.0848204Z secret/devops-demo-secret created
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:36.1268958Z Release "devops-demo" does not exist. Installing it now.
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:40.2878906Z NAME: devops-demo
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:40.2880248Z LAST DEPLOYED: Wed Oct  7 14:53:36 2026
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:40.2880821Z NAMESPACE: devops-final
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:40.2881107Z STATUS: deployed
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:40.2881355Z REVISION: 1
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:40.2881574Z TEST SUITE: None
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:40.3424870Z deployment "devops-demo" successfully rolled out
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:44.2330385Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:44.2331367Z                                  Dload  Upload   Total   Spent    Left  Speed
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:44.2333496Z 
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:44.2333996Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:44.2336818Z 100    15  100    15    0     0   8571      0 --:--:-- --:--:-- --:--:-- 15000
+publish-deploy	Pull published image and deploy to Kubernetes using Helm	2026-10-07T14:53:44.3328555Z {"ready": true}
+publish-deploy	Diagnostics	﻿2026-10-07T14:53:44.3369409Z ##[group]Run kubectl -n devops-final get pods,svc || true
+publish-deploy	Diagnostics	2026-10-07T14:53:44.3369905Z ^[[36;1mkubectl -n devops-final get pods,svc || true^[[0m
+publish-deploy	Diagnostics	2026-10-07T14:53:44.3370588Z ^[[36;1mkubectl -n devops-final get events --sort-by=.lastTimestamp || true^[[0m
+publish-deploy	Diagnostics	2026-10-07T14:53:44.3434037Z shell: /usr/bin/bash -e {0}
+publish-deploy	Diagnostics	2026-10-07T14:53:44.3434340Z env:
+publish-deploy	Diagnostics	2026-10-07T14:53:44.3434583Z   IMAGE: ghcr.io/aj5831a/devops-final
+publish-deploy	Diagnostics	2026-10-07T14:53:44.3434913Z ##[endgroup]
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4053022Z NAME                             READY   STATUS      RESTARTS   AGE
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4053876Z pod/devops-demo-85d55c4f-cv2hv   1/1     Running     0          8s
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4054657Z pod/devops-demo-85d55c4f-mx9bn   1/1     Running     0          8s
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4055331Z pod/smoke                        0/1     Completed   0          4s
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4055714Z 
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4056021Z NAME                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4056777Z service/devops-demo   ClusterIP   10.96.89.201   <none>        80/TCP    8s
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4554399Z LAST SEEN   TYPE     REASON              OBJECT                            MESSAGE
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4555873Z 8s          Normal   Scheduled           pod/devops-demo-85d55c4f-cv2hv    Successfully assigned devops-final/devops-demo-85d55c4f-cv2hv to final-ci-control-plane
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4557316Z 8s          Normal   Pulled              pod/devops-demo-85d55c4f-cv2hv    Container image "ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681" already present on machine and can be accessed by the pod
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4558716Z 8s          Normal   Created             pod/devops-demo-85d55c4f-cv2hv    Container created
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4559261Z 8s          Normal   Started             pod/devops-demo-85d55c4f-cv2hv    Container started
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4560060Z 8s          Normal   Scheduled           pod/devops-demo-85d55c4f-mx9bn    Successfully assigned devops-final/devops-demo-85d55c4f-mx9bn to final-ci-control-plane
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4561330Z 8s          Normal   Pulled              pod/devops-demo-85d55c4f-mx9bn    Container image "ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681" already present on machine and can be accessed by the pod
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4562321Z 8s          Normal   Created             pod/devops-demo-85d55c4f-mx9bn    Container created
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4562834Z 8s          Normal   Started             pod/devops-demo-85d55c4f-mx9bn    Container started
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4563486Z 8s          Normal   SuccessfulCreate    replicaset/devops-demo-85d55c4f   Created pod: devops-demo-85d55c4f-cv2hv
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4564252Z 8s          Normal   SuccessfulCreate    replicaset/devops-demo-85d55c4f   Created pod: devops-demo-85d55c4f-mx9bn
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4565028Z 8s          Normal   ScalingReplicaSet   deployment/devops-demo            Scaled up replica set devops-demo-85d55c4f from 0 to 2
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4565838Z 4s          Normal   Scheduled           pod/smoke                         Successfully assigned devops-final/smoke to final-ci-control-plane
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4566536Z 4s          Normal   Pulling             pod/smoke                         Pulling image "curlimages/curl:8.12.1"
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4567409Z 2s          Normal   Pulled              pod/smoke                         Successfully pulled image "curlimages/curl:8.12.1" in 1.634s (1.634s including waiting). Image size: 12434447 bytes.
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4568767Z 2s          Normal   Created             pod/smoke                         Container created
+publish-deploy	Diagnostics	2026-10-07T14:53:44.4569291Z 2s          Normal   Started             pod/smoke                         Container started
+publish-deploy	Run actions/upload-artifact@v4	﻿2026-10-07T14:53:44.4627950Z ##[group]Run actions/upload-artifact@v4
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.4628293Z with:
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.4628526Z   name: final-deployment-evidence
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.4628820Z   path: /tmp/deployment-evidence.txt
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.4629110Z   if-no-files-found: warn
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.4629363Z   compression-level: 6
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.4629593Z   overwrite: false
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.4629820Z   include-hidden-files: false
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.4630061Z env:
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.4630457Z   IMAGE: ghcr.io/aj5831a/devops-final
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.4630730Z ##[endgroup]
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.6424688Z (node:12151) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.6426190Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.6473250Z With the provided path, there will be 1 file uploaded
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.6480114Z Artifact name is valid!
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:44.6480653Z Root directory input is valid!
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:45.0511223Z Beginning upload of artifact content to blob storage
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:45.0713441Z (node:12151) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:45.3670943Z Uploaded bytes 471
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:45.4507182Z Finished uploading artifact content to blob storage!
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:45.4509010Z SHA256 digest of uploaded artifact zip is 2c51ec5b81a879dd84e60771c334681ab820b7c4e23f6f43da3c349c80f079de
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:45.4512112Z Finalizing artifact upload
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:45.7432146Z Artifact final-deployment-evidence.zip successfully finalized. Artifact ID 11491687155
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:45.7433922Z Artifact final-deployment-evidence has been successfully uploaded! Final size is 471 bytes. Artifact ID is 11491687155
+publish-deploy	Run actions/upload-artifact@v4	2026-10-07T14:53:45.7439396Z Artifact download URL: https://github.com/AJ5831A/devops-homework/actions/runs/37640204903/artifacts/11491687155
+publish-deploy	Promotion instructions	﻿2026-10-07T14:53:45.7559250Z ##[group]Run echo "Promote this scanned image by setting final-devops-project/helm/devops-demo/values-gitops.yaml image.tag to $GITHUB_SHA, then commit and push." >> "$GITHUB_STEP_SUMMARY"
+publish-deploy	Promotion instructions	2026-10-07T14:53:45.7560741Z ^[[36;1mecho "Promote this scanned image by setting final-devops-project/helm/devops-demo/values-gitops.yaml image.tag to $GITHUB_SHA, then commit and push." >> "$GITHUB_STEP_SUMMARY"^[[0m
+publish-deploy	Promotion instructions	2026-10-07T14:53:45.7561908Z ^[[36;1mecho "The kind cluster is ephemeral. Persistent delivery is handled by Argo CD." >> "$GITHUB_STEP_SUMMARY"^[[0m
+publish-deploy	Promotion instructions	2026-10-07T14:53:45.7626546Z shell: /usr/bin/bash -e {0}
+publish-deploy	Promotion instructions	2026-10-07T14:53:45.7626868Z env:
+publish-deploy	Promotion instructions	2026-10-07T14:53:45.7627151Z   IMAGE: ghcr.io/aj5831a/devops-final
+publish-deploy	Promotion instructions	2026-10-07T14:53:45.7627502Z ##[endgroup]
+publish-deploy	Post Run helm/kind-action@v1	﻿2026-10-07T14:53:45.7814990Z Post job cleanup.
+publish-deploy	Post Run helm/kind-action@v1	2026-10-07T14:53:45.8232212Z Error response from daemon: No such container: kind-registry
+publish-deploy	Post Run helm/kind-action@v1	2026-10-07T14:53:45.8393711Z Deleting cluster "final-ci" ...
+publish-deploy	Post Run helm/kind-action@v1	2026-10-07T14:53:47.1189653Z Deleted nodes: ["final-ci-control-plane"]
+publish-deploy	Post Run docker/login-action@v3	﻿2026-10-07T14:53:47.1282635Z Post job cleanup.
+publish-deploy	Post Run docker/login-action@v3	2026-10-07T14:53:47.4640595Z ##[group]Logout from ghcr.io
+publish-deploy	Post Run docker/login-action@v3	2026-10-07T14:53:47.4663129Z (node:12261) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publish-deploy	Post Run docker/login-action@v3	2026-10-07T14:53:47.4664310Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publish-deploy	Post Run docker/login-action@v3	2026-10-07T14:53:47.4693406Z [command]/usr/bin/docker logout ghcr.io
+publish-deploy	Post Run docker/login-action@v3	2026-10-07T14:53:47.4851410Z Removing login credentials for ghcr.io
+publish-deploy	Post Run docker/login-action@v3	2026-10-07T14:53:47.4908989Z ##[endgroup]
+publish-deploy	Post Run docker/login-action@v3	2026-10-07T14:53:47.4910988Z ##[group]Post cache
+publish-deploy	Post Run docker/login-action@v3	2026-10-07T14:53:47.4911861Z State not set
+publish-deploy	Post Run docker/login-action@v3	2026-10-07T14:53:47.4913074Z ##[endgroup]
+publish-deploy	Post Run actions/checkout@v4	﻿2026-10-07T14:53:47.5154653Z Post job cleanup.
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6071827Z [command]/usr/bin/git version
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6119457Z git version 2.55.0
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6162630Z Temporarily overriding HOME='/home/runner/work/_temp/01208658-633c-401b-a6d1-fb88f5070f7f' before making global git config changes
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6164166Z Adding repository directory to the temporary git global config as a safe directory
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6168056Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-homework/devops-homework
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6213040Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6253183Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6500898Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6531962Z http.https://github.com/.extraheader
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6545575Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6589753Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6856791Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publish-deploy	Post Run actions/checkout@v4	2026-10-07T14:53:47.6898744Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publish-deploy	Complete job	﻿2026-10-07T14:53:47.7341738Z Cleaning up orphan processes
+publish-deploy	Complete job	2026-10-07T14:53:47.7752173Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/upload-artifact@v4, docker/login-action@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

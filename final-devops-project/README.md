@@ -5,8 +5,21 @@
 A stateless Python HTTP service demonstrates the complete delivery chain. The
 friend's repository was used to understand the lab style; this implementation
 adds the PDF's CI/CD, Kubernetes, Helm, Terraform, security, monitoring and
-GitOps requirements. Application tests run locally; cloud/container/cluster
-execution and screenshots are pending (see [validation](../VALIDATION.md)).
+GitOps requirements. Application tests, security gates, image publication and hosted Helm/Kubernetes
+smoke deployment have passed. Local cloud/runtime lab work is tracked in
+[validation](../VALIDATION.md).
+
+## Observed pipeline execution
+
+[Successful run 37640204903](https://github.com/AJ5831A/devops-homework/actions/runs/37640204903)
+built and scanned commit `be9442981c475a39475f4f14501e0fc95244b681`, published its
+image, deployed two replicas with Helm into kind, and received successful
+readiness through the Service. [Actual logs and artifacts](../evidence/pipelines/final-success/)
+are retained. The GitOps values now promote that verified SHA.
+
+![Successful final pipeline](../evidence/pipelines/screenshots/final-success.png)
+
+![Local running application](../evidence/final-project/local-app.png)
 
 ## Architecture and technologies
 
@@ -152,8 +165,7 @@ Pushes/PRs test and scan the application. Successful main-branch runs publish
 the scanned image and deploy it into a fresh kind cluster using Helm, then
 request readiness through the Kubernetes Service. Actions artifacts retain the
 rendered chart, scanned image and successful deployment output. This is an
-ephemeral test cluster; persistent delivery uses GitOps below. No successful
-Actions run is claimed until GitHub executes it.
+ephemeral test cluster; persistent delivery uses GitOps below. The successful run above provides the hosted execution evidence.
 
 See [security/README.md](security/README.md) for SAST, SCA, secret and image
 scanning gates. The runtime is stdlib-only; image scanning covers OS/Python

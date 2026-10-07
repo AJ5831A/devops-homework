@@ -37,15 +37,29 @@ Deployment/ReplicaSet selectors and mounted volumes. It skips Helm template
 syntax and is not Kubernetes schema validation. Intentional broken fixtures
 are designed to be syntactically valid so their runtime failures can be studied.
 
-## Not executed here
+## Live validation after network access became available
 
-Docker image builds, container security scans, HTTP integration, Minikube/kind,
-Helm rendering, Terraform provider initialization/validation, AWS provisioning,
-Argo reconciliation and hosted GitHub Actions have **not** run here. Required
-CLIs are absent; outbound shell DNS fails; local socket binding is denied.
-No successful runtime screenshots or output have been invented or copied.
+All four hosted workflows have successful runs:
 
-The root workflows contain the next executable checks: application CI/CD,
-DevSecOps, final-project deployment and infrastructure validation. These need
-GitHub connectivity and an actual push before they produce evidence. Cloud
-apply/destroy is deliberately a documented lab operation, not an automatic CI job.
+- [CI/CD calculator](https://github.com/AJ5831A/devops-homework/actions/runs/37639824089): build, registry push, kind deployment and HTTP checks.
+- [Infrastructure](https://github.com/AJ5831A/devops-homework/actions/runs/37639824286): all three Terraform init/validate/fmt jobs and both Helm lint/render jobs.
+- [DevSecOps](https://github.com/AJ5831A/devops-homework/actions/runs/37640204904): tests, SAST, SCA, secrets and image gates, registry push and Kubernetes HTTP checks.
+- [Final project](https://github.com/AJ5831A/devops-homework/actions/runs/37640204903): tests, scans, publication and Helm deployment into kind with readiness verification.
+
+Actual logs/artifacts/screenshots are in [evidence/pipelines](evidence/pipelines/README.md).
+The first image scans failed on Debian CVEs. Replacing the runtime with updated
+Alpine images resolved those findings without weakening the security gates.
+
+Local HTTP readiness/metrics and the application screenshot are in
+[evidence/final-project](evidence/final-project/). The Ubuntu user creation,
+verification, cleanup and journalctl transcript is in
+[evidence/linux/ubuntu-users-journal.log](evidence/linux/ubuntu-users-journal.log).
+
+## Remaining execution work
+
+The local Docker/Minikube lab is now installed and its exercise runs are in
+progress. Monitoring, GitOps, complete per-exercise Kubernetes output and AWS
+apply/destroy remain pending until their actual evidence is recorded. The user
+is configuring an AWS lab profile. No cloud credentials or fabricated output
+are committed. Later workflow additions must get a new run before claiming
+validation for those revisions.

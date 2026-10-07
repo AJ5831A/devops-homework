@@ -1,0 +1,4 @@
+NAME                                 READY   STATUS        RESTARTS   AGE   IP           NODE                     NOMINATED NODE   READINESS GATES
+secure-calculator-58cbcccdd9-hs6hw   1/1     Running       0          3s    10.244.0.8   pipeline-control-plane   <none>           <none>
+secure-calculator-58cbcccdd9-q6fpj   1/1     Running       0          5s    10.244.0.7   pipeline-control-plane   <none>           <none>
+secure-calculator-5fb89cfb4-ws8gb    0/1     Terminating   0          6s    10.244.0.6   pipeline-control-plane   <none>           <none>

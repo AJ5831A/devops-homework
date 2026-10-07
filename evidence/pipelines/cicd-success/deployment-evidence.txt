@@ -1,0 +1,4 @@
+NAME                               READY   STATUS        RESTARTS   AGE   IP           NODE                     NOMINATED NODE   READINESS GATES
+cicd-calculator-546f99cbd4-nplrw   1/1     Running       0          13s   10.244.0.8   pipeline-control-plane   <none>           <none>
+cicd-calculator-546f99cbd4-trfbv   1/1     Running       0          24s   10.244.0.7   pipeline-control-plane   <none>           <none>
+cicd-calculator-77b474558-hjgzt    0/1     Terminating   0          24s   10.244.0.6   pipeline-control-plane   <none>           <none>

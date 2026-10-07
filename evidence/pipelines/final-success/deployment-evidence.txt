@@ -1,0 +1,9 @@
+NAME                             READY   STATUS      RESTARTS   AGE
+pod/devops-demo-85d55c4f-cv2hv   1/1     Running     0          8s
+pod/devops-demo-85d55c4f-mx9bn   1/1     Running     0          8s
+pod/smoke                        0/1     Completed   0          4s
+
+NAME                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+service/devops-demo   ClusterIP   10.96.89.201   <none>        80/TCP    8s
+NAME       	NAMESPACE   	REVISION	UPDATED                                	STATUS  	CHART            	APP VERSION
+devops-demo	devops-final	1       	2026-10-07 14:53:36.142230173 +0000 UTC	deployed	devops-demo-0.1.0	1.0        

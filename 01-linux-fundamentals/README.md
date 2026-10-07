@@ -74,10 +74,11 @@ the same state and is easy to misconfigure.
 sudo adduser testuser        # recommended on Ubuntu/Debian
 ```
 
-> This machine is macOS, which has neither `adduser` nor `useradd` (user
-> management is done via `dscl`/`sysadminctl` or System Settings instead), so
-> this step should be run on the Ubuntu/Linux machine used for the rest of
-> the course for a real captured `adduser` transcript.
+**Executed on 2026-10-07 in the disposable Ubuntu 24.04 Colima VM.**
+`sudo adduser --disabled-password --gecos "Homework test user" hwtestuser`
+created the home directory and Bash account; `id` and `getent passwd` verified
+it, then `deluser --remove-home` cleaned up the lab account. See the
+[actual transcript](../evidence/linux/ubuntu-users-journal.log).
 
 ## Task 3: `journalctl`
 
@@ -93,9 +94,9 @@ journalctl --since "1 hour ago"  # filter by time
 journalctl -p err                # filter by priority (errors only)
 ```
 
-> `journalctl` is systemd-specific and doesn't exist on macOS (this repo's
-> build machine). It should be run and its real output captured on the
-> Ubuntu/Linux machine, e.g. `journalctl -u ssh.service --since today`.
+**Executed:** `sudo journalctl -u docker.service --since "10 minutes ago" --no-pager -n 20`
+returned the Docker daemon startup and service logs from systemd. The same
+[Ubuntu transcript](../evidence/linux/ubuntu-users-journal.log) includes the command/output.
 
 ## Task 4: Linux Command Cheat Sheet
 

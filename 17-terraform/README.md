@@ -7,4 +7,4 @@
 - [VPC](aws-services/04-vpc/README.md)
 - [DynamoDB and RDS](aws-services/05-dynamodb-rds/README.md)
 
-Implementation is provided; Terraform/provider validation and AWS execution evidence remain pending. No AWS resources are claimed to have been created.
+Terraform formatting, provider initialization and validation passed in hosted CI; see [validation evidence](../evidence/infrastructure/README.md). AWS apply and runtime evidence remain pending. No AWS resources are claimed to have been created.

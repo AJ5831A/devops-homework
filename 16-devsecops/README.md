@@ -86,9 +86,13 @@ The runnable workflow lives in root `.github/workflows/devsecops.yml`. Push chan
 
 Successful main runs publish `ghcr.io/aj5831a/devops-homework/secure-calculator:<commit-sha>`, pull that published tag, load it into an ephemeral kind cluster and verify both `/health` and `/calculate`. No persistent cluster or cloud subscription is required; the deployment disappears when the GitHub runner finishes.
 
-Download `secure-calculator-build`, `source-security-reports`, `container-security-report` and `secure-calculator-deployment` from the run. Capture your own screenshots of the green job graph, security steps and deployment output; record the real run URL/commit. If a gate fails, preserve its report and resolve the finding before claiming successful completion.
+**Execution status: successful hosted run.** [DevSecOps calculator run 37640204904](https://github.com/AJ5831A/devops-homework/actions/runs/37640204904) passed on 7 October 2026 for commit `be9442981c475a39475f4f14501e0fc95244b681`. Unit tests, source/security gates, image scanning, GHCR publication, Kubernetes rollout and HTTP verification all passed. The six unit tests also passed locally.
 
-**Execution status:** six unit tests passed locally during preparation. External security scanners, Docker, GHCR and Kubernetes stages have not been executed in this restricted preparation environment. Hosted success output and screenshots are pending an actual Actions run; reference screenshots are not submitted as this project's evidence.
+![Successful DevSecOps calculator workflow](../evidence/pipelines/screenshots/devsecops-success.png)
+
+Evidence includes the complete [workflow log](../evidence/pipelines/devsecops-success/workflow.log), [deployment output](../evidence/pipelines/devsecops-success/deployment-evidence.txt), [health response](../evidence/pipelines/devsecops-success/health.json) and [calculation response](../evidence/pipelines/devsecops-success/calculator.json). Security report artifacts are attached to the linked run. The initial image failure and its remediation are preserved in the [pipeline evidence index](../evidence/pipelines/README.md).
+
+The additional **Test application inside the built runtime** step was added after this successful run. This historical evidence does not claim that later step executed; its verification belongs to the next run containing that change.
 
 ## References
 
@@ -100,4 +104,4 @@ Download `secure-calculator-build`, `source-security-reports`, `container-securi
 
 ## Container remediation
 
-The first hosted image scan blocked the Debian slim base on HIGH severity OS findings. The runtime now uses `python:3.12-alpine` and runs `apk upgrade --no-cache` during its build. This removes unnecessary Debian packages and applies Alpine updates while retaining the same blocking HIGH/CRITICAL gate, including unfixed findings. See [actual failure logs and remediation](../evidence/pipelines/image-remediation.md) for evidence. A later successful scan is required to confirm the fix.
+The first hosted image scan blocked the Debian slim base on HIGH severity OS findings. The runtime now uses `python:3.12-alpine` and runs `apk upgrade --no-cache` during its build. This removes unnecessary Debian packages and applies Alpine updates while retaining the same blocking HIGH/CRITICAL gate, including unfixed findings. See [actual failure logs and remediation](../evidence/pipelines/image-remediation.md) for evidence. The successful run linked above subsequently confirmed the revised image passed the unchanged gate.

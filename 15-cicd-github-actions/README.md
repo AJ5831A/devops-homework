@@ -74,9 +74,11 @@ kind delete cluster --name calculator-demo
 
 Open the repository's **Actions → CI/CD calculator → Run workflow**, choose `main`, then start the run. Alternatively, push a change under this folder. GitHub Actions and package publishing must be enabled for the repository; if reusing an existing GHCR package, grant this repository Actions access to that package.
 
-On success, download `cicd-calculator-build` and `cicd-calculator-deployment` from that run. Capture the run's job overview and expanded **Deploy and verify** step as your own screenshots; include its run URL and commit SHA in your submission. A failing rollout prints an error and fails the workflow rather than reporting success.
+**Execution status: successful hosted run.** [CI/CD calculator run 37639824089](https://github.com/AJ5831A/devops-homework/actions/runs/37639824089) passed on 7 October 2026 for commit `8fdc4e970d759eac156516101c33e64b5cf6f065`. It ran the tests, built and published the image, deployed to kind and verified the HTTP endpoints. The six unit tests also passed locally.
 
-**Execution status:** the six local unit tests passed during preparation. GitHub Actions, Docker, registry publication and Kubernetes execution were not run in the preparation environment, which lacks Docker/kubectl and shell network access. Successful hosted pipeline screenshots must come from a real run; none are claimed or borrowed from the reference repository.
+![Successful CI/CD calculator workflow](../evidence/pipelines/screenshots/cicd-success.png)
+
+The downloaded [deployment output](../evidence/pipelines/cicd-success/deployment-evidence.txt) shows two ready application pods. Actual HTTP artifacts contain [health status](../evidence/pipelines/cicd-success/health.json) and [calculation result](../evidence/pipelines/cicd-success/calculator.json). The screenshot is from this repository's run. Build artifacts remain available from the linked Actions run according to GitHub's artifact retention policy. See the [pipeline evidence index](../evidence/pipelines/README.md) for all runs.
 
 This is a teaching service based on `http.server`; deploy a production HTTP server, authentication and ingress/TLS before using the design for a public service.
 

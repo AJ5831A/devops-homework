@@ -1,0 +1,10 @@
+# HELP demo_requests_total HTTP requests including probes and scrapes.
+# TYPE demo_requests_total counter
+demo_requests_total 2
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 0.21331899999999998
+# HELP demo_peak_resident_memory_bytes Peak resident memory, not current RSS.
+# TYPE demo_peak_resident_memory_bytes gauge
+demo_peak_resident_memory_bytes 33751040
+# TYPE demo_uptime_seconds gauge
+demo_uptime_seconds 15.778774416947272

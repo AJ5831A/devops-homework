@@ -1,7 +1,7 @@
-# Set tag to the SHA of a successful published image before initial sync.
+# Promoted after successful security gates and Helm/Kubernetes smoke deployment.
 image:
   repository: ghcr.io/aj5831a/devops-final
-  tag: SET_SUCCESSFUL_COMMIT_SHA
+  tag: be9442981c475a39475f4f14501e0fc95244b681
   pullPolicy: IfNotPresent
 existingSecret: devops-demo-secret
 hpa:

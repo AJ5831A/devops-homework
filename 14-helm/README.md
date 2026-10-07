@@ -1,6 +1,6 @@
 # Helm — Session 15
 
-Commands and a complete Notes chart implement the supplied session and mini project. Runtime output and screenshots are **pending execution** on a Helm/Kubernetes machine; none below are claimed as observed output.
+Commands and a complete Notes chart implement the supplied session and mini project. Helm lint/render checks passed in hosted CI; see [infrastructure validation evidence](../evidence/infrastructure/README.md). Cluster installation output and screenshots remain **pending execution**; none below are claimed as observed cluster output.
 
 ## Task 1: Charts and commands
 
@@ -75,3 +75,14 @@ helm repo remove ingress-nginx
 ```
 
 Capture command output and browser screenshots for install, both upgrades, broken Pods, rollback and cleanup. See [Helm command reference](https://helm.sh/docs/helm/) for command semantics.
+
+## Automated runtime evidence
+
+With the `devops-homework` Kubernetes context ready, run from the repository root:
+
+```bash
+bash scripts/run-helm-evidence.sh
+# Optional: CLEANUP=1 bash scripts/run-helm-evidence.sh
+```
+
+The script uses only namespace `hw-runtime-helm`, refuses to overwrite an existing `notes-evidence` release, and records a timestamped transcript plus actual manifests, HTTP responses, broken-Pod diagnostics and Helm history under `evidence/helm/`. It asserts ready replica counts, ConfigMap/HTTP environment values, the image-pull failure and revisions 1 → 2 → 3 → 4 (rollback to revision 2). A successful run writes `result.txt`; absence of that file means the entire workflow has not passed. `CLEANUP=1` uninstalls only the release after verification. Run `helm uninstall notes-evidence -n hw-runtime-helm --kube-context devops-homework` deliberately before repeating the fresh-install exercise.

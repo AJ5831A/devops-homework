@@ -35,8 +35,9 @@ thirteen topics, including the full final project.
 
 Source/configuration and documentation are implemented. Local application tests
 and structural checks are recorded in [VALIDATION.md](VALIDATION.md).
-Docker/Kubernetes/AWS runs, successful GitHub Actions runs and screenshots still
-need to be captured in a capable environment. Expected outputs in the runbooks
+Successful GitHub Actions runs now verify CI/CD, security gates, Kubernetes
+smoke deployment, Helm charts and Terraform validation. Live Docker/Kubernetes
+lab exercises, monitoring/GitOps and AWS apply/destroy are being completed. Expected outputs in the runbooks
 are explicitly distinguished from observed results; no reference screenshots
 are presented as this submission's evidence.
 

@@ -50,11 +50,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build image
-        run: docker build -t devops-final:${{ github.sha }} -f final-devops-project/docker/Dockerfile final-devops-project
+        run: docker build --pull -t devops-final:${{ github.sha }} -f final-devops-project/docker/Dockerfile final-devops-project
+      - name: Test application inside the built runtime
+        run: >-
+          docker run --rm --read-only
+          -v "$PWD/final-devops-project/application/test_app.py:/app/test_app.py:ro"
+          devops-final:${{ github.sha }} python -m unittest -v
       - name: Image security gate
         uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: devops-final:${{ github.sha }}
+          scanners: vuln
+          ignore-unfixed: false
           severity: HIGH,CRITICAL
           exit-code: '1'
           format: table

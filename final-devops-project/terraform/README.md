@@ -43,6 +43,6 @@ References and dependencies construct the Terraform graph; `depends_on` ensures 
 
 ## Cleanup and evidence
 
-AWS execution and cluster evidence are pending. Capture real Terraform validation/plan/apply/output, node readiness and browser results after running. Uninstall project workloads, then run `terraform destroy` from this folder. S3 must be empty including versions; `force_destroy=false` protects uploaded data. Deleting the single node destroys its local-path volumes. Remove the local kubeconfig after teardown.
+Terraform formatting, provider initialization and validation passed in hosted CI; see [infrastructure validation evidence](../../evidence/infrastructure/README.md). AWS execution and cluster evidence are pending. Capture real Terraform validation/plan/apply/output, node readiness and browser results after running. Uninstall project workloads, then run `terraform destroy` from this folder. S3 must be empty including versions; `force_destroy=false` protects uploaded data. Deleting the single node destroys its local-path volumes. Remove the local kubeconfig after teardown.
 
 Reference: [K3s quick-start and kubeconfig location](https://docs.k3s.io/quick-start).

@@ -1,0 +1,59 @@
++ date -u
+Wed Oct  7 14:54:52 UTC 2026
++ cat /etc/os-release
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.4 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
++ command -v adduser useradd journalctl
+/usr/sbin/adduser
+/usr/sbin/useradd
+/usr/bin/journalctl
++ sudo adduser --disabled-password --gecos 'Homework test user' hwtestuser
+info: Adding user `hwtestuser' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `hwtestuser' (1001) ...
+info: Adding new user `hwtestuser' (1001) with group `hwtestuser (1001)' ...
+info: Creating home directory `/home/hwtestuser' ...
+info: Copying files from `/etc/skel' ...
+info: Adding new user `hwtestuser' to supplemental / extra groups `users' ...
+info: Adding user `hwtestuser' to group `users' ...
++ id hwtestuser
+uid=1001(hwtestuser) gid=1001(hwtestuser) groups=1001(hwtestuser),100(users)
++ getent passwd hwtestuser
+hwtestuser:x:1001:1001:Homework test user,,,:/home/hwtestuser:/bin/bash
++ sudo journalctl -u docker.service --since '10 minutes ago' --no-pager -n 20
+Oct 07 20:24:04 colima-devops-homework systemd[1]: Starting docker.service - Docker Application Container Engine...
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.367824794+05:30" level=info msg="Starting up"
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.368466960+05:30" level=info msg="OTEL tracing is not configured, using no-op tracer provider"
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.368539377+05:30" level=info msg="CDI directory does not exist, skipping" dir=/etc/cdi
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.368547960+05:30" level=info msg="CDI directory does not exist, skipping" dir=/var/run/cdi
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.373105169+05:30" level=warning msg="\"containerd-snapshotter\" is now the default and no longer needed to be set"
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.382078502+05:30" level=info msg="Creating a containerd client" address=/run/containerd/containerd.sock timeout=1m0s
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.385283210+05:30" level=info msg="Loading containers: start."
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.385302044+05:30" level=info msg="NRI is disabled"
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.385305169+05:30" level=info msg="Starting daemon with containerd snapshotter integration enabled"
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.387031794+05:30" level=info msg="Restoring containers: start."
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.398467669+05:30" level=info msg="Deleting nftables IPv4 rules" error="exit status 1" output="Error: Could not process rule: No such file or directory\ndelete table ip docker-bridges"
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.408559710+05:30" level=info msg="Deleting nftables IPv6 rules" error="exit status 1" output="Error: Could not process rule: No such file or directory\ndelete table ip6 docker-bridges"
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.622315419+05:30" level=info msg="Loading containers: done."
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.625186961+05:30" level=info msg="Docker daemon" commit=568f755 containerd-snapshotter=true storage-driver=overlayfs version=29.5.2
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.625254669+05:30" level=info msg="Initializing buildkit"
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.629894669+05:30" level=info msg="Completed buildkit initialization"
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.632509919+05:30" level=info msg="Daemon has completed initialization"
+Oct 07 20:24:04 colima-devops-homework dockerd[1545]: time="2026-10-07T20:24:04.632539586+05:30" level=info msg="API listen on /run/docker.sock"
+Oct 07 20:24:04 colima-devops-homework systemd[1]: Started docker.service - Docker Application Container Engine.
++ sudo deluser --remove-home hwtestuser
+info: Looking for files to backup/remove ...
+info: Removing files ...
+warn: `/usr/bin/crontab' not executed. Skipping crontab removal. Package `cron' required.
+info: Removing user `hwtestuser' ...

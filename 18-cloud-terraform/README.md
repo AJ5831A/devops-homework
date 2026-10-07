@@ -1,6 +1,6 @@
 # Cloud & Terraform in Action — Session 19
 
-The [Terraform project](terraform-vpc/) implements the PDF's full suggested architecture: VPC, subnet, security group, EC2 and S3. It extends the reference's VPC/network-only implementation with a working Nginx EC2 bootstrap and private object storage. AWS apply and runtime screenshots are **pending**, not claimed as completed.
+The [Terraform project](terraform-vpc/) implements the PDF's full suggested architecture: VPC, subnet, security group, EC2 and S3. It extends the reference's VPC/network-only implementation with a working Nginx EC2 bootstrap and private object storage. Terraform formatting, initialization and validation passed in hosted CI ([evidence](../evidence/infrastructure/README.md)). AWS apply and runtime screenshots are **pending**, not claimed as completed.
 
 ```mermaid
 flowchart TD

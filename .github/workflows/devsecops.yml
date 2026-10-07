@@ -83,6 +83,8 @@ jobs:
         run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}/secure-calculator:${GITHUB_SHA}" >> "$GITHUB_ENV"
       - name: Docker build
         run: docker build --pull -t "$IMAGE" 16-devsecops
+      - name: Test application inside the built runtime
+        run: docker run --rm --read-only -v "$PWD/16-devsecops/tests:/tests:ro" "$IMAGE" python -m unittest discover -s /tests -v
       - name: Container security gate (HIGH and CRITICAL)
         uses: aquasecurity/trivy-action@v0.36.0
         with:

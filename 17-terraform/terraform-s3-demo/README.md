@@ -29,7 +29,7 @@ terraform destroy
 
 ## Verification and evidence
 
-Execution is pending: Terraform and authenticated AWS are unavailable in the authoring environment. Save your real `validate`, plan, apply, output, AWS verification and destroy results in an `evidence/` folder, redact account identifiers as needed, and capture the S3 console. No sample output here is represented as a successful execution.
+Terraform formatting, initialization and validation passed in hosted CI; see [validation evidence](../../evidence/infrastructure/README.md). AWS plan/apply/destroy execution is pending because no authenticated AWS account is configured. Save your real `validate`, plan, apply, output, AWS verification and destroy results in an `evidence/` folder, redact account identifiers as needed, and capture the S3 console. No sample output here is represented as a successful execution.
 
 The bucket starts empty. `force_destroy=false` prevents silently deleting uploaded objects. If you add objects, deliberately remove all versions and delete markers before destroy; deleting only current keys does not empty a versioned bucket. Retain the state until cleanup succeeds.
 
