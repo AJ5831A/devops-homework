@@ -1,4 +1,6 @@
-FROM python:3.12-slim
+FROM python:3.12-alpine
+# Apply distribution security updates without shipping unused Debian utilities.
+RUN apk upgrade --no-cache
 WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 COPY --chown=10001:10001 app/ ./app/

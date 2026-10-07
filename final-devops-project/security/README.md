@@ -20,3 +20,7 @@ the bearer token and never returns it. Logs omit authorization headers.
 GHCR uses the Actions `GITHUB_TOKEN`, scoped to the publishing job. Set the
 published package public for anonymous cluster pulls, or configure an
 `imagePullSecret` in the deployment for a private package.
+
+## Container remediation
+
+The first hosted image scan blocked the Debian slim base on HIGH severity OS findings. The runtime now uses `python:3.12-alpine` and runs `apk upgrade --no-cache` during its build. This removes unnecessary Debian packages and applies Alpine updates while retaining the same blocking HIGH/CRITICAL gate, including unfixed findings. See [actual failure logs and remediation](../../evidence/pipelines/image-remediation.md) for evidence. A later successful scan is required to confirm the fix.

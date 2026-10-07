@@ -1,0 +1,231 @@
+delivery	Container security gate (HIGH and CRITICAL)	﻿2026-10-07T14:49:23.0585138Z ##[group]Run aquasecurity/trivy-action@v0.36.0
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0585494Z with:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0585931Z   image-ref: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0586438Z   scanners: vuln
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0586682Z   severity: HIGH,CRITICAL
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0586919Z   ignore-unfixed: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0587394Z   exit-code: 1
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0587604Z   format: json
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0587812Z   output: container-scan.json
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0588052Z   scan-type: image
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0588249Z   scan-ref: .
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0588442Z   vuln-type: os,library
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0588785Z   cache-dir: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0589192Z   list-all-pkgs: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0589414Z   version: v0.70.0
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0589614Z   cache: true
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0589817Z   skip-setup-trivy: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0592410Z   token-setup-trivy: ***
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0592687Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0593080Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0593551Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0653053Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0782959Z ##[group]Run aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0783378Z with:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0783568Z   version: v0.70.0
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0783766Z   cache: true
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0786289Z   token: ***
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0786508Z   path: $HOME/.local/bin
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0786769Z   github-server-url: https://github.com
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0787218Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0787824Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0788295Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0794843Z ##[start-action display=Binary dir;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0813774Z ##[group]Run echo "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0814231Z ^[[36;1mecho "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0877699Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0878063Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0878470Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0878939Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0985273Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir;outcome=success;conclusion=success;duration_ms=18]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0990662Z ##[start-action display=Check the version for caching;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0997476Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.0999950Z ##[start-action display=Restore Trivy binary from cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.1056020Z ##[group]Run actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.1056453Z with:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.1056678Z   path: /home/runner/.local/bin/trivy-bin
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.1057237Z   key: trivy-binary-v0.70.0-Linux-X64
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.1057555Z   enableCrossOsArchive: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.1057818Z   fail-on-cache-miss: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.1058059Z   lookup-only: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.1058265Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.1058657Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.1059126Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:23.3814862Z Cache hit for: trivy-binary-v0.70.0-Linux-X64
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.2521242Z Received 43751198 of 43751198 (100.0%), 60.2 MBs/sec
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.2522440Z Cache Size: ~42 MB (43751198 B)
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.2551787Z [command]/usr/bin/tar -xf /home/runner/work/_temp/02a143ae-a576-4fa2-8cdd-b8caecb252c7/cache.tzst -P -C /home/runner/work/devops-homework/devops-homework --use-compress-program unzstd
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.4864402Z Cache restored successfully
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.4963324Z Cache restored from key: trivy-binary-v0.70.0-Linux-X64
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5048147Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache;outcome=success;conclusion=success;duration_ms=1404]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5051345Z ##[start-action display=Checkout install script;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5058137Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout;outcome=skipped;conclusion=skipped;duration_ms=0]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5060461Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5065021Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5067585Z ##[start-action display=Add Trivy binary to $GITHUB_PATH;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5109854Z ##[group]Run echo /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5110648Z ^[[36;1mecho /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5202523Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5203155Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5203890Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5204762Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5319383Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3;outcome=success;conclusion=success;duration_ms=25]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5322232Z ##[start-action display=Save Trivy binary to cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5329557Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5342007Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=1468]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5344083Z ##[start-action display=Get current date;id=__aquasecurity_trivy-action.date]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5361916Z ##[group]Run echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5362369Z ^[[36;1mecho "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5426021Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5426408Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5426863Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5427701Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5528015Z ##[end-action id=__aquasecurity_trivy-action.date;outcome=success;conclusion=success;duration_ms=18]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5530430Z ##[start-action display=Restore DB from cache;id=__aquasecurity_trivy-action.__actions_cache]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5568665Z ##[group]Run actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5569034Z with:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5569337Z   path: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5569718Z   key: cache-trivy-2026-10-07
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5569971Z   restore-keys: cache-trivy-
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5570228Z   enableCrossOsArchive: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5570476Z   fail-on-cache-miss: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5570716Z   lookup-only: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5570928Z   save-always: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5571141Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5571532Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.5572017Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8303650Z Cache not found for input keys: cache-trivy-2026-10-07, cache-trivy-
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8368850Z ##[end-action id=__aquasecurity_trivy-action.__actions_cache;outcome=success;conclusion=success;duration_ms=283]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8373052Z ##[start-action display=Set GitHub Path;id=__aquasecurity_trivy-action.__run]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8391484Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8391909Z ^[[36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8454910Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8455332Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8455819Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8456580Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/aquasecurity/trivy-action/v0.36.0
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8457440Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8551637Z ##[end-action id=__aquasecurity_trivy-action.__run;outcome=success;conclusion=success;duration_ms=17]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8554164Z ##[start-action display=Clear Trivy Envs file;id=__aquasecurity_trivy-action.__run_2]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8572797Z ##[group]Run rm -f trivy_envs.txt
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8573115Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8573374Z ^[[36;1mtouch trivy_envs.txt^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8632892Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8633275Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8633724Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8634264Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8739754Z ##[end-action id=__aquasecurity_trivy-action.__run_2;outcome=success;conclusion=success;duration_ms=18]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8744784Z ##[start-action display=Set Trivy environment variables;id=__aquasecurity_trivy-action.__run_3]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8761433Z ##[group]Run # Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8762349Z ^[[36;1m# Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8763028Z ^[[36;1m# This limitation affects how we handle default values and empty inputs.^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8763588Z ^[[36;1m# For more information, see: https://github.com/actions/runner/issues/924^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8764005Z ^[[36;1m^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8764384Z ^[[36;1m# The following logic implements the configuration priority described in the README:^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8764824Z ^[[36;1m#^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8765018Z ^[[36;1m# Inputs^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8765238Z ^[[36;1m# Environment Variables^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8765504Z ^[[36;1m# Config File^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8765725Z ^[[36;1m# Defaults^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8765929Z ^[[36;1m#^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8766351Z ^[[36;1m# As noted above defaults are awkward to handle as GitHub Actions will inject those values as the input^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8767343Z ^[[36;1m# if the caller doesn't provide them, thus if the input matches the default we don't set it as we^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8768063Z ^[[36;1m# can't tell the difference.  Plus if we did set it when it was the default value then it could potentially^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8768820Z ^[[36;1m# override an external environment variable, or something in the callers configuration file, which then wouldn't^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8769431Z ^[[36;1m# match the configuration priority that is documented.^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8769783Z ^[[36;1mset_env_var_if_provided() {^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8770053Z ^[[36;1m  local var_name="$1"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8770305Z ^[[36;1m  local input_value="$2"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8770574Z ^[[36;1m  local default_value="$3"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8770819Z ^[[36;1m^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8771111Z ^[[36;1m  if [ -n "$input_value" ] && [ "$input_value" != "$default_value" ]; then^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8771630Z ^[[36;1m    # If action was provided with explicit input by the caller set that^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8772167Z ^[[36;1m    # Use printf %q to safely escape special characters and prevent command injection^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8772871Z ^[[36;1m    printf 'export %s=%q\n' "$var_name" "$input_value" >> trivy_envs.txt^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8773240Z ^[[36;1m  fi^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8773438Z ^[[36;1m}^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8773620Z ^[[36;1m^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8773908Z ^[[36;1m# Set environment variables, handling those with default values^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8774494Z ^[[36;1m# cf. https://aquasecurity.github.io/trivy/latest/docs/configuration/#environment-variables^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8775057Z ^[[36;1mset_env_var_if_provided "TRIVY_INPUT" "$INPUT_INPUT" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8775488Z ^[[36;1mset_env_var_if_provided "TRIVY_EXIT_CODE" "$INPUT_EXIT_CODE" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8775986Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_UNFIXED" "$INPUT_IGNORE_UNFIXED" "false"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8776535Z ^[[36;1mset_env_var_if_provided "TRIVY_PKG_TYPES" "$INPUT_VULN_TYPE" "os,library"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8777395Z ^[[36;1mset_env_var_if_provided "TRIVY_SEVERITY" "$INPUT_SEVERITY" "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8777961Z ^[[36;1mset_env_var_if_provided "TRIVY_FORMAT" "$INPUT_FORMAT" "table"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8778413Z ^[[36;1mset_env_var_if_provided "TRIVY_TEMPLATE" "$INPUT_TEMPLATE" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8778839Z ^[[36;1mset_env_var_if_provided "TRIVY_OUTPUT" "$INPUT_OUTPUT" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8779269Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_DIRS" "$INPUT_SKIP_DIRS" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8779725Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_FILES" "$INPUT_SKIP_FILES" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8780173Z ^[[36;1mset_env_var_if_provided "TRIVY_TIMEOUT" "$INPUT_TIMEOUT" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8780637Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_POLICY" "$INPUT_IGNORE_POLICY" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8781271Z ^[[36;1mset_env_var_if_provided "TRIVY_QUIET" "$INPUT_HIDE_PROGRESS" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8781767Z ^[[36;1mset_env_var_if_provided "TRIVY_LIST_ALL_PKGS" "$INPUT_LIST_ALL_PKGS" "false"^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8782265Z ^[[36;1mset_env_var_if_provided "TRIVY_SCANNERS" "$INPUT_SCANNERS" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8782706Z ^[[36;1mset_env_var_if_provided "TRIVY_CONFIG" "$INPUT_TRIVY_CONFIG" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8783136Z ^[[36;1mset_env_var_if_provided "TRIVY_TF_VARS" "$INPUT_TF_VARS" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8783598Z ^[[36;1mset_env_var_if_provided "TRIVY_DOCKER_HOST" "$INPUT_DOCKER_HOST" ""^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8839197Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8839541Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8839959Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8840435Z   INPUT_INPUT: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8840642Z   INPUT_EXIT_CODE: 1
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8840865Z   INPUT_IGNORE_UNFIXED: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8841121Z   INPUT_VULN_TYPE: os,library
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8841362Z   INPUT_SEVERITY: HIGH,CRITICAL
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8841602Z   INPUT_FORMAT: json
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8841807Z   INPUT_TEMPLATE: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8842036Z   INPUT_OUTPUT: container-scan.json
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8842290Z   INPUT_SKIP_DIRS: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8842494Z   INPUT_SKIP_FILES: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8842696Z   INPUT_TIMEOUT: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8842987Z   INPUT_IGNORE_POLICY: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8843239Z   INPUT_HIDE_PROGRESS: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8843465Z   INPUT_LIST_ALL_PKGS: false
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8843703Z   INPUT_SCANNERS: vuln
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8843919Z   INPUT_TRIVY_CONFIG: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8844125Z   INPUT_TF_VARS: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8844324Z   INPUT_DOCKER_HOST: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8844532Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8933037Z ##[end-action id=__aquasecurity_trivy-action.__run_3;outcome=success;conclusion=success;duration_ms=18]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8936295Z ##[start-action display=Run Trivy;id=__aquasecurity_trivy-action.__run_4]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8952376Z ##[group]Run entrypoint.sh
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.8952645Z ^[[36;1mentrypoint.sh^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9008382Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9008927Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9009387Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9009938Z   INPUT_SCAN_TYPE: image
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9010455Z   INPUT_IMAGE_REF: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9011052Z   INPUT_SCAN_REF: .
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9011314Z   INPUT_TRIVYIGNORES: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9011580Z   INPUT_GITHUB_PAT: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9011851Z   INPUT_LIMIT_SEVERITIES_FOR_SARIF: 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9012337Z   TRIVY_CACHE_DIR: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9012821Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9117625Z Running Trivy with options: trivy image ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9657698Z 2026-10-07T14:49:24Z	INFO	[vulndb] Need to update DB
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9658474Z 2026-10-07T14:49:24Z	INFO	[vulndb] Downloading vulnerability DB...
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:24.9659517Z 2026-10-07T14:49:24Z	INFO	[vulndb] Downloading artifact...	repo="mirror.gcr.io/aquasec/trivy-db:2"
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:29.3705031Z 6.64 MiB / 119.53 MiB [--->__________________________________________________________] 5.55% ? p/s ?48.34 MiB / 119.53 MiB [------------------------>___________________________________] 40.44% ? p/s ?93.12 MiB / 119.53 MiB [---------------------------------------------->_____________] 77.90% ? p/s ?119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 188.16 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 188.16 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 188.16 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 176.02 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 176.02 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 176.02 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 164.66 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 164.66 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 164.66 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 154.04 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 154.04 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 154.04 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 144.10 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 144.10 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 144.10 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 134.80 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 134.80 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [-----------------------------------------------] 100.00% 31.39 MiB p/s 4.0s2026-10-07T14:49:29Z	INFO	[vulndb] Artifact successfully downloaded	repo="mirror.gcr.io/aquasec/trivy-db:2"
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:29.3724672Z 2026-10-07T14:49:29Z	INFO	[vuln] Vulnerability scanning is enabled
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.6271738Z 2026-10-07T14:49:33Z	INFO	[python] Licenses acquired from one or more METADATA files may be subject to additional terms. Use `--debug` flag to see all affected packages.
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.6864548Z 2026-10-07T14:49:33Z	INFO	Detected OS	family="debian" version="13.7"
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.6865390Z 2026-10-07T14:49:33Z	INFO	[debian] Detecting vulnerabilities...	os_version="13" pkg_num=87
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.6953599Z 2026-10-07T14:49:33Z	INFO	Number of language-specific files	num=1
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.6954838Z 2026-10-07T14:49:33Z	INFO	[python-pkg] Detecting vulnerabilities...
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.6988650Z 2026-10-07T14:49:33Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.70/guide/scanner/vulnerability#severity-selection for details.
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7205276Z 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7206136Z 📣 ^[[34mNotices:^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7206643Z   - Version 0.75.0 of Trivy is now available, current version is 0.70.0
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7207951Z 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7208376Z To suppress version checks, run Trivy scans with the --skip-version-check flag
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7209075Z 
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7260411Z ##[error]Process completed with exit code 1.
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7326172Z ##[end-action id=__aquasecurity_trivy-action.__run_4;outcome=failure;conclusion=failure;duration_ms=8838]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7330318Z ##[start-action display=Remove Trivy Envs file;id=__aquasecurity_trivy-action.__run_5]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7349845Z ##[group]Run rm -f trivy_envs.txt
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7350144Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7413378Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7413750Z env:
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7414172Z   IMAGE: ghcr.io/aj5831a/devops-homework/secure-calculator:8fdc4e970d759eac156516101c33e64b5cf6f065
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7414684Z ##[endgroup]
+delivery	Container security gate (HIGH and CRITICAL)	2026-10-07T14:49:33.7512014Z ##[end-action id=__aquasecurity_trivy-action.__run_5;outcome=success;conclusion=success;duration_ms=18]

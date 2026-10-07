@@ -1,0 +1,418 @@
+image	Image security gate	﻿2026-10-07T14:49:14.2011540Z ##[group]Run aquasecurity/trivy-action@v0.36.0
+image	Image security gate	2026-10-07T14:49:14.2011889Z with:
+image	Image security gate	2026-10-07T14:49:14.2012187Z   image-ref: devops-final:8fdc4e970d759eac156516101c33e64b5cf6f065
+image	Image security gate	2026-10-07T14:49:14.2012549Z   severity: HIGH,CRITICAL
+image	Image security gate	2026-10-07T14:49:14.2012788Z   exit-code: 1
+image	Image security gate	2026-10-07T14:49:14.2012974Z   format: table
+image	Image security gate	2026-10-07T14:49:14.2013174Z   scan-type: image
+image	Image security gate	2026-10-07T14:49:14.2013370Z   scan-ref: .
+image	Image security gate	2026-10-07T14:49:14.2013574Z   ignore-unfixed: false
+image	Image security gate	2026-10-07T14:49:14.2013814Z   vuln-type: os,library
+image	Image security gate	2026-10-07T14:49:14.2014155Z   cache-dir: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+image	Image security gate	2026-10-07T14:49:14.2014848Z   list-all-pkgs: false
+image	Image security gate	2026-10-07T14:49:14.2015086Z   version: v0.70.0
+image	Image security gate	2026-10-07T14:49:14.2015307Z   cache: true
+image	Image security gate	2026-10-07T14:49:14.2015512Z   skip-setup-trivy: false
+image	Image security gate	2026-10-07T14:49:14.2018020Z   token-setup-trivy: ***
+image	Image security gate	2026-10-07T14:49:14.2018266Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:14.2082920Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy]
+image	Image security gate	2026-10-07T14:49:14.2252825Z ##[group]Run aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514
+image	Image security gate	2026-10-07T14:49:14.2253268Z with:
+image	Image security gate	2026-10-07T14:49:14.2253458Z   version: v0.70.0
+image	Image security gate	2026-10-07T14:49:14.2253662Z   cache: true
+image	Image security gate	2026-10-07T14:49:14.2256440Z   token: ***
+image	Image security gate	2026-10-07T14:49:14.2256662Z   path: $HOME/.local/bin
+image	Image security gate	2026-10-07T14:49:14.2256923Z   github-server-url: https://github.com
+image	Image security gate	2026-10-07T14:49:14.2257209Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:14.2265034Z ##[start-action display=Binary dir;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir]
+image	Image security gate	2026-10-07T14:49:14.2285445Z ##[group]Run echo "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT
+image	Image security gate	2026-10-07T14:49:14.2285913Z ^[[36;1mecho "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT^[[0m
+image	Image security gate	2026-10-07T14:49:14.2350996Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:49:14.2351360Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:14.2469164Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir;outcome=success;conclusion=success;duration_ms=20]
+image	Image security gate	2026-10-07T14:49:14.2474420Z ##[start-action display=Check the version for caching;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run]
+image	Image security gate	2026-10-07T14:49:14.2481621Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+image	Image security gate	2026-10-07T14:49:14.2484114Z ##[start-action display=Restore Trivy binary from cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache]
+image	Image security gate	2026-10-07T14:49:14.2540482Z ##[group]Run actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb
+image	Image security gate	2026-10-07T14:49:14.2540887Z with:
+image	Image security gate	2026-10-07T14:49:14.2541110Z   path: /home/runner/.local/bin/trivy-bin
+image	Image security gate	2026-10-07T14:49:14.2541405Z   key: trivy-binary-v0.70.0-Linux-X64
+image	Image security gate	2026-10-07T14:49:14.2541695Z   enableCrossOsArchive: false
+image	Image security gate	2026-10-07T14:49:14.2541946Z   fail-on-cache-miss: false
+image	Image security gate	2026-10-07T14:49:14.2542176Z   lookup-only: false
+image	Image security gate	2026-10-07T14:49:14.2542390Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:14.5803450Z Cache hit for: trivy-binary-v0.70.0-Linux-X64
+image	Image security gate	2026-10-07T14:49:14.8897750Z Received 43751198 of 43751198 (100.0%), 156.9 MBs/sec
+image	Image security gate	2026-10-07T14:49:14.8899622Z Cache Size: ~42 MB (43751198 B)
+image	Image security gate	2026-10-07T14:49:14.8931183Z [command]/usr/bin/tar -xf /home/runner/work/_temp/20dc157a-c6bd-4bad-b9b9-94195e8315f6/cache.tzst -P -C /home/runner/work/devops-homework/devops-homework --use-compress-program unzstd
+image	Image security gate	2026-10-07T14:49:15.1601036Z Cache restored successfully
+image	Image security gate	2026-10-07T14:49:15.1759807Z Cache restored from key: trivy-binary-v0.70.0-Linux-X64
+image	Image security gate	2026-10-07T14:49:15.1854221Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache;outcome=success;conclusion=success;duration_ms=936]
+image	Image security gate	2026-10-07T14:49:15.1858075Z ##[start-action display=Checkout install script;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout]
+image	Image security gate	2026-10-07T14:49:15.1864166Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout;outcome=skipped;conclusion=skipped;duration_ms=0]
+image	Image security gate	2026-10-07T14:49:15.1868490Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2]
+image	Image security gate	2026-10-07T14:49:15.1873609Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+image	Image security gate	2026-10-07T14:49:15.1876681Z ##[start-action display=Add Trivy binary to $GITHUB_PATH;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3]
+image	Image security gate	2026-10-07T14:49:15.1896287Z ##[group]Run echo /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH
+image	Image security gate	2026-10-07T14:49:15.1896753Z ^[[36;1mecho /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH^[[0m
+image	Image security gate	2026-10-07T14:49:15.1961513Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:49:15.1961870Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:15.2055012Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3;outcome=success;conclusion=success;duration_ms=17]
+image	Image security gate	2026-10-07T14:49:15.2057450Z ##[start-action display=Save Trivy binary to cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache]
+image	Image security gate	2026-10-07T14:49:15.2064168Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+image	Image security gate	2026-10-07T14:49:15.2076857Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=999]
+image	Image security gate	2026-10-07T14:49:15.2078980Z ##[start-action display=Get current date;id=__aquasecurity_trivy-action.date]
+image	Image security gate	2026-10-07T14:49:15.2095903Z ##[group]Run echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+image	Image security gate	2026-10-07T14:49:15.2096327Z ^[[36;1mecho "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT^[[0m
+image	Image security gate	2026-10-07T14:49:15.2161108Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:49:15.2161466Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:15.2265460Z ##[end-action id=__aquasecurity_trivy-action.date;outcome=success;conclusion=success;duration_ms=18]
+image	Image security gate	2026-10-07T14:49:15.2267670Z ##[start-action display=Restore DB from cache;id=__aquasecurity_trivy-action.__actions_cache]
+image	Image security gate	2026-10-07T14:49:15.2306270Z ##[group]Run actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae
+image	Image security gate	2026-10-07T14:49:15.2306642Z with:
+image	Image security gate	2026-10-07T14:49:15.2306943Z   path: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+image	Image security gate	2026-10-07T14:49:15.2307323Z   key: cache-trivy-2026-10-07
+image	Image security gate	2026-10-07T14:49:15.2307580Z   restore-keys: cache-trivy-
+image	Image security gate	2026-10-07T14:49:15.2307839Z   enableCrossOsArchive: false
+image	Image security gate	2026-10-07T14:49:15.2308089Z   fail-on-cache-miss: false
+image	Image security gate	2026-10-07T14:49:15.2308327Z   lookup-only: false
+image	Image security gate	2026-10-07T14:49:15.2308541Z   save-always: false
+image	Image security gate	2026-10-07T14:49:15.2308756Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:15.4545341Z Cache not found for input keys: cache-trivy-2026-10-07, cache-trivy-
+image	Image security gate	2026-10-07T14:49:15.4627188Z ##[end-action id=__aquasecurity_trivy-action.__actions_cache;outcome=success;conclusion=success;duration_ms=235]
+image	Image security gate	2026-10-07T14:49:15.4635116Z ##[start-action display=Set GitHub Path;id=__aquasecurity_trivy-action.__run]
+image	Image security gate	2026-10-07T14:49:15.4655587Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+image	Image security gate	2026-10-07T14:49:15.4656261Z ^[[36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH^[[0m
+image	Image security gate	2026-10-07T14:49:15.4730138Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:49:15.4730679Z env:
+image	Image security gate	2026-10-07T14:49:15.4731041Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/aquasecurity/trivy-action/v0.36.0
+image	Image security gate	2026-10-07T14:49:15.4731464Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:15.4821378Z ##[end-action id=__aquasecurity_trivy-action.__run;outcome=success;conclusion=success;duration_ms=18]
+image	Image security gate	2026-10-07T14:49:15.4823584Z ##[start-action display=Clear Trivy Envs file;id=__aquasecurity_trivy-action.__run_2]
+image	Image security gate	2026-10-07T14:49:15.4841762Z ##[group]Run rm -f trivy_envs.txt
+image	Image security gate	2026-10-07T14:49:15.4842070Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+image	Image security gate	2026-10-07T14:49:15.4842324Z ^[[36;1mtouch trivy_envs.txt^[[0m
+image	Image security gate	2026-10-07T14:49:15.4901276Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:49:15.4901634Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:15.5006261Z ##[end-action id=__aquasecurity_trivy-action.__run_2;outcome=success;conclusion=success;duration_ms=18]
+image	Image security gate	2026-10-07T14:49:15.5011947Z ##[start-action display=Set Trivy environment variables;id=__aquasecurity_trivy-action.__run_3]
+image	Image security gate	2026-10-07T14:49:15.5029109Z ##[group]Run # Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.
+image	Image security gate	2026-10-07T14:49:15.5030000Z ^[[36;1m# Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.^[[0m
+image	Image security gate	2026-10-07T14:49:15.5030661Z ^[[36;1m# This limitation affects how we handle default values and empty inputs.^[[0m
+image	Image security gate	2026-10-07T14:49:15.5031211Z ^[[36;1m# For more information, see: https://github.com/actions/runner/issues/924^[[0m
+image	Image security gate	2026-10-07T14:49:15.5031630Z ^[[36;1m^[[0m
+image	Image security gate	2026-10-07T14:49:15.5032009Z ^[[36;1m# The following logic implements the configuration priority described in the README:^[[0m
+image	Image security gate	2026-10-07T14:49:15.5032437Z ^[[36;1m#^[[0m
+image	Image security gate	2026-10-07T14:49:15.5032629Z ^[[36;1m# Inputs^[[0m
+image	Image security gate	2026-10-07T14:49:15.5032861Z ^[[36;1m# Environment Variables^[[0m
+image	Image security gate	2026-10-07T14:49:15.5033120Z ^[[36;1m# Config File^[[0m
+image	Image security gate	2026-10-07T14:49:15.5033343Z ^[[36;1m# Defaults^[[0m
+image	Image security gate	2026-10-07T14:49:15.5033549Z ^[[36;1m#^[[0m
+image	Image security gate	2026-10-07T14:49:15.5033957Z ^[[36;1m# As noted above defaults are awkward to handle as GitHub Actions will inject those values as the input^[[0m
+image	Image security gate	2026-10-07T14:49:15.5034918Z ^[[36;1m# if the caller doesn't provide them, thus if the input matches the default we don't set it as we^[[0m
+image	Image security gate	2026-10-07T14:49:15.5035600Z ^[[36;1m# can't tell the difference.  Plus if we did set it when it was the default value then it could potentially^[[0m
+image	Image security gate	2026-10-07T14:49:15.5036344Z ^[[36;1m# override an external environment variable, or something in the callers configuration file, which then wouldn't^[[0m
+image	Image security gate	2026-10-07T14:49:15.5036953Z ^[[36;1m# match the configuration priority that is documented.^[[0m
+image	Image security gate	2026-10-07T14:49:15.5037309Z ^[[36;1mset_env_var_if_provided() {^[[0m
+image	Image security gate	2026-10-07T14:49:15.5037577Z ^[[36;1m  local var_name="$1"^[[0m
+image	Image security gate	2026-10-07T14:49:15.5037827Z ^[[36;1m  local input_value="$2"^[[0m
+image	Image security gate	2026-10-07T14:49:15.5038099Z ^[[36;1m  local default_value="$3"^[[0m
+image	Image security gate	2026-10-07T14:49:15.5038348Z ^[[36;1m^[[0m
+image	Image security gate	2026-10-07T14:49:15.5038658Z ^[[36;1m  if [ -n "$input_value" ] && [ "$input_value" != "$default_value" ]; then^[[0m
+image	Image security gate	2026-10-07T14:49:15.5039142Z ^[[36;1m    # If action was provided with explicit input by the caller set that^[[0m
+image	Image security gate	2026-10-07T14:49:15.5039673Z ^[[36;1m    # Use printf %q to safely escape special characters and prevent command injection^[[0m
+image	Image security gate	2026-10-07T14:49:15.5040210Z ^[[36;1m    printf 'export %s=%q\n' "$var_name" "$input_value" >> trivy_envs.txt^[[0m
+image	Image security gate	2026-10-07T14:49:15.5040576Z ^[[36;1m  fi^[[0m
+image	Image security gate	2026-10-07T14:49:15.5040765Z ^[[36;1m}^[[0m
+image	Image security gate	2026-10-07T14:49:15.5040945Z ^[[36;1m^[[0m
+image	Image security gate	2026-10-07T14:49:15.5041242Z ^[[36;1m# Set environment variables, handling those with default values^[[0m
+image	Image security gate	2026-10-07T14:49:15.5041819Z ^[[36;1m# cf. https://aquasecurity.github.io/trivy/latest/docs/configuration/#environment-variables^[[0m
+image	Image security gate	2026-10-07T14:49:15.5042373Z ^[[36;1mset_env_var_if_provided "TRIVY_INPUT" "$INPUT_INPUT" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5042808Z ^[[36;1mset_env_var_if_provided "TRIVY_EXIT_CODE" "$INPUT_EXIT_CODE" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5043475Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_UNFIXED" "$INPUT_IGNORE_UNFIXED" "false"^[[0m
+image	Image security gate	2026-10-07T14:49:15.5044007Z ^[[36;1mset_env_var_if_provided "TRIVY_PKG_TYPES" "$INPUT_VULN_TYPE" "os,library"^[[0m
+image	Image security gate	2026-10-07T14:49:15.5044816Z ^[[36;1mset_env_var_if_provided "TRIVY_SEVERITY" "$INPUT_SEVERITY" "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"^[[0m
+image	Image security gate	2026-10-07T14:49:15.5045384Z ^[[36;1mset_env_var_if_provided "TRIVY_FORMAT" "$INPUT_FORMAT" "table"^[[0m
+image	Image security gate	2026-10-07T14:49:15.5045828Z ^[[36;1mset_env_var_if_provided "TRIVY_TEMPLATE" "$INPUT_TEMPLATE" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5046256Z ^[[36;1mset_env_var_if_provided "TRIVY_OUTPUT" "$INPUT_OUTPUT" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5046693Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_DIRS" "$INPUT_SKIP_DIRS" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5047151Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_FILES" "$INPUT_SKIP_FILES" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5047731Z ^[[36;1mset_env_var_if_provided "TRIVY_TIMEOUT" "$INPUT_TIMEOUT" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5048199Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_POLICY" "$INPUT_IGNORE_POLICY" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5048675Z ^[[36;1mset_env_var_if_provided "TRIVY_QUIET" "$INPUT_HIDE_PROGRESS" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5049161Z ^[[36;1mset_env_var_if_provided "TRIVY_LIST_ALL_PKGS" "$INPUT_LIST_ALL_PKGS" "false"^[[0m
+image	Image security gate	2026-10-07T14:49:15.5049647Z ^[[36;1mset_env_var_if_provided "TRIVY_SCANNERS" "$INPUT_SCANNERS" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5050091Z ^[[36;1mset_env_var_if_provided "TRIVY_CONFIG" "$INPUT_TRIVY_CONFIG" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5050599Z ^[[36;1mset_env_var_if_provided "TRIVY_TF_VARS" "$INPUT_TF_VARS" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5051076Z ^[[36;1mset_env_var_if_provided "TRIVY_DOCKER_HOST" "$INPUT_DOCKER_HOST" ""^[[0m
+image	Image security gate	2026-10-07T14:49:15.5109172Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:49:15.5109519Z env:
+image	Image security gate	2026-10-07T14:49:15.5109713Z   INPUT_INPUT: 
+image	Image security gate	2026-10-07T14:49:15.5109930Z   INPUT_EXIT_CODE: 1
+image	Image security gate	2026-10-07T14:49:15.5110153Z   INPUT_IGNORE_UNFIXED: false
+image	Image security gate	2026-10-07T14:49:15.5110412Z   INPUT_VULN_TYPE: os,library
+image	Image security gate	2026-10-07T14:49:15.5110663Z   INPUT_SEVERITY: HIGH,CRITICAL
+image	Image security gate	2026-10-07T14:49:15.5110914Z   INPUT_FORMAT: table
+image	Image security gate	2026-10-07T14:49:15.5111129Z   INPUT_TEMPLATE: 
+image	Image security gate	2026-10-07T14:49:15.5111328Z   INPUT_OUTPUT: 
+image	Image security gate	2026-10-07T14:49:15.5111526Z   INPUT_SKIP_DIRS: 
+image	Image security gate	2026-10-07T14:49:15.5111729Z   INPUT_SKIP_FILES: 
+image	Image security gate	2026-10-07T14:49:15.5111946Z   INPUT_TIMEOUT: 
+image	Image security gate	2026-10-07T14:49:15.5112164Z   INPUT_IGNORE_POLICY: 
+image	Image security gate	2026-10-07T14:49:15.5112381Z   INPUT_HIDE_PROGRESS: 
+image	Image security gate	2026-10-07T14:49:15.5112602Z   INPUT_LIST_ALL_PKGS: false
+image	Image security gate	2026-10-07T14:49:15.5112842Z   INPUT_SCANNERS: 
+image	Image security gate	2026-10-07T14:49:15.5113047Z   INPUT_TRIVY_CONFIG: 
+image	Image security gate	2026-10-07T14:49:15.5113255Z   INPUT_TF_VARS: 
+image	Image security gate	2026-10-07T14:49:15.5113455Z   INPUT_DOCKER_HOST: 
+image	Image security gate	2026-10-07T14:49:15.5113672Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:15.5202738Z ##[end-action id=__aquasecurity_trivy-action.__run_3;outcome=success;conclusion=success;duration_ms=18]
+image	Image security gate	2026-10-07T14:49:15.5206659Z ##[start-action display=Run Trivy;id=__aquasecurity_trivy-action.__run_4]
+image	Image security gate	2026-10-07T14:49:15.5222852Z ##[group]Run entrypoint.sh
+image	Image security gate	2026-10-07T14:49:15.5223135Z ^[[36;1mentrypoint.sh^[[0m
+image	Image security gate	2026-10-07T14:49:15.5279976Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:49:15.5280328Z env:
+image	Image security gate	2026-10-07T14:49:15.5280537Z   INPUT_SCAN_TYPE: image
+image	Image security gate	2026-10-07T14:49:15.5280879Z   INPUT_IMAGE_REF: devops-final:8fdc4e970d759eac156516101c33e64b5cf6f065
+image	Image security gate	2026-10-07T14:49:15.5281257Z   INPUT_SCAN_REF: .
+image	Image security gate	2026-10-07T14:49:15.5281472Z   INPUT_TRIVYIGNORES: 
+image	Image security gate	2026-10-07T14:49:15.5281698Z   INPUT_GITHUB_PAT: 
+image	Image security gate	2026-10-07T14:49:15.5281922Z   INPUT_LIMIT_SEVERITIES_FOR_SARIF: 
+image	Image security gate	2026-10-07T14:49:15.5282318Z   TRIVY_CACHE_DIR: /home/runner/work/devops-homework/devops-homework/.cache/trivy
+image	Image security gate	2026-10-07T14:49:15.5282714Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:15.5388604Z Running Trivy with options: trivy image devops-final:8fdc4e970d759eac156516101c33e64b5cf6f065
+image	Image security gate	2026-10-07T14:49:15.5897126Z 2026-10-07T14:49:15Z	INFO	[vulndb] Need to update DB
+image	Image security gate	2026-10-07T14:49:15.5898691Z 2026-10-07T14:49:15Z	INFO	[vulndb] Downloading vulnerability DB...
+image	Image security gate	2026-10-07T14:49:15.5900061Z 2026-10-07T14:49:15Z	INFO	[vulndb] Downloading artifact...	repo="mirror.gcr.io/aquasec/trivy-db:2"
+image	Image security gate	2026-10-07T14:49:20.6156475Z 30.76 MiB / 119.53 MiB [--------------->____________________________________________] 25.73% ? p/s ?69.63 MiB / 119.53 MiB [---------------------------------->_________________________] 58.25% ? p/s ?104.72 MiB / 119.53 MiB [--------------------------------------------------->_______] 87.61% ? p/s ?119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 147.74 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 147.74 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 147.74 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 138.21 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 138.21 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 138.21 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 129.30 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 129.30 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 129.30 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 120.95 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 120.95 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 120.95 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 113.15 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 113.15 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 113.15 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 105.85 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 105.85 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [-----------------------------------------------] 100.00% 31.14 MiB p/s 4.0s2026-10-07T14:49:20Z	INFO	[vulndb] Artifact successfully downloaded	repo="mirror.gcr.io/aquasec/trivy-db:2"
+image	Image security gate	2026-10-07T14:49:20.6163820Z 2026-10-07T14:49:20Z	INFO	[vuln] Vulnerability scanning is enabled
+image	Image security gate	2026-10-07T14:49:20.6164999Z 2026-10-07T14:49:20Z	INFO	[secret] Secret scanning is enabled
+image	Image security gate	2026-10-07T14:49:20.6166500Z 2026-10-07T14:49:20Z	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+image	Image security gate	2026-10-07T14:49:20.6168093Z 2026-10-07T14:49:20Z	INFO	[secret] Please see https://trivy.dev/docs/v0.70/guide/scanner/secret#recommendation for faster secret detection
+image	Image security gate	2026-10-07T14:49:24.2341464Z 2026-10-07T14:49:24Z	INFO	[python] Licenses acquired from one or more METADATA files may be subject to additional terms. Use `--debug` flag to see all affected packages.
+image	Image security gate	2026-10-07T14:49:24.3055331Z 2026-10-07T14:49:24Z	INFO	Detected OS	family="debian" version="13.7"
+image	Image security gate	2026-10-07T14:49:24.3056430Z 2026-10-07T14:49:24Z	INFO	[debian] Detecting vulnerabilities...	os_version="13" pkg_num=87
+image	Image security gate	2026-10-07T14:49:24.3164998Z 2026-10-07T14:49:24Z	INFO	Number of language-specific files	num=1
+image	Image security gate	2026-10-07T14:49:24.3168812Z 2026-10-07T14:49:24Z	INFO	[python-pkg] Detecting vulnerabilities...
+image	Image security gate	2026-10-07T14:49:24.3170307Z 2026-10-07T14:49:24Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.70/guide/scanner/vulnerability#severity-selection for details.
+image	Image security gate	2026-10-07T14:49:24.3547470Z 
+image	Image security gate	2026-10-07T14:49:24.3547865Z Report Summary
+image	Image security gate	2026-10-07T14:49:24.3548101Z 
+image	Image security gate	2026-10-07T14:49:24.3548954Z ┌──────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬─────────┐
+image	Image security gate	2026-10-07T14:49:24.3550211Z │                                Target                                │    Type    │ Vulnerabilities │ Secrets │
+image	Image security gate	2026-10-07T14:49:24.3551956Z ├──────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+image	Image security gate	2026-10-07T14:49:24.3553512Z │ devops-final:8fdc4e970d759eac156516101c33e64b5cf6f065 (debian 13.7)  │   debian   │       44        │    -    │
+image	Image security gate	2026-10-07T14:49:24.3555335Z ├──────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+image	Image security gate	2026-10-07T14:49:24.3556275Z │ usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA │ python-pkg │        0        │    -    │
+image	Image security gate	2026-10-07T14:49:24.3557184Z └──────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴─────────┘
+image	Image security gate	2026-10-07T14:49:24.3557652Z Legend:
+image	Image security gate	2026-10-07T14:49:24.3557875Z - '-': Not scanned
+image	Image security gate	2026-10-07T14:49:24.3558149Z - '0': Clean (no security findings detected)
+image	Image security gate	2026-10-07T14:49:24.3558646Z 
+image	Image security gate	2026-10-07T14:49:24.3558652Z 
+image	Image security gate	2026-10-07T14:49:24.3558784Z For OSS Maintainers: VEX Notice
+image	Image security gate	2026-10-07T14:49:24.3559086Z --------------------------------
+image	Image security gate	2026-10-07T14:49:24.3560064Z If you're an OSS maintainer and Trivy has detected vulnerabilities in your project that you believe are not actually exploitable, consider issuing a VEX (Vulnerability Exploitability eXchange) statement.
+image	Image security gate	2026-10-07T14:49:24.3561568Z VEX allows you to communicate the actual status of vulnerabilities in your project, improving security transparency and reducing false positives for your users.
+image	Image security gate	2026-10-07T14:49:24.3562704Z Learn more and start using VEX: https://trivy.dev/docs/v0.70/guide/supply-chain/vex/repo#publishing-vex-documents
+image	Image security gate	2026-10-07T14:49:24.3563240Z 
+image	Image security gate	2026-10-07T14:49:24.3563496Z To disable this notice, set the TRIVY_DISABLE_VEX_NOTICE environment variable.
+image	Image security gate	2026-10-07T14:49:24.3563838Z 
+image	Image security gate	2026-10-07T14:49:24.3563842Z 
+image	Image security gate	2026-10-07T14:49:24.3564036Z devops-final:8fdc4e970d759eac156516101c33e64b5cf6f065 (debian 13.7)
+image	Image security gate	2026-10-07T14:49:24.3564426Z ===================================================================
+image	Image security gate	2026-10-07T14:49:24.3565148Z Total: 44 (HIGH: 44, CRITICAL: 0)
+image	Image security gate	2026-10-07T14:49:24.3565409Z 
+image	Image security gate	2026-10-07T14:49:24.3565968Z ┌───────────────┬────────────────┬──────────┬──────────────┬───────────────────────────────────┬───────────────┬─────────────────────────────────────────────────────────────┐
+image	Image security gate	2026-10-07T14:49:24.3566928Z │    Library    │ Vulnerability  │ Severity │    Status    │         Installed Version         │ Fixed Version │                            Title                            │
+image	Image security gate	2026-10-07T14:49:24.3567953Z ├───────────────┼────────────────┼──────────┼──────────────┼───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3568902Z │ bsdutils      │ CVE-2026-76642 │ HIGH     │ affected     │ 1:2.41.5-0+deb13u1                │               │ util-linux: util-linux: failed external mount helper still  │
+image	Image security gate	2026-10-07T14:49:24.3569831Z │               │                │          │              │                                   │               │ runs privileged X-mount post-hooks                          │
+image	Image security gate	2026-10-07T14:49:24.3570826Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-76642                  │
+image	Image security gate	2026-10-07T14:49:24.3571647Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3572463Z │               │ CVE-2026-78408 │          │              │                                   │               │ util-linux: util-linux: nsenter --join-cgroup leaks root    │
+image	Image security gate	2026-10-07T14:49:24.3573325Z │               │                │          │              │                                   │               │ cgroup migration authority                                  │
+image	Image security gate	2026-10-07T14:49:24.3574234Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78408                  │
+image	Image security gate	2026-10-07T14:49:24.3586066Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3587592Z │               │ CVE-2026-78409 │          │              │                                   │               │ util-linux: util-linux: X-mount.subdir detached-tree        │
+image	Image security gate	2026-10-07T14:49:24.3589078Z │               │                │          │              │                                   │               │ resolution can escape via intermediate symlinks             │
+image	Image security gate	2026-10-07T14:49:24.3590502Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78409                  │
+image	Image security gate	2026-10-07T14:49:24.3592028Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3593519Z │               │ CVE-2026-78410 │          │              │                                   │               │ util-linux: util-linux: restricted bind mounts do not pin   │
+image	Image security gate	2026-10-07T14:49:24.3595447Z │               │                │          │              │                                   │               │ the source, allowing X-mount.owner/group/mode...            │
+image	Image security gate	2026-10-07T14:49:24.3596879Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78410                  │
+image	Image security gate	2026-10-07T14:49:24.3598483Z ├───────────────┼────────────────┤          │              ├───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3600119Z │ libacl1       │ CVE-2026-54369 │          │              │ 2.3.2-2+b1                        │               │ acl: Symlink traversal privilege escalation via libacl      │
+image	Image security gate	2026-10-07T14:49:24.3601913Z │               │                │          │              │                                   │               │ functions                                                   │
+image	Image security gate	2026-10-07T14:49:24.3602634Z 
+image	Image security gate	2026-10-07T14:49:24.3602848Z 📣 ^[[34mNotices:^[[0m
+image	Image security gate	2026-10-07T14:49:24.3603370Z   - Version 0.75.0 of Trivy is now available, current version is 0.70.0
+image	Image security gate	2026-10-07T14:49:24.3603842Z 
+image	Image security gate	2026-10-07T14:49:24.3604226Z To suppress version checks, run Trivy scans with the --skip-version-check flag
+image	Image security gate	2026-10-07T14:49:24.3604979Z 
+image	Image security gate	2026-10-07T14:49:24.3605710Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-54369                  │
+image	Image security gate	2026-10-07T14:49:24.3607320Z ├───────────────┼────────────────┤          │              ├───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3609123Z │ libblkid1     │ CVE-2026-76642 │          │              │ 2.41.5-0+deb13u1                  │               │ util-linux: util-linux: failed external mount helper still  │
+image	Image security gate	2026-10-07T14:49:24.3610584Z │               │                │          │              │                                   │               │ runs privileged X-mount post-hooks                          │
+image	Image security gate	2026-10-07T14:49:24.3611987Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-76642                  │
+image	Image security gate	2026-10-07T14:49:24.3613474Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3615082Z │               │ CVE-2026-78408 │          │              │                                   │               │ util-linux: util-linux: nsenter --join-cgroup leaks root    │
+image	Image security gate	2026-10-07T14:49:24.3616595Z │               │                │          │              │                                   │               │ cgroup migration authority                                  │
+image	Image security gate	2026-10-07T14:49:24.3617879Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78408                  │
+image	Image security gate	2026-10-07T14:49:24.3618940Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3619762Z │               │ CVE-2026-78409 │          │              │                                   │               │ util-linux: util-linux: X-mount.subdir detached-tree        │
+image	Image security gate	2026-10-07T14:49:24.3620691Z │               │                │          │              │                                   │               │ resolution can escape via intermediate symlinks             │
+image	Image security gate	2026-10-07T14:49:24.3622414Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78409                  │
+image	Image security gate	2026-10-07T14:49:24.3624118Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3625663Z │               │ CVE-2026-78410 │          │              │                                   │               │ util-linux: util-linux: restricted bind mounts do not pin   │
+image	Image security gate	2026-10-07T14:49:24.3626505Z │               │                │          │              │                                   │               │ the source, allowing X-mount.owner/group/mode...            │
+image	Image security gate	2026-10-07T14:49:24.3627299Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78410                  │
+image	Image security gate	2026-10-07T14:49:24.3628353Z ├───────────────┼────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3629214Z │ liblastlog2-2 │ CVE-2026-76642 │          │              │                                   │               │ util-linux: util-linux: failed external mount helper still  │
+image	Image security gate	2026-10-07T14:49:24.3630065Z │               │                │          │              │                                   │               │ runs privileged X-mount post-hooks                          │
+image	Image security gate	2026-10-07T14:49:24.3630830Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-76642                  │
+image	Image security gate	2026-10-07T14:49:24.3631628Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3632460Z │               │ CVE-2026-78408 │          │              │                                   │               │ util-linux: util-linux: nsenter --join-cgroup leaks root    │
+image	Image security gate	2026-10-07T14:49:24.3633255Z │               │                │          │              │                                   │               │ cgroup migration authority                                  │
+image	Image security gate	2026-10-07T14:49:24.3634015Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78408                  │
+image	Image security gate	2026-10-07T14:49:24.3635231Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3636065Z │               │ CVE-2026-78409 │          │              │                                   │               │ util-linux: util-linux: X-mount.subdir detached-tree        │
+image	Image security gate	2026-10-07T14:49:24.3637074Z │               │                │          │              │                                   │               │ resolution can escape via intermediate symlinks             │
+image	Image security gate	2026-10-07T14:49:24.3637880Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78409                  │
+image	Image security gate	2026-10-07T14:49:24.3638693Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3639492Z │               │ CVE-2026-78410 │          │              │                                   │               │ util-linux: util-linux: restricted bind mounts do not pin   │
+image	Image security gate	2026-10-07T14:49:24.3640302Z │               │                │          │              │                                   │               │ the source, allowing X-mount.owner/group/mode...            │
+image	Image security gate	2026-10-07T14:49:24.3641280Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78410                  │
+image	Image security gate	2026-10-07T14:49:24.3642670Z ├───────────────┼────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3643523Z │ libmount1     │ CVE-2026-76642 │          │              │                                   │               │ util-linux: util-linux: failed external mount helper still  │
+image	Image security gate	2026-10-07T14:49:24.3644349Z │               │                │          │              │                                   │               │ runs privileged X-mount post-hooks                          │
+image	Image security gate	2026-10-07T14:49:24.3645416Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-76642                  │
+image	Image security gate	2026-10-07T14:49:24.3646247Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3647038Z │               │ CVE-2026-78408 │          │              │                                   │               │ util-linux: util-linux: nsenter --join-cgroup leaks root    │
+image	Image security gate	2026-10-07T14:49:24.3647834Z │               │                │          │              │                                   │               │ cgroup migration authority                                  │
+image	Image security gate	2026-10-07T14:49:24.3648591Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78408                  │
+image	Image security gate	2026-10-07T14:49:24.3649383Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3650356Z │               │ CVE-2026-78409 │          │              │                                   │               │ util-linux: util-linux: X-mount.subdir detached-tree        │
+image	Image security gate	2026-10-07T14:49:24.3651160Z │               │                │          │              │                                   │               │ resolution can escape via intermediate symlinks             │
+image	Image security gate	2026-10-07T14:49:24.3651923Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78409                  │
+image	Image security gate	2026-10-07T14:49:24.3652719Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3653505Z │               │ CVE-2026-78410 │          │              │                                   │               │ util-linux: util-linux: restricted bind mounts do not pin   │
+image	Image security gate	2026-10-07T14:49:24.3654440Z │               │                │          │              │                                   │               │ the source, allowing X-mount.owner/group/mode...            │
+image	Image security gate	2026-10-07T14:49:24.3655560Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78410                  │
+image	Image security gate	2026-10-07T14:49:24.3656423Z ├───────────────┼────────────────┤          │              ├───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3657323Z │ libncursesw6  │ CVE-2025-69720 │          │              │ 6.5+20250216-2                    │               │ ncurses: ncurses: Buffer overflow vulnerability may lead to │
+image	Image security gate	2026-10-07T14:49:24.3658181Z │               │                │          │              │                                   │               │ arbitrary code execution.                                   │
+image	Image security gate	2026-10-07T14:49:24.3658967Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2025-69720                  │
+image	Image security gate	2026-10-07T14:49:24.3659818Z ├───────────────┼────────────────┤          │              ├───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3660719Z │ libsmartcols1 │ CVE-2026-76642 │          │              │ 2.41.5-0+deb13u1                  │               │ util-linux: util-linux: failed external mount helper still  │
+image	Image security gate	2026-10-07T14:49:24.3661582Z │               │                │          │              │                                   │               │ runs privileged X-mount post-hooks                          │
+image	Image security gate	2026-10-07T14:49:24.3662338Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-76642                  │
+image	Image security gate	2026-10-07T14:49:24.3663302Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3664093Z │               │ CVE-2026-78408 │          │              │                                   │               │ util-linux: util-linux: nsenter --join-cgroup leaks root    │
+image	Image security gate	2026-10-07T14:49:24.3665478Z │               │                │          │              │                                   │               │ cgroup migration authority                                  │
+image	Image security gate	2026-10-07T14:49:24.3666303Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78408                  │
+image	Image security gate	2026-10-07T14:49:24.3667110Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3668105Z │               │ CVE-2026-78409 │          │              │                                   │               │ util-linux: util-linux: X-mount.subdir detached-tree        │
+image	Image security gate	2026-10-07T14:49:24.3668930Z │               │                │          │              │                                   │               │ resolution can escape via intermediate symlinks             │
+image	Image security gate	2026-10-07T14:49:24.3669703Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78409                  │
+image	Image security gate	2026-10-07T14:49:24.3670502Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3671305Z │               │ CVE-2026-78410 │          │              │                                   │               │ util-linux: util-linux: restricted bind mounts do not pin   │
+image	Image security gate	2026-10-07T14:49:24.3672131Z │               │                │          │              │                                   │               │ the source, allowing X-mount.owner/group/mode...            │
+image	Image security gate	2026-10-07T14:49:24.3672942Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78410                  │
+image	Image security gate	2026-10-07T14:49:24.3673810Z ├───────────────┼────────────────┤          │              ├───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3675031Z │ libsystemd0   │ CVE-2026-16742 │          │              │ 257.13-1~deb13u1                  │               │ systemd: systemd-homed: Local privilege escalation via      │
+image	Image security gate	2026-10-07T14:49:24.3675946Z │               │                │          │              │                                   │               │ missing home-record signature verification                  │
+image	Image security gate	2026-10-07T14:49:24.3676910Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-16742                  │
+image	Image security gate	2026-10-07T14:49:24.3677770Z ├───────────────┼────────────────┤          │              ├───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3678660Z │ libtinfo6     │ CVE-2025-69720 │          │              │ 6.5+20250216-2                    │               │ ncurses: ncurses: Buffer overflow vulnerability may lead to │
+image	Image security gate	2026-10-07T14:49:24.3679510Z │               │                │          │              │                                   │               │ arbitrary code execution.                                   │
+image	Image security gate	2026-10-07T14:49:24.3680277Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2025-69720                  │
+image	Image security gate	2026-10-07T14:49:24.3681263Z ├───────────────┼────────────────┤          │              ├───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3682163Z │ libudev1      │ CVE-2026-16742 │          │              │ 257.13-1~deb13u1                  │               │ systemd: systemd-homed: Local privilege escalation via      │
+image	Image security gate	2026-10-07T14:49:24.3683061Z │               │                │          │              │                                   │               │ missing home-record signature verification                  │
+image	Image security gate	2026-10-07T14:49:24.3683842Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-16742                  │
+image	Image security gate	2026-10-07T14:49:24.3684944Z ├───────────────┼────────────────┤          │              ├───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3685879Z │ libuuid1      │ CVE-2026-76642 │          │              │ 2.41.5-0+deb13u1                  │               │ util-linux: util-linux: failed external mount helper still  │
+image	Image security gate	2026-10-07T14:49:24.3686737Z │               │                │          │              │                                   │               │ runs privileged X-mount post-hooks                          │
+image	Image security gate	2026-10-07T14:49:24.3687501Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-76642                  │
+image	Image security gate	2026-10-07T14:49:24.3688306Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3689099Z │               │ CVE-2026-78408 │          │              │                                   │               │ util-linux: util-linux: nsenter --join-cgroup leaks root    │
+image	Image security gate	2026-10-07T14:49:24.3690068Z │               │                │          │              │                                   │               │ cgroup migration authority                                  │
+image	Image security gate	2026-10-07T14:49:24.3690839Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78408                  │
+image	Image security gate	2026-10-07T14:49:24.3691634Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3692430Z │               │ CVE-2026-78409 │          │              │                                   │               │ util-linux: util-linux: X-mount.subdir detached-tree        │
+image	Image security gate	2026-10-07T14:49:24.3693245Z │               │                │          │              │                                   │               │ resolution can escape via intermediate symlinks             │
+image	Image security gate	2026-10-07T14:49:24.3694148Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78409                  │
+image	Image security gate	2026-10-07T14:49:24.3695259Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3696135Z │               │ CVE-2026-78410 │          │              │                                   │               │ util-linux: util-linux: restricted bind mounts do not pin   │
+image	Image security gate	2026-10-07T14:49:24.3696945Z │               │                │          │              │                                   │               │ the source, allowing X-mount.owner/group/mode...            │
+image	Image security gate	2026-10-07T14:49:24.3697714Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78410                  │
+image	Image security gate	2026-10-07T14:49:24.3698602Z ├───────────────┼────────────────┤          │              ├───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3699531Z │ login         │ CVE-2026-76642 │          │              │ 1:4.16.0-2+really2.41.5-0+deb13u1 │               │ util-linux: util-linux: failed external mount helper still  │
+image	Image security gate	2026-10-07T14:49:24.3700409Z │               │                │          │              │                                   │               │ runs privileged X-mount post-hooks                          │
+image	Image security gate	2026-10-07T14:49:24.3701180Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-76642                  │
+image	Image security gate	2026-10-07T14:49:24.3701977Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3702787Z │               │ CVE-2026-78408 │          │              │                                   │               │ util-linux: util-linux: nsenter --join-cgroup leaks root    │
+image	Image security gate	2026-10-07T14:49:24.3703761Z │               │                │          │              │                                   │               │ cgroup migration authority                                  │
+image	Image security gate	2026-10-07T14:49:24.3704752Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78408                  │
+image	Image security gate	2026-10-07T14:49:24.3705597Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3706414Z │               │ CVE-2026-78409 │          │              │                                   │               │ util-linux: util-linux: X-mount.subdir detached-tree        │
+image	Image security gate	2026-10-07T14:49:24.3707371Z │               │                │          │              │                                   │               │ resolution can escape via intermediate symlinks             │
+image	Image security gate	2026-10-07T14:49:24.3708172Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78409                  │
+image	Image security gate	2026-10-07T14:49:24.3708973Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3709772Z │               │ CVE-2026-78410 │          │              │                                   │               │ util-linux: util-linux: restricted bind mounts do not pin   │
+image	Image security gate	2026-10-07T14:49:24.3710577Z │               │                │          │              │                                   │               │ the source, allowing X-mount.owner/group/mode...            │
+image	Image security gate	2026-10-07T14:49:24.3711359Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78410                  │
+image	Image security gate	2026-10-07T14:49:24.3712225Z ├───────────────┼────────────────┤          │              ├───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3713104Z │ mount         │ CVE-2026-76642 │          │              │ 2.41.5-0+deb13u1                  │               │ util-linux: util-linux: failed external mount helper still  │
+image	Image security gate	2026-10-07T14:49:24.3713951Z │               │                │          │              │                                   │               │ runs privileged X-mount post-hooks                          │
+image	Image security gate	2026-10-07T14:49:24.3714992Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-76642                  │
+image	Image security gate	2026-10-07T14:49:24.3715827Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3716797Z │               │ CVE-2026-78408 │          │              │                                   │               │ util-linux: util-linux: nsenter --join-cgroup leaks root    │
+image	Image security gate	2026-10-07T14:49:24.3717647Z │               │                │          │              │                                   │               │ cgroup migration authority                                  │
+image	Image security gate	2026-10-07T14:49:24.3718412Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78408                  │
+image	Image security gate	2026-10-07T14:49:24.3719217Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3720167Z │               │ CVE-2026-78409 │          │              │                                   │               │ util-linux: util-linux: X-mount.subdir detached-tree        │
+image	Image security gate	2026-10-07T14:49:24.3720989Z │               │                │          │              │                                   │               │ resolution can escape via intermediate symlinks             │
+image	Image security gate	2026-10-07T14:49:24.3721762Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78409                  │
+image	Image security gate	2026-10-07T14:49:24.3722563Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3723367Z │               │ CVE-2026-78410 │          │              │                                   │               │ util-linux: util-linux: restricted bind mounts do not pin   │
+image	Image security gate	2026-10-07T14:49:24.3724189Z │               │                │          │              │                                   │               │ the source, allowing X-mount.owner/group/mode...            │
+image	Image security gate	2026-10-07T14:49:24.3725267Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78410                  │
+image	Image security gate	2026-10-07T14:49:24.3726133Z ├───────────────┼────────────────┤          │              ├───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3727035Z │ ncurses-base  │ CVE-2025-69720 │          │              │ 6.5+20250216-2                    │               │ ncurses: ncurses: Buffer overflow vulnerability may lead to │
+image	Image security gate	2026-10-07T14:49:24.3727890Z │               │                │          │              │                                   │               │ arbitrary code execution.                                   │
+image	Image security gate	2026-10-07T14:49:24.3728670Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2025-69720                  │
+image	Image security gate	2026-10-07T14:49:24.3729592Z ├───────────────┤                │          │              │                                   ├───────────────┤                                                             │
+image	Image security gate	2026-10-07T14:49:24.3730322Z │ ncurses-bin   │                │          │              │                                   │               │                                                             │
+image	Image security gate	2026-10-07T14:49:24.3731019Z │               │                │          │              │                                   │               │                                                             │
+image	Image security gate	2026-10-07T14:49:24.3731692Z │               │                │          │              │                                   │               │                                                             │
+image	Image security gate	2026-10-07T14:49:24.3732643Z ├───────────────┼────────────────┤          ├──────────────┼───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3733606Z │ perl-base     │ CVE-2026-9538  │          │ fix_deferred │ 5.40.1-6+deb13u1                  │               │ perl-Archive-Tar: perl-Archive-Tar: Denial of Service via   │
+image	Image security gate	2026-10-07T14:49:24.3734718Z │               │                │          │              │                                   │               │ crafted tar header with large entry...                      │
+image	Image security gate	2026-10-07T14:49:24.3735512Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-9538                   │
+image	Image security gate	2026-10-07T14:49:24.3736394Z ├───────────────┼────────────────┤          ├──────────────┼───────────────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3737350Z │ util-linux    │ CVE-2026-76642 │          │ affected     │ 2.41.5-0+deb13u1                  │               │ util-linux: util-linux: failed external mount helper still  │
+image	Image security gate	2026-10-07T14:49:24.3738250Z │               │                │          │              │                                   │               │ runs privileged X-mount post-hooks                          │
+image	Image security gate	2026-10-07T14:49:24.3739024Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-76642                  │
+image	Image security gate	2026-10-07T14:49:24.3739822Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3740616Z │               │ CVE-2026-78408 │          │              │                                   │               │ util-linux: util-linux: nsenter --join-cgroup leaks root    │
+image	Image security gate	2026-10-07T14:49:24.3741434Z │               │                │          │              │                                   │               │ cgroup migration authority                                  │
+image	Image security gate	2026-10-07T14:49:24.3742379Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78408                  │
+image	Image security gate	2026-10-07T14:49:24.3743174Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3743973Z │               │ CVE-2026-78409 │          │              │                                   │               │ util-linux: util-linux: X-mount.subdir detached-tree        │
+image	Image security gate	2026-10-07T14:49:24.3745004Z │               │                │          │              │                                   │               │ resolution can escape via intermediate symlinks             │
+image	Image security gate	2026-10-07T14:49:24.3745948Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78409                  │
+image	Image security gate	2026-10-07T14:49:24.3746766Z │               ├────────────────┤          │              │                                   ├───────────────┼─────────────────────────────────────────────────────────────┤
+image	Image security gate	2026-10-07T14:49:24.3747563Z │               │ CVE-2026-78410 │          │              │                                   │               │ util-linux: util-linux: restricted bind mounts do not pin   │
+image	Image security gate	2026-10-07T14:49:24.3748375Z │               │                │          │              │                                   │               │ the source, allowing X-mount.owner/group/mode...            │
+image	Image security gate	2026-10-07T14:49:24.3749146Z │               │                │          │              │                                   │               │ https://avd.aquasec.com/nvd/cve-2026-78410                  │
+image	Image security gate	2026-10-07T14:49:24.3750036Z └───────────────┴────────────────┴──────────┴──────────────┴───────────────────────────────────┴───────────────┴─────────────────────────────────────────────────────────────┘
+image	Image security gate	2026-10-07T14:49:24.3760469Z ##[error]Process completed with exit code 1.
+image	Image security gate	2026-10-07T14:49:24.3767930Z ##[end-action id=__aquasecurity_trivy-action.__run_4;outcome=failure;conclusion=failure;duration_ms=8856]
+image	Image security gate	2026-10-07T14:49:24.3771825Z ##[start-action display=Remove Trivy Envs file;id=__aquasecurity_trivy-action.__run_5]
+image	Image security gate	2026-10-07T14:49:24.3791405Z ##[group]Run rm -f trivy_envs.txt
+image	Image security gate	2026-10-07T14:49:24.3791717Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+image	Image security gate	2026-10-07T14:49:24.3855054Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+image	Image security gate	2026-10-07T14:49:24.3855413Z ##[endgroup]
+image	Image security gate	2026-10-07T14:49:24.3962007Z ##[end-action id=__aquasecurity_trivy-action.__run_5;outcome=success;conclusion=success;duration_ms=18]

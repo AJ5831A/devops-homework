@@ -97,3 +97,7 @@ Download `secure-calculator-build`, `source-security-reports`, `container-securi
 - [Trivy action configuration](https://github.com/aquasecurity/trivy-action)
 - [Bandit](https://bandit.readthedocs.io/en/latest/)
 - [pip-audit](https://github.com/pypa/pip-audit)
+
+## Container remediation
+
+The first hosted image scan blocked the Debian slim base on HIGH severity OS findings. The runtime now uses `python:3.12-alpine` and runs `apk upgrade --no-cache` during its build. This removes unnecessary Debian packages and applies Alpine updates while retaining the same blocking HIGH/CRITICAL gate, including unfixed findings. See [actual failure logs and remediation](../evidence/pipelines/image-remediation.md) for evidence. A later successful scan is required to confirm the fix.
