@@ -55,7 +55,7 @@ helm rollback devops-demo 1 -n devops-final --wait --timeout 180s
 helm history devops-demo -n devops-final
 # Load long enough for metrics-server and HPA sampling.
 for worker in 1 2 3 4 5 6; do
-  (end=$((SECONDS+150)); while ((SECONDS<end)); do curl -fsS -H 'Host: devops.local' "http://$CLUSTER_IP/work?rounds=100000" >/dev/null; done) &
+  (set +x; end=$((SECONDS+150)); while ((SECONDS<end)); do curl -fsS -H 'Host: devops.local' "http://$CLUSTER_IP/work?rounds=100000" >/dev/null; done) &
 done
 for sample in $(seq 1 10); do sleep 15; kubectl -n devops-final get hpa; kubectl -n devops-final top pods || true; done
 kubectl -n devops-final describe hpa devops-demo
@@ -86,11 +86,18 @@ kubectl -n gitops-lab get pods,svc
 kubectl -n devops-final get pods,svc,ingress,hpa
 curl -f -H 'Host: devops.local' "http://$CLUSTER_IP/readyz"
 # Use a real remote temporary branch for change and rollback, without changing main.
+push_branch() {
+  for attempt in 1 2 3 4 5; do
+    if git push origin "$BRANCH"; then return 0; fi
+    sleep $((attempt * 5))
+  done
+  return 1
+}
 BRANCH="lab/gitops-runtime-$GITHUB_RUN_ID"
 git checkout -b "$BRANCH"
 git config user.name 'Aryan Jakhar'
 git config user.email 'AJ5831A@users.noreply.github.com'
-git push origin "$BRANCH"
+push_branch
 kubectl -n argocd patch application monitoring-gitops-lab --type merge -p "{\"spec\":{\"source\":{\"targetRevision\":\"$BRANCH\"}}}"
 python3 - <<'PY'
 from pathlib import Path
@@ -99,7 +106,7 @@ s=p.read_text(); assert 'replicas: 2' in s; p.write_text(s.replace('replicas: 2'
 PY
 git add 19-monitoring-gitops/gitops/deployment.yaml
 git commit -m 'Demonstrate GitOps three-replica promotion'
-git push origin "$BRANCH"
+push_branch
 kubectl -n argocd annotate application monitoring-gitops-lab argocd.argoproj.io/refresh=hard --overwrite
 sleep 15
 wait_app monitoring-gitops-lab
@@ -111,7 +118,7 @@ wait_app monitoring-gitops-lab
 test "$(kubectl -n gitops-lab get deployment gitops-web -o jsonpath='{.spec.replicas}')" = 3
 kubectl -n gitops-lab get pods
 git revert --no-edit HEAD
-git push origin "$BRANCH"
+push_branch
 kubectl -n argocd annotate application monitoring-gitops-lab argocd.argoproj.io/refresh=hard --overwrite
 sleep 15
 wait_app monitoring-gitops-lab
