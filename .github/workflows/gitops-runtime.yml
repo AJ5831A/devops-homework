@@ -1,0 +1,53 @@
+name: GitOps and final project runtime
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v5.0.0
+        with:
+          version: v3.17.3
+      - uses: actions/download-artifact@v4
+        with:
+          name: final-image
+          run-id: 37640204903
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/image
+      - name: Create disposable cluster
+        run: |
+          curl -fsSL https://storage.googleapis.com/minikube/releases/v1.39.0/minikube-linux-amd64 -o /tmp/minikube
+          sudo install /tmp/minikube /usr/local/bin/minikube
+          minikube start -p gitops-runtime --driver=docker --cpus=2 --memory=5000 --kubernetes-version=v1.34.0
+          minikube -p gitops-runtime addons enable ingress
+          minikube -p gitops-runtime addons enable metrics-server
+          docker load -i /tmp/image/final-image.tar
+          docker tag devops-final:be9442981c475a39475f4f14501e0fc95244b681 ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681
+          docker tag devops-final:be9442981c475a39475f4f14501e0fc95244b681 devops-final:local
+          minikube -p gitops-runtime image load ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681
+          minikube -p gitops-runtime image load devops-final:local
+      - name: Run final project and GitOps experiments
+        run: bash scripts/run-gitops-evidence.sh
+      - name: Capture browser evidence
+        if: success()
+        run: |
+          npm install --prefix /tmp/browser playwright
+          /tmp/browser/node_modules/.bin/playwright install --with-deps chromium
+          NODE_PATH=/tmp/browser/node_modules node scripts/capture-argocd.cjs
+      - name: Diagnostics
+        if: always()
+        run: |
+          mkdir -p evidence/gitops
+          kubectl get pods -A -o wide > evidence/gitops/pods-final.txt
+          kubectl get events -A --sort-by=.lastTimestamp > evidence/gitops/events-final.txt
+          kubectl -n argocd get applications -o yaml > evidence/gitops/applications-final.yaml || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gitops-final-runtime-evidence
+          path: evidence/gitops/
