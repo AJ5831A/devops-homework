@@ -1,0 +1,10 @@
+CONTAINER ID   IMAGE               COMMAND                  CREATED              STATUS              PORTS                       NAMES
+55969b09b8dc   alpine:3.22         "sleep 3600"             41 seconds ago       Up 41 seconds                                   hw-backend
+da284c817e0d   alpine:3.22         "sleep 3600"             41 seconds ago       Up 41 seconds                                   hw-frontend
+95804f654744   hw-multistage:lab   "/app"                   55 seconds ago       Up 54 seconds       127.0.0.1:8080->8080/tcp    hw-multistage
+82ef495b65a6   hw-nginx-app:lab    "/docker-entrypoint.…"   About a minute ago   Up About a minute   127.0.0.1:18083->80/tcp     hw-nginx-app
+aa2fc4746793   hw-react-app:lab    "/docker-entrypoint.…"   About a minute ago   Up About a minute   127.0.0.1:18082->80/tcp     hw-react-app
+929295c82781   hw-apache-app:lab   "httpd-foreground"       2 minutes ago        Up 2 minutes        127.0.0.1:18081->80/tcp     hw-apache-app
+b2080c4f8caa   hw-java-app:lab     "/__cacert_entrypoin…"   2 minutes ago        Up 2 minutes        127.0.0.1:18080->8000/tcp   hw-java-app
+c36e59f3b320   hw-python-app:lab   "python app.py"          9 minutes ago        Up 9 minutes        127.0.0.1:18050->5000/tcp   hw-python-app
+3b3792af5b73   hw-nodejs-app:lab   "docker-entrypoint.s…"   11 minutes ago       Up 11 minutes       127.0.0.1:18030->3000/tcp   hw-nodejs-app

@@ -56,17 +56,18 @@ docker ps
 # <id>           multistage-hello   "/app"    ...   0.0.0.0:8080->8080/tcp   multistage-demo
 ```
 
-> **Note:** Docker isn't installed on the machine this was authored on, so
-> this hasn't been built/run here yet — needs to be run on a Docker-capable
-> machine to capture the real `curl`/`docker ps` output and screenshots below
-> before final submission.
+**Executed on 2026-10-07.** The image built in two stages and the running
+container returned `Hello World from Docker multi-stage build` on host port
+8080. See [actual build/run output](../evidence/docker/runtime.log),
+[HTTP response](../evidence/docker/multistage-response.txt), and
+[`docker ps`](../evidence/docker/docker-ps.txt).
 
 ## Task 2: Documentation
 
 - **Name:** Aryan Jakhar
 - **Enrollment number:** 24BCS10305
-- **Screenshot/output — app running successfully:** _\<add after running `curl http://localhost:8080` or opening it in a browser\>_
-- **Screenshot/output — `docker ps` showing the container on port 8080:** _\<add after running `docker ps`\>_
+- **Screenshot/output — app running successfully:** captured below.
+- **Screenshot/output — `docker ps` showing the container on port 8080:** captured below.
 
 ## Task 3: Deploy 3 Different Application Types
 
@@ -83,3 +84,7 @@ docker build -t java-hello   java-app/   && docker run -d -p 8000:8000 --name ja
 
 docker ps
 ```
+
+![Running multi-stage application](../evidence/docker/multistage-app.png)
+
+![Recorded docker ps output](../evidence/docker/docker-ps.png)

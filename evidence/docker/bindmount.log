@@ -1,0 +1,17 @@
++zsh:6> docker rm -f hw-bindmount
+hw-bindmount
++zsh:6> BIND_DIR='/Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/.runtime-bindmount' 
++zsh:6> printf '<h1>Hello students</h1>\n'
++zsh:6> docker run -d --name hw-bindmount -p 127.0.0.1:18090:80 -v '/Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/.runtime-bindmount:/usr/share/nginx/html:ro' nginx:alpine
+d92f58b62c46b41d7ba6be4fda5bfef1a959bbf1b0a95ef55cf0a36486bbb5be
++zsh:6> curl -fsS --retry 10 --retry-all-errors --retry-delay 1 http://127.0.0.1:18090
+curl: (52) Empty reply from server
+<h1>Hello students</h1>
++zsh:6> docker inspect hw-bindmount --format 'StartedAt={{.State.StartedAt}}'
+StartedAt=2026-10-07T15:09:58.464813693Z
++zsh:8> set -x
++zsh:8> printf '<h1>Hello students - updated!</h1>\n'
++zsh:8> curl -fsS http://127.0.0.1:18090
+<h1>Hello students - updated!</h1>
++zsh:8> docker inspect hw-bindmount --format 'StartedAt={{.State.StartedAt}}'
+StartedAt=2026-10-07T15:09:58.464813693Z

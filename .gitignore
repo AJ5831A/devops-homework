@@ -17,3 +17,5 @@ crash.log
 build/
 *.tar
 *.tar.gz
+
+.runtime-bindmount/

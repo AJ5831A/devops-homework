@@ -2,11 +2,18 @@
 
 Six "Hello World" web apps, each in its own folder with its own `Dockerfile`.
 
-> **Note:** Docker isn't installed on the machine these were authored on, so
-> the images below were **not built or run here** — the code and Dockerfiles
-> are written and ready, but need to actually be built/run (and the resulting
-> "Hello World" webpage screenshotted) on a machine with Docker before final
-> submission.
+**Executed on 2026-10-07 using Docker in the Ubuntu Colima lab VM.**
+All six images built and returned their Hello World pages. Browser screenshots
+below show the running applications; the [full transcript](../evidence/docker/runtime.log)
+records the actual build/run/curl commands. The evidence script uses distinct
+host ports 18030, 18050, 18080–18083 so the apps run together.
+
+![Node.js](../evidence/docker/nodejs-app.png)
+![Python](../evidence/docker/python-app.png)
+![Java](../evidence/docker/java-app.png)
+![Apache](../evidence/docker/Apache-app.png)
+![React](../evidence/docker/React-app.png)
+![Nginx](../evidence/docker/nginx-app.png)
 
 ## nodejs-app
 

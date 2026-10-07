@@ -1,0 +1,20 @@
+Wed Oct  7 15:05:50 UTC 2026
+devops-homework
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+NAME              STATUS   ROLES           AGE    VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION      CONTAINER-RUNTIME
+devops-homework   Ready    control-plane   108s   v1.34.0   192.168.49.2   <none>        Debian GNU/Linux 12 (bookworm)   6.8.0-117-generic   containerd://2.3.4
+NAMESPACE     NAME                                       READY   STATUS              RESTARTS   AGE
+kube-system   calico-kube-controllers-855c4cc49d-54lrf   0/1     ContainerCreating   0          100s
+kube-system   calico-node-v9d5l                          0/1     Init:2/3            0          100s
+kube-system   coredns-66bc5c9577-sd6z8                   0/1     ContainerCreating   0          100s
+kube-system   etcd-devops-homework                       1/1     Running             0          106s
+kube-system   kube-apiserver-devops-homework             1/1     Running             0          106s
+kube-system   kube-controller-manager-devops-homework    1/1     Running             0          106s
+kube-system   kube-proxy-vsgmb                           1/1     Running             0          100s
+kube-system   kube-scheduler-devops-homework             1/1     Running             0          106s
+kube-system   storage-provisioner                        1/1     Running             0          104s

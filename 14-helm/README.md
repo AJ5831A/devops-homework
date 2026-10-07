@@ -1,6 +1,6 @@
 # Helm — Session 15
 
-Commands and a complete Notes chart implement the supplied session and mini project. Helm lint/render checks passed in hosted CI; see [infrastructure validation evidence](../evidence/infrastructure/README.md). Cluster installation output and screenshots remain **pending execution**; none below are claimed as observed cluster output.
+The Notes chart was installed and upgraded on the local Minikube cluster on 7 October 2026. A deliberately invalid image produced ErrImagePull, then rollback restored three healthy production replicas. See [runtime evidence](../evidence/helm/README.md) and [infrastructure validation](../evidence/infrastructure/README.md).
 
 ## Task 1: Charts and commands
 
@@ -37,7 +37,7 @@ kubectl port-forward -n helm-demo svc/notes-dev-svc 8080:80
 # In another terminal: curl http://localhost:8080
 ```
 
-Expected, not captured: release revision 1 has one ready Pod and the webpage says `development`. Save the real status and browser screenshot in `evidence/`.
+Observed: revision 1 had one ready Pod and its HTTP page said `development`; revision 2 had three ready Pods and said `production`. The captured [transcript](../evidence/helm/20261007T150849Z/transcript.txt) and HTTP responses record both states.
 
 ```bash
 helm upgrade notes-dev notes-chart -n helm-demo -f notes-chart/values-prod.yaml --wait --timeout 3m
@@ -86,3 +86,13 @@ bash scripts/run-helm-evidence.sh
 ```
 
 The script uses only namespace `hw-runtime-helm`, refuses to overwrite an existing `notes-evidence` release, and records a timestamped transcript plus actual manifests, HTTP responses, broken-Pod diagnostics and Helm history under `evidence/helm/`. It asserts ready replica counts, ConfigMap/HTTP environment values, the image-pull failure and revisions 1 → 2 → 3 → 4 (rollback to revision 2). A successful run writes `result.txt`; absence of that file means the entire workflow has not passed. `CLEANUP=1` uninstalls only the release after verification. Run `helm uninstall notes-evidence -n hw-runtime-helm --kube-context devops-homework` deliberately before repeating the fresh-install exercise.
+
+## Recorded release lifecycle
+
+The [runtime evidence index](../evidence/helm/README.md) links the complete transcript, ready-Pod counts, real HTTP responses and history. Revision 3 used `broken-tag-does-not-exist`; the new Pod entered `ErrImagePull` while the three existing Pods stayed healthy. `helm rollback notes-evidence 2` created revision 4 with description `Rollback to 2`, restored the valid image and returned the production page.
+
+![Captured rollback output](../evidence/helm/20261007T150849Z/rollback-output.png)
+
+![Live Notes production page](../evidence/helm/20261007T150849Z/notes-browser.png)
+
+The release was then [uninstalled successfully](../evidence/helm/20261007T150849Z/uninstall.txt).

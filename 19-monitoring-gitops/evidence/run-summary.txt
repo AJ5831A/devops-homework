@@ -1,0 +1,7 @@
+2026-10-07T15:08:54.988482+00:00
+Local Docker Compose monitoring verified: healthy app, Prometheus scrape, CPU load and memory metrics, Grafana dashboard, down alert firing and recovery.
+NAME                                IMAGE                      COMMAND                  SERVICE      CREATED         STATUS                            PORTS
+19-monitoring-gitops-app-1          19-monitoring-gitops-app   "python app.py"          app          3 minutes ago   Up 7 seconds (health: starting)   127.0.0.1:18089->8080/tcp
+19-monitoring-gitops-grafana-1      grafana/grafana:11.6.0     "/run.sh"                grafana      3 minutes ago   Up 3 minutes                      127.0.0.1:3000->3000/tcp
+19-monitoring-gitops-prometheus-1   prom/prometheus:v3.2.1     "/bin/prometheus --c…"   prometheus   3 minutes ago   Up 3 minutes                      127.0.0.1:9090->9090/tcp
+

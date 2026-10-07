@@ -1,0 +1,10 @@
+Wed Oct  7 15:11:56 UTC 2026
+release "notes-evidence" uninstalled
+NAME	NAMESPACE	REVISION	UPDATED	STATUS	CHART	APP VERSION
+NAME                                        READY   STATUS        RESTARTS   AGE
+pod/notes-evidence-deploy-d46b88456-55zxd   1/1     Terminating   0          2m33s
+pod/notes-evidence-deploy-d46b88456-gfj5c   1/1     Terminating   0          2m30s
+pod/notes-evidence-deploy-d46b88456-r8x58   1/1     Terminating   0          2m31s
+
+NAME                         DATA   AGE
+configmap/kube-root-ca.crt   1      3m6s

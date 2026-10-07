@@ -116,3 +116,9 @@ Commands reviewed and practiced (standard file/process/permission ops):
 | `tar -czvf` | Archive and compress files |
 | `chmod +x` | Make a file executable |
 | `sudo` | Run a command with elevated privileges |
+
+## Captured Ubuntu output
+
+The screenshot below renders the actual recorded transcript, not a simulated terminal.
+
+![Ubuntu user and journal exercise](../evidence/linux/ubuntu-users-journal.png)

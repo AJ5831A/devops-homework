@@ -1,0 +1,32 @@
+2026-10-07T15:07:58.139336+00:00
+app-1  | {"request_id": "233a425d-e2e8-48d6-875c-5e9555df897f", "path": "/work", "status": 200, "duration_ms": 11.952}
+app-1  | {"request_id": "511a6e71-7baf-4d30-bada-c7ebb87d538d", "path": "/work", "status": 200, "duration_ms": 22.416}
+app-1  | {"request_id": "2a3c9128-774f-4e94-998a-648c82ea0ca3", "path": "/work", "status": 200, "duration_ms": 15.508}
+app-1  | {"request_id": "66f78ab5-f5b1-4f7c-ac48-be4d5951bb0d", "path": "/work", "status": 200, "duration_ms": 13.229}
+app-1  | {"request_id": "e210dbaf-0217-476c-bd45-f40cebedbc7c", "path": "/work", "status": 200, "duration_ms": 13.407}
+app-1  | {"request_id": "5ebcd219-0c20-4f15-ab82-e29f4a6f42bb", "path": "/work", "status": 200, "duration_ms": 11.741}
+app-1  | {"request_id": "7bf6357f-24e2-453b-aa99-3fcfc21c20f2", "path": "/work", "status": 200, "duration_ms": 12.573}
+app-1  | {"request_id": "5443c9be-36f5-409d-b5cb-e5be4a407204", "path": "/work", "status": 200, "duration_ms": 12.924}
+app-1  | {"request_id": "fa7e9e28-b2aa-4687-aeb5-e336e22b1a42", "path": "/work", "status": 200, "duration_ms": 12.539}
+app-1  | {"request_id": "37e55852-9590-45c9-933e-a2e6a026ed33", "path": "/metrics", "status": 200, "duration_ms": 0.113}
+app-1  | {"request_id": "56dfa330-7c82-4133-916d-64fe46925ac9", "path": "/metrics", "status": 200, "duration_ms": 0.148}
+app-1  | {"request_id": "37813963-5288-4209-a48a-03136dac0f80", "path": "/healthz", "status": 200, "duration_ms": 0.101}
+app-1  | {"request_id": "18feeb66-0d4c-4a00-ae8f-089e7bdec093", "path": "/metrics", "status": 200, "duration_ms": 0.094}
+app-1  | {"request_id": "81e2e726-6236-4ef5-84aa-834645ef0e75", "path": "/metrics", "status": 200, "duration_ms": 0.12}
+app-1  | {"request_id": "7b6da443-eb3f-496c-8886-0aac09094588", "path": "/metrics", "status": 200, "duration_ms": 0.119}
+app-1  | {"request_id": "98109ff0-9f36-4ec0-8726-583357d3c88f", "path": "/healthz", "status": 200, "duration_ms": 0.09}
+app-1  | {"request_id": "3ebe8f62-92fc-4870-8427-156d4fecf6ad", "path": "/metrics", "status": 200, "duration_ms": 0.104}
+app-1  | {"request_id": "d36360c5-eeee-442b-aba4-cdb48675f3f5", "path": "/metrics", "status": 200, "duration_ms": 0.118}
+app-1  | {"request_id": "168ed87e-0948-434d-8644-67ec874f507a", "path": "/metrics", "status": 200, "duration_ms": 0.55}
+app-1  | {"request_id": "9f79de7e-bfd0-4021-8644-04c1830de20a", "path": "/healthz", "status": 200, "duration_ms": 0.222}
+app-1  | {"request_id": "08bba2e2-0488-43fa-aea1-46e6e8c3eb2f", "path": "/metrics", "status": 200, "duration_ms": 0.175}
+app-1  | {"request_id": "30053124-627a-46a5-92f1-bdac9f08a62a", "path": "/metrics", "status": 200, "duration_ms": 0.267}
+app-1  | {"request_id": "5d7ac95b-cc08-452b-a500-ad0acb4f5ea2", "path": "/metrics", "status": 200, "duration_ms": 0.115}
+app-1  | {"request_id": "dffeb356-7372-4b49-9d66-90c696e4506e", "path": "/healthz", "status": 200, "duration_ms": 0.111}
+app-1  | {"request_id": "626ff7a9-a086-40b8-9353-6ceebdbcb632", "path": "/metrics", "status": 200, "duration_ms": 0.136}
+app-1  | {"request_id": "292c8477-0c40-487a-937f-cd9468e34986", "path": "/metrics", "status": 200, "duration_ms": 0.114}
+app-1  | {"request_id": "f8fee93e-6b80-443e-9f83-72fccad577f5", "path": "/metrics", "status": 200, "duration_ms": 0.1}
+app-1  | {"request_id": "01659aac-0be9-48b1-87df-864582c6b4c8", "path": "/healthz", "status": 200, "duration_ms": 0.111}
+app-1  | {"request_id": "7882cb43-a77c-4328-b0a9-5bb2928566bd", "path": "/metrics", "status": 200, "duration_ms": 0.147}
+app-1  | {"request_id": "0b5919e5-f401-417c-9a5e-e0c5b448b49d", "path": "/metrics", "status": 200, "duration_ms": 0.098}
+

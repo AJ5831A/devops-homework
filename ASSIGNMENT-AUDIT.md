@@ -41,19 +41,18 @@ attached to two networks does not automatically route between them.
 | 47–48 | 19-monitoring-gitops | Compose app/Prometheus/Grafana, metrics/logs/alerts, observability notes, Argo reconciliation demo |
 | 49–54 | final-devops-project | Required directory tree, app through gated image/Helm/Kubernetes/GitOps, Terraform k3s, monitoring and four faults |
 
-## Evidence still required for final submission
+## Execution progress after tools/network became available
 
-The PDF asks for live execution and screenshots, not just files. Those items
-are **not complete** in this environment:
+- Ubuntu adduser/user verification/cleanup and journalctl completed; actual transcript and rendered screenshot are linked from01.
+- Docker05–07 completed: six built/running apps with browser screenshots, multi-stage app on8080, network isolation/connectivity, host networking and live bind-mount update.
+- Local Minikube/Kubernetes node reached Ready; setup output is in evidence/kubernetes/local-setup.
+- Helm14 completed locally: install→upgrade→bad image→rollback, actual HTTP/config/replica checks, revision history and uninstall. Chart creation, repository/search commands also executed.
+- CI/CD15, DevSecOps16 and final gated pipeline passed on GitHub, with screenshots and retained logs/artifacts. The first image gate failure was remediated without bypassing checks.
+- All Terraform projects passed actual init/fmt/validate locally and in CI; provider lock files are committed.
+- Monitoring20 completed with real CPU/memory/health/logs, Grafana screenshots, high-CPU/down alerts and recovery.
 
-1. Run Docker labs 05–07; capture actual web pages, container/network output.
-2. Run Kubernetes labs 08–13 and Helm lab 14; capture each task's output and before/after failures.
-3. Run the GitHub workflows after pushing; preserve successful Actions logs/artifacts.
-4. Configure an AWS lab account and run Terraform init/validate/plan/apply/output/destroy; retain redacted evidence.
-5. Run monitoring/GitOps/final deployment and capture dashboards, alerts, Argo sync and troubleshooting.
-6. Run Ubuntu-specific adduser/journalctl exercises from the original Linux assignment.
-
-No Docker, kubectl, Minikube, Helm, Terraform or AWS CLI was available during
-local authoring. Socket binding was denied, so even local HTTP integration
-could not run. Shell network access could not resolve GitHub; push and hosted
-execution are separately blocked. See VALIDATION.md for actual checks.
+Hosted Kubernetes08–13 and final GitOps/troubleshooting exercises are still
+running; their evidence must be reviewed before claiming task completion.
+AWS plan/apply/output/destroy remain pending the user's configured lab profile.
+The submission remains incomplete until these remaining execution requirements
+are proven. See VALIDATION.md and each linked evidence folder for exact scope.

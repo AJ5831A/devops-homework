@@ -1,9 +1,11 @@
 # Docker Networking & Volumes
 
-> **Note:** Docker isn't installed on the machine this was authored on, so the
-> commands below are documented but **not executed here** — run them on a
-> Docker-capable machine and add the real output/screenshots before final
-> submission.
+**Executed on 2026-10-07 using the Ubuntu Colima Docker host.**
+The [recorded transcript](../evidence/docker/runtime.log) verifies three networks,
+a backend attached to two networks, expected isolation and successful
+connectivity after attachment, Apache on the Linux host's port 80, and bind
+mount changes without a restart. The lab uses `hw-` name prefixes and host port
+18090 for the bind-mount demo to avoid other applications.
 
 ## Task 1: Container Networking (3 containers, 3 networks)
 
@@ -110,3 +112,15 @@ docker swarm init
 docker network create -d overlay my-overlay-net
 docker service create --name web --network my-overlay-net -p 8080:80 nginx:alpine
 ```
+
+## Captured evidence
+
+The command-output screenshots render excerpts of the actual transcript.
+The two bind-mount screenshots were captured directly from the running website.
+[Before/after output](../evidence/docker/bindmount.log) shows the same container
+start timestamp, proving it was not restarted between edits.
+
+![Network connectivity and isolation](../evidence/docker/network-connectivity.png)
+![Apache host network response](../evidence/docker/apache-host-output.png)
+![Bind mount before host edit](../evidence/docker/bindmount-before.png)
+![Bind mount after host edit](../evidence/docker/bindmount-after.png)

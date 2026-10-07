@@ -36,11 +36,12 @@ docker exec hw-frontend ping -c 2 hw-database
 docker run -d --name hw-apache-host --network host httpd:2.4
 # Host here is the Linux Colima VM, not macOS.
 docker run --rm --network host curlimages/curl:8.12.1 --fail --retry 10 --retry-all-errors http://127.0.0.1:80
-mkdir -p /private/tmp/devops-bindmount
-printf '<h1>Hello students</h1>\n' > /private/tmp/devops-bindmount/index.html
-docker run -d --name hw-bindmount -p 127.0.0.1:18090:80 -v /private/tmp/devops-bindmount:/usr/share/nginx/html:ro nginx:alpine
+BIND_DIR="$PWD/.runtime-bindmount"
+mkdir -p "$BIND_DIR"
+printf '<h1>Hello students</h1>\n' > "$BIND_DIR/index.html"
+docker run -d --name hw-bindmount -p 127.0.0.1:18090:80 -v "$BIND_DIR:/usr/share/nginx/html:ro" nginx:alpine
 curl --fail --retry 10 --retry-all-errors http://127.0.0.1:18090
-printf '<h1>Hello students - updated!</h1>\n' > /private/tmp/devops-bindmount/index.html
+printf '<h1>Hello students - updated!</h1>\n' > "$BIND_DIR/index.html"
 curl --fail http://127.0.0.1:18090
 docker inspect hw-bindmount --format 'StartedAt={{.State.StartedAt}}'
 docker ps --filter name=hw-

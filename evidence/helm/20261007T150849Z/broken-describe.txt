@@ -1,0 +1,292 @@
+Name:             notes-evidence-deploy-766fdfd49f-v8g6v
+Namespace:        hw-runtime-helm
+Priority:         0
+Service Account:  default
+Node:             devops-homework/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 20:39:29 +0530
+Labels:           app.kubernetes.io/instance=notes-evidence
+                  pod-template-hash=766fdfd49f
+Annotations:      checksum/config: cde90c720d8f1cc5ba56cb8782502bc49a9fbdd105b91a6d718a973e134f0eeb
+                  cni.projectcalico.org/containerID: 42df446781425661623db5ae289438a6ec59db78e21f4d8a559757d1dee95def
+                  cni.projectcalico.org/podIP: 10.244.30.137/32
+                  cni.projectcalico.org/podIPs: 10.244.30.137/32
+Status:           Pending
+IP:               10.244.30.137
+IPs:
+  IP:           10.244.30.137
+Controlled By:  ReplicaSet/notes-evidence-deploy-766fdfd49f
+Containers:
+  notes:
+    Container ID:   
+    Image:          nginx:broken-tag-does-not-exist
+    Image ID:       
+    Port:           80/TCP (http)
+    Host Port:      0/TCP (http)
+    State:          Waiting
+      Reason:       ErrImagePull
+    Ready:          False
+    Restart Count:  0
+    Limits:
+      cpu:     200m
+      memory:  128Mi
+    Requests:
+      cpu:      50m
+      memory:   32Mi
+    Liveness:   http-get http://:http/ delay=10s timeout=1s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/ delay=0s timeout=1s period=10s #success=1 #failure=3
+    Environment Variables from:
+      notes-evidence-config  ConfigMap  Optional: false
+    Environment:             <none>
+    Mounts:
+      /usr/share/nginx/html from page (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-m7wjx (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  page:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      notes-evidence-config
+    Optional:  false
+  kube-api-access-m7wjx:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age   From               Message
+  ----     ------     ----  ----               -------
+  Normal   Scheduled  4s    default-scheduler  Successfully assigned hw-runtime-helm/notes-evidence-deploy-766fdfd49f-v8g6v to devops-homework
+  Normal   Pulling    4s    kubelet            Pulling image "nginx:broken-tag-does-not-exist"
+  Warning  Failed     2s    kubelet            Failed to pull image "nginx:broken-tag-does-not-exist": rpc error: code = NotFound desc = failed to pull and unpack image "docker.io/library/nginx:broken-tag-does-not-exist": failed to resolve reference "docker.io/library/nginx:broken-tag-does-not-exist": docker.io/library/nginx:broken-tag-does-not-exist: not found
+  Warning  Failed     2s    kubelet            Error: ErrImagePull
+  Normal   BackOff    1s    kubelet            Back-off pulling image "nginx:broken-tag-does-not-exist"
+  Warning  Failed     1s    kubelet            Error: ImagePullBackOff
+
+
+Name:             notes-evidence-deploy-d46b88456-55zxd
+Namespace:        hw-runtime-helm
+Priority:         0
+Service Account:  default
+Node:             devops-homework/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 20:39:23 +0530
+Labels:           app.kubernetes.io/instance=notes-evidence
+                  pod-template-hash=d46b88456
+Annotations:      checksum/config: cde90c720d8f1cc5ba56cb8782502bc49a9fbdd105b91a6d718a973e134f0eeb
+                  cni.projectcalico.org/containerID: 3bfd4fa02bde4443aca71fcbeb91622622d1e3a19d1cb8170d77f06e97664bed
+                  cni.projectcalico.org/podIP: 10.244.30.134/32
+                  cni.projectcalico.org/podIPs: 10.244.30.134/32
+Status:           Running
+IP:               10.244.30.134
+IPs:
+  IP:           10.244.30.134
+Controlled By:  ReplicaSet/notes-evidence-deploy-d46b88456
+Containers:
+  notes:
+    Container ID:   containerd://4366e0d41f420f50d099cc422261d2205d0b98875628c5684a198319fcfdd33f
+    Image:          nginx:1.28-alpine
+    Image ID:       docker.io/library/nginx@sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
+    Port:           80/TCP (http)
+    Host Port:      0/TCP (http)
+    State:          Running
+      Started:      Wed, 07 Oct 2026 20:39:24 +0530
+    Ready:          True
+    Restart Count:  0
+    Limits:
+      cpu:     200m
+      memory:  128Mi
+    Requests:
+      cpu:      50m
+      memory:   32Mi
+    Liveness:   http-get http://:http/ delay=10s timeout=1s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/ delay=0s timeout=1s period=10s #success=1 #failure=3
+    Environment Variables from:
+      notes-evidence-config  ConfigMap  Optional: false
+    Environment:             <none>
+    Mounts:
+      /usr/share/nginx/html from page (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-rjnhc (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  page:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      notes-evidence-config
+    Optional:  false
+  kube-api-access-rjnhc:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  10s   default-scheduler  Successfully assigned hw-runtime-helm/notes-evidence-deploy-d46b88456-55zxd to devops-homework
+  Normal  Pulled     9s    kubelet            Container image "nginx:1.28-alpine" already present on machine
+  Normal  Created    9s    kubelet            Created container: notes
+  Normal  Started    9s    kubelet            Started container notes
+
+
+Name:             notes-evidence-deploy-d46b88456-gfj5c
+Namespace:        hw-runtime-helm
+Priority:         0
+Service Account:  default
+Node:             devops-homework/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 20:39:26 +0530
+Labels:           app.kubernetes.io/instance=notes-evidence
+                  pod-template-hash=d46b88456
+Annotations:      checksum/config: cde90c720d8f1cc5ba56cb8782502bc49a9fbdd105b91a6d718a973e134f0eeb
+                  cni.projectcalico.org/containerID: c0a60745581cbbb62918863d2cd6b07a9186c0ff9efb6db6a05670d2f95cf96f
+                  cni.projectcalico.org/podIP: 10.244.30.136/32
+                  cni.projectcalico.org/podIPs: 10.244.30.136/32
+Status:           Running
+IP:               10.244.30.136
+IPs:
+  IP:           10.244.30.136
+Controlled By:  ReplicaSet/notes-evidence-deploy-d46b88456
+Containers:
+  notes:
+    Container ID:   containerd://403bb2c3c34997a90f5327457ae255ef9e26ec74544d8e82e225b3667b86ffc7
+    Image:          nginx:1.28-alpine
+    Image ID:       docker.io/library/nginx@sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
+    Port:           80/TCP (http)
+    Host Port:      0/TCP (http)
+    State:          Running
+      Started:      Wed, 07 Oct 2026 20:39:26 +0530
+    Ready:          True
+    Restart Count:  0
+    Limits:
+      cpu:     200m
+      memory:  128Mi
+    Requests:
+      cpu:      50m
+      memory:   32Mi
+    Liveness:   http-get http://:http/ delay=10s timeout=1s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/ delay=0s timeout=1s period=10s #success=1 #failure=3
+    Environment Variables from:
+      notes-evidence-config  ConfigMap  Optional: false
+    Environment:             <none>
+    Mounts:
+      /usr/share/nginx/html from page (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-pjggq (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  page:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      notes-evidence-config
+    Optional:  false
+  kube-api-access-pjggq:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  7s    default-scheduler  Successfully assigned hw-runtime-helm/notes-evidence-deploy-d46b88456-gfj5c to devops-homework
+  Normal  Pulled     7s    kubelet            Container image "nginx:1.28-alpine" already present on machine
+  Normal  Created    7s    kubelet            Created container: notes
+  Normal  Started    7s    kubelet            Started container notes
+
+
+Name:             notes-evidence-deploy-d46b88456-r8x58
+Namespace:        hw-runtime-helm
+Priority:         0
+Service Account:  default
+Node:             devops-homework/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 20:39:25 +0530
+Labels:           app.kubernetes.io/instance=notes-evidence
+                  pod-template-hash=d46b88456
+Annotations:      checksum/config: cde90c720d8f1cc5ba56cb8782502bc49a9fbdd105b91a6d718a973e134f0eeb
+                  cni.projectcalico.org/containerID: 5d16bdb211adedb164e85edbd95647c52ea5e91dc7dccfaaef70565905aada26
+                  cni.projectcalico.org/podIP: 10.244.30.135/32
+                  cni.projectcalico.org/podIPs: 10.244.30.135/32
+Status:           Running
+IP:               10.244.30.135
+IPs:
+  IP:           10.244.30.135
+Controlled By:  ReplicaSet/notes-evidence-deploy-d46b88456
+Containers:
+  notes:
+    Container ID:   containerd://fa8fa7034cdd15fcca26ae12472769c777ce3905b17b8ee980b1d6bd75b77c6f
+    Image:          nginx:1.28-alpine
+    Image ID:       docker.io/library/nginx@sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
+    Port:           80/TCP (http)
+    Host Port:      0/TCP (http)
+    State:          Running
+      Started:      Wed, 07 Oct 2026 20:39:25 +0530
+    Ready:          True
+    Restart Count:  0
+    Limits:
+      cpu:     200m
+      memory:  128Mi
+    Requests:
+      cpu:      50m
+      memory:   32Mi
+    Liveness:   http-get http://:http/ delay=10s timeout=1s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/ delay=0s timeout=1s period=10s #success=1 #failure=3
+    Environment Variables from:
+      notes-evidence-config  ConfigMap  Optional: false
+    Environment:             <none>
+    Mounts:
+      /usr/share/nginx/html from page (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-mlvzw (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  page:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      notes-evidence-config
+    Optional:  false
+  kube-api-access-mlvzw:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  8s    default-scheduler  Successfully assigned hw-runtime-helm/notes-evidence-deploy-d46b88456-r8x58 to devops-homework
+  Normal  Pulled     8s    kubelet            Container image "nginx:1.28-alpine" already present on machine
+  Normal  Created    8s    kubelet            Created container: notes
+  Normal  Started    8s    kubelet            Started container notes

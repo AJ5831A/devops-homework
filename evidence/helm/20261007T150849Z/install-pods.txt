@@ -1,0 +1,2 @@
+NAME                                  READY   STATUS    RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+notes-evidence-deploy-f56c985-p4ffl   1/1     Running   0          32s   10.244.30.131   devops-homework   <none>           <none>

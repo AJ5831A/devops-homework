@@ -1,0 +1,1 @@
+{"status":"success","data":{"alerts":[{"labels":{"alertname":"DemoApplicationDown","instance":"app:8080","job":"devops-demo","severity":"critical"},"annotations":{"summary":"Demo application scrape target has been down for 30 seconds"},"state":"firing","activeAt":"2026-10-07T15:08:13.238732241Z","value":"0e+00"}]}}

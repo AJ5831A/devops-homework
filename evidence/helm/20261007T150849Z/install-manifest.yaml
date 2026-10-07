@@ -1,0 +1,85 @@
+---
+# Source: notes-chart/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: notes-evidence-config
+data:
+  APP_NAME: "notes-app"
+  ENVIRONMENT: "development"
+  index.html: |
+    <!doctype html>
+    <html><head><title>Notes</title></head><body>
+    <h1>notes-app</h1>
+    <p>Environment: development</p>
+    <p>Packaged and deployed with Helm.</p>
+    </body></html>
+---
+# Source: notes-chart/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: notes-evidence-svc
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/instance: notes-evidence
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+# Source: notes-chart/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notes-evidence-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: notes-evidence
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: notes-evidence
+      annotations:
+        checksum/config: 0b8e426ad268ee38171a8758a63856505424f859dd07774600613ad6e4a24ef4
+    spec:
+      containers:
+        - name: notes
+          image: "nginx:1.28-alpine"
+          ports:
+            - name: http
+              containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: notes-evidence-config
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 10
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 32Mi
+          volumeMounts:
+            - name: page
+              mountPath: /usr/share/nginx/html
+              readOnly: true
+      volumes:
+        - name: page
+          configMap:
+            name: notes-evidence-config
+            items:
+              - key: index.html
+                path: index.html
+

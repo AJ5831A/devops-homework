@@ -1,0 +1,772 @@
++ date -u
+Wed Oct  7 14:54:28 UTC 2026
++ docker version
+Client: Docker Engine - Community
+ Version:           29.8.2
+ API version:       1.54 (downgraded from 1.56)
+ Go version:        go1.27.1
+ Git commit:        7fc2dff9bc
+ Built:             Wed Sep 23 09:45:10 2026
+ OS/Arch:           darwin/arm64
+ Context:           colima-devops-homework
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          29.5.2
+  API version:      1.54 (minimum version 1.40)
+  Go version:       go1.26.3
+  Git commit:       568f755
+  Built:            Wed May 20 14:39:25 2026
+  OS/Arch:          linux/arm64
+  Experimental:     false
+ containerd:
+  Version:          v2.2.4
+  GitCommit:        193637f7ee8ae5f5aa5248f49e7baa3e6164966e
+ runc:
+  Version:          1.3.5
+  GitCommit:        v1.3.5-0-g488fc13e
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
++ for spec in nodejs-app:3000:18030 python-app:5000:18050 java-app:8000:18080 Apache-app:80:18081 React-app:80:18082 nginx-app:80:18083
++ IFS=:
++ read -r folder internal external
+++ echo nodejs-app
+++ tr '[:upper:]' '[:lower:]'
++ name=hw-nodejs-app
++ docker build -t hw-nodejs-app:lab 05-docker-fundamentals/nodejs-app
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  3.072kB
+Step 1/5 : FROM node:20-alpine
+20-alpine: Pulling from library/node
+cd322d0ddd02: Pulling fs layer
+13e45b12880f: Pulling fs layer
+d17f077ada11: Pulling fs layer
+bda5d7ef971f: Pulling fs layer
+e68c4317c820: Download complete
+cd322d0ddd02: Download complete
+85e939e07fce: Download complete
+13e45b12880f: Download complete
+d17f077ada11: Download complete
+d17f077ada11: Pull complete
+bda5d7ef971f: Download complete
+bda5d7ef971f: Pull complete
+cd322d0ddd02: Pull complete
+13e45b12880f: Pull complete
+Digest: sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293
+Status: Downloaded newer image for node:20-alpine
+ ---> fb4cd12c85ee
+Step 2/5 : WORKDIR /app
+ ---> Running in eb9fa437e23f
+ ---> Removed intermediate container eb9fa437e23f
+ ---> dbaeecb2c5b3
+Step 3/5 : COPY server.js .
+ ---> bd2d15f5275f
+Step 4/5 : EXPOSE 3000
+ ---> Running in 710e128e5677
+ ---> Removed intermediate container 710e128e5677
+ ---> 3507f5e352ea
+Step 5/5 : CMD ["node", "server.js"]
+ ---> Running in 6fb7ce55d3dd
+ ---> Removed intermediate container 6fb7ce55d3dd
+ ---> 3bd2adc3f308
+Successfully built 3bd2adc3f308
+Successfully tagged hw-nodejs-app:lab
++ docker rm -f hw-nodejs-app
++ docker run -d --name hw-nodejs-app -p 127.0.0.1:18030:3000 hw-nodejs-app:lab
+3b3792af5b73322d5121f4ded343cb9178bbc0fce03ba1912aacfb56e63acdb8
++ curl --fail --retry 20 --retry-all-errors --retry-delay 2 http://127.0.0.1:18030/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (52) Empty reply from server
+Warning: Problem (retrying all errors). Will retry in 2 seconds. 20 retries 
+Warning: left.
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    33    0    33    0     0   3312      0 --:--:-- --:--:-- --:--:--  3666
++ cat evidence/docker/nodejs-app-response.html
+<h1>Hello World from Node.js</h1>+ for spec in nodejs-app:3000:18030 python-app:5000:18050 java-app:8000:18080 Apache-app:80:18081 React-app:80:18082 nginx-app:80:18083
++ IFS=:
++ read -r folder internal external
+++ echo python-app
+++ tr '[:upper:]' '[:lower:]'
++ name=hw-python-app
++ docker build -t hw-python-app:lab 05-docker-fundamentals/python-app
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  3.072kB
+Step 1/5 : FROM python:3.12-alpine
+3.12-alpine: Pulling from library/python
+776bdb191e7f: Pulling fs layer
+a9986cd6f37d: Pulling fs layer
+08693f0e5690: Pulling fs layer
+32bef0b52008: Pulling fs layer
+08693f0e5690: Download complete
+32bef0b52008: Download complete
+a5836d681cbe: Download complete
+cbe4623cf6f2: Download complete
+a9986cd6f37d: Download complete
+a9986cd6f37d: Pull complete
+32bef0b52008: Pull complete
+776bdb191e7f: Download complete
+08693f0e5690: Pull complete
+776bdb191e7f: Pull complete
+Digest: sha256:1b668429b3511ab407d8e00648891631b0b1a4d7e15e3ca70f38ab5b91ad4ab4
+Status: Downloaded newer image for python:3.12-alpine
+ ---> 1b668429b351
+Step 2/5 : WORKDIR /app
+ ---> Running in c41474664a68
+ ---> Removed intermediate container c41474664a68
+ ---> 33e58cf0343e
+Step 3/5 : COPY app.py .
+ ---> 7760977d1864
+Step 4/5 : EXPOSE 5000
+ ---> Running in 276d8bd29088
+ ---> Removed intermediate container 276d8bd29088
+ ---> c5016d00dd35
+Step 5/5 : CMD ["python", "app.py"]
+ ---> Running in 0f48fc195e50
+ ---> Removed intermediate container 0f48fc195e50
+ ---> 81a558371f55
+Successfully built 81a558371f55
+Successfully tagged hw-python-app:lab
++ docker rm -f hw-python-app
++ docker run -d --name hw-python-app -p 127.0.0.1:18050:5000 hw-python-app:lab
+c36e59f3b3208032b133fae2cbdea44e605b3b5d3c9c1b60eff52c699593013b
++ curl --fail --retry 20 --retry-all-errors --retry-delay 2 http://127.0.0.1:18050/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (52) Empty reply from server
+Warning: Problem (retrying all errors). Will retry in 2 seconds. 20 retries 
+Warning: left.
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    32    0    32    0     0   6791      0 --:--:-- --:--:-- --:--:--  8000
++ cat evidence/docker/python-app-response.html
+<h1>Hello World from Python</h1>+ for spec in nodejs-app:3000:18030 python-app:5000:18050 java-app:8000:18080 Apache-app:80:18081 React-app:80:18082 nginx-app:80:18083
++ IFS=:
++ read -r folder internal external
+++ echo java-app
+++ tr '[:upper:]' '[:lower:]'
++ name=hw-java-app
++ docker build -t hw-java-app:lab 05-docker-fundamentals/java-app
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  3.584kB
+Step 1/6 : FROM eclipse-temurin:21-jdk-alpine
+21-jdk-alpine: Pulling from library/eclipse-temurin
+794d8b8fb47b: Pulling fs layer
+8438b55bfa39: Pulling fs layer
+c807d060ae33: Pulling fs layer
+166f645a3063: Pulling fs layer
+e44f7682965b: Download complete
+794d8b8fb47b: Download complete
+166f645a3063: Download complete
+bf66ad52d41a: Download complete
+c807d060ae33: Download complete
+c807d060ae33: Pull complete
+8438b55bfa39: Download complete
+166f645a3063: Pull complete
+8438b55bfa39: Pull complete
+794d8b8fb47b: Pull complete
+Digest: sha256:0bfc69a4758a86710e5c474032d28400a8bd00874766f9e8b1642ac2fd293159
+Status: Downloaded newer image for eclipse-temurin:21-jdk-alpine
+ ---> 0bfc69a4758a
+Step 2/6 : WORKDIR /app
+ ---> Running in 3c1ffe217fbc
+ ---> Removed intermediate container 3c1ffe217fbc
+ ---> 0c89d4e19e43
+Step 3/6 : COPY HelloWorld.java .
+ ---> 0be939c2daba
+Step 4/6 : RUN javac HelloWorld.java
+ ---> Running in f29063af14dc
+ ---> Removed intermediate container f29063af14dc
+ ---> 123a3132eb6a
+Step 5/6 : EXPOSE 8000
+ ---> Running in 6da3e899669b
+ ---> Removed intermediate container 6da3e899669b
+ ---> 03ff30528224
+Step 6/6 : CMD ["java", "HelloWorld"]
+ ---> Running in aa1dce51a073
+ ---> Removed intermediate container aa1dce51a073
+ ---> 290aae8af7ec
+Successfully built 290aae8af7ec
+Successfully tagged hw-java-app:lab
++ docker rm -f hw-java-app
++ docker run -d --name hw-java-app -p 127.0.0.1:18080:8000 hw-java-app:lab
+b2080c4f8caa283899b681f4573eef9f2971405a66943d7672ec8313bc82a8d1
++ curl --fail --retry 20 --retry-all-errors --retry-delay 2 http://127.0.0.1:18080/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (52) Empty reply from server
+Warning: Problem (retrying all errors). Will retry in 2 seconds. 20 retries 
+Warning: left.
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0    30    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    30  100    30    0     0    775      0 --:--:-- --:--:-- --:--:--   769
++ cat evidence/docker/java-app-response.html
+<h1>Hello World from Java</h1>+ for spec in nodejs-app:3000:18030 python-app:5000:18050 java-app:8000:18080 Apache-app:80:18081 React-app:80:18082 nginx-app:80:18083
++ IFS=:
++ read -r folder internal external
+++ echo Apache-app
+++ tr '[:upper:]' '[:lower:]'
++ name=hw-apache-app
++ docker build -t hw-apache-app:lab 05-docker-fundamentals/Apache-app
+#0 building with "colima-devops-homework" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 124B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/httpd:2.4-alpine
+#2 DONE 2.9s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 167B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/library/httpd:2.4-alpine@sha256:3440c39d8d6f54fa9ad2549e5a60c19ddd435faadc29c1ad28aa795f71888889
+#5 resolve docker.io/library/httpd:2.4-alpine@sha256:3440c39d8d6f54fa9ad2549e5a60c19ddd435faadc29c1ad28aa795f71888889 0.0s done
+#5 sha256:c6e2904ac185b39b4e3853eaeb9413aec5145abdb5cc38c58dfd48aeec0c1cdf 0B / 287B 0.2s
+#5 sha256:98b3bd652a0c6784c5ada60beaa21e8fe4bd766956dfec05ce93fc955d17f1a0 0B / 8.83MB 0.2s
+#5 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 0B / 32B 0.2s
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 0B / 11.00MB 0.2s
+#5 sha256:c6e2904ac185b39b4e3853eaeb9413aec5145abdb5cc38c58dfd48aeec0c1cdf 287B / 287B 0.3s done
+#5 sha256:a507aa80ad00385f650674356a89cc2c40b70460898abf52644e14743a723de4 0B / 146B 0.2s
+#5 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 1.1s done
+#5 sha256:a507aa80ad00385f650674356a89cc2c40b70460898abf52644e14743a723de4 146B / 146B 0.8s done
+#5 sha256:98b3bd652a0c6784c5ada60beaa21e8fe4bd766956dfec05ce93fc955d17f1a0 1.05MB / 8.83MB 1.4s
+#5 sha256:5039119939d5342abdf8d383179931bc7a4502082bae91c850978976a15bd951 0B / 935B 0.2s
+#5 sha256:5039119939d5342abdf8d383179931bc7a4502082bae91c850978976a15bd951 935B / 935B 0.4s done
+#5 extracting sha256:5039119939d5342abdf8d383179931bc7a4502082bae91c850978976a15bd951 0.0s done
+#5 extracting sha256:a507aa80ad00385f650674356a89cc2c40b70460898abf52644e14743a723de4 done
+#5 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done
+#5 sha256:98b3bd652a0c6784c5ada60beaa21e8fe4bd766956dfec05ce93fc955d17f1a0 2.10MB / 8.83MB 2.3s
+#5 sha256:98b3bd652a0c6784c5ada60beaa21e8fe4bd766956dfec05ce93fc955d17f1a0 3.15MB / 8.83MB 3.3s
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 1.05MB / 11.00MB 3.2s
+#5 sha256:98b3bd652a0c6784c5ada60beaa21e8fe4bd766956dfec05ce93fc955d17f1a0 4.19MB / 8.83MB 3.9s
+#5 sha256:98b3bd652a0c6784c5ada60beaa21e8fe4bd766956dfec05ce93fc955d17f1a0 5.24MB / 8.83MB 4.5s
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 2.10MB / 11.00MB 4.7s
+#5 sha256:98b3bd652a0c6784c5ada60beaa21e8fe4bd766956dfec05ce93fc955d17f1a0 6.29MB / 8.83MB 5.1s
+#5 sha256:98b3bd652a0c6784c5ada60beaa21e8fe4bd766956dfec05ce93fc955d17f1a0 7.34MB / 8.83MB 5.6s
+#5 sha256:98b3bd652a0c6784c5ada60beaa21e8fe4bd766956dfec05ce93fc955d17f1a0 8.39MB / 8.83MB 6.0s
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 3.15MB / 11.00MB 6.0s
+#5 sha256:98b3bd652a0c6784c5ada60beaa21e8fe4bd766956dfec05ce93fc955d17f1a0 8.83MB / 8.83MB 6.2s done
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 4.19MB / 11.00MB 7.4s
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 5.24MB / 11.00MB 8.1s
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 6.29MB / 11.00MB 8.7s
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 7.34MB / 11.00MB 9.5s
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 8.39MB / 11.00MB 10.1s
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 9.44MB / 11.00MB 10.5s
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 10.49MB / 11.00MB 11.1s
+#5 sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 11.00MB / 11.00MB 11.4s done
+#5 extracting sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a
+#5 extracting sha256:9b7d232c6e6d97850a3a9a6791dedccca8efc89695d10abc1e656c8f69e2c06a 0.2s done
+#5 DONE 11.7s
+
+#5 [1/2] FROM docker.io/library/httpd:2.4-alpine@sha256:3440c39d8d6f54fa9ad2549e5a60c19ddd435faadc29c1ad28aa795f71888889
+#5 extracting sha256:98b3bd652a0c6784c5ada60beaa21e8fe4bd766956dfec05ce93fc955d17f1a0 0.1s done
+#5 DONE 11.8s
+
+#5 [1/2] FROM docker.io/library/httpd:2.4-alpine@sha256:3440c39d8d6f54fa9ad2549e5a60c19ddd435faadc29c1ad28aa795f71888889
+#5 extracting sha256:c6e2904ac185b39b4e3853eaeb9413aec5145abdb5cc38c58dfd48aeec0c1cdf done
+#5 DONE 11.8s
+
+#6 [2/2] COPY index.html /usr/local/apache2/htdocs/index.html
+#6 DONE 0.1s
+
+#7 exporting to image
+#7 exporting layers 0.0s done
+#7 exporting manifest sha256:75095a239b68bc04df9960605d1af10aa8d7072c5bffd4e5e3602b1e604b3df8 done
+#7 exporting config sha256:f871272b5c7a6653aa246a3976557af47658655aede3c6d5da8397fa37edc3e8 done
+#7 exporting attestation manifest sha256:9ce253a71ac4501f829d6a34633f13c5e7ba8ab8720a93829fdcb054de548cfd done
+#7 exporting manifest list sha256:6aeba944b8d807945c8eb6caebb83d167c6497ec12b28cfc9bb03f10bd25c2b6
+#7 exporting manifest list sha256:6aeba944b8d807945c8eb6caebb83d167c6497ec12b28cfc9bb03f10bd25c2b6 done
+#7 naming to docker.io/library/hw-apache-app:lab done
+#7 unpacking to docker.io/library/hw-apache-app:lab done
+#7 DONE 0.1s
++ docker rm -f hw-apache-app
++ docker run -d --name hw-apache-app -p 127.0.0.1:18081:80 hw-apache-app:lab
+929295c8278137e288a84682ced8f3ef50cc7f602fad5339e6a4fffd459e18bc
++ curl --fail --retry 20 --retry-all-errors --retry-delay 2 http://127.0.0.1:18081/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   128  100   128    0     0  15585      0 --:--:-- --:--:-- --:--:-- 16000
++ cat evidence/docker/Apache-app-response.html
+<!DOCTYPE html>
+<html>
+<head><title>Apache Hello World</title></head>
+<body>
+  <h1>Hello World from Apache</h1>
+</body>
+</html>
++ for spec in nodejs-app:3000:18030 python-app:5000:18050 java-app:8000:18080 Apache-app:80:18081 React-app:80:18082 nginx-app:80:18083
++ IFS=:
++ read -r folder internal external
+++ echo React-app
+++ tr '[:upper:]' '[:lower:]'
++ name=hw-react-app
++ docker build -t hw-react-app:lab 05-docker-fundamentals/React-app
+#0 building with "colima-devops-homework" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 116B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/nginx:alpine
+#2 DONE 3.2s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 499B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/library/nginx:alpine@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2
+#5 resolve docker.io/library/nginx:alpine@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2 0.0s done
+#5 sha256:d766d06974faca2e3bc47f067832c4d6469e6db75cbb597baa943ab30b822e60 0B / 1.40kB 0.2s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 0B / 20.09MB 0.2s
+#5 sha256:bc862a9910f586c671851634646f9747fdad971ca2988bf1c36b333a26677daf 0B / 1.21kB 0.2s
+#5 sha256:943c389642fab1a496f66d9b0ae09288798bb42bd6cd7fb0c06f5e48ad788474 0B / 403B 0.2s
+#5 sha256:d766d06974faca2e3bc47f067832c4d6469e6db75cbb597baa943ab30b822e60 1.40kB / 1.40kB 0.4s done
+#5 sha256:ccea4a153c591cd6756c0a003489efb511a7d9692e5a8463b3152efce5f671e6 0B / 964B 0.2s
+#5 sha256:bc862a9910f586c671851634646f9747fdad971ca2988bf1c36b333a26677daf 1.21kB / 1.21kB 1.2s done
+#5 sha256:943c389642fab1a496f66d9b0ae09288798bb42bd6cd7fb0c06f5e48ad788474 403B / 403B 1.2s done
+#5 sha256:ccea4a153c591cd6756c0a003489efb511a7d9692e5a8463b3152efce5f671e6 964B / 964B 0.8s done
+#5 sha256:766d3311d5dfcea79009b222ef4b3f88dfb0fa79944ccdd730ad164a01598605 0B / 628B 0.2s
+#5 sha256:858f76146c129bf634d0fef4a2780c3a34b40ba9bf9ef45173e0553414be267f 0B / 1.95MB 0.2s
+#5 sha256:766d3311d5dfcea79009b222ef4b3f88dfb0fa79944ccdd730ad164a01598605 628B / 628B 0.4s done
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 1.05MB / 20.09MB 1.8s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 2.10MB / 20.09MB 2.1s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 3.15MB / 20.09MB 2.6s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 4.19MB / 20.09MB 3.2s
+#5 sha256:858f76146c129bf634d0fef4a2780c3a34b40ba9bf9ef45173e0553414be267f 1.05MB / 1.95MB 1.8s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 5.24MB / 20.09MB 3.6s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 6.29MB / 20.09MB 4.1s
+#5 sha256:858f76146c129bf634d0fef4a2780c3a34b40ba9bf9ef45173e0553414be267f 1.95MB / 1.95MB 3.0s done
+#5 extracting sha256:858f76146c129bf634d0fef4a2780c3a34b40ba9bf9ef45173e0553414be267f 0.1s done
+#5 extracting sha256:766d3311d5dfcea79009b222ef4b3f88dfb0fa79944ccdd730ad164a01598605 done
+#5 extracting sha256:ccea4a153c591cd6756c0a003489efb511a7d9692e5a8463b3152efce5f671e6 done
+#5 extracting sha256:943c389642fab1a496f66d9b0ae09288798bb42bd6cd7fb0c06f5e48ad788474 done
+#5 extracting sha256:bc862a9910f586c671851634646f9747fdad971ca2988bf1c36b333a26677daf done
+#5 extracting sha256:d766d06974faca2e3bc47f067832c4d6469e6db75cbb597baa943ab30b822e60 done
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 7.34MB / 20.09MB 4.7s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 8.39MB / 20.09MB 5.3s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 9.44MB / 20.09MB 5.6s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 10.49MB / 20.09MB 6.3s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 11.53MB / 20.09MB 6.9s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 12.58MB / 20.09MB 8.0s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 13.63MB / 20.09MB 8.4s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 14.68MB / 20.09MB 9.2s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 15.73MB / 20.09MB 9.9s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 16.78MB / 20.09MB 10.8s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 17.83MB / 20.09MB 11.7s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 18.87MB / 20.09MB 12.5s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 19.92MB / 20.09MB 13.5s
+#5 sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 20.09MB / 20.09MB 13.5s done
+#5 extracting sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f
+#5 extracting sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 0.2s done
+#5 DONE 13.8s
+
+#6 [2/2] COPY index.html /usr/share/nginx/html/index.html
+#6 DONE 0.0s
+
+#7 exporting to image
+#7 exporting layers 0.0s done
+#7 exporting manifest sha256:c8dc3032e9f334346fccf68b45c252026cba2f6157a1dcb3db532e9c3d47535b done
+#7 exporting config sha256:d4d8bbcf29c63d50499f53aab150c28a9a7601f7c9433ecf3d7a43066c620bc4 done
+#7 exporting attestation manifest sha256:1c8ffacb1602416c78387bc120db30a9ea0efa3349fe02d7add7b17bb9b53aea done
+#7 exporting manifest list sha256:c8f1e3749b1ce8fbe7804d78be718d7b367368a6eeb701aeebcec596f543bf4b done
+#7 naming to docker.io/library/hw-react-app:lab done
+#7 unpacking to docker.io/library/hw-react-app:lab 0.0s done
+#7 DONE 0.1s
++ docker rm -f hw-react-app
++ docker run -d --name hw-react-app -p 127.0.0.1:18082:80 hw-react-app:lab
+aa2fc4746793e3bfbe3c272cc715a8c4842797cfca5166a7c770f444fa1713e8
++ curl --fail --retry 20 --retry-all-errors --retry-delay 2 http://127.0.0.1:18082/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (52) Empty reply from server
+Warning: Problem (retrying all errors). Will retry in 2 seconds. 20 retries 
+Warning: left.
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   460  100   460    0     0  86093      0 --:--:-- --:--:-- --:--:-- 92000
++ cat evidence/docker/React-app-response.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React Hello World</title>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(React.createElement('h1', null, 'Hello World from React'));
+  </script>
+</body>
+</html>
++ for spec in nodejs-app:3000:18030 python-app:5000:18050 java-app:8000:18080 Apache-app:80:18081 React-app:80:18082 nginx-app:80:18083
++ IFS=:
++ read -r folder internal external
+++ echo nginx-app
+++ tr '[:upper:]' '[:lower:]'
++ name=hw-nginx-app
++ docker build -t hw-nginx-app:lab 05-docker-fundamentals/nginx-app
+#0 building with "colima-devops-homework" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 116B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/nginx:alpine
+#2 DONE 0.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 163B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/library/nginx:alpine@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2
+#5 resolve docker.io/library/nginx:alpine@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2 done
+#5 CACHED
+
+#6 [2/2] COPY index.html /usr/share/nginx/html/index.html
+#6 DONE 0.0s
+
+#7 exporting to image
+#7 exporting layers 0.0s done
+#7 exporting manifest sha256:34b3d8d62bf8fb7bbea185e8136cbc1d9ab498afea83d0f9f93620fe26274448 done
+#7 exporting config sha256:e804d40bca2507304abf3ae8d28dda803d88f1a625a5030f63cbff9fc3543d56 done
+#7 exporting attestation manifest sha256:1099107861de15345b6cc41a6f2f112e190edc64b8d14b2253f822dd14ea6935 done
+#7 exporting manifest list sha256:1074aaccc1c1212d32b62037cd8f30ec0f5bed661ace520744f9d01bd985a83f done
+#7 naming to docker.io/library/hw-nginx-app:lab done
+#7 unpacking to docker.io/library/hw-nginx-app:lab done
+#7 DONE 0.1s
++ docker rm -f hw-nginx-app
++ docker run -d --name hw-nginx-app -p 127.0.0.1:18083:80 hw-nginx-app:lab
+82ef495b65a6fdf5debcd37f711e5080606db695de4354e3d4aaa6d6159cb737
++ curl --fail --retry 20 --retry-all-errors --retry-delay 2 http://127.0.0.1:18083/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (52) Empty reply from server
+Warning: Problem (retrying all errors). Will retry in 2 seconds. 20 retries 
+Warning: left.
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   126  100   126    0     0  68255      0 --:--:-- --:--:-- --:--:--  123k
++ cat evidence/docker/nginx-app-response.html
+<!DOCTYPE html>
+<html>
+<head><title>Nginx Hello World</title></head>
+<body>
+  <h1>Hello World from Nginx</h1>
+</body>
+</html>
++ docker build -t hw-multistage:lab 06-docker-multistage
+#0 building with "colima-devops-homework" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 300B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/golang:1.22-alpine
+#2 ...
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 3.4s
+
+#2 [internal] load metadata for docker.io/library/golang:1.22-alpine
+#2 DONE 3.4s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [stage-1 1/2] FROM docker.io/library/alpine:latest@sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6
+#5 resolve docker.io/library/alpine:latest@sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 320B done
+#6 DONE 0.0s
+
+#7 [builder 1/4] FROM docker.io/library/golang:1.22-alpine@sha256:1699c10032ca2582ec89a24a1312d986a3f094aed3d5c1147b19880afe40e052
+#7 resolve docker.io/library/golang:1.22-alpine@sha256:1699c10032ca2582ec89a24a1312d986a3f094aed3d5c1147b19880afe40e052 done
+#7 sha256:4861bab1ea04dbb3dd5482b1705d41beefe250163e513588e8a7529ed76d351c 0B / 127B 0.2s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 0B / 66.29MB 0.2s
+#7 sha256:52f827f723504aa3325bb5a54247f0dc4b92bb72569525bc951532c4ef679bd4 0B / 3.99MB 0.2s
+#7 sha256:fa1868c9f11e67c6a569d83fd91d32a555c8f736e46d134152ae38157607d910 0B / 297.86kB 0.2s
+#7 sha256:4861bab1ea04dbb3dd5482b1705d41beefe250163e513588e8a7529ed76d351c 127B / 127B 0.4s done
+#7 sha256:fa1868c9f11e67c6a569d83fd91d32a555c8f736e46d134152ae38157607d910 297.86kB / 297.86kB 3.8s done
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 1.05MB / 66.29MB 5.3s
+#7 sha256:52f827f723504aa3325bb5a54247f0dc4b92bb72569525bc951532c4ef679bd4 0B / 3.99MB 5.3s
+#7 sha256:52f827f723504aa3325bb5a54247f0dc4b92bb72569525bc951532c4ef679bd4 1.05MB / 3.99MB 6.5s
+#7 sha256:52f827f723504aa3325bb5a54247f0dc4b92bb72569525bc951532c4ef679bd4 2.10MB / 3.99MB 9.5s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 4.19MB / 66.29MB 10.4s
+#7 sha256:52f827f723504aa3325bb5a54247f0dc4b92bb72569525bc951532c4ef679bd4 3.15MB / 3.99MB 11.4s
+#7 sha256:52f827f723504aa3325bb5a54247f0dc4b92bb72569525bc951532c4ef679bd4 3.99MB / 3.99MB 12.8s done
+#7 extracting sha256:52f827f723504aa3325bb5a54247f0dc4b92bb72569525bc951532c4ef679bd4 0.1s done
+#7 extracting sha256:fa1868c9f11e67c6a569d83fd91d32a555c8f736e46d134152ae38157607d910 0.0s done
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 8.39MB / 66.29MB 15.3s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 12.58MB / 66.29MB 19.1s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 16.78MB / 66.29MB 23.0s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 20.97MB / 66.29MB 25.5s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 25.17MB / 66.29MB 28.2s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 29.36MB / 66.29MB 31.7s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 33.55MB / 66.29MB 34.2s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 37.75MB / 66.29MB 36.0s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 41.94MB / 66.29MB 37.8s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 46.14MB / 66.29MB 39.0s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 50.33MB / 66.29MB 40.1s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 54.53MB / 66.29MB 41.0s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 58.72MB / 66.29MB 41.7s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 62.91MB / 66.29MB 42.6s
+#7 sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 66.29MB / 66.29MB 43.2s done
+#7 extracting sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4
+#7 extracting sha256:90fc70e12d60da9fe07466871c454610a4e5c1031087182e69b164f64aacd1c4 1.5s done
+#7 DONE 44.7s
+
+#7 [builder 1/4] FROM docker.io/library/golang:1.22-alpine@sha256:1699c10032ca2582ec89a24a1312d986a3f094aed3d5c1147b19880afe40e052
+#7 extracting sha256:4861bab1ea04dbb3dd5482b1705d41beefe250163e513588e8a7529ed76d351c done
+#7 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 0.0s done
+#7 DONE 44.7s
+
+#8 [builder 2/4] WORKDIR /src
+#8 DONE 0.2s
+
+#9 [builder 3/4] COPY app.go .
+#9 DONE 0.0s
+
+#10 [builder 4/4] RUN go build -o /out/app app.go
+#10 DONE 5.9s
+
+#11 [stage-1 2/2] COPY --from=builder /out/app /app
+#11 DONE 0.0s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 0.2s done
+#12 exporting manifest sha256:31688b17693a6ef3370929d77d90a0472461e006491e4d1d15796ba0e79a1572 done
+#12 exporting config sha256:543df1ab167008ce5023628ed57f17e22f64a9abe736bfd93230f1f527950057 done
+#12 exporting attestation manifest sha256:8a1074a647688f771a18b52b7d2b1c726b17036a0e4e43c92ec5c9b3a567ccbe done
+#12 exporting manifest list sha256:76279ca63e25c0fd632b300d37041d53d44bf8da8cb0cddc941ffd69420d8d09 done
+#12 naming to docker.io/library/hw-multistage:lab done
+#12 unpacking to docker.io/library/hw-multistage:lab 0.0s done
+#12 DONE 0.3s
++ docker rm -f hw-multistage
++ docker run -d --name hw-multistage -p 127.0.0.1:8080:8080 hw-multistage:lab
+95804f654744756a9267e10565e7fc491b51be717e9ee7ff8c0c8ba64e6ba91a
++ curl --fail --retry 20 --retry-all-errors --retry-delay 2 http://127.0.0.1:8080
++ tee evidence/docker/multistage-response.txt
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    42  100    42    0     0  35117      0 --:--:-- --:--:-- --:--:-- 42000
+Hello World from Docker multi-stage build
++ docker ps --filter name=hw-
+CONTAINER ID   IMAGE               COMMAND                  CREATED              STATUS                  PORTS                       NAMES
+95804f654744   hw-multistage:lab   "/app"                   1 second ago         Up Less than a second   127.0.0.1:8080->8080/tcp    hw-multistage
+82ef495b65a6   hw-nginx-app:lab    "/docker-entrypoint.…"   58 seconds ago       Up 57 seconds           127.0.0.1:18083->80/tcp     hw-nginx-app
+aa2fc4746793   hw-react-app:lab    "/docker-entrypoint.…"   About a minute ago   Up About a minute       127.0.0.1:18082->80/tcp     hw-react-app
+929295c82781   hw-apache-app:lab   "httpd-foreground"       About a minute ago   Up About a minute       127.0.0.1:18081->80/tcp     hw-apache-app
+b2080c4f8caa   hw-java-app:lab     "/__cacert_entrypoin…"   About a minute ago   Up About a minute       127.0.0.1:18080->8000/tcp   hw-java-app
+c36e59f3b320   hw-python-app:lab   "python app.py"          8 minutes ago        Up 8 minutes            127.0.0.1:18050->5000/tcp   hw-python-app
+3b3792af5b73   hw-nodejs-app:lab   "docker-entrypoint.s…"   10 minutes ago       Up 10 minutes           127.0.0.1:18030->3000/tcp   hw-nodejs-app
++ for n in hw-net1 hw-net2 hw-net3
++ docker network inspect hw-net1
++ docker network create hw-net1
+9c6c384303ea3378a21561c9d53864835ed20135128968956326d2a518d9ed24
++ for n in hw-net1 hw-net2 hw-net3
++ docker network inspect hw-net2
++ docker network create hw-net2
+0d5985d2fe8ded4be601800392eaadcafb8b8d3940ca0be72b6d01178641b9e4
++ for n in hw-net1 hw-net2 hw-net3
++ docker network inspect hw-net3
++ docker network create hw-net3
+abcce359c2d4de3b252036c187107c67992087d434acf3491ae117a282564ca6
++ for c in hw-frontend hw-backend hw-database hw-bindmount hw-apache-host
++ docker rm -f hw-frontend
++ for c in hw-frontend hw-backend hw-database hw-bindmount hw-apache-host
++ docker rm -f hw-backend
++ for c in hw-frontend hw-backend hw-database hw-bindmount hw-apache-host
++ docker rm -f hw-database
++ for c in hw-frontend hw-backend hw-database hw-bindmount hw-apache-host
++ docker rm -f hw-bindmount
++ for c in hw-frontend hw-backend hw-database hw-bindmount hw-apache-host
++ docker rm -f hw-apache-host
++ docker run -d --name hw-frontend --network hw-net1 alpine:3.22 sleep 3600
+Unable to find image 'alpine:3.22' locally
+3.22: Pulling from library/alpine
+16fc4f52163f: Pulling fs layer
+37a98a5c0ed3: Download complete
+237cf59f8e65: Download complete
+16fc4f52163f: Download complete
+16fc4f52163f: Pull complete
+Digest: sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+Status: Downloaded newer image for alpine:3.22
+da284c817e0d2626cdcdaa46533ab92c38be810687ef323d9b60229d2b230686
++ docker run -d --name hw-backend --network hw-net1 alpine:3.22 sleep 3600
+55969b09b8dc172ea8d7b3774e2777d5d6f0f7f903c823e0f7034edaf9c80732
++ docker run -d --name hw-database --network hw-net3 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes mysql:8
+Unable to find image 'mysql:8' locally
+8: Pulling from library/mysql
+c39e7994a8f2: Pulling fs layer
+a7411e35d6d4: Pulling fs layer
+f4aeb931cc30: Pulling fs layer
+674e0586d6a0: Pulling fs layer
+9caa8c3382dd: Pulling fs layer
+7c2e7d54e98e: Pulling fs layer
+6dddcbf9098d: Pulling fs layer
+9d43d3bd420c: Pulling fs layer
+a9f1b48c6cb3: Pulling fs layer
+0f6670c3ce31: Pulling fs layer
+c39e7994a8f2: Download complete
+7c2e7d54e98e: Download complete
+f4aeb931cc30: Download complete
+a9f1b48c6cb3: Download complete
+6dddcbf9098d: Download complete
+674e0586d6a0: Download complete
+097a02c958f8: Download complete
+9caa8c3382dd: Download complete
+1e6475e65a4b: Download complete
+9d43d3bd420c: Download complete
+a7411e35d6d4: Download complete
+f4aeb931cc30: Pull complete
+674e0586d6a0: Pull complete
+a7411e35d6d4: Pull complete
+7c2e7d54e98e: Pull complete
+6dddcbf9098d: Pull complete
+9caa8c3382dd: Pull complete
+a9f1b48c6cb3: Pull complete
+9d43d3bd420c: Pull complete
+0f6670c3ce31: Download complete
+c39e7994a8f2: Pull complete
+0f6670c3ce31: Pull complete
+Digest: sha256:6ea90827b1100f8f2ae306a539f86d2c264a26ed435a2a9f75551dd5c3aeb242
+Status: Downloaded newer image for mysql:8
+895c00f0566f98b2f1f423c5c6def045f35ec791f31e15468e4075b5a3e15f7e
++ docker network connect hw-net2 hw-backend
++ docker inspect hw-backend --format '{{json .NetworkSettings.Networks}}'
+{"hw-net1":{"IPAMConfig":null,"Links":null,"Aliases":null,"DriverOpts":null,"GwPriority":0,"NetworkID":"9c6c384303ea3378a21561c9d53864835ed20135128968956326d2a518d9ed24","EndpointID":"148dea4cafc6f9a36cd5379e194d8263c47c46cc1de6c93171a8ce922019626c","Gateway":"172.19.0.1","IPAddress":"172.19.0.3","MacAddress":"ae:0a:42:75:62:71","IPPrefixLen":16,"IPv6Gateway":"","GlobalIPv6Address":"","GlobalIPv6PrefixLen":0,"DNSNames":["hw-backend","55969b09b8dc"]},"hw-net2":{"IPAMConfig":{},"Links":null,"Aliases":[],"DriverOpts":{},"GwPriority":0,"NetworkID":"0d5985d2fe8ded4be601800392eaadcafb8b8d3940ca0be72b6d01178641b9e4","EndpointID":"d9d2d60d9db164848d42e7c5df3216b8d2fbd21cce5430c46850cff2adc8db73","Gateway":"172.20.0.1","IPAddress":"172.20.0.2","MacAddress":"72:10:a9:e3:4c:b8","IPPrefixLen":16,"IPv6Gateway":"","GlobalIPv6Address":"","GlobalIPv6PrefixLen":0,"DNSNames":["hw-backend","55969b09b8dc"]}}
++ docker exec hw-frontend ping -c 2 hw-backend
+PING hw-backend (172.19.0.3): 56 data bytes
+64 bytes from 172.19.0.3: seq=0 ttl=64 time=0.138 ms
+64 bytes from 172.19.0.3: seq=1 ttl=64 time=0.149 ms
+
+--- hw-backend ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 0.138/0.143/0.149 ms
++ docker exec hw-frontend ping -c 2 -W 2 hw-database
+ping: bad address 'hw-database'
++ echo 'Observed expected isolation'
+Observed expected isolation
++ docker network connect hw-net3 hw-frontend
++ docker exec hw-frontend ping -c 2 hw-database
+PING hw-database (172.21.0.2): 56 data bytes
+64 bytes from 172.21.0.2: seq=0 ttl=64 time=0.073 ms
+64 bytes from 172.21.0.2: seq=1 ttl=64 time=0.092 ms
+
+--- hw-database ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 0.073/0.082/0.092 ms
++ docker run -d --name hw-apache-host --network host httpd:2.4
+Unable to find image 'httpd:2.4' locally
+2.4: Pulling from library/httpd
+16216c3fcaf0: Pulling fs layer
+bbeda6b4abb7: Pulling fs layer
+902e2a8a7274: Pulling fs layer
+e71ac08dcbc4: Pulling fs layer
+2bfba9b8d1a6: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4f4fb700ef54: Already exists
+595cc0f8833f: Download complete
+2bfba9b8d1a6: Download complete
+16216c3fcaf0: Download complete
+2468c11e8512: Download complete
+902e2a8a7274: Download complete
+e71ac08dcbc4: Download complete
+bbeda6b4abb7: Download complete
+4f4fb700ef54: Pull complete
+2bfba9b8d1a6: Pull complete
+902e2a8a7274: Pull complete
+bbeda6b4abb7: Pull complete
+e71ac08dcbc4: Pull complete
+16216c3fcaf0: Pull complete
+Digest: sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+Status: Downloaded newer image for httpd:2.4
+690bef1b447a6d06c9e78ab4933489161b792aaaa9fe54e12135cdfc19d57c48
++ docker run --rm --network host curlimages/curl:8.12.1 --fail --retry 10 --retry-all-errors http://127.0.0.1:80
+Unable to find image 'curlimages/curl:8.12.1' locally
+8.12.1: Pulling from curlimages/curl
+bd9ddc54bea9: Pulling fs layer
+7c7e9e0a0259: Pulling fs layer
+bd9ddc54bea9: Download complete
+7c7e9e0a0259: Download complete
+bd9ddc54bea9: Pull complete
+7c7e9e0a0259: Pull complete
+Digest: sha256:94e9e444bcba979c2ea12e27ae39bee4cd10bc7041a472c4727a558e213744e6
+Status: Downloaded newer image for curlimages/curl:8.12.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>It works! Apache httpd</title>
+</head>
+<body>
+<p>It works!</p>
+</body>
+</html>
+100   191  100   191    0     0   295k      0 --:--:-- --:--:-- --:--:--  186k
++ mkdir -p /private/tmp/devops-bindmount
++ printf '<h1>Hello students</h1>\n'
++ docker run -d --name hw-bindmount -p 127.0.0.1:18090:80 -v /private/tmp/devops-bindmount:/usr/share/nginx/html:ro nginx:alpine
+Unable to find image 'nginx:alpine' locally
+alpine: Pulling from library/nginx
+Digest: sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2
+Status: Downloaded newer image for nginx:alpine
+e2d0f6f3e434e1a1eaa6c0b26559633a7e85a418621c5b0d40f364bbb27a3b39
++ curl --fail --retry 10 --retry-all-errors http://127.0.0.1:18090
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (52) Empty reply from server
+Warning: Problem (retrying all errors). Will retry in 1 seconds. 10 retries 
+Warning: left.
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    24  100    24    0     0   8498      0 --:--:-- --:--:-- --:--:-- 12000
+<h1>Hello students</h1>
++ printf '<h1>Hello students - updated!</h1>\n'
++ curl --fail http://127.0.0.1:18090
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    35  100    35    0     0  24021      0 --:--:-- --:--:-- --:--:-- 35000
+<h1>Hello students - updated!</h1>
++ docker inspect hw-bindmount --format 'StartedAt={{.State.StartedAt}}'
+StartedAt=2026-10-07T15:08:47.398324787Z
++ docker ps --filter name=hw-
+CONTAINER ID   IMAGE               COMMAND                  CREATED              STATUS              PORTS                       NAMES
+e2d0f6f3e434   nginx:alpine        "/docker-entrypoint.…"   1 second ago         Up 1 second         127.0.0.1:18090->80/tcp     hw-bindmount
+690bef1b447a   httpd:2.4           "httpd-foreground"       16 seconds ago       Up 15 seconds                                   hw-apache-host
+895c00f0566f   mysql:8             "docker-entrypoint.s…"   43 seconds ago       Up 42 seconds       3306/tcp, 33060/tcp         hw-database
+55969b09b8dc   alpine:3.22         "sleep 3600"             About a minute ago   Up About a minute                               hw-backend
+da284c817e0d   alpine:3.22         "sleep 3600"             About a minute ago   Up About a minute                               hw-frontend
+95804f654744   hw-multistage:lab   "/app"                   2 minutes ago        Up 2 minutes        127.0.0.1:8080->8080/tcp    hw-multistage
+82ef495b65a6   hw-nginx-app:lab    "/docker-entrypoint.…"   3 minutes ago        Up 3 minutes        127.0.0.1:18083->80/tcp     hw-nginx-app
+aa2fc4746793   hw-react-app:lab    "/docker-entrypoint.…"   3 minutes ago        Up 3 minutes        127.0.0.1:18082->80/tcp     hw-react-app
+929295c82781   hw-apache-app:lab   "httpd-foreground"       3 minutes ago        Up 3 minutes        127.0.0.1:18081->80/tcp     hw-apache-app
+b2080c4f8caa   hw-java-app:lab     "/__cacert_entrypoin…"   3 minutes ago        Up 3 minutes        127.0.0.1:18080->8000/tcp   hw-java-app
+c36e59f3b320   hw-python-app:lab   "python app.py"          10 minutes ago       Up 10 minutes       127.0.0.1:18050->5000/tcp   hw-python-app
+3b3792af5b73   hw-nodejs-app:lab   "docker-entrypoint.s…"   12 minutes ago       Up 12 minutes       127.0.0.1:18030->3000/tcp   hw-nodejs-app

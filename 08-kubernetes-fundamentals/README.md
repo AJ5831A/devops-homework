@@ -49,3 +49,11 @@ curl http://127.0.0.1:8080
 Expected: three ready replicas after scaling, a new ReplicaSet after changing the image, and `Hello from Kubernetes` from curl. Save command output and a browser screenshot. Stop port-forward with Ctrl+C, then `kubectl delete namespace hw-fundamentals`.
 
 References: [Kubernetes basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/), [components](https://kubernetes.io/docs/concepts/overview/components/), [Minikube start](https://minikube.sigs.k8s.io/docs/start/).
+
+## Local cluster setup evidence
+
+Minikube v1.39.0 created Kubernetes v1.34.0 in the Docker-backed Colima lab on 2026-10-07. The node reached Ready after Calico initialized.
+
+[Actual cluster status](../evidence/kubernetes/local-setup/cluster-ready.txt) · [initial startup state](../evidence/kubernetes/local-setup/cluster-startup.txt)
+
+![Recorded local cluster output](../evidence/kubernetes/local-setup/cluster-ready.png)

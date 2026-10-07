@@ -1,7 +1,9 @@
 # Monitoring, Observability & GitOps
 
-Session 20. Commands below are runnable lab steps; Docker/Kubernetes execution
-and screenshots are still pending on a machine with those tools.
+Session 20. The monitoring lab ran locally on 7 October 2026 using Docker,
+Prometheus and Grafana. [Runtime evidence](evidence/README.md) includes dashboard
+screenshots, metrics, request logs and verified alert firing/recovery.
+The GitOps procedure and its execution status are documented in Task 3 below.
 
 ## Task 1: Monitoring demo
 
@@ -40,6 +42,24 @@ Prometheus evaluates these and displays pending/firing/resolved state. This lab
 has no external notification receiver; Alertmanager is needed to route emails
 or messages. Capture dashboard graphs, `docker stats`, logs and alert transitions.
 The CPU alert may need several concurrent load loops to exceed its threshold.
+
+### Recorded monitoring results
+
+The application was healthy and Prometheus scraped it successfully. Four
+concurrent `/work?rounds=100000` loops produced 357.42% container CPU usage
+(about 3.57 cores) and a peak resident-memory metric of 24,809,472 bytes.
+Grafana displayed health, CPU, memory and request-rate graphs. Prometheus
+recorded `DemoHighCPU` firing during this load. Stopping the app then triggered
+`DemoApplicationDown`; restarting it cleared the alert. The captured run used
+`APP_PORT=18089` to avoid other lab services.
+
+![Grafana monitoring dashboard](evidence/grafana-dashboard.png)
+
+![Prometheus down alert firing](evidence/alert-firing.png)
+
+![Prometheus alerts recovered](evidence/alert-recovered.png)
+
+See [raw commands and evidence](evidence/README.md).
 
 ## Task 2: Observability
 

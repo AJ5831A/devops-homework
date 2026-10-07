@@ -1,0 +1,19 @@
+COMPUTED VALUES:
+app:
+  environment: production
+  name: notes-app
+image:
+  repository: nginx
+  tag: 1.28-alpine
+replicaCount: 3
+resources:
+  limits:
+    cpu: 200m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 32Mi
+service:
+  nodePort: 30090
+  port: 80
+  type: ClusterIP
