@@ -6,6 +6,6 @@
 - Helm: `14-helm/notes-chart` passed strict lint/render with defaults and production + NodePort overrides.
 - Helm: `final-devops-project/helm/devops-demo` passed strict lint/render with defaults, Ingress/HPA enabled, and GitOps values.
 
-These checks verify formatting, Terraform/provider configuration and Helm template rendering. They do not create AWS resources or install charts into Kubernetes. AWS plan/apply/destroy remains pending. Separate [Helm runtime evidence](../helm/20261007T150849Z/) records the actual chart installation, upgrade and rollback. No AWS credentials were needed by this workflow.
+These checks verify formatting, Terraform/provider configuration and Helm template rendering. They do not create AWS resources or install charts into Kubernetes. Subsequent AWS plan/apply/destroy evidence is recorded separately for [S3](../aws/17-s3-20261007T153930Z/README.md), [VPC/EC2](../aws/18-vpc-ec2-20261007T153930Z/README.md) and the [final project](../aws-final/). Separate [Helm runtime evidence](../helm/20261007T150849Z/) records the actual chart installation, upgrade and rollback. No AWS credentials were needed by this workflow.
 
 All corresponding local checks also completed successfully on 2026-10-07 with Terraform 1.9.8 and Helm 3.16.4. The tool/version, initialization, validation, lint and rendered-manifest files in this folder are the actual local outputs. Rendered YAML is validation output, not proof of a deployed application.

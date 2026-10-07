@@ -57,6 +57,11 @@ Final deployment, four fault repairs and GitOps promotion/self-heal/rollback
 passed in the hosted runtime step. Its subsequent UI capture failed on a login
 selector; the corrected capture then passed locally with both Argo applications
 Synced/Healthy and final readiness HTTP200. Original failures are retained.
-AWS plan/apply/output/destroy remain pending authenticated AWS CLI access.
-The submission remains incomplete until these remaining execution requirements
-are proven. See VALIDATION.md and each linked evidence folder for exact scope.
+AWS execution is complete: [Session18 S3](evidence/aws/17-s3-20261007T153930Z/README.md)
+created/verified/destroyed four resources; [Session19 VPC/EC2](evidence/aws/18-vpc-ec2-20261007T153930Z/README.md)
+created/verified/destroyed eleven resources and served the live Nginx page.
+The [final AWS deployment](evidence/aws-final/) created eleven resources,
+bootstrapped k3s, served the scanned application through Helm/Traefik, and then
+destroyed the resources and temporary key pair. Independent AWS checks verified
+cleanup. All required implementation and execution deliverables are recorded;
+see VALIDATION.md and each evidence index for run details and original failures.

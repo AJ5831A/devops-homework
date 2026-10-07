@@ -35,6 +35,7 @@ cd terraform-vpc
 cp terraform.tfvars.example terraform.tfvars
 # Edit http_cidr to your actual public IPv4 /32 before planning.
 export AWS_PROFILE=devops-lab
+export AWS_DEFAULT_REGION=ap-south-1
 # Bridge AWS CLI login credentials to the Terraform 5.x AWS provider.
 # This evaluates trusted AWS CLI exports; do not print the values or use shell xtrace.
 eval "$(aws configure export-credentials --profile "$AWS_PROFILE" --format env)"

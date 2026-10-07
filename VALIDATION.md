@@ -11,8 +11,10 @@
 - Final application review fixes are documented in [security/REVIEW.md](final-devops-project/security/REVIEW.md).
 
 The repository-wide structural checker and application unit tests passed.
-Counts increase as new runtime evidence is added; use the commands below to
-check the current checkout. Raw CLI evidence preserves original whitespace.
+The final structural pass checked 114 YAML, 36 JSON, 10 Python and 9 shell
+files plus 301 local links. A final credential check found no current AWS
+credential values in tracked or unignored submission files. Raw CLI evidence
+preserves original whitespace.
 
 ## Reproduce offline checks
 
@@ -57,7 +59,7 @@ verification, cleanup and journalctl transcript is in
 - [Local infrastructure validation](evidence/infrastructure/README.md): all three Terraform init/fmt/validate runs and both chart lint/render checks.
 - [Monitoring](19-monitoring-gitops/evidence/README.md): CPU/memory, logs, health, Grafana, firing alerts and recovery.
 
-## Runtime recovery and remaining AWS work
+## Runtime recovery
 
 The first hosted Kubernetes exercise run exposed verification-script timing
 and DNS return-code problems. Its original evidence is retained alongside
@@ -69,7 +71,16 @@ script passed against local Argo with both applications Synced/Healthy and
 final readiness HTTP200; [actual screenshots and runtime records](evidence/gitops/)
 are saved separately. Neither original workflow is represented as fully green.
 
-AWS plan/apply/output/destroy await CLI authentication: the latest local STS
-identity check returned NoCredentials, with no configured profile or region. No cloud credentials
-or fabricated output are committed. Later workflow additions need a new run
-before claiming validation for those revisions.
+## AWS execution and cleanup
+
+All three projects ran against AWS in `ap-south-1` using profile `devops-lab`:
+
+- [S3 lab](evidence/aws/17-s3-20261007T153930Z/README.md): four resources created, public-access blocking/versioning/encryption checked, no-change plan, four resources destroyed and bucket absence verified.
+- [VPC/EC2 lab](evidence/aws/18-vpc-ec2-20261007T153930Z/README.md): eleven resources created, EC2 health and live Nginx page verified, no-change plan, eleven resources destroyed; EC2 termination and bucket/VPC/root-disk absence verified.
+- [Final project cloud deployment](evidence/aws-final/): eleven resources created, SSH host key verified against AWS console output, k3s Ready, exact scanned image deployed with Helm, two ready Pods, Traefik HTTP200/readiness and HPA metrics. All eleven resources and the temporary SSH key were removed; independent AWS checks confirmed cleanup and empty Terraform state.
+
+Original init/validate/plan/apply/show/output/destroy records and actual browser
+screenshots are included. State, saved plans, credentials and private keys were
+kept outside Git. Account identifiers and the operator's public IP are explicitly
+redacted in published infrastructure transcripts. Local lab containers and the
+Minikube/Colima VM were stopped after evidence capture.

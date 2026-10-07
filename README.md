@@ -40,7 +40,8 @@ smoke deployment, Helm charts and Terraform validation. Docker application,
 networking and volume exercises, the Helm lifecycle, and live Prometheus/Grafana
 monitoring now have recorded evidence. Kubernetes repair checks and GitOps
 promotion, self-healing and rollback have passed. Argo screenshots now show
-both applications Synced/Healthy. AWS apply/destroy awaits CLI authentication. Expected outputs in the runbooks
+both applications Synced/Healthy. All three AWS Terraform labs were created,
+verified and destroyed; cloud and cleanup evidence is linked in the audit. Expected outputs in the runbooks
 are explicitly distinguished from observed results; no reference screenshots
 are presented as this submission's evidence.
 
