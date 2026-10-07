@@ -21,6 +21,22 @@ are retained. The GitOps values now promote that verified SHA.
 
 ![Local running application](../evidence/final-project/local-app.png)
 
+## Observed Kubernetes, Helm and GitOps runtime
+
+The runtime step in [run 37642643309](https://github.com/AJ5831A/devops-homework/actions/runs/37642643309)
+completed native deployment, real Ingress requests, Helm upgrade/rollback,
+CPU-driven scaling from 2 to 4 to 5 replicas, and all four intentional fault
+repairs. It then deployed the chart through Argo CD and verified `Synced / Healthy`.
+[The complete transcript and provenance](../evidence/gitops/README.md) retain
+these observations. The exact image from the successful scanned/published
+pipeline was loaded from its saved artifact; it was not rebuilt for this run.
+
+The supplementary hosted browser step failed on a login selector. After fixing
+and testing that selector locally, both Argo Applications were healthy in the
+local Minikube cluster, and the final Service returned `{"ready": true}`.
+
+![Final application managed by Argo CD](../evidence/gitops/argocd-final.png)
+
 ## Architecture and technologies
 
 ```text

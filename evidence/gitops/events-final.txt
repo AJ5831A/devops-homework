@@ -1,0 +1,342 @@
+NAMESPACE       LAST SEEN   TYPE      REASON                         OBJECT                                                   MESSAGE
+default         9m27s       Normal    Starting                       node/gitops-runtime                                      
+default         9m34s       Normal    Starting                       node/gitops-runtime                                      Starting kubelet.
+default         9m34s       Normal    NodeAllocatableEnforced        node/gitops-runtime                                      Updated Node Allocatable limit across pods
+default         9m33s       Normal    NodeHasSufficientPID           node/gitops-runtime                                      Node gitops-runtime status is now: NodeHasSufficientPID
+kube-system     9m33s       Warning   Unhealthy                      pod/kube-scheduler-gitops-runtime                        Readiness probe failed: HTTP probe failed with statuscode: 500
+default         9m33s       Normal    NodeHasSufficientMemory        node/gitops-runtime                                      Node gitops-runtime status is now: NodeHasSufficientMemory
+default         9m33s       Normal    NodeHasNoDiskPressure          node/gitops-runtime                                      Node gitops-runtime status is now: NodeHasNoDiskPressure
+kube-system     9m32s       Warning   FailedScheduling               pod/storage-provisioner                                  0/1 nodes are available: 1 node(s) had untolerated taint {node.kubernetes.io/not-ready: }. no new claims to deallocate, preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+default         9m29s       Normal    RegisteredNode                 node/gitops-runtime                                      Node gitops-runtime event: Registered Node gitops-runtime in Controller
+kube-system     9m28s       Normal    SuccessfulCreate               daemonset/kube-proxy                                     Created pod: kube-proxy-nnjpz
+kube-system     9m28s       Normal    ScalingReplicaSet              deployment/coredns                                       Scaled up replica set coredns-66bc5c9577 from 0 to 1
+ingress-nginx   9m28s       Warning   FailedScheduling               pod/ingress-nginx-controller-f547cc9fc-54wdr             0/1 nodes are available: 1 node(s) had untolerated taint {node.kubernetes.io/not-ready: }. no new claims to deallocate, preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+ingress-nginx   9m28s       Normal    ScalingReplicaSet              deployment/ingress-nginx-controller                      Scaled up replica set ingress-nginx-controller-f547cc9fc from 0 to 1
+kube-system     9m28s       Normal    SuccessfulCreate               replicaset/coredns-66bc5c9577                            Created pod: coredns-66bc5c9577-sb5lp
+kube-system     9m28s       Warning   FailedScheduling               pod/coredns-66bc5c9577-sb5lp                             0/1 nodes are available: 1 node(s) had untolerated taint {node.kubernetes.io/not-ready: }. no new claims to deallocate, preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+ingress-nginx   9m28s       Warning   FailedScheduling               pod/ingress-nginx-admission-patch-b6tb2                  0/1 nodes are available: 1 node(s) had untolerated taint {node.kubernetes.io/not-ready: }. no new claims to deallocate, preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+ingress-nginx   9m28s       Normal    SuccessfulCreate               job/ingress-nginx-admission-patch                        Created pod: ingress-nginx-admission-patch-b6tb2
+ingress-nginx   9m28s       Normal    SuccessfulCreate               job/ingress-nginx-admission-create                       Created pod: ingress-nginx-admission-create-pb5mt
+kube-system     9m28s       Warning   FailedMount                    pod/kube-proxy-nnjpz                                     MountVolume.SetUp failed for volume "kube-api-access-28c4v" : configmap "kube-root-ca.crt" not found
+kube-system     9m28s       Normal    Scheduled                      pod/kube-proxy-nnjpz                                     Successfully assigned kube-system/kube-proxy-nnjpz to gitops-runtime
+kube-system     9m28s       Normal    SuccessfulCreate               daemonset/kindnet                                        Created pod: kindnet-77z2h
+kube-system     9m28s       Normal    Scheduled                      pod/kindnet-77z2h                                        Successfully assigned kube-system/kindnet-77z2h to gitops-runtime
+kube-system     9m28s       Warning   FailedMount                    pod/kindnet-77z2h                                        MountVolume.SetUp failed for volume "kube-api-access-52mjm" : configmap "kube-root-ca.crt" not found
+ingress-nginx   9m28s       Warning   FailedScheduling               pod/ingress-nginx-admission-create-pb5mt                 0/1 nodes are available: 1 node(s) had untolerated taint {node.kubernetes.io/not-ready: }. no new claims to deallocate, preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+ingress-nginx   9m28s       Normal    SuccessfulCreate               replicaset/ingress-nginx-controller-f547cc9fc            Created pod: ingress-nginx-controller-f547cc9fc-54wdr
+kube-system     9m27s       Normal    Created                        pod/kube-proxy-nnjpz                                     Created container: kube-proxy
+kube-system     9m27s       Normal    Pulling                        pod/kindnet-77z2h                                        Pulling image "docker.io/kindest/kindnetd:v20260820-69b56db7"
+kube-system     9m27s       Normal    Pulled                         pod/kube-proxy-nnjpz                                     Container image "registry.k8s.io/kube-proxy:v1.34.0" already present on machine
+kube-system     9m27s       Normal    Started                        pod/kube-proxy-nnjpz                                     Started container kube-proxy
+kube-system     9m26s       Normal    Created                        pod/kindnet-77z2h                                        Created container: kindnet-cni
+kube-system     9m26s       Normal    Started                        pod/kindnet-77z2h                                        Started container kindnet-cni
+kube-system     9m26s       Normal    Pulled                         pod/kindnet-77z2h                                        Successfully pulled image "docker.io/kindest/kindnetd:v20260820-69b56db7" in 1.092s (1.092s including waiting). Image size: 39744255 bytes.
+ingress-nginx   9m16s       Normal    Scheduled                      pod/ingress-nginx-admission-create-pb5mt                 Successfully assigned ingress-nginx/ingress-nginx-admission-create-pb5mt to gitops-runtime
+ingress-nginx   9m16s       Normal    Scheduled                      pod/ingress-nginx-controller-f547cc9fc-54wdr             Successfully assigned ingress-nginx/ingress-nginx-controller-f547cc9fc-54wdr to gitops-runtime
+ingress-nginx   9m16s       Normal    Scheduled                      pod/ingress-nginx-admission-patch-b6tb2                  Successfully assigned ingress-nginx/ingress-nginx-admission-patch-b6tb2 to gitops-runtime
+kube-system     9m16s       Normal    Scheduled                      pod/coredns-66bc5c9577-sb5lp                             Successfully assigned kube-system/coredns-66bc5c9577-sb5lp to gitops-runtime
+default         9m16s       Normal    NodeReady                      node/gitops-runtime                                      Node gitops-runtime status is now: NodeReady
+kube-system     9m16s       Normal    Scheduled                      pod/storage-provisioner                                  Successfully assigned kube-system/storage-provisioner to gitops-runtime
+kube-system     9m15s       Normal    LeaderElection                 endpoints/k8s.io-minikube-hostpath                       gitops-runtime_38554306-8a3f-4afb-b4a7-f8b33677b673 became leader
+ingress-nginx   9m15s       Warning   FailedMount                    pod/ingress-nginx-controller-f547cc9fc-54wdr             MountVolume.SetUp failed for volume "webhook-cert" : secret "ingress-nginx-admission" not found
+kube-system     9m15s       Normal    Started                        pod/storage-provisioner                                  Started container storage-provisioner
+kube-system     9m15s       Normal    Created                        pod/storage-provisioner                                  Created container: storage-provisioner
+kube-system     9m15s       Normal    Pulled                         pod/storage-provisioner                                  Container image "gcr.io/k8s-minikube/storage-provisioner:v5" already present on machine
+kube-system     9m15s       Normal    Pulled                         pod/coredns-66bc5c9577-sb5lp                             Container image "registry.k8s.io/coredns/coredns:v1.12.1" already present on machine
+ingress-nginx   9m15s       Normal    Pulling                        pod/ingress-nginx-admission-create-pb5mt                 Pulling image "registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.9@sha256:01038e7de14b78d702d2849c3aad72fd25903c4765af63cf16aa3398f5d5f2dd"
+ingress-nginx   9m15s       Normal    Pulling                        pod/ingress-nginx-admission-patch-b6tb2                  Pulling image "registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.9@sha256:01038e7de14b78d702d2849c3aad72fd25903c4765af63cf16aa3398f5d5f2dd"
+kube-system     9m15s       Normal    Started                        pod/coredns-66bc5c9577-sb5lp                             Started container coredns
+kube-system     9m15s       Normal    Created                        pod/coredns-66bc5c9577-sb5lp                             Created container: coredns
+ingress-nginx   9m14s       Normal    Started                        pod/ingress-nginx-admission-create-pb5mt                 Started container create
+ingress-nginx   9m14s       Normal    Pulled                         pod/ingress-nginx-admission-patch-b6tb2                  Successfully pulled image "registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.9@sha256:01038e7de14b78d702d2849c3aad72fd25903c4765af63cf16aa3398f5d5f2dd" in 773ms (773ms including waiting). Image size: 26543532 bytes.
+ingress-nginx   9m14s       Normal    Pulling                        pod/ingress-nginx-controller-f547cc9fc-54wdr             Pulling image "registry.k8s.io/ingress-nginx/controller:v1.15.1@sha256:594ceea76b01c592858f803f9ff4d2cb40542cae2060410b2c95f75907d659e1"
+ingress-nginx   9m14s       Normal    Created                        pod/ingress-nginx-admission-create-pb5mt                 Created container: create
+ingress-nginx   9m14s       Normal    Pulled                         pod/ingress-nginx-admission-create-pb5mt                 Successfully pulled image "registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.9@sha256:01038e7de14b78d702d2849c3aad72fd25903c4765af63cf16aa3398f5d5f2dd" in 74ms (803ms including waiting). Image size: 26543532 bytes.
+ingress-nginx   9m14s       Normal    Pulled                         pod/ingress-nginx-admission-patch-b6tb2                  Container image "registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.9@sha256:01038e7de14b78d702d2849c3aad72fd25903c4765af63cf16aa3398f5d5f2dd" already present on machine
+ingress-nginx   9m13s       Normal    Started                        pod/ingress-nginx-admission-patch-b6tb2                  Started container patch
+ingress-nginx   9m13s       Normal    Created                        pod/ingress-nginx-admission-patch-b6tb2                  Created container: patch
+ingress-nginx   9m12s       Normal    Pulled                         pod/ingress-nginx-controller-f547cc9fc-54wdr             Successfully pulled image "registry.k8s.io/ingress-nginx/controller:v1.15.1@sha256:594ceea76b01c592858f803f9ff4d2cb40542cae2060410b2c95f75907d659e1" in 2.066s (2.066s including waiting). Image size: 115975561 bytes.
+ingress-nginx   9m12s       Normal    Created                        pod/ingress-nginx-controller-f547cc9fc-54wdr             Created container: controller
+ingress-nginx   9m11s       Normal    Started                        pod/ingress-nginx-controller-f547cc9fc-54wdr             Started container controller
+ingress-nginx   9m11s       Normal    CREATE                         configmap/udp-services                                   ConfigMap ingress-nginx/udp-services
+ingress-nginx   9m11s       Normal    CREATE                         configmap/tcp-services                                   ConfigMap ingress-nginx/tcp-services
+ingress-nginx   9m11s       Normal    CREATE                         configmap/ingress-nginx-controller                       ConfigMap ingress-nginx/ingress-nginx-controller
+ingress-nginx   9m11s       Normal    Completed                      job/ingress-nginx-admission-create                       Job completed
+kube-system     9m10s       Normal    ScalingReplicaSet              deployment/metrics-server                                Scaled up replica set metrics-server-b85d78fd7 from 0 to 1
+kube-system     9m10s       Normal    SuccessfulCreate               replicaset/metrics-server-b85d78fd7                      Created pod: metrics-server-b85d78fd7-hzdqj
+kube-system     9m10s       Normal    Scheduled                      pod/metrics-server-b85d78fd7-hzdqj                       Successfully assigned kube-system/metrics-server-b85d78fd7-hzdqj to gitops-runtime
+ingress-nginx   9m10s       Normal    Completed                      job/ingress-nginx-admission-patch                        Job completed
+kube-system     9m9s        Normal    Pulling                        pod/metrics-server-b85d78fd7-hzdqj                       Pulling image "registry.k8s.io/metrics-server/metrics-server:v0.9.0@sha256:d9862115e7c7881280d3d75ca26bda8ffc0fc213315979575bf23ce9826205c0"
+kube-system     9m8s        Normal    Started                        pod/metrics-server-b85d78fd7-hzdqj                       Started container metrics-server
+kube-system     9m8s        Normal    Pulled                         pod/metrics-server-b85d78fd7-hzdqj                       Successfully pulled image "registry.k8s.io/metrics-server/metrics-server:v0.9.0@sha256:d9862115e7c7881280d3d75ca26bda8ffc0fc213315979575bf23ce9826205c0" in 1.033s (1.033s including waiting). Image size: 23258428 bytes.
+kube-system     9m8s        Normal    Created                        pod/metrics-server-b85d78fd7-hzdqj                       Created container: metrics-server
+kube-system     8m15s       Warning   Unhealthy                      pod/metrics-server-b85d78fd7-hzdqj                       Readiness probe failed: HTTP probe failed with statuscode: 500
+devops-final    8m5s        Normal    Scheduled                      pod/devops-demo-6c684865d8-q59bn                         Successfully assigned devops-final/devops-demo-6c684865d8-q59bn to gitops-runtime
+devops-final    8m5s        Normal    Scheduled                      pod/devops-demo-6c684865d8-kzb9d                         Successfully assigned devops-final/devops-demo-6c684865d8-kzb9d to gitops-runtime
+devops-final    8m5s        Normal    Created                        pod/devops-demo-6c684865d8-kzb9d                         Created container: app
+devops-final    8m5s        Normal    Started                        pod/devops-demo-6c684865d8-q59bn                         Started container app
+devops-final    8m5s        Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-6c684865d8 from 0 to 2
+devops-final    8m5s        Normal    Pulled                         pod/devops-demo-6c684865d8-kzb9d                         Container image "devops-final:local" already present on machine
+devops-final    8m5s        Normal    Created                        pod/devops-demo-6c684865d8-q59bn                         Created container: app
+devops-final    8m5s        Normal    SuccessfulCreate               replicaset/devops-demo-6c684865d8                        Created pod: devops-demo-6c684865d8-kzb9d
+devops-final    8m5s        Normal    Started                        pod/devops-demo-6c684865d8-kzb9d                         Started container app
+devops-final    8m5s        Normal    SuccessfulCreate               replicaset/devops-demo-6c684865d8                        Created pod: devops-demo-6c684865d8-q59bn
+devops-final    8m5s        Normal    Pulled                         pod/devops-demo-6c684865d8-q59bn                         Container image "devops-final:local" already present on machine
+devops-final    7m59s       Normal    SuccessfulCreate               replicaset/devops-demo-cf847b7b8                         Created pod: devops-demo-cf847b7b8-5tbwz
+devops-final    7m59s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-cf847b7b8 from 0 to 1
+devops-final    7m59s       Normal    Scheduled                      pod/devops-demo-cf847b7b8-5tbwz                          Successfully assigned devops-final/devops-demo-cf847b7b8-5tbwz to gitops-runtime
+devops-final    7m45s       Warning   Failed                         pod/devops-demo-cf847b7b8-5tbwz                          Failed to pull image "nginx:does-not-exist": rpc error: code = NotFound desc = failed to pull and unpack image "docker.io/library/nginx:does-not-exist": failed to resolve reference "docker.io/library/nginx:does-not-exist": docker.io/library/nginx:does-not-exist: not found
+devops-final    7m45s       Normal    Pulling                        pod/devops-demo-cf847b7b8-5tbwz                          Pulling image "nginx:does-not-exist"
+devops-final    7m45s       Warning   Failed                         pod/devops-demo-cf847b7b8-5tbwz                          Error: ErrImagePull
+devops-final    7m31s       Warning   Failed                         pod/devops-demo-cf847b7b8-5tbwz                          Error: ImagePullBackOff
+devops-final    7m31s       Normal    BackOff                        pod/devops-demo-cf847b7b8-5tbwz                          Back-off pulling image "nginx:does-not-exist"
+devops-final    7m29s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled down replica set devops-demo-cf847b7b8 from 1 to 0
+devops-final    7m29s       Normal    SuccessfulDelete               replicaset/devops-demo-cf847b7b8                         Deleted pod: devops-demo-cf847b7b8-5tbwz
+devops-final    7m28s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-7d6dc7dc87 from 0 to 1
+devops-final    7m28s       Normal    SuccessfulCreate               replicaset/devops-demo-7d6dc7dc87                        Created pod: devops-demo-7d6dc7dc87-gqfv2
+devops-final    7m28s       Normal    Scheduled                      pod/devops-demo-7d6dc7dc87-gqfv2                         Successfully assigned devops-final/devops-demo-7d6dc7dc87-gqfv2 to gitops-runtime
+devops-final    7m20s       Warning   FailedGetResourceMetric        horizontalpodautoscaler/devops-demo                      failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+devops-final    7m20s       Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/devops-demo                      invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+devops-final    7m16s       Warning   Failed                         pod/devops-demo-7d6dc7dc87-gqfv2                         Error: secret "devops-demo-secret" not found
+devops-final    7m10s       Normal    Sync                           ingress/devops-demo                                      Scheduled for sync
+devops-final    7m4s        Normal    Created                        pod/devops-demo-7d6dc7dc87-gqfv2                         Created container: app
+devops-final    7m4s        Normal    Pulled                         pod/devops-demo-7d6dc7dc87-gqfv2                         Container image "devops-final:local" already present on machine
+devops-final    7m3s        Normal    Started                        pod/devops-demo-7d6dc7dc87-gqfv2                         Started container app
+devops-final    7m1s        Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-7d6dc7dc87 from 1 to 2
+devops-final    7m1s        Normal    SuccessfulCreate               replicaset/devops-demo-7d6dc7dc87                        Created pod: devops-demo-7d6dc7dc87-54n9j
+devops-final    7m1s        Normal    Created                        pod/devops-demo-7d6dc7dc87-54n9j                         Created container: app
+devops-final    7m1s        Normal    Killing                        pod/devops-demo-6c684865d8-kzb9d                         Stopping container app
+devops-final    7m1s        Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled down replica set devops-demo-6c684865d8 from 2 to 1
+devops-final    7m1s        Normal    SuccessfulDelete               replicaset/devops-demo-6c684865d8                        Deleted pod: devops-demo-6c684865d8-kzb9d
+devops-final    7m1s        Normal    Scheduled                      pod/devops-demo-7d6dc7dc87-54n9j                         Successfully assigned devops-final/devops-demo-7d6dc7dc87-54n9j to gitops-runtime
+devops-final    7m1s        Normal    Pulled                         pod/devops-demo-7d6dc7dc87-54n9j                         Container image "devops-final:local" already present on machine
+devops-final    7m1s        Normal    Started                        pod/devops-demo-7d6dc7dc87-54n9j                         Started container app
+devops-final    6m58s       Normal    SuccessfulDelete               replicaset/devops-demo-6c684865d8                        Deleted pod: devops-demo-6c684865d8-q59bn
+devops-final    6m58s       Normal    Killing                        pod/devops-demo-6c684865d8-q59bn                         Stopping container app
+devops-final    6m58s       Normal    SuccessfulCreate               replicaset/devops-demo-5467d9996b                        Created pod: devops-demo-5467d9996b-dcgst
+devops-final    6m58s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-5467d9996b from 0 to 1
+devops-final    6m58s       Normal    Started                        pod/devops-demo-5467d9996b-dcgst                         Started container app
+devops-final    6m58s       Normal    Created                        pod/devops-demo-5467d9996b-dcgst                         Created container: app
+devops-final    6m58s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled down replica set devops-demo-6c684865d8 from 1 to 0
+devops-final    6m58s       Normal    Pulled                         pod/devops-demo-5467d9996b-dcgst                         Container image "devops-final:local" already present on machine
+devops-final    6m58s       Normal    Scheduled                      pod/devops-demo-5467d9996b-dcgst                         Successfully assigned devops-final/devops-demo-5467d9996b-dcgst to gitops-runtime
+devops-final    6m35s       Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/devops-demo                      invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+devops-final    6m35s       Warning   FailedGetResourceMetric        horizontalpodautoscaler/devops-demo                      failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+devops-final    6m33s       Normal    SuccessfulDelete               replicaset/devops-demo-5467d9996b                        Deleted pod: devops-demo-5467d9996b-dcgst
+devops-final    6m33s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled down replica set devops-demo-5467d9996b from 1 to 0
+devops-final    6m33s       Normal    Killing                        pod/devops-demo-7d6dc7dc87-gqfv2                         Stopping container app
+devops-final    6m33s       Normal    Killing                        pod/devops-demo-5467d9996b-dcgst                         Stopping container app
+devops-final    6m33s       Normal    Killing                        pod/devops-demo-7d6dc7dc87-54n9j                         Stopping container app
+devops-final    6m32s       Normal    Started                        pod/devops-demo-5989f485cf-t7jpj                         Started container app
+devops-final    6m32s       Normal    SuccessfulCreate               replicaset/devops-demo-5989f485cf                        Created pod: devops-demo-5989f485cf-t7jpj
+devops-final    6m32s       Normal    Scheduled                      pod/devops-demo-5989f485cf-t7jpj                         Successfully assigned devops-final/devops-demo-5989f485cf-t7jpj to gitops-runtime
+devops-final    6m32s       Normal    Pulled                         pod/devops-demo-5989f485cf-t7jpj                         Container image "devops-final:local" already present on machine
+devops-final    6m32s       Normal    Created                        pod/devops-demo-5989f485cf-t7jpj                         Created container: app
+devops-final    6m28s       Normal    Created                        pod/devops-demo-6944874c9-29wqq                          Created container: app
+devops-final    6m28s       Normal    SuccessfulCreate               replicaset/devops-demo-6944874c9                         Created pod: devops-demo-6944874c9-29wqq
+devops-final    6m28s       Normal    Scheduled                      pod/devops-demo-6944874c9-29wqq                          Successfully assigned devops-final/devops-demo-6944874c9-29wqq to gitops-runtime
+devops-final    6m28s       Normal    Pulled                         pod/devops-demo-6944874c9-29wqq                          Container image "devops-final:local" already present on machine
+devops-final    6m28s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-6944874c9 from 0 to 1
+devops-final    6m28s       Normal    Started                        pod/devops-demo-6944874c9-29wqq                          Started container app
+devops-final    6m25s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled down replica set devops-demo-5989f485cf from 1 to 0
+devops-final    6m25s       Normal    Killing                        pod/devops-demo-5989f485cf-t7jpj                         Stopping container app
+devops-final    6m25s       Normal    SuccessfulDelete               replicaset/devops-demo-5989f485cf                        Deleted pod: devops-demo-5989f485cf-t7jpj
+devops-final    6m24s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-5989f485cf from 0 to 1
+devops-final    6m24s       Normal    Started                        pod/devops-demo-5989f485cf-fdsqh                         Started container app
+devops-final    6m24s       Normal    Created                        pod/devops-demo-5989f485cf-fdsqh                         Created container: app
+devops-final    6m24s       Normal    SuccessfulCreate               replicaset/devops-demo-5989f485cf                        Created pod: devops-demo-5989f485cf-fdsqh
+devops-final    6m24s       Normal    Pulled                         pod/devops-demo-5989f485cf-fdsqh                         Container image "devops-final:local" already present on machine
+devops-final    6m24s       Normal    Scheduled                      pod/devops-demo-5989f485cf-fdsqh                         Successfully assigned devops-final/devops-demo-5989f485cf-fdsqh to gitops-runtime
+devops-final    6m21s       Normal    SuccessfulDelete               replicaset/devops-demo-6944874c9                         Deleted pod: devops-demo-6944874c9-29wqq
+devops-final    6m21s       Normal    Killing                        pod/devops-demo-6944874c9-29wqq                          Stopping container app
+devops-final    6m21s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled down replica set devops-demo-6944874c9 from 1 to 0
+devops-final    6m20s       Normal    SuccessfulCreate               replicaset/devops-demo-5989f485cf                        Created pod: devops-demo-5989f485cf-6mpvg
+devops-final    6m20s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-5989f485cf from 1 to 2
+devops-final    6m20s       Normal    Pulled                         pod/devops-demo-5989f485cf-6mpvg                         Container image "devops-final:local" already present on machine
+devops-final    6m20s       Normal    Started                        pod/devops-demo-5989f485cf-6mpvg                         Started container app
+devops-final    6m20s       Normal    Scheduled                      pod/devops-demo-5989f485cf-6mpvg                         Successfully assigned devops-final/devops-demo-5989f485cf-6mpvg to gitops-runtime
+devops-final    6m20s       Normal    Created                        pod/devops-demo-5989f485cf-6mpvg                         Created container: app
+devops-final    6m20s       Normal    SuccessfulRescale              horizontalpodautoscaler/devops-demo                      New size: 2; reason: Current number of replicas below Spec.MinReplicas
+devops-final    6m10s       Normal    Sync                           ingress/devops-demo                                      Scheduled for sync
+devops-final    6m3s        Warning   Unhealthy                      pod/devops-demo-5467d9996b-dcgst                         Readiness probe failed: HTTP probe failed with statuscode: 404
+devops-final    5m20s       Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/devops-demo                      invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+devops-final    5m20s       Warning   FailedGetResourceMetric        horizontalpodautoscaler/devops-demo                      failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+devops-final    5m5s        Normal    Created                        pod/devops-demo-5989f485cf-vll7l                         Created container: app
+devops-final    5m5s        Normal    Pulled                         pod/devops-demo-5989f485cf-v6rvd                         Container image "devops-final:local" already present on machine
+devops-final    5m5s        Normal    Scheduled                      pod/devops-demo-5989f485cf-v6rvd                         Successfully assigned devops-final/devops-demo-5989f485cf-v6rvd to gitops-runtime
+devops-final    5m5s        Normal    Created                        pod/devops-demo-5989f485cf-v6rvd                         Created container: app
+devops-final    5m5s        Normal    Started                        pod/devops-demo-5989f485cf-v6rvd                         Started container app
+devops-final    5m5s        Normal    Scheduled                      pod/devops-demo-5989f485cf-vll7l                         Successfully assigned devops-final/devops-demo-5989f485cf-vll7l to gitops-runtime
+devops-final    5m5s        Normal    SuccessfulRescale              horizontalpodautoscaler/devops-demo                      New size: 4; reason: cpu resource utilization (percentage of request) above target
+devops-final    5m5s        Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-5989f485cf from 2 to 4
+devops-final    5m5s        Normal    Pulled                         pod/devops-demo-5989f485cf-vll7l                         Container image "devops-final:local" already present on machine
+devops-final    5m5s        Normal    Started                        pod/devops-demo-5989f485cf-vll7l                         Started container app
+devops-final    5m5s        Normal    SuccessfulCreate               replicaset/devops-demo-5989f485cf                        Created pod: devops-demo-5989f485cf-v6rvd
+devops-final    5m5s        Normal    SuccessfulCreate               replicaset/devops-demo-5989f485cf                        Created pod: devops-demo-5989f485cf-vll7l
+devops-final    4m50s       Normal    SuccessfulCreate               replicaset/devops-demo-5989f485cf                        Created pod: devops-demo-5989f485cf-l8j2r
+devops-final    4m50s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-5989f485cf from 4 to 5
+devops-final    4m50s       Normal    Started                        pod/devops-demo-5989f485cf-l8j2r                         Started container app
+devops-final    4m50s       Normal    Created                        pod/devops-demo-5989f485cf-l8j2r                         Created container: app
+devops-final    4m50s       Normal    Pulled                         pod/devops-demo-5989f485cf-l8j2r                         Container image "devops-final:local" already present on machine
+devops-final    4m50s       Normal    Scheduled                      pod/devops-demo-5989f485cf-l8j2r                         Successfully assigned devops-final/devops-demo-5989f485cf-l8j2r to gitops-runtime
+devops-final    4m50s       Normal    SuccessfulRescale              horizontalpodautoscaler/devops-demo                      New size: 5; reason: cpu resource utilization (percentage of request) above target
+devops-final    3m48s       Normal    Killing                        pod/devops-demo-5989f485cf-fdsqh                         Stopping container app
+devops-final    3m48s       Normal    Killing                        pod/devops-demo-5989f485cf-6mpvg                         Stopping container app
+devops-final    3m48s       Normal    Killing                        pod/devops-demo-5989f485cf-vll7l                         Stopping container app
+devops-final    3m48s       Normal    Killing                        pod/devops-demo-5989f485cf-v6rvd                         Stopping container app
+devops-final    3m48s       Normal    Killing                        pod/devops-demo-5989f485cf-l8j2r                         Stopping container app
+argocd          3m47s       Normal    ScalingReplicaSet              deployment/argocd-notifications-controller               Scaled up replica set argocd-notifications-controller-66cd6fcd69 from 0 to 1
+argocd          3m47s       Normal    ScalingReplicaSet              deployment/argocd-dex-server                             Scaled up replica set argocd-dex-server-c8d667984 from 0 to 1
+argocd          3m47s       Normal    ScalingReplicaSet              deployment/argocd-server                                 Scaled up replica set argocd-server-57574968c6 from 0 to 1
+argocd          3m47s       Normal    ScalingReplicaSet              deployment/argocd-redis                                  Scaled up replica set argocd-redis-797b6548f7 from 0 to 1
+argocd          3m47s       Normal    Scheduled                      pod/argocd-redis-797b6548f7-58qtw                        Successfully assigned argocd/argocd-redis-797b6548f7-58qtw to gitops-runtime
+argocd          3m47s       Normal    SuccessfulCreate               replicaset/argocd-notifications-controller-66cd6fcd69    Created pod: argocd-notifications-controller-66cd6fcd69-nl7wq
+argocd          3m47s       Normal    Scheduled                      pod/argocd-notifications-controller-66cd6fcd69-nl7wq     Successfully assigned argocd/argocd-notifications-controller-66cd6fcd69-nl7wq to gitops-runtime
+argocd          3m47s       Normal    ScalingReplicaSet              deployment/argocd-applicationset-controller              Scaled up replica set argocd-applicationset-controller-5b9b67656d from 0 to 1
+argocd          3m47s       Normal    SuccessfulCreate               replicaset/argocd-dex-server-c8d667984                   Created pod: argocd-dex-server-c8d667984-wgrgx
+argocd          3m47s       Normal    Scheduled                      pod/argocd-dex-server-c8d667984-wgrgx                    Successfully assigned argocd/argocd-dex-server-c8d667984-wgrgx to gitops-runtime
+argocd          3m47s       Normal    Scheduled                      pod/argocd-applicationset-controller-5b9b67656d-6rxv7    Successfully assigned argocd/argocd-applicationset-controller-5b9b67656d-6rxv7 to gitops-runtime
+argocd          3m47s       Normal    SuccessfulCreate               replicaset/argocd-applicationset-controller-5b9b67656d   Created pod: argocd-applicationset-controller-5b9b67656d-6rxv7
+argocd          3m47s       Normal    ScalingReplicaSet              deployment/argocd-repo-server                            Scaled up replica set argocd-repo-server-6df7758d78 from 0 to 1
+argocd          3m47s       Normal    SuccessfulCreate               replicaset/argocd-redis-797b6548f7                       Created pod: argocd-redis-797b6548f7-58qtw
+argocd          3m46s       Normal    Scheduled                      pod/argocd-application-controller-0                      Successfully assigned argocd/argocd-application-controller-0 to gitops-runtime
+argocd          3m46s       Normal    Scheduled                      pod/argocd-server-57574968c6-fmkrj                       Successfully assigned argocd/argocd-server-57574968c6-fmkrj to gitops-runtime
+argocd          3m46s       Normal    Pulling                        pod/argocd-application-controller-0                      Pulling image "quay.io/argoproj/argocd:v3.1.8"
+argocd          3m46s       Normal    Pulling                        pod/argocd-repo-server-6df7758d78-8cz7s                  Pulling image "quay.io/argoproj/argocd:v3.1.8"
+argocd          3m46s       Normal    SuccessfulCreate               statefulset/argocd-application-controller                create Pod argocd-application-controller-0 in StatefulSet argocd-application-controller successful
+argocd          3m46s       Normal    Pulling                        pod/argocd-applicationset-controller-5b9b67656d-6rxv7    Pulling image "quay.io/argoproj/argocd:v3.1.8"
+argocd          3m46s       Normal    SuccessfulCreate               replicaset/argocd-repo-server-6df7758d78                 Created pod: argocd-repo-server-6df7758d78-8cz7s
+argocd          3m46s       Normal    Scheduled                      pod/argocd-repo-server-6df7758d78-8cz7s                  Successfully assigned argocd/argocd-repo-server-6df7758d78-8cz7s to gitops-runtime
+argocd          3m46s       Normal    Pulling                        pod/argocd-server-57574968c6-fmkrj                       Pulling image "quay.io/argoproj/argocd:v3.1.8"
+argocd          3m46s       Normal    Pulling                        pod/argocd-dex-server-c8d667984-wgrgx                    Pulling image "quay.io/argoproj/argocd:v3.1.8"
+argocd          3m46s       Normal    Pulling                        pod/argocd-redis-797b6548f7-58qtw                        Pulling image "quay.io/argoproj/argocd:v3.1.8"
+argocd          3m46s       Normal    Pulling                        pod/argocd-notifications-controller-66cd6fcd69-nl7wq     Pulling image "quay.io/argoproj/argocd:v3.1.8"
+argocd          3m46s       Normal    SuccessfulCreate               replicaset/argocd-server-57574968c6                      Created pod: argocd-server-57574968c6-fmkrj
+argocd          3m42s       Normal    Started                        pod/argocd-dex-server-c8d667984-wgrgx                    Started container copyutil
+argocd          3m42s       Normal    Created                        pod/argocd-dex-server-c8d667984-wgrgx                    Created container: copyutil
+argocd          3m42s       Normal    Pulled                         pod/argocd-dex-server-c8d667984-wgrgx                    Successfully pulled image "quay.io/argoproj/argocd:v3.1.8" in 4.339s (4.339s including waiting). Image size: 194150143 bytes.
+argocd          3m42s       Normal    Pulled                         pod/argocd-redis-797b6548f7-58qtw                        Successfully pulled image "quay.io/argoproj/argocd:v3.1.8" in 85ms (4.398s including waiting). Image size: 194150143 bytes.
+argocd          3m42s       Normal    Created                        pod/argocd-redis-797b6548f7-58qtw                        Created container: secret-init
+argocd          3m41s       Normal    Started                        pod/argocd-repo-server-6df7758d78-8cz7s                  Started container copyutil
+argocd          3m41s       Normal    Started                        pod/argocd-redis-797b6548f7-58qtw                        Started container secret-init
+argocd          3m41s       Normal    Pulled                         pod/argocd-repo-server-6df7758d78-8cz7s                  Successfully pulled image "quay.io/argoproj/argocd:v3.1.8" in 556ms (4.906s including waiting). Image size: 194150143 bytes.
+argocd          3m41s       Normal    Created                        pod/argocd-repo-server-6df7758d78-8cz7s                  Created container: copyutil
+argocd          3m40s       Normal    Started                        pod/argocd-applicationset-controller-5b9b67656d-6rxv7    Started container argocd-applicationset-controller
+argocd          3m40s       Normal    Created                        pod/argocd-applicationset-controller-5b9b67656d-6rxv7    Created container: argocd-applicationset-controller
+argocd          3m40s       Normal    Pulled                         pod/argocd-applicationset-controller-5b9b67656d-6rxv7    Successfully pulled image "quay.io/argoproj/argocd:v3.1.8" in 785ms (5.491s including waiting). Image size: 194150143 bytes.
+argocd          3m40s       Normal    Pulled                         pod/argocd-application-controller-0                      Successfully pulled image "quay.io/argoproj/argocd:v3.1.8" in 207ms (5.625s including waiting). Image size: 194150143 bytes.
+argocd          3m39s       Normal    Pulled                         pod/argocd-notifications-controller-66cd6fcd69-nl7wq     Successfully pulled image "quay.io/argoproj/argocd:v3.1.8" in 729ms (6.252s including waiting). Image size: 194150143 bytes.
+argocd          3m39s       Normal    Created                        pod/argocd-server-57574968c6-fmkrj                       Created container: argocd-server
+argocd          3m39s       Normal    Pulled                         pod/argocd-server-57574968c6-fmkrj                       Successfully pulled image "quay.io/argoproj/argocd:v3.1.8" in 103ms (6.349s including waiting). Image size: 194150143 bytes.
+argocd          3m39s       Normal    Started                        pod/argocd-server-57574968c6-fmkrj                       Started container argocd-server
+argocd          3m39s       Normal    Pulling                        pod/argocd-redis-797b6548f7-58qtw                        Pulling image "public.ecr.aws/docker/library/redis:7.2.7-alpine"
+argocd          3m39s       Normal    Created                        pod/argocd-application-controller-0                      Created container: argocd-application-controller
+argocd          3m39s       Normal    Started                        pod/argocd-application-controller-0                      Started container argocd-application-controller
+argocd          3m39s       Normal    Pulling                        pod/argocd-repo-server-6df7758d78-8cz7s                  Pulling image "quay.io/argoproj/argocd:v3.1.8"
+argocd          3m39s       Normal    Created                        pod/argocd-notifications-controller-66cd6fcd69-nl7wq     Created container: argocd-notifications-controller
+argocd          3m39s       Normal    Pulling                        pod/argocd-dex-server-c8d667984-wgrgx                    Pulling image "ghcr.io/dexidp/dex:v2.43.0"
+argocd          3m39s       Normal    Started                        pod/argocd-notifications-controller-66cd6fcd69-nl7wq     Started container argocd-notifications-controller
+argocd          3m37s       Normal    Pulled                         pod/argocd-repo-server-6df7758d78-8cz7s                  Successfully pulled image "quay.io/argoproj/argocd:v3.1.8" in 143ms (1.31s including waiting). Image size: 194150143 bytes.
+argocd          3m37s       Normal    Created                        pod/argocd-repo-server-6df7758d78-8cz7s                  Created container: argocd-repo-server
+argocd          3m37s       Normal    Started                        pod/argocd-repo-server-6df7758d78-8cz7s                  Started container argocd-repo-server
+argocd          3m37s       Normal    Started                        pod/argocd-dex-server-c8d667984-wgrgx                    Started container dex
+argocd          3m37s       Normal    Created                        pod/argocd-dex-server-c8d667984-wgrgx                    Created container: dex
+argocd          3m37s       Normal    Pulled                         pod/argocd-dex-server-c8d667984-wgrgx                    Successfully pulled image "ghcr.io/dexidp/dex:v2.43.0" in 1.178s (1.178s including waiting). Image size: 43032839 bytes.
+argocd          3m36s       Normal    Started                        pod/argocd-redis-797b6548f7-58qtw                        Started container redis
+argocd          3m36s       Normal    Created                        pod/argocd-redis-797b6548f7-58qtw                        Created container: redis
+argocd          3m36s       Normal    Pulled                         pod/argocd-redis-797b6548f7-58qtw                        Successfully pulled image "public.ecr.aws/docker/library/redis:7.2.7-alpine" in 839ms (2.146s including waiting). Image size: 16844051 bytes.
+argocd          3m6s        Normal    SuccessfulCreate               replicaset/argocd-server-6bc7997b8f                      Created pod: argocd-server-6bc7997b8f-wnwt9
+argocd          3m6s        Normal    Pulling                        pod/argocd-server-6bc7997b8f-wnwt9                       Pulling image "quay.io/argoproj/argocd:v3.1.8"
+argocd          3m6s        Normal    ScalingReplicaSet              deployment/argocd-server                                 Scaled up replica set argocd-server-6bc7997b8f from 0 to 1
+argocd          3m6s        Normal    Created                        pod/argocd-server-6bc7997b8f-wnwt9                       Created container: argocd-server
+argocd          3m6s        Normal    Scheduled                      pod/argocd-server-6bc7997b8f-wnwt9                       Successfully assigned argocd/argocd-server-6bc7997b8f-wnwt9 to gitops-runtime
+argocd          3m6s        Normal    Pulled                         pod/argocd-server-6bc7997b8f-wnwt9                       Successfully pulled image "quay.io/argoproj/argocd:v3.1.8" in 323ms (323ms including waiting). Image size: 194150143 bytes.
+argocd          3m5s        Normal    Started                        pod/argocd-server-6bc7997b8f-wnwt9                       Started container argocd-server
+argocd          2m33s       Normal    Killing                        pod/argocd-server-57574968c6-fmkrj                       Stopping container argocd-server
+argocd          2m33s       Normal    SuccessfulDelete               replicaset/argocd-server-57574968c6                      Deleted pod: argocd-server-57574968c6-fmkrj
+argocd          2m33s       Normal    ScalingReplicaSet              deployment/argocd-server                                 Scaled down replica set argocd-server-57574968c6 from 1 to 0
+argocd          2m32s       Normal    ResourceUpdated                application/devops-final                                 Updated sync status:  -> OutOfSync
+argocd          2m32s       Normal    OperationStarted               application/monitoring-gitops-lab                        Initiated automated sync to 'c0d875f3b09a77c42f99e0028adeddd8da8116af'
+argocd          2m32s       Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated sync status:  -> OutOfSync
+argocd          2m32s       Normal    ResourceUpdated                application/devops-final                                 Updated health status:  -> Missing
+argocd          2m32s       Normal    OperationStarted               application/devops-final                                 Initiated automated sync to 'c0d875f3b09a77c42f99e0028adeddd8da8116af'
+argocd          2m32s       Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated health status:  -> Missing
+gitops-lab      2m31s       Normal    Pulling                        pod/gitops-web-b6795749-t4fjq                            Pulling image "nginx:1.28-alpine"
+gitops-lab      2m31s       Normal    Scheduled                      pod/gitops-web-b6795749-mswg6                            Successfully assigned gitops-lab/gitops-web-b6795749-mswg6 to gitops-runtime
+gitops-lab      2m31s       Normal    SuccessfulCreate               replicaset/gitops-web-b6795749                           Created pod: gitops-web-b6795749-t4fjq
+argocd          2m31s       Normal    OperationCompleted             application/devops-final                                 Sync operation to c0d875f3b09a77c42f99e0028adeddd8da8116af succeeded
+devops-final    2m31s       Normal    SuccessfulCreate               replicaset/devops-demo-745bdb7db8                        Created pod: devops-demo-745bdb7db8-hqklq
+argocd          2m31s       Normal    OperationCompleted             application/monitoring-gitops-lab                        Sync operation to c0d875f3b09a77c42f99e0028adeddd8da8116af succeeded
+argocd          2m31s       Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated sync status: OutOfSync -> Synced
+argocd          2m31s       Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated health status: Missing -> Progressing
+devops-final    2m31s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-745bdb7db8 from 0 to 1
+gitops-lab      2m31s       Normal    ScalingReplicaSet              deployment/gitops-web                                    Scaled up replica set gitops-web-b6795749 from 0 to 2
+argocd          2m31s       Normal    ResourceUpdated                application/devops-final                                 Updated sync status: OutOfSync -> Synced
+argocd          2m31s       Normal    ResourceUpdated                application/devops-final                                 Updated health status: Missing -> Progressing
+devops-final    2m31s       Normal    Scheduled                      pod/devops-demo-745bdb7db8-hqklq                         Successfully assigned devops-final/devops-demo-745bdb7db8-hqklq to gitops-runtime
+gitops-lab      2m31s       Normal    SuccessfulCreate               replicaset/gitops-web-b6795749                           Created pod: gitops-web-b6795749-mswg6
+gitops-lab      2m31s       Normal    Pulling                        pod/gitops-web-b6795749-mswg6                            Pulling image "nginx:1.28-alpine"
+devops-final    2m31s       Normal    Pulled                         pod/devops-demo-745bdb7db8-hqklq                         Container image "ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681" already present on machine
+gitops-lab      2m31s       Normal    Scheduled                      pod/gitops-web-b6795749-t4fjq                            Successfully assigned gitops-lab/gitops-web-b6795749-t4fjq to gitops-runtime
+ingress-nginx   2m30s       Normal    RELOAD                         pod/ingress-nginx-controller-f547cc9fc-54wdr             NGINX reload triggered due to a change in configuration
+gitops-lab      2m30s       Normal    Created                        pod/gitops-web-b6795749-t4fjq                            Created container: web
+gitops-lab      2m30s       Normal    Pulled                         pod/gitops-web-b6795749-t4fjq                            Successfully pulled image "nginx:1.28-alpine" in 132ms (1.301s including waiting). Image size: 25976042 bytes.
+gitops-lab      2m30s       Normal    Started                        pod/gitops-web-b6795749-mswg6                            Started container web
+gitops-lab      2m30s       Normal    Created                        pod/gitops-web-b6795749-mswg6                            Created container: web
+gitops-lab      2m30s       Normal    Pulled                         pod/gitops-web-b6795749-mswg6                            Successfully pulled image "nginx:1.28-alpine" in 1.199s (1.199s including waiting). Image size: 25976042 bytes.
+devops-final    2m30s       Normal    Started                        pod/devops-demo-745bdb7db8-hqklq                         Started container app
+devops-final    2m30s       Normal    Created                        pod/devops-demo-745bdb7db8-hqklq                         Created container: app
+argocd          2m29s       Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated health status: Progressing -> Healthy
+devops-final    2m29s       Warning   Unhealthy                      pod/devops-demo-745bdb7db8-hqklq                         Startup probe failed: Get "http://10.244.0.28:8080/healthz": dial tcp 10.244.0.28:8080: connect: connection refused
+gitops-lab      2m29s       Normal    Started                        pod/gitops-web-b6795749-t4fjq                            Started container web
+devops-final    2m16s       Normal    Scheduled                      pod/devops-demo-745bdb7db8-qd7ts                         Successfully assigned devops-final/devops-demo-745bdb7db8-qd7ts to gitops-runtime
+devops-final    2m16s       Normal    ScalingReplicaSet              deployment/devops-demo                                   Scaled up replica set devops-demo-745bdb7db8 from 1 to 2
+devops-final    2m16s       Normal    SuccessfulRescale              horizontalpodautoscaler/devops-demo                      New size: 2; reason: Current number of replicas below Spec.MinReplicas
+devops-final    2m16s       Normal    Pulled                         pod/devops-demo-745bdb7db8-qd7ts                         Container image "ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681" already present on machine
+devops-final    2m16s       Normal    SuccessfulCreate               replicaset/devops-demo-745bdb7db8                        Created pod: devops-demo-745bdb7db8-qd7ts
+devops-final    2m16s       Normal    Created                        pod/devops-demo-745bdb7db8-qd7ts                         Created container: app
+devops-final    2m16s       Normal    Started                        pod/devops-demo-745bdb7db8-qd7ts                         Started container app
+devops-final    2m10s       Normal    Sync                           ingress/devops-demo                                      Scheduled for sync
+argocd          2m10s       Normal    ResourceUpdated                application/devops-final                                 Updated health status: Progressing -> Healthy
+argocd          2m4s        Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated sync status: Synced -> OutOfSync
+argocd          2m4s        Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated health status: Healthy -> Progressing
+gitops-lab      2m4s        Normal    ScalingReplicaSet              deployment/gitops-web                                    Scaled up replica set gitops-web-b6795749 from 2 to 3
+argocd          2m4s        Normal    OperationStarted               application/monitoring-gitops-lab                        Initiated automated sync to '6457eb8444f5b060ac8d492506e6dae32db0a06f'
+argocd          2m4s        Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated sync status: OutOfSync -> Synced
+gitops-lab      2m4s        Normal    Scheduled                      pod/gitops-web-b6795749-tdzlf                            Successfully assigned gitops-lab/gitops-web-b6795749-tdzlf to gitops-runtime
+gitops-lab      2m4s        Normal    SuccessfulCreate               replicaset/gitops-web-b6795749                           Created pod: gitops-web-b6795749-tdzlf
+argocd          2m4s        Normal    OperationCompleted             application/monitoring-gitops-lab                        Sync operation to 6457eb8444f5b060ac8d492506e6dae32db0a06f succeeded
+gitops-lab      2m3s        Normal    Started                        pod/gitops-web-b6795749-tdzlf                            Started container web
+gitops-lab      2m3s        Normal    Pulled                         pod/gitops-web-b6795749-tdzlf                            Container image "nginx:1.28-alpine" already present on machine
+gitops-lab      2m3s        Normal    Created                        pod/gitops-web-b6795749-tdzlf                            Created container: web
+argocd          2m2s        Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated health status: Progressing -> Healthy
+gitops-lab      109s        Normal    Killing                        pod/gitops-web-b6795749-mswg6                            Stopping container web
+gitops-lab      109s        Normal    ScalingReplicaSet              deployment/gitops-web                                    Scaled up replica set gitops-web-b6795749 from 1 to 3
+argocd          109s        Normal    OperationCompleted             application/monitoring-gitops-lab                        Partial sync operation to 6457eb8444f5b060ac8d492506e6dae32db0a06f succeeded
+gitops-lab      109s        Normal    Scheduled                      pod/gitops-web-b6795749-v96dx                            Successfully assigned gitops-lab/gitops-web-b6795749-v96dx to gitops-runtime
+argocd          109s        Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated sync status: Synced -> OutOfSync
+argocd          109s        Normal    OperationStarted               application/monitoring-gitops-lab                        Initiated automated sync to '6457eb8444f5b060ac8d492506e6dae32db0a06f'
+gitops-lab      109s        Normal    ScalingReplicaSet              deployment/gitops-web                                    Scaled down replica set gitops-web-b6795749 from 3 to 1
+gitops-lab      109s        Normal    Scheduled                      pod/gitops-web-b6795749-tj54s                            Successfully assigned gitops-lab/gitops-web-b6795749-tj54s to gitops-runtime
+gitops-lab      109s        Normal    Killing                        pod/gitops-web-b6795749-tdzlf                            Stopping container web
+gitops-lab      109s        Normal    SuccessfulCreate               replicaset/gitops-web-b6795749                           Created pod: gitops-web-b6795749-tj54s
+gitops-lab      109s        Normal    SuccessfulDelete               replicaset/gitops-web-b6795749                           Deleted pod: gitops-web-b6795749-mswg6
+gitops-lab      109s        Normal    SuccessfulDelete               replicaset/gitops-web-b6795749                           Deleted pod: gitops-web-b6795749-tdzlf
+gitops-lab      109s        Normal    SuccessfulCreate               replicaset/gitops-web-b6795749                           Created pod: gitops-web-b6795749-v96dx
+argocd          108s        Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated sync status: OutOfSync -> Synced
+gitops-lab      108s        Normal    Started                        pod/gitops-web-b6795749-v96dx                            Started container web
+gitops-lab      108s        Normal    Pulled                         pod/gitops-web-b6795749-tj54s                            Container image "nginx:1.28-alpine" already present on machine
+gitops-lab      108s        Normal    Created                        pod/gitops-web-b6795749-v96dx                            Created container: web
+gitops-lab      108s        Normal    Created                        pod/gitops-web-b6795749-tj54s                            Created container: web
+gitops-lab      108s        Normal    Started                        pod/gitops-web-b6795749-tj54s                            Started container web
+gitops-lab      108s        Normal    Pulled                         pod/gitops-web-b6795749-v96dx                            Container image "nginx:1.28-alpine" already present on machine
+argocd          108s        Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated health status: Healthy -> Progressing
+argocd          107s        Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated health status: Progressing -> Healthy
+gitops-lab      82s         Normal    ScalingReplicaSet              deployment/gitops-web                                    Scaled down replica set gitops-web-b6795749 from 3 to 2
+argocd          82s         Normal    OperationStarted               application/monitoring-gitops-lab                        Initiated automated sync to '16475370a38b08c63fffbd77f9cb4ed71805a9e6'
+argocd          82s         Normal    ResourceUpdated                application/monitoring-gitops-lab                        Updated sync status: Synced -> OutOfSync
+argocd          82s         Normal    OperationCompleted             application/monitoring-gitops-lab                        Sync operation to 16475370a38b08c63fffbd77f9cb4ed71805a9e6 succeeded
+gitops-lab      82s         Normal    Killing                        pod/gitops-web-b6795749-v96dx                            Stopping container web
+gitops-lab      82s         Normal    SuccessfulDelete               replicaset/gitops-web-b6795749                           Deleted pod: gitops-web-b6795749-v96dx
+devops-final    76s         Warning   FailedGetResourceMetric        horizontalpodautoscaler/devops-demo                      failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+devops-final    76s         Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/devops-demo                      invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)

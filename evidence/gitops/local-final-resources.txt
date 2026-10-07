@@ -1,0 +1,12 @@
+NAME                               READY   STATUS    RESTARTS   AGE
+pod/devops-demo-745bdb7db8-ffb89   1/1     Running   0          77s
+pod/devops-demo-745bdb7db8-ppq6r   1/1     Running   0          62s
+
+NAME                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+service/devops-demo   ClusterIP   10.108.225.75   <none>        80/TCP    77s
+
+NAME                                    CLASS   HOSTS          ADDRESS        PORTS   AGE
+ingress.networking.k8s.io/devops-demo   nginx   devops.local   192.168.49.2   80      47s
+
+NAME                                              REFERENCE                TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/devops-demo   Deployment/devops-demo   cpu: <unknown>/60%   2         5         2          77s

@@ -1,0 +1,3 @@
+NAME                    SYNC STATUS   HEALTH STATUS   REVISION                                   PROJECT
+devops-final            Synced        Healthy         c795c4545698f488083c91a6e70f5c432ad8af4e   default
+monitoring-gitops-lab   Synced        Healthy         c795c4545698f488083c91a6e70f5c432ad8af4e   default

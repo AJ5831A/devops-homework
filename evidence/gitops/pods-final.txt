@@ -1,0 +1,24 @@
+NAMESPACE       NAME                                                READY   STATUS      RESTARTS   AGE     IP             NODE             NOMINATED NODE   READINESS GATES
+argocd          argocd-application-controller-0                     1/1     Running     0          3m46s   10.244.0.24    gitops-runtime   <none>           <none>
+argocd          argocd-applicationset-controller-5b9b67656d-6rxv7   1/1     Running     0          3m47s   10.244.0.23    gitops-runtime   <none>           <none>
+argocd          argocd-dex-server-c8d667984-wgrgx                   1/1     Running     0          3m47s   10.244.0.20    gitops-runtime   <none>           <none>
+argocd          argocd-notifications-controller-66cd6fcd69-nl7wq    1/1     Running     0          3m47s   10.244.0.25    gitops-runtime   <none>           <none>
+argocd          argocd-redis-797b6548f7-58qtw                       1/1     Running     0          3m47s   10.244.0.21    gitops-runtime   <none>           <none>
+argocd          argocd-repo-server-6df7758d78-8cz7s                 1/1     Running     0          3m47s   10.244.0.22    gitops-runtime   <none>           <none>
+argocd          argocd-server-6bc7997b8f-wnwt9                      1/1     Running     0          3m6s    10.244.0.27    gitops-runtime   <none>           <none>
+devops-final    devops-demo-745bdb7db8-hqklq                        1/1     Running     0          2m31s   10.244.0.28    gitops-runtime   <none>           <none>
+devops-final    devops-demo-745bdb7db8-qd7ts                        1/1     Running     0          2m16s   10.244.0.31    gitops-runtime   <none>           <none>
+gitops-lab      gitops-web-b6795749-t4fjq                           1/1     Running     0          2m31s   10.244.0.30    gitops-runtime   <none>           <none>
+gitops-lab      gitops-web-b6795749-tj54s                           1/1     Running     0          109s    10.244.0.34    gitops-runtime   <none>           <none>
+ingress-nginx   ingress-nginx-admission-create-pb5mt                0/1     Completed   0          9m28s   10.244.0.4     gitops-runtime   <none>           <none>
+ingress-nginx   ingress-nginx-admission-patch-b6tb2                 0/1     Completed   1          9m28s   10.244.0.2     gitops-runtime   <none>           <none>
+ingress-nginx   ingress-nginx-controller-f547cc9fc-54wdr            1/1     Running     0          9m28s   10.244.0.5     gitops-runtime   <none>           <none>
+kube-system     coredns-66bc5c9577-sb5lp                            1/1     Running     0          9m28s   10.244.0.3     gitops-runtime   <none>           <none>
+kube-system     etcd-gitops-runtime                                 1/1     Running     0          9m33s   192.168.49.2   gitops-runtime   <none>           <none>
+kube-system     kindnet-77z2h                                       1/1     Running     0          9m28s   192.168.49.2   gitops-runtime   <none>           <none>
+kube-system     kube-apiserver-gitops-runtime                       1/1     Running     0          9m33s   192.168.49.2   gitops-runtime   <none>           <none>
+kube-system     kube-controller-manager-gitops-runtime              1/1     Running     0          9m33s   192.168.49.2   gitops-runtime   <none>           <none>
+kube-system     kube-proxy-nnjpz                                    1/1     Running     0          9m28s   192.168.49.2   gitops-runtime   <none>           <none>
+kube-system     kube-scheduler-gitops-runtime                       1/1     Running     0          9m33s   192.168.49.2   gitops-runtime   <none>           <none>
+kube-system     metrics-server-b85d78fd7-hzdqj                      1/1     Running     0          9m10s   10.244.0.6     gitops-runtime   <none>           <none>
+kube-system     storage-provisioner                                 1/1     Running     0          9m32s   192.168.49.2   gitops-runtime   <none>           <none>

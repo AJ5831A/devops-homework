@@ -1,0 +1,674 @@
++ date -u
+Wed Oct  7 15:19:06 UTC 2026
++ git rev-parse HEAD
+8b2a4523d396b722cfbd6efc447501446d8f55af
++ kubectl version
+Client Version: v1.37.1
+Kustomize Version: v5.8.1
+Server Version: v1.34.0
+Warning: version difference between client (1.37) and server (1.34) exceeds the supported minor version skew of +/-1
++ kubectl -n ingress-nginx rollout status deployment/ingress-nginx-controller --timeout=240s
+Waiting for deployment "ingress-nginx-controller" rollout to finish: 0 of 1 updated replicas are available...
+deployment "ingress-nginx-controller" successfully rolled out
++ kubectl -n kube-system rollout status deployment/metrics-server --timeout=240s
+Waiting for deployment "metrics-server" rollout to finish: 0 of 1 updated replicas are available...
+deployment "metrics-server" successfully rolled out
++ kubectl apply -f final-devops-project/kubernetes/namespace.yaml
+namespace/devops-final created
++ set +x
+::add-mask::b4e66c5591dfdbc9dce1f875755cbfd5c050534e7a1aff70
+secret/devops-demo-secret created
++ kubectl apply -f final-devops-project/kubernetes/
+configmap/devops-demo created
+deployment.apps/devops-demo created
+horizontalpodautoscaler.autoscaling/devops-demo created
+ingress.networking.k8s.io/devops-demo created
+namespace/devops-final unchanged
+service/devops-demo created
++ kubectl -n devops-final rollout status deployment/devops-demo --timeout=240s
+Waiting for deployment "devops-demo" rollout to finish: 0 of 2 updated replicas are available...
+Waiting for deployment "devops-demo" rollout to finish: 1 of 2 updated replicas are available...
+deployment "devops-demo" successfully rolled out
+++ minikube -p gitops-runtime ip
++ CLUSTER_IP=192.168.49.2
++ curl --fail --retry 15 --retry-all-errors --retry-delay 3 -H 'Host: devops.local' http://192.168.49.2/readyz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Warning: Problem (retrying all errors). Will retry in 3 seconds. 15 retries 
+Warning: left.
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    15  100    15    0     0   9009      0 --:--:-- --:--:-- --:--:-- 15000
+{"ready": true}+ kubectl -n devops-final get pods,svc,ingress,hpa
+NAME                               READY   STATUS    RESTARTS   AGE
+pod/devops-demo-6c684865d8-kzb9d   1/1     Running   0          6s
+pod/devops-demo-6c684865d8-q59bn   1/1     Running   0          6s
+
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+service/devops-demo   ClusterIP   10.105.200.220   <none>        80/TCP    6s
+
+NAME                                    CLASS   HOSTS          ADDRESS   PORTS   AGE
+ingress.networking.k8s.io/devops-demo   nginx   devops.local             80      6s
+
+NAME                                              REFERENCE                TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/devops-demo   Deployment/devops-demo   cpu: <unknown>/60%   2         5         0          6s
++ kubectl -n devops-final get deployment devops-demo -o yaml
++ kubectl -n devops-final set image deployment/devops-demo app=nginx:does-not-exist
+deployment.apps/devops-demo image updated
++ sleep 30
++ kubectl -n devops-final get pods
+NAME                           READY   STATUS         RESTARTS   AGE
+devops-demo-6c684865d8-kzb9d   1/1     Running        0          36s
+devops-demo-6c684865d8-q59bn   1/1     Running        0          36s
+devops-demo-cf847b7b8-5tbwz    0/1     ErrImagePull   0          30s
++ kubectl -n devops-final get events --sort-by=.lastTimestamp
++ tail -20
+36s         Normal    Created                        pod/devops-demo-6c684865d8-kzb9d      Created container: app
+36s         Normal    Started                        pod/devops-demo-6c684865d8-kzb9d      Started container app
+36s         Normal    Scheduled                      pod/devops-demo-6c684865d8-q59bn      Successfully assigned devops-final/devops-demo-6c684865d8-q59bn to gitops-runtime
+36s         Normal    Pulled                         pod/devops-demo-6c684865d8-q59bn      Container image "devops-final:local" already present on machine
+36s         Normal    Created                        pod/devops-demo-6c684865d8-q59bn      Created container: app
+36s         Normal    Started                        pod/devops-demo-6c684865d8-q59bn      Started container app
+36s         Normal    SuccessfulCreate               replicaset/devops-demo-6c684865d8     Created pod: devops-demo-6c684865d8-kzb9d
+36s         Normal    SuccessfulCreate               replicaset/devops-demo-6c684865d8     Created pod: devops-demo-6c684865d8-q59bn
+36s         Normal    Scheduled                      pod/devops-demo-6c684865d8-kzb9d      Successfully assigned devops-final/devops-demo-6c684865d8-kzb9d to gitops-runtime
+36s         Normal    Sync                           ingress/devops-demo                   Scheduled for sync
+30s         Normal    Scheduled                      pod/devops-demo-cf847b7b8-5tbwz       Successfully assigned devops-final/devops-demo-cf847b7b8-5tbwz to gitops-runtime
+30s         Normal    SuccessfulCreate               replicaset/devops-demo-cf847b7b8      Created pod: devops-demo-cf847b7b8-5tbwz
+30s         Normal    ScalingReplicaSet              deployment/devops-demo                Scaled up replica set devops-demo-cf847b7b8 from 0 to 1
+16s         Warning   Failed                         pod/devops-demo-cf847b7b8-5tbwz       Error: ErrImagePull
+16s         Warning   Failed                         pod/devops-demo-cf847b7b8-5tbwz       Failed to pull image "nginx:does-not-exist": rpc error: code = NotFound desc = failed to pull and unpack image "docker.io/library/nginx:does-not-exist": failed to resolve reference "docker.io/library/nginx:does-not-exist": docker.io/library/nginx:does-not-exist: not found
+16s         Normal    Pulling                        pod/devops-demo-cf847b7b8-5tbwz       Pulling image "nginx:does-not-exist"
+6s          Warning   FailedGetResourceMetric        horizontalpodautoscaler/devops-demo   failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+6s          Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/devops-demo   invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+2s          Normal    BackOff                        pod/devops-demo-cf847b7b8-5tbwz       Back-off pulling image "nginx:does-not-exist"
+2s          Warning   Failed                         pod/devops-demo-cf847b7b8-5tbwz       Error: ImagePullBackOff
++ kubectl -n devops-final rollout undo deployment/devops-demo
+Warning: resource deployments/devops-demo was previously managed with 'kubectl apply'. Rolling back will not update the kubectl.kubernetes.io/last-applied-configuration annotation, which may cause unexpected behavior on future 'kubectl apply' operations. Consider using 'kubectl apply' with your previous configuration file instead.
+deployment.apps/devops-demo rolled back
++ kubectl -n devops-final rollout status deployment/devops-demo --timeout=180s
+deployment "devops-demo" successfully rolled out
++ kubectl apply -f final-devops-project/troubleshooting/broken-service.yaml
+service/devops-demo configured
++ kubectl -n devops-final get endpointslice -l kubernetes.io/service-name=devops-demo -o yaml
+apiVersion: v1
+items:
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints: null
+  kind: EndpointSlice
+  metadata:
+    creationTimestamp: "2026-10-07T15:20:02Z"
+    generateName: devops-demo-
+    generation: 8
+    labels:
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      kubernetes.io/service-name: devops-demo
+    name: devops-demo-w7mrq
+    namespace: devops-final
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: devops-demo
+      uid: 0b7cdbd4-315e-446b-9356-3dabb62a2c0a
+    resourceVersion: "781"
+    uid: b9055fed-6e6b-411d-bb8d-6684a1f1d917
+  ports: null
+kind: List
+metadata:
+  resourceVersion: ""
++ kubectl apply -f final-devops-project/kubernetes/service.yaml
+service/devops-demo configured
++ curl --fail --retry 10 --retry-all-errors --retry-delay 2 -H 'Host: devops.local' http://192.168.49.2/readyz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    15  100    15    0     0   8551      0 --:--:-- --:--:-- --:--:-- 15000
+{"ready": true}+ kubectl -n devops-final delete secret devops-demo-secret
+secret "devops-demo-secret" deleted from devops-final namespace
++ kubectl -n devops-final rollout restart deployment/devops-demo
+deployment.apps/devops-demo restarted
++ sleep 20
++ kubectl -n devops-final get pods
+NAME                           READY   STATUS                       RESTARTS   AGE
+devops-demo-6c684865d8-kzb9d   1/1     Running                      0          57s
+devops-demo-6c684865d8-q59bn   1/1     Running                      0          57s
+devops-demo-7d6dc7dc87-gqfv2   0/1     CreateContainerConfigError   0          20s
++ kubectl -n devops-final get events --sort-by=.lastTimestamp
++ tail -20
+57s         Normal    SuccessfulCreate               replicaset/devops-demo-6c684865d8     Created pod: devops-demo-6c684865d8-q59bn
+57s         Normal    ScalingReplicaSet              deployment/devops-demo                Scaled up replica set devops-demo-6c684865d8 from 0 to 2
+51s         Normal    Scheduled                      pod/devops-demo-cf847b7b8-5tbwz       Successfully assigned devops-final/devops-demo-cf847b7b8-5tbwz to gitops-runtime
+51s         Normal    ScalingReplicaSet              deployment/devops-demo                Scaled up replica set devops-demo-cf847b7b8 from 0 to 1
+51s         Normal    SuccessfulCreate               replicaset/devops-demo-cf847b7b8      Created pod: devops-demo-cf847b7b8-5tbwz
+37s         Normal    Pulling                        pod/devops-demo-cf847b7b8-5tbwz       Pulling image "nginx:does-not-exist"
+37s         Warning   Failed                         pod/devops-demo-cf847b7b8-5tbwz       Failed to pull image "nginx:does-not-exist": rpc error: code = NotFound desc = failed to pull and unpack image "docker.io/library/nginx:does-not-exist": failed to resolve reference "docker.io/library/nginx:does-not-exist": docker.io/library/nginx:does-not-exist: not found
+37s         Warning   Failed                         pod/devops-demo-cf847b7b8-5tbwz       Error: ErrImagePull
+23s         Normal    BackOff                        pod/devops-demo-cf847b7b8-5tbwz       Back-off pulling image "nginx:does-not-exist"
+23s         Warning   Failed                         pod/devops-demo-cf847b7b8-5tbwz       Error: ImagePullBackOff
+21s         Normal    SuccessfulDelete               replicaset/devops-demo-cf847b7b8      Deleted pod: devops-demo-cf847b7b8-5tbwz
+21s         Normal    ScalingReplicaSet              deployment/devops-demo                Scaled down replica set devops-demo-cf847b7b8 from 1 to 0
+20s         Normal    SuccessfulCreate               replicaset/devops-demo-7d6dc7dc87     Created pod: devops-demo-7d6dc7dc87-gqfv2
+20s         Normal    Scheduled                      pod/devops-demo-7d6dc7dc87-gqfv2      Successfully assigned devops-final/devops-demo-7d6dc7dc87-gqfv2 to gitops-runtime
+20s         Normal    ScalingReplicaSet              deployment/devops-demo                Scaled up replica set devops-demo-7d6dc7dc87 from 0 to 1
+12s         Warning   FailedGetResourceMetric        horizontalpodautoscaler/devops-demo   failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+12s         Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/devops-demo   invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+8s          Warning   Failed                         pod/devops-demo-7d6dc7dc87-gqfv2      Error: secret "devops-demo-secret" not found
+8s          Normal    Pulled                         pod/devops-demo-7d6dc7dc87-gqfv2      Container image "devops-final:local" already present on machine
+2s          Normal    Sync                           ingress/devops-demo                   Scheduled for sync
++ set +x
+secret/devops-demo-secret created
++ kubectl -n devops-final rollout status deployment/devops-demo --timeout=180s
+Waiting for deployment "devops-demo" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "devops-demo" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "devops-demo" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "devops-demo" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "devops-demo" rollout to finish: 1 old replicas are pending termination...
+deployment "devops-demo" successfully rolled out
++ kubectl -n devops-final patch deployment devops-demo --type=json '-p=[{"op":"replace","path":"/spec/template/spec/containers/0/readinessProbe/httpGet/path","value":"/missing"}]'
+deployment.apps/devops-demo patched
++ sleep 25
++ kubectl -n devops-final get pods
+NAME                           READY   STATUS        RESTARTS   AGE
+devops-demo-5467d9996b-dcgst   0/1     Running       0          25s
+devops-demo-6c684865d8-kzb9d   1/1     Terminating   0          92s
+devops-demo-6c684865d8-q59bn   1/1     Terminating   0          92s
+devops-demo-7d6dc7dc87-54n9j   1/1     Running       0          28s
+devops-demo-7d6dc7dc87-gqfv2   1/1     Running       0          55s
++ kubectl -n devops-final get events --sort-by=.lastTimestamp
++ tail -20
+28s         Normal    SuccessfulDelete               replicaset/devops-demo-6c684865d8     Deleted pod: devops-demo-6c684865d8-kzb9d
+28s         Normal    ScalingReplicaSet              deployment/devops-demo                Scaled down replica set devops-demo-6c684865d8 from 2 to 1
+28s         Normal    Killing                        pod/devops-demo-6c684865d8-kzb9d      Stopping container app
+28s         Normal    ScalingReplicaSet              deployment/devops-demo                Scaled up replica set devops-demo-7d6dc7dc87 from 1 to 2
+28s         Normal    Pulled                         pod/devops-demo-7d6dc7dc87-54n9j      Container image "devops-final:local" already present on machine
+28s         Normal    Created                        pod/devops-demo-7d6dc7dc87-54n9j      Created container: app
+28s         Normal    Started                        pod/devops-demo-7d6dc7dc87-54n9j      Started container app
+28s         Normal    Scheduled                      pod/devops-demo-7d6dc7dc87-54n9j      Successfully assigned devops-final/devops-demo-7d6dc7dc87-54n9j to gitops-runtime
+25s         Normal    SuccessfulCreate               replicaset/devops-demo-5467d9996b     Created pod: devops-demo-5467d9996b-dcgst
+25s         Normal    Pulled                         pod/devops-demo-5467d9996b-dcgst      Container image "devops-final:local" already present on machine
+25s         Normal    Created                        pod/devops-demo-5467d9996b-dcgst      Created container: app
+25s         Normal    Scheduled                      pod/devops-demo-5467d9996b-dcgst      Successfully assigned devops-final/devops-demo-5467d9996b-dcgst to gitops-runtime
+25s         Normal    Started                        pod/devops-demo-5467d9996b-dcgst      Started container app
+25s         Normal    ScalingReplicaSet              deployment/devops-demo                Scaled up replica set devops-demo-5467d9996b from 0 to 1
+25s         Normal    SuccessfulDelete               replicaset/devops-demo-6c684865d8     Deleted pod: devops-demo-6c684865d8-q59bn
+25s         Normal    ScalingReplicaSet              deployment/devops-demo                Scaled down replica set devops-demo-6c684865d8 from 1 to 0
+25s         Normal    Killing                        pod/devops-demo-6c684865d8-q59bn      Stopping container app
+2s          Warning   FailedGetResourceMetric        horizontalpodautoscaler/devops-demo   failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+2s          Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/devops-demo   invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+1s          Warning   Unhealthy                      pod/devops-demo-5467d9996b-dcgst      Readiness probe failed: HTTP probe failed with statuscode: 404
++ kubectl -n devops-final rollout undo deployment/devops-demo
+Warning: resource deployments/devops-demo was previously managed with 'kubectl apply'. Rolling back will not update the kubectl.kubernetes.io/last-applied-configuration annotation, which may cause unexpected behavior on future 'kubectl apply' operations. Consider using 'kubectl apply' with your previous configuration file instead.
+deployment.apps/devops-demo rolled back
++ kubectl -n devops-final rollout status deployment/devops-demo --timeout=180s
+deployment "devops-demo" successfully rolled out
++ curl -f -H 'Host: devops.local' http://192.168.49.2/readyz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    15  100    15    0     0   7853      0 --:--:-- --:--:-- --:--:-- 15000
+{"ready": true}+ kubectl -n devops-final delete deployment,service,configmap,ingress,hpa devops-demo
+deployment.apps "devops-demo" deleted from devops-final namespace
+service "devops-demo" deleted from devops-final namespace
+configmap "devops-demo" deleted from devops-final namespace
+ingress.networking.k8s.io "devops-demo" deleted from devops-final namespace
+horizontalpodautoscaler.autoscaling "devops-demo" deleted from devops-final namespace
++ helm upgrade --install devops-demo final-devops-project/helm/devops-demo -n devops-final --set ingress.enabled=true --set hpa.enabled=true --wait --timeout 180s
+Release "devops-demo" does not exist. Installing it now.
+NAME: devops-demo
+LAST DEPLOYED: Wed Oct  7 15:21:34 2026
+NAMESPACE: devops-final
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
++ helm upgrade devops-demo final-devops-project/helm/devops-demo -n devops-final --reuse-values --set 'message=Updated through Helm' --wait --timeout 180s
+Release "devops-demo" has been upgraded. Happy Helming!
+NAME: devops-demo
+LAST DEPLOYED: Wed Oct  7 15:21:39 2026
+NAMESPACE: devops-final
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
++ curl -f -H 'Host: devops.local' http://192.168.49.2/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   196  100   196    0     0   124k      0 --:--:-- --:--:-- --:--:--  191k
+<!doctype html><html><title>DevOps Demo</title><h1>Hello from Aryan&#x27;s DevOps final project</h1><p>Health: <a href="/healthz">/healthz</a> | Metrics: <a href="/metrics">/metrics</a></p></html>+ helm rollback devops-demo 1 -n devops-final --wait --timeout 180s
+Rollback was a success! Happy Helming!
++ helm history devops-demo -n devops-final
+REVISION	UPDATED                 	STATUS    	CHART            	APP VERSION	DESCRIPTION     
+1       	Wed Oct  7 15:21:34 2026	superseded	devops-demo-0.1.0	1.0        	Install complete
+2       	Wed Oct  7 15:21:39 2026	superseded	devops-demo-0.1.0	1.0        	Upgrade complete
+3       	Wed Oct  7 15:21:43 2026	deployed  	devops-demo-0.1.0	1.0        	Rollback to 1   
++ for worker in 1 2 3 4 5 6
++ for worker in 1 2 3 4 5 6
++ set +x
++ set +x
++ for worker in 1 2 3 4 5 6
++ set +x
++ for worker in 1 2 3 4 5 6
++ set +x
++ for worker in 1 2 3 4 5 6
++ for worker in 1 2 3 4 5 6
++ set +x
++ set +x
+++ seq 1 10
++ for sample in $(seq 1 10)
++ sleep 15
++ kubectl -n devops-final get hpa
+NAME          REFERENCE                TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+devops-demo   Deployment/devops-demo   cpu: <unknown>/60%   2         5         2          27s
++ kubectl -n devops-final top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+devops-demo-5467d9996b-dcgst   12m          11Mi            
+devops-demo-5989f485cf-6mpvg   285m         12Mi            
+devops-demo-5989f485cf-fdsqh   323m         12Mi            
+devops-demo-5989f485cf-t7jpj   26m          11Mi            
+devops-demo-6944874c9-29wqq    62m          11Mi            
+devops-demo-7d6dc7dc87-54n9j   10m          11Mi            
+devops-demo-7d6dc7dc87-gqfv2   10m          11Mi            
++ for sample in $(seq 1 10)
++ sleep 15
++ kubectl -n devops-final get hpa
+NAME          REFERENCE                TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+devops-demo   Deployment/devops-demo   cpu: <unknown>/60%   2         5         2          42s
++ kubectl -n devops-final top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+devops-demo-5989f485cf-6mpvg   285m         12Mi            
+devops-demo-5989f485cf-fdsqh   323m         12Mi            
++ for sample in $(seq 1 10)
++ sleep 15
++ kubectl -n devops-final get hpa
+NAME          REFERENCE                TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+devops-demo   Deployment/devops-demo   cpu: <unknown>/60%   2         5         2          58s
++ kubectl -n devops-final top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+devops-demo-5989f485cf-6mpvg   285m         12Mi            
+devops-demo-5989f485cf-fdsqh   323m         12Mi            
++ for sample in $(seq 1 10)
++ sleep 15
++ kubectl -n devops-final get hpa
+NAME          REFERENCE                TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+devops-demo   Deployment/devops-demo   cpu: <unknown>/60%   2         5         2          73s
++ kubectl -n devops-final top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+devops-demo-5989f485cf-6mpvg   285m         12Mi            
+devops-demo-5989f485cf-fdsqh   323m         12Mi            
++ for sample in $(seq 1 10)
++ sleep 15
++ kubectl -n devops-final get hpa
+NAME          REFERENCE                TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+devops-demo   Deployment/devops-demo   cpu: 428%/60%   2         5         2          88s
++ kubectl -n devops-final top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+devops-demo-5989f485cf-6mpvg   357m         12Mi            
+devops-demo-5989f485cf-fdsqh   500m         12Mi            
++ for sample in $(seq 1 10)
++ sleep 15
++ kubectl -n devops-final get hpa
+NAME          REFERENCE                TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+devops-demo   Deployment/devops-demo   cpu: 428%/60%   2         5         4          103s
++ kubectl -n devops-final top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+devops-demo-5989f485cf-6mpvg   357m         12Mi            
+devops-demo-5989f485cf-fdsqh   500m         12Mi            
++ for sample in $(seq 1 10)
++ sleep 15
++ kubectl -n devops-final get hpa
+NAME          REFERENCE                TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+devops-demo   Deployment/devops-demo   cpu: 428%/60%   2         5         5          118s
++ kubectl -n devops-final top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+devops-demo-5989f485cf-6mpvg   357m         12Mi            
+devops-demo-5989f485cf-fdsqh   500m         12Mi            
++ for sample in $(seq 1 10)
++ sleep 15
++ kubectl -n devops-final get hpa
+NAME          REFERENCE                TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+devops-demo   Deployment/devops-demo   cpu: 428%/60%   2         5         5          2m13s
++ kubectl -n devops-final top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+devops-demo-5989f485cf-6mpvg   357m         12Mi            
+devops-demo-5989f485cf-fdsqh   500m         12Mi            
++ for sample in $(seq 1 10)
++ sleep 15
++ kubectl -n devops-final get hpa
+NAME          REFERENCE                TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+devops-demo   Deployment/devops-demo   cpu: 445%/60%   2         5         5          2m29s
++ kubectl -n devops-final top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+devops-demo-5989f485cf-6mpvg   414m         12Mi            
+devops-demo-5989f485cf-fdsqh   476m         12Mi            
+devops-demo-5989f485cf-l8j2r   401m         12Mi            
+devops-demo-5989f485cf-v6rvd   416m         12Mi            
+devops-demo-5989f485cf-vll7l   396m         12Mi            
++ for sample in $(seq 1 10)
++ sleep 15
++ kubectl -n devops-final get hpa
+NAME          REFERENCE                TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+devops-demo   Deployment/devops-demo   cpu: 445%/60%   2         5         5          2m44s
++ kubectl -n devops-final top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+devops-demo-5989f485cf-6mpvg   414m         12Mi            
+devops-demo-5989f485cf-fdsqh   476m         12Mi            
+devops-demo-5989f485cf-l8j2r   401m         12Mi            
+devops-demo-5989f485cf-v6rvd   416m         12Mi            
+devops-demo-5989f485cf-vll7l   396m         12Mi            
++ kubectl -n devops-final describe hpa devops-demo
+Name:                                                  devops-demo
+Namespace:                                             devops-final
+Labels:                                                app.kubernetes.io/managed-by=Helm
+Annotations:                                           meta.helm.sh/release-name: devops-demo
+                                                       meta.helm.sh/release-namespace: devops-final
+CreationTimestamp:                                     Wed, 07 Oct 2026 15:21:35 +0000
+Reference:                                             Deployment/devops-demo
+Metrics:                                               ( current / target )
+  resource cpu on pods  (as a percentage of request):  445% (445m) / 60%
+Min replicas:                                          2
+Max replicas:                                          5
+Deployment pods:                                       5 current / 5 desired
+Conditions:
+  Type            Status  Reason            Message
+  ----            ------  ------            -------
+  AbleToScale     True    ReadyForNewScale  recommended size matches current size
+  ScalingActive   True    ValidMetricFound  the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)
+  ScalingLimited  True    TooManyReplicas   the desired replica count is more than the maximum replica count
+Events:
+  Type     Reason                        Age                  From                       Message
+  ----     ------                        ----                 ----                       -------
+  Normal   SuccessfulRescale             2m32s                horizontal-pod-autoscaler  New size: 2; reason: Current number of replicas below Spec.MinReplicas
+  Warning  FailedGetResourceMetric       92s (x4 over 2m17s)  horizontal-pod-autoscaler  failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+  Warning  FailedComputeMetricsReplicas  92s (x4 over 2m17s)  horizontal-pod-autoscaler  invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+  Normal   SuccessfulRescale             77s                  horizontal-pod-autoscaler  New size: 4; reason: cpu resource utilization (percentage of request) above target
+  Normal   SuccessfulRescale             62s                  horizontal-pod-autoscaler  New size: 5; reason: cpu resource utilization (percentage of request) above target
++ kubectl -n devops-final logs deployment/devops-demo --tail=20
+Found 5 pods, using pod/devops-demo-5989f485cf-fdsqh
+{"request_id": "89d18d90-0069-4de9-ace0-67a469316ca8", "path": "/work", "status": 200, "duration_ms": 109.9}
+{"request_id": "9f2277ef-fe23-400b-8db5-d8b516666a8a", "path": "/work", "status": 200, "duration_ms": 51.106}
+{"request_id": "9577a59f-dd7f-4652-8e0b-57e7b9126cd6", "path": "/work", "status": 200, "duration_ms": 46.865}
+{"request_id": "0cde1733-28b9-4ce0-a9d7-efbd535febae", "path": "/work", "status": 200, "duration_ms": 50.611}
+{"request_id": "a79c3c88-b4ac-458a-b427-80b652ade7a7", "path": "/work", "status": 200, "duration_ms": 97.888}
+{"request_id": "99d814e0-4e7a-43eb-8743-60f29a5dccc6", "path": "/work", "status": 200, "duration_ms": 103.042}
+{"request_id": "a80a0907-3a45-43d2-acd2-c92338a86057", "path": "/work", "status": 200, "duration_ms": 128.456}
+{"request_id": "33f9105f-d44b-4885-a87e-3e0c25c8e54c", "path": "/work", "status": 200, "duration_ms": 41.745}
+{"request_id": "0026dd2f-0363-4122-a532-65867c6f728c", "path": "/work", "status": 200, "duration_ms": 38.309}
+{"request_id": "42cd83e8-ebe0-468f-997c-07885bacf877", "path": "/work", "status": 200, "duration_ms": 78.026}
+{"request_id": "fce1b419-db3b-4885-a7c8-2bfd0e2bad9b", "path": "/work", "status": 200, "duration_ms": 81.785}
+{"request_id": "56f3df12-1b0c-4776-b87d-cb60f4ac2ce3", "path": "/work", "status": 200, "duration_ms": 33.641}
+{"request_id": "64096b53-470d-4eb9-be71-25d502359ac7", "path": "/readyz", "status": 200, "duration_ms": 0.169}
+{"request_id": "e0a5b9f1-8eff-418c-9eaa-76738b0ef4eb", "path": "/work", "status": 200, "duration_ms": 32.786}
+{"request_id": "4a42bece-eff8-40bf-86d8-1a7a7414cfb7", "path": "/work", "status": 200, "duration_ms": 176.272}
+{"request_id": "dea0409a-ad46-4f45-8570-b7b87634e58d", "path": "/work", "status": 200, "duration_ms": 261.6}
+{"request_id": "3d50aa54-7268-4077-bf9b-21f9dffcf631", "path": "/work", "status": 200, "duration_ms": 201.997}
+{"request_id": "2615420a-80f8-473d-84b0-483b36888fb2", "path": "/work", "status": 200, "duration_ms": 102.398}
+{"request_id": "203b81cc-d687-466b-bf98-6d9cea18cf49", "path": "/work", "status": 200, "duration_ms": 126.301}
+{"request_id": "573c300c-6561-4aec-ad8d-56b01e74afa0", "path": "/work", "status": 200, "duration_ms": 34.381}
++ helm uninstall devops-demo -n devops-final
+release "devops-demo" uninstalled
++ kubectl create namespace argocd
+namespace/argocd created
++ kubectl apply --server-side -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v3.1.8/manifests/install.yaml
+Warning: unrecognized format "int64"
+customresourcedefinition.apiextensions.k8s.io/applications.argoproj.io serverside-applied
+customresourcedefinition.apiextensions.k8s.io/applicationsets.argoproj.io serverside-applied
+customresourcedefinition.apiextensions.k8s.io/appprojects.argoproj.io serverside-applied
+serviceaccount/argocd-application-controller serverside-applied
+serviceaccount/argocd-applicationset-controller serverside-applied
+serviceaccount/argocd-dex-server serverside-applied
+serviceaccount/argocd-notifications-controller serverside-applied
+serviceaccount/argocd-redis serverside-applied
+serviceaccount/argocd-repo-server serverside-applied
+serviceaccount/argocd-server serverside-applied
+role.rbac.authorization.k8s.io/argocd-application-controller serverside-applied
+role.rbac.authorization.k8s.io/argocd-applicationset-controller serverside-applied
+role.rbac.authorization.k8s.io/argocd-dex-server serverside-applied
+role.rbac.authorization.k8s.io/argocd-notifications-controller serverside-applied
+role.rbac.authorization.k8s.io/argocd-redis serverside-applied
+role.rbac.authorization.k8s.io/argocd-server serverside-applied
+clusterrole.rbac.authorization.k8s.io/argocd-application-controller serverside-applied
+clusterrole.rbac.authorization.k8s.io/argocd-applicationset-controller serverside-applied
+clusterrole.rbac.authorization.k8s.io/argocd-server serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-application-controller serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-dex-server serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-notifications-controller serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-redis serverside-applied
+rolebinding.rbac.authorization.k8s.io/argocd-server serverside-applied
+clusterrolebinding.rbac.authorization.k8s.io/argocd-application-controller serverside-applied
+clusterrolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller serverside-applied
+clusterrolebinding.rbac.authorization.k8s.io/argocd-server serverside-applied
+configmap/argocd-cm serverside-applied
+configmap/argocd-cmd-params-cm serverside-applied
+configmap/argocd-gpg-keys-cm serverside-applied
+configmap/argocd-notifications-cm serverside-applied
+configmap/argocd-rbac-cm serverside-applied
+configmap/argocd-ssh-known-hosts-cm serverside-applied
+configmap/argocd-tls-certs-cm serverside-applied
+secret/argocd-notifications-secret serverside-applied
+secret/argocd-secret serverside-applied
+service/argocd-applicationset-controller serverside-applied
+service/argocd-dex-server serverside-applied
+service/argocd-metrics serverside-applied
+service/argocd-notifications-controller-metrics serverside-applied
+service/argocd-redis serverside-applied
+service/argocd-repo-server serverside-applied
+service/argocd-server serverside-applied
+service/argocd-server-metrics serverside-applied
+deployment.apps/argocd-applicationset-controller serverside-applied
+deployment.apps/argocd-dex-server serverside-applied
+deployment.apps/argocd-notifications-controller serverside-applied
+deployment.apps/argocd-redis serverside-applied
+deployment.apps/argocd-repo-server serverside-applied
+deployment.apps/argocd-server serverside-applied
+statefulset.apps/argocd-application-controller serverside-applied
+networkpolicy.networking.k8s.io/argocd-application-controller-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-applicationset-controller-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-dex-server-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-notifications-controller-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-redis-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-repo-server-network-policy serverside-applied
+networkpolicy.networking.k8s.io/argocd-server-network-policy serverside-applied
++ kubectl -n argocd rollout status deployment/argocd-server --timeout=300s
+Waiting for deployment "argocd-server" rollout to finish: 0 of 1 updated replicas are available...
+deployment "argocd-server" successfully rolled out
++ kubectl -n argocd rollout status deployment/argocd-repo-server --timeout=300s
+deployment "argocd-repo-server" successfully rolled out
++ kubectl -n argocd rollout status statefulset/argocd-application-controller --timeout=300s
+partitioned roll out complete: 1 new pods have been updated...
++ kubectl -n argocd patch configmap argocd-cmd-params-cm --type merge -p '{"data":{"server.insecure":"true"}}'
+configmap/argocd-cmd-params-cm patched
++ kubectl -n argocd rollout restart deployment/argocd-server
+deployment.apps/argocd-server restarted
++ kubectl -n argocd rollout status deployment/argocd-server --timeout=180s
+Waiting for deployment "argocd-server" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "argocd-server" rollout to finish: 1 old replicas are pending termination...
+deployment "argocd-server" successfully rolled out
++ kubectl apply -f 19-monitoring-gitops/application.yaml
+application.argoproj.io/monitoring-gitops-lab created
++ kubectl apply -f final-devops-project/gitops/application.yaml
+application.argoproj.io/devops-final created
++ wait_app monitoring-gitops-lab
+++ seq 1 90
++ for attempt in $(seq 1 90)
++ kubectl -n argocd get application monitoring-gitops-lab
+NAME                    SYNC STATUS   HEALTH STATUS
+monitoring-gitops-lab                 
+++ kubectl -n argocd get application monitoring-gitops-lab -o 'jsonpath={.status.sync.status}/{.status.health.status}'
++ state=/
++ [[ / == Synced/Healthy ]]
++ sleep 5
++ for attempt in $(seq 1 90)
++ kubectl -n argocd get application monitoring-gitops-lab
+NAME                    SYNC STATUS   HEALTH STATUS
+monitoring-gitops-lab   Synced        Healthy
+++ kubectl -n argocd get application monitoring-gitops-lab -o 'jsonpath={.status.sync.status}/{.status.health.status}'
++ state=Synced/Healthy
++ [[ Synced/Healthy == Synced/Healthy ]]
++ return 0
++ wait_app devops-final
+++ seq 1 90
++ for attempt in $(seq 1 90)
++ kubectl -n argocd get application devops-final
+NAME           SYNC STATUS   HEALTH STATUS
+devops-final   Synced        Progressing
+++ kubectl -n argocd get application devops-final -o 'jsonpath={.status.sync.status}/{.status.health.status}'
++ state=Synced/Progressing
++ [[ Synced/Progressing == Synced/Healthy ]]
++ sleep 5
++ for attempt in $(seq 1 90)
++ kubectl -n argocd get application devops-final
+NAME           SYNC STATUS   HEALTH STATUS
+devops-final   Synced        Progressing
+++ kubectl -n argocd get application devops-final -o 'jsonpath={.status.sync.status}/{.status.health.status}'
++ state=Synced/Progressing
++ [[ Synced/Progressing == Synced/Healthy ]]
++ sleep 5
++ for attempt in $(seq 1 90)
++ kubectl -n argocd get application devops-final
+NAME           SYNC STATUS   HEALTH STATUS
+devops-final   Synced        Progressing
+++ kubectl -n argocd get application devops-final -o 'jsonpath={.status.sync.status}/{.status.health.status}'
++ state=Synced/Progressing
++ [[ Synced/Progressing == Synced/Healthy ]]
++ sleep 5
++ for attempt in $(seq 1 90)
++ kubectl -n argocd get application devops-final
+NAME           SYNC STATUS   HEALTH STATUS
+devops-final   Synced        Progressing
+++ kubectl -n argocd get application devops-final -o 'jsonpath={.status.sync.status}/{.status.health.status}'
++ state=Synced/Progressing
++ [[ Synced/Progressing == Synced/Healthy ]]
++ sleep 5
++ for attempt in $(seq 1 90)
++ kubectl -n argocd get application devops-final
+NAME           SYNC STATUS   HEALTH STATUS
+devops-final   Synced        Healthy
+++ kubectl -n argocd get application devops-final -o 'jsonpath={.status.sync.status}/{.status.health.status}'
++ state=Synced/Healthy
++ [[ Synced/Healthy == Synced/Healthy ]]
++ return 0
++ kubectl -n gitops-lab get pods,svc
+NAME                            READY   STATUS    RESTARTS   AGE
+pod/gitops-web-b6795749-mswg6   1/1     Running   0          24s
+pod/gitops-web-b6795749-t4fjq   1/1     Running   0          24s
+
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+service/gitops-web   ClusterIP   10.96.232.243   <none>        80/TCP    24s
++ kubectl -n devops-final get pods,svc,ingress,hpa
+NAME                               READY   STATUS    RESTARTS   AGE
+pod/devops-demo-745bdb7db8-hqklq   1/1     Running   0          24s
+pod/devops-demo-745bdb7db8-qd7ts   1/1     Running   0          9s
+
+NAME                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+service/devops-demo   ClusterIP   10.96.110.118   <none>        80/TCP    24s
+
+NAME                                    CLASS   HOSTS          ADDRESS        PORTS   AGE
+ingress.networking.k8s.io/devops-demo   nginx   devops.local   192.168.49.2   80      24s
+
+NAME                                              REFERENCE                TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/devops-demo   Deployment/devops-demo   cpu: <unknown>/60%   2         5         1          24s
++ curl -f -H 'Host: devops.local' http://192.168.49.2/readyz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    15  100    15    0     0   8547      0 --:--:-- --:--:-- --:--:-- 15000
+{"ready": true}+ BRANCH=lab/gitops-runtime-37642643309
++ git checkout -b lab/gitops-runtime-37642643309
+Switched to a new branch 'lab/gitops-runtime-37642643309'
++ git config user.name 'Aryan Jakhar'
++ git config user.email AJ5831A@users.noreply.github.com
++ push_branch
++ for attempt in 1 2 3 4 5
++ git push origin lab/gitops-runtime-37642643309
+remote: 
+remote: Create a pull request for 'lab/gitops-runtime-37642643309' on GitHub by visiting:        
+remote:      https://github.com/AJ5831A/devops-homework/pull/new/lab/gitops-runtime-37642643309        
+remote: 
+To https://github.com/AJ5831A/devops-homework
+ * [new branch]      lab/gitops-runtime-37642643309 -> lab/gitops-runtime-37642643309
++ return 0
++ kubectl -n argocd patch application monitoring-gitops-lab --type merge -p '{"spec":{"source":{"targetRevision":"lab/gitops-runtime-37642643309"}}}'
+application.argoproj.io/monitoring-gitops-lab patched
++ python3 -
++ git add 19-monitoring-gitops/gitops/deployment.yaml
++ git commit -m 'Demonstrate GitOps three-replica promotion'
+[lab/gitops-runtime-37642643309 6457eb8] Demonstrate GitOps three-replica promotion
+ 1 file changed, 1 insertion(+), 1 deletion(-)
++ push_branch
++ for attempt in 1 2 3 4 5
++ git push origin lab/gitops-runtime-37642643309
+To https://github.com/AJ5831A/devops-homework
+   8b2a452..6457eb8  lab/gitops-runtime-37642643309 -> lab/gitops-runtime-37642643309
++ return 0
++ kubectl -n argocd annotate application monitoring-gitops-lab argocd.argoproj.io/refresh=hard --overwrite
+application.argoproj.io/monitoring-gitops-lab annotated
++ sleep 15
++ wait_app monitoring-gitops-lab
+++ seq 1 90
++ for attempt in $(seq 1 90)
++ kubectl -n argocd get application monitoring-gitops-lab
+NAME                    SYNC STATUS   HEALTH STATUS
+monitoring-gitops-lab   Synced        Healthy
+++ kubectl -n argocd get application monitoring-gitops-lab -o 'jsonpath={.status.sync.status}/{.status.health.status}'
++ state=Synced/Healthy
++ [[ Synced/Healthy == Synced/Healthy ]]
++ return 0
++ kubectl -n gitops-lab rollout status deployment/gitops-web --timeout=180s
+deployment "gitops-web" successfully rolled out
+++ kubectl -n gitops-lab get deployment gitops-web -o 'jsonpath={.spec.replicas}'
++ test 3 = 3
++ kubectl -n gitops-lab scale deployment gitops-web --replicas=1
+deployment.apps/gitops-web scaled
++ sleep 25
++ wait_app monitoring-gitops-lab
+++ seq 1 90
++ for attempt in $(seq 1 90)
++ kubectl -n argocd get application monitoring-gitops-lab
+NAME                    SYNC STATUS   HEALTH STATUS
+monitoring-gitops-lab   Synced        Healthy
+++ kubectl -n argocd get application monitoring-gitops-lab -o 'jsonpath={.status.sync.status}/{.status.health.status}'
++ state=Synced/Healthy
++ [[ Synced/Healthy == Synced/Healthy ]]
++ return 0
+++ kubectl -n gitops-lab get deployment gitops-web -o 'jsonpath={.spec.replicas}'
++ test 3 = 3
++ kubectl -n gitops-lab get pods
+NAME                        READY   STATUS    RESTARTS   AGE
+gitops-web-b6795749-t4fjq   1/1     Running   0          67s
+gitops-web-b6795749-tj54s   1/1     Running   0          25s
+gitops-web-b6795749-v96dx   1/1     Running   0          25s
++ git revert --no-edit HEAD
+[lab/gitops-runtime-37642643309 1647537] Revert "Demonstrate GitOps three-replica promotion"
+ Date: Wed Oct 7 15:26:43 2026 +0000
+ 1 file changed, 1 insertion(+), 1 deletion(-)
++ push_branch
++ for attempt in 1 2 3 4 5
++ git push origin lab/gitops-runtime-37642643309
+To https://github.com/AJ5831A/devops-homework
+   6457eb8..1647537  lab/gitops-runtime-37642643309 -> lab/gitops-runtime-37642643309
++ return 0
++ kubectl -n argocd annotate application monitoring-gitops-lab argocd.argoproj.io/refresh=hard --overwrite
+application.argoproj.io/monitoring-gitops-lab annotated
++ sleep 15
++ wait_app monitoring-gitops-lab
+++ seq 1 90
++ for attempt in $(seq 1 90)
++ kubectl -n argocd get application monitoring-gitops-lab
+NAME                    SYNC STATUS   HEALTH STATUS
+monitoring-gitops-lab   Synced        Healthy
+++ kubectl -n argocd get application monitoring-gitops-lab -o 'jsonpath={.status.sync.status}/{.status.health.status}'
++ state=Synced/Healthy
++ [[ Synced/Healthy == Synced/Healthy ]]
++ return 0
+++ kubectl -n gitops-lab get deployment gitops-web -o 'jsonpath={.spec.replicas}'
++ test 2 = 2
++ kubectl -n gitops-lab get pods
+NAME                        READY   STATUS    RESTARTS   AGE
+gitops-web-b6795749-t4fjq   1/1     Running   0          84s
+gitops-web-b6795749-tj54s   1/1     Running   0          42s
++ kubectl -n argocd get applications -o wide
+NAME                    SYNC STATUS   HEALTH STATUS   REVISION                                   PROJECT
+devops-final            Synced        Healthy         c0d875f3b09a77c42f99e0028adeddd8da8116af   default
+monitoring-gitops-lab   Synced        Healthy         16475370a38b08c63fffbd77f9cb4ed71805a9e6   default
++ sleep 3
++ kubectl -n argocd port-forward svc/argocd-server 8088:80
++ set +x

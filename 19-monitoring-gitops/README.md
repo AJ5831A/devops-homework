@@ -104,7 +104,24 @@ kubectl -n gitops-lab get pods -w
 
 Self-heal restores the count declared in Git. Revert the commit and push to
 perform a GitOps rollback. Record the commit SHA, Argo sync/health status and
-Pod counts before/after; these are expected outcomes until actually executed.
+Pod counts before/after. The observed execution below records this experiment.
+
+### Observed GitOps execution — 7 October 2026
+
+The [hosted runtime experiment](https://github.com/AJ5831A/devops-homework/actions/runs/37642643309)
+completed the real GitOps cycle on branch `lab/gitops-runtime-37642643309`:
+commit `6457eb8` changed replicas from 2 to 3, Argo repaired a manual scale to 1
+back to 3, and revert `1647537` restored 2. Assertions and both applications'
+`Synced / Healthy` status are in the [actual transcript](../evidence/gitops/runtime.txt).
+
+The hosted browser step failed on an incorrect login selector; it did not
+invalidate the completed Kubernetes/GitOps experiments. The selector was fixed
+and verified against a separate local Argo installation. These are genuine
+local screenshots of the same repository Applications, both healthy:
+
+![Argo CD applications](../evidence/gitops/argocd-applications.png)
+
+[Evidence provenance and local verification](../evidence/gitops/README.md).
 
 Cleanup: delete the Argo Application first to stop reconciliation, then delete
 the dedicated `gitops-lab` namespace. `docker compose down` stops monitoring;

@@ -1,0 +1,6 @@
+NAME                            READY   STATUS    RESTARTS   AGE
+pod/gitops-web-b6795749-fvchp   1/1     Running   0          77s
+pod/gitops-web-b6795749-gl5gq   1/1     Running   0          77s
+
+NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+service/gitops-web   ClusterIP   10.108.194.251   <none>        80/TCP    77s

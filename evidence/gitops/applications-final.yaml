@@ -1,0 +1,317 @@
+apiVersion: v1
+items:
+- apiVersion: argoproj.io/v1alpha1
+  kind: Application
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"argoproj.io/v1alpha1","kind":"Application","metadata":{"annotations":{},"name":"devops-final","namespace":"argocd"},"spec":{"destination":{"namespace":"devops-final","server":"https://kubernetes.default.svc"},"project":"default","source":{"helm":{"releaseName":"devops-demo","valueFiles":["values-gitops.yaml"]},"path":"final-devops-project/helm/devops-demo","repoURL":"https://github.com/AJ5831A/devops-homework.git","targetRevision":"main"},"syncPolicy":{"automated":{"prune":true,"selfHeal":true},"syncOptions":["CreateNamespace=true"]}}}
+    creationTimestamp: "2026-10-07T15:25:34Z"
+    generation: 11
+    name: devops-final
+    namespace: argocd
+    resourceVersion: "2003"
+    uid: 8cf0e050-b737-45a4-a704-6ea00d801c71
+  spec:
+    destination:
+      namespace: devops-final
+      server: https://kubernetes.default.svc
+    project: default
+    source:
+      helm:
+        releaseName: devops-demo
+        valueFiles:
+        - values-gitops.yaml
+      path: final-devops-project/helm/devops-demo
+      repoURL: https://github.com/AJ5831A/devops-homework.git
+      targetRevision: main
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
+      syncOptions:
+      - CreateNamespace=true
+  status:
+    controllerNamespace: argocd
+    health:
+      lastTransitionTime: "2026-10-07T15:25:57Z"
+      status: Healthy
+    history:
+    - deployStartedAt: "2026-10-07T15:25:35Z"
+      deployedAt: "2026-10-07T15:25:36Z"
+      id: 0
+      initiatedBy:
+        automated: true
+      revision: c0d875f3b09a77c42f99e0028adeddd8da8116af
+      source:
+        helm:
+          releaseName: devops-demo
+          valueFiles:
+          - values-gitops.yaml
+        path: final-devops-project/helm/devops-demo
+        repoURL: https://github.com/AJ5831A/devops-homework.git
+        targetRevision: main
+    operationState:
+      finishedAt: "2026-10-07T15:25:36Z"
+      message: successfully synced (all tasks run)
+      operation:
+        initiatedBy:
+          automated: true
+        retry:
+          limit: 5
+        sync:
+          prune: true
+          revision: c0d875f3b09a77c42f99e0028adeddd8da8116af
+          syncOptions:
+          - CreateNamespace=true
+      phase: Succeeded
+      startedAt: "2026-10-07T15:25:35Z"
+      syncResult:
+        resources:
+        - group: ""
+          hookPhase: Running
+          kind: ConfigMap
+          message: configmap/devops-demo created
+          name: devops-demo
+          namespace: devops-final
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ""
+          hookPhase: Running
+          kind: Service
+          message: service/devops-demo created
+          name: devops-demo
+          namespace: devops-final
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apps
+          hookPhase: Running
+          images:
+          - ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681
+          kind: Deployment
+          message: deployment.apps/devops-demo created
+          name: devops-demo
+          namespace: devops-final
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: autoscaling
+          hookPhase: Running
+          kind: HorizontalPodAutoscaler
+          message: horizontalpodautoscaler.autoscaling/devops-demo created
+          name: devops-demo
+          namespace: devops-final
+          status: Synced
+          syncPhase: Sync
+          version: v2
+        - group: networking.k8s.io
+          hookPhase: Running
+          kind: Ingress
+          message: ingress.networking.k8s.io/devops-demo created
+          name: devops-demo
+          namespace: devops-final
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        revision: c0d875f3b09a77c42f99e0028adeddd8da8116af
+        source:
+          helm:
+            releaseName: devops-demo
+            valueFiles:
+            - values-gitops.yaml
+          path: final-devops-project/helm/devops-demo
+          repoURL: https://github.com/AJ5831A/devops-homework.git
+          targetRevision: main
+    reconciledAt: "2026-10-07T15:25:36Z"
+    resourceHealthSource: appTree
+    resources:
+    - kind: ConfigMap
+      name: devops-demo
+      namespace: devops-final
+      status: Synced
+      version: v1
+    - kind: Service
+      name: devops-demo
+      namespace: devops-final
+      status: Synced
+      version: v1
+    - group: apps
+      kind: Deployment
+      name: devops-demo
+      namespace: devops-final
+      status: Synced
+      version: v1
+    - group: autoscaling
+      kind: HorizontalPodAutoscaler
+      name: devops-demo
+      namespace: devops-final
+      status: Synced
+      version: v2
+    - group: networking.k8s.io
+      kind: Ingress
+      name: devops-demo
+      namespace: devops-final
+      status: Synced
+      version: v1
+    sourceHydrator: {}
+    sourceType: Helm
+    summary:
+      externalURLs:
+      - http://devops.local/
+      images:
+      - ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681
+    sync:
+      comparedTo:
+        destination:
+          namespace: devops-final
+          server: https://kubernetes.default.svc
+        source:
+          helm:
+            releaseName: devops-demo
+            valueFiles:
+            - values-gitops.yaml
+          path: final-devops-project/helm/devops-demo
+          repoURL: https://github.com/AJ5831A/devops-homework.git
+          targetRevision: main
+      revision: c0d875f3b09a77c42f99e0028adeddd8da8116af
+      status: Synced
+- apiVersion: argoproj.io/v1alpha1
+  kind: Application
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"argoproj.io/v1alpha1","kind":"Application","metadata":{"annotations":{},"name":"monitoring-gitops-lab","namespace":"argocd"},"spec":{"destination":{"namespace":"gitops-lab","server":"https://kubernetes.default.svc"},"project":"default","source":{"path":"19-monitoring-gitops/gitops","repoURL":"https://github.com/AJ5831A/devops-homework.git","targetRevision":"main"},"syncPolicy":{"automated":{"prune":true,"selfHeal":true},"syncOptions":["CreateNamespace=true"]}}}
+    creationTimestamp: "2026-10-07T15:25:34Z"
+    generation: 31
+    name: monitoring-gitops-lab
+    namespace: argocd
+    resourceVersion: "2189"
+    uid: 0363792b-8db1-4905-b585-45663ec1279c
+  spec:
+    destination:
+      namespace: gitops-lab
+      server: https://kubernetes.default.svc
+    project: default
+    source:
+      path: 19-monitoring-gitops/gitops
+      repoURL: https://github.com/AJ5831A/devops-homework.git
+      targetRevision: lab/gitops-runtime-37642643309
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
+      syncOptions:
+      - CreateNamespace=true
+  status:
+    controllerNamespace: argocd
+    health:
+      lastTransitionTime: "2026-10-07T15:26:20Z"
+      status: Healthy
+    history:
+    - deployStartedAt: "2026-10-07T15:25:35Z"
+      deployedAt: "2026-10-07T15:25:36Z"
+      id: 0
+      initiatedBy:
+        automated: true
+      revision: c0d875f3b09a77c42f99e0028adeddd8da8116af
+      source:
+        path: 19-monitoring-gitops/gitops
+        repoURL: https://github.com/AJ5831A/devops-homework.git
+        targetRevision: main
+    - deployStartedAt: "2026-10-07T15:26:03Z"
+      deployedAt: "2026-10-07T15:26:03Z"
+      id: 1
+      initiatedBy:
+        automated: true
+      revision: 6457eb8444f5b060ac8d492506e6dae32db0a06f
+      source:
+        path: 19-monitoring-gitops/gitops
+        repoURL: https://github.com/AJ5831A/devops-homework.git
+        targetRevision: lab/gitops-runtime-37642643309
+    - deployStartedAt: "2026-10-07T15:26:45Z"
+      deployedAt: "2026-10-07T15:26:45Z"
+      id: 2
+      initiatedBy:
+        automated: true
+      revision: 16475370a38b08c63fffbd77f9cb4ed71805a9e6
+      source:
+        path: 19-monitoring-gitops/gitops
+        repoURL: https://github.com/AJ5831A/devops-homework.git
+        targetRevision: lab/gitops-runtime-37642643309
+    operationState:
+      finishedAt: "2026-10-07T15:26:45Z"
+      message: successfully synced (all tasks run)
+      operation:
+        initiatedBy:
+          automated: true
+        retry:
+          limit: 5
+        sync:
+          prune: true
+          revision: 16475370a38b08c63fffbd77f9cb4ed71805a9e6
+          syncOptions:
+          - CreateNamespace=true
+      phase: Succeeded
+      startedAt: "2026-10-07T15:26:45Z"
+      syncResult:
+        resources:
+        - group: ""
+          hookPhase: Running
+          kind: Service
+          message: service/gitops-web unchanged
+          name: gitops-web
+          namespace: gitops-lab
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apps
+          hookPhase: Running
+          images:
+          - nginx:1.28-alpine
+          kind: Deployment
+          message: deployment.apps/gitops-web configured
+          name: gitops-web
+          namespace: gitops-lab
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        revision: 16475370a38b08c63fffbd77f9cb4ed71805a9e6
+        source:
+          path: 19-monitoring-gitops/gitops
+          repoURL: https://github.com/AJ5831A/devops-homework.git
+          targetRevision: lab/gitops-runtime-37642643309
+    reconciledAt: "2026-10-07T15:26:45Z"
+    resourceHealthSource: appTree
+    resources:
+    - kind: Service
+      name: gitops-web
+      namespace: gitops-lab
+      status: Synced
+      version: v1
+    - group: apps
+      kind: Deployment
+      name: gitops-web
+      namespace: gitops-lab
+      status: Synced
+      version: v1
+    sourceHydrator: {}
+    sourceType: Directory
+    summary:
+      images:
+      - nginx:1.28-alpine
+    sync:
+      comparedTo:
+        destination:
+          namespace: gitops-lab
+          server: https://kubernetes.default.svc
+        source:
+          path: 19-monitoring-gitops/gitops
+          repoURL: https://github.com/AJ5831A/devops-homework.git
+          targetRevision: lab/gitops-runtime-37642643309
+      revision: 16475370a38b08c63fffbd77f9cb4ed71805a9e6
+      status: Synced
+kind: List
+metadata:
+  resourceVersion: ""

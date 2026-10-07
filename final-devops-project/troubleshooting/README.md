@@ -3,7 +3,14 @@
 Run in the dedicated `devops-final` lab namespace after a healthy deployment.
 Temporarily disable Argo auto-sync/self-heal before fault injection, otherwise
 it may repair changes before you observe them. Re-enable it after restoring Git.
-All statuses below are expected symptoms, not captured execution evidence.
+All four faults were executed and repaired in the runtime step of
+[run 37642643309](https://github.com/AJ5831A/devops-homework/actions/runs/37642643309).
+The [actual transcript](../../evidence/gitops/runtime.txt) records image pull
+errors, the empty Service EndpointSlice, `CreateContainerConfigError` from the
+missing Secret, and a readiness probe HTTP 404. Every repaired Deployment
+completed its rollout; the restored Service/Ingress returned successful readiness.
+The run's later browser-only failure and successful local screenshot recovery
+are explained in [evidence provenance](../../evidence/gitops/README.md).
 
 | Fault | Investigate | Root cause | Repair and verify |
 | --- | --- | --- | --- |
