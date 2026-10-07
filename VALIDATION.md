@@ -57,13 +57,19 @@ verification, cleanup and journalctl transcript is in
 - [Local infrastructure validation](evidence/infrastructure/README.md): all three Terraform init/fmt/validate runs and both chart lint/render checks.
 - [Monitoring](19-monitoring-gitops/evidence/README.md): CPU/memory, logs, health, Grafana, firing alerts and recovery.
 
-## Remaining execution work
+## Runtime recovery and remaining AWS work
 
 The first hosted Kubernetes exercise run exposed verification-script timing
 and DNS return-code problems. Its original evidence is retained alongside
-ongoing targeted repairs. The final GitOps retry is running after a transient
-GitHub push failure. Neither run is claimed as fully passed here.
+successful targeted repairs, including a full HPA 1→5→1 cycle.
+[GitOps runtime run](https://github.com/AJ5831A/devops-homework/actions/runs/37642643309)
+passed the deployment, faults, HPA, promotion, self-heal and rollback experiments,
+then failed in browser capture on a login-field selector. The corrected browser
+script passed against local Argo with both applications Synced/Healthy and
+final readiness HTTP200; [actual screenshots and runtime records](evidence/gitops/)
+are saved separately. Neither original workflow is represented as fully green.
 
-AWS plan/apply/output/destroy await the user's lab profile. No cloud credentials
+AWS plan/apply/output/destroy await CLI authentication: the latest local STS
+identity check returned NoCredentials, with no configured profile or region. No cloud credentials
 or fabricated output are committed. Later workflow additions need a new run
 before claiming validation for those revisions.

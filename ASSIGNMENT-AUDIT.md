@@ -51,8 +51,12 @@ attached to two networks does not automatically route between them.
 - All Terraform projects passed actual init/fmt/validate locally and in CI; provider lock files are committed.
 - Monitoring20 completed with real CPU/memory/health/logs, Grafana screenshots, high-CPU/down alerts and recovery.
 
-Hosted Kubernetes08–13 and final GitOps/troubleshooting exercises are still
-running; their evidence must be reviewed before claiming task completion.
-AWS plan/apply/output/destroy remain pending the user's configured lab profile.
+Kubernetes08–13 evidence includes the original hosted failures and successful
+targeted liveness, DNS, network-policy, canary and HPA scale-up/down repairs.
+Final deployment, four fault repairs and GitOps promotion/self-heal/rollback
+passed in the hosted runtime step. Its subsequent UI capture failed on a login
+selector; the corrected capture then passed locally with both Argo applications
+Synced/Healthy and final readiness HTTP200. Original failures are retained.
+AWS plan/apply/output/destroy remain pending authenticated AWS CLI access.
 The submission remains incomplete until these remaining execution requirements
 are proven. See VALIDATION.md and each linked evidence folder for exact scope.

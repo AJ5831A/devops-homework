@@ -28,6 +28,11 @@ for path in sorted(ROOT.rglob('*')):
                         dependencies = job.get('needs', [])
                         if isinstance(dependencies, str): dependencies = [dependencies]
                         assert all(d in obj['jobs'] for d in dependencies), 'unknown job dependency'
+                if obj.get('kind') == 'List':
+                    # kubectl collection output has no object name; validate its items.
+                    assert obj.get('apiVersion') and isinstance(obj.get('items'), list), 'invalid resource list'
+                    documents.extend(obj['items'])
+                    continue
                 if 'kind' in obj:
                     assert obj.get('apiVersion') and obj.get('metadata', {}).get('name'), 'resource identity missing'
                 if obj.get('kind') in {'Deployment', 'ReplicaSet'}:
