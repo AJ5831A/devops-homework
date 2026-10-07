@@ -1,6 +1,6 @@
 # Cloud & Terraform in Action — Session 19
 
-The [Terraform project](terraform-vpc/) implements the PDF's full suggested architecture: VPC, subnet, security group, EC2 and S3. It extends the reference's VPC/network-only implementation with a working Nginx EC2 bootstrap and private object storage. Terraform formatting, initialization and validation passed in hosted CI ([evidence](../evidence/infrastructure/README.md)). AWS apply and runtime screenshots are **pending**, not claimed as completed.
+The [Terraform project](terraform-vpc/) implements the PDF's full suggested architecture: VPC, subnet, security group, EC2 and S3. It extends the reference's VPC/network-only implementation with a working Nginx EC2 bootstrap and private object storage. Terraform formatting, initialization and validation passed in hosted CI ([evidence](../evidence/infrastructure/README.md)). The real AWS lifecycle completed on 7 October 2026: eleven resources created, Nginx HTTP and security settings verified, no-change plan confirmed, and all eleven resources destroyed. [Runtime evidence](../evidence/aws/18-vpc-ec2-20261007T153930Z/README.md) includes a live browser screenshot and independent deletion checks.
 
 ```mermaid
 flowchart TD
@@ -34,7 +34,10 @@ Requires Terraform >=1.6, authenticated AWS CLI and permission to create these r
 cd terraform-vpc
 cp terraform.tfvars.example terraform.tfvars
 # Edit http_cidr to your actual public IPv4 /32 before planning.
-export AWS_PROFILE=your-lab-profile
+export AWS_PROFILE=devops-lab
+# Bridge AWS CLI login credentials to the Terraform 5.x AWS provider.
+# This evaluates trusted AWS CLI exports; do not print the values or use shell xtrace.
+eval "$(aws configure export-credentials --profile "$AWS_PROFILE" --format env)"
 aws sts get-caller-identity
 terraform init
 terraform fmt
@@ -49,9 +52,18 @@ curl --fail --retry 12 --retry-delay 10 --retry-connrefused "$(terraform output 
 aws s3api get-public-access-block --bucket "$(terraform output -raw bucket_name)"
 terraform plan
 terraform destroy
+unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_CREDENTIAL_EXPIRATION
 ```
 
-Expected verification: HTTP contains `Hello from Terraform on AWS`, S3 blocks public access, and a second plan shows no changes. These are acceptance criteria, not captured results. Record actual init/validate/plan/apply/output/destroy transcripts and browser/AWS resource screenshots in `evidence/` before submission. The S3 bucket must be empty (including object versions) for destroy because force deletion is disabled.
+The captured runner bridges AWS CLI login sessions by reading `export-credentials --format process` JSON into memory and passing temporary credentials to Terraform child processes. The shell equivalent above avoids depending on direct login-cache support in the AWS provider 5.x. Credentials, state and plans are excluded from published evidence.
+
+Observed verification: HTTP returned `Hello from Terraform on AWS`; S3 blocked public access, enabled versioning and used AES256 encryption; EC2 required IMDSv2 and used an encrypted root volume. A second plan showed no changes. [Captured evidence](../evidence/aws/18-vpc-ec2-20261007T153930Z/README.md) includes init, validate, plan, apply, show, output and destroy. Cleanup left empty Terraform state; AWS reported the instance terminated, the bucket 404, and the VPC and root volume absent. The bucket was kept empty because force deletion is disabled.
+
+![Live AWS Nginx application](../evidence/aws/18-vpc-ec2-20261007T153930Z/web-browser.png)
+
+![Recorded AWS Terraform apply](../evidence/aws/18-vpc-ec2-20261007T153930Z/apply.png)
+
+![Recorded AWS Terraform destroy](../evidence/aws/18-vpc-ec2-20261007T153930Z/destroy.png)
 
 ## Troubleshooting
 

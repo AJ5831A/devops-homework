@@ -1,0 +1,20 @@
+data.aws_availability_zones.available: Reading...
+data.aws_ami.linux: Reading...
+aws_vpc.main: Refreshing state... [id=vpc-00e9b2626bf6907ba]
+aws_s3_bucket.demo: Refreshing state... [id=aj5831a-cloud-lab-20261007154235806100000001]
+aws_s3_bucket_public_access_block.demo: Refreshing state... [id=aj5831a-cloud-lab-20261007154235806100000001]
+aws_s3_bucket_versioning.demo: Refreshing state... [id=aj5831a-cloud-lab-20261007154235806100000001]
+aws_s3_bucket_server_side_encryption_configuration.demo: Refreshing state... [id=aj5831a-cloud-lab-20261007154235806100000001]
+data.aws_availability_zones.available: Read complete after 3s [id=ap-south-1]
+data.aws_ami.linux: Read complete after 3s [id=ami-03054015e26069645]
+aws_internet_gateway.main: Refreshing state... [id=igw-0d180e56de67ac87e]
+aws_subnet.public: Refreshing state... [id=subnet-00438b5cd3e555e2e]
+aws_security_group.web: Refreshing state... [id=sg-072cf8e958478a777]
+aws_route_table.public: Refreshing state... [id=rtb-0e86060b6e05c6e81]
+aws_route_table_association.public: Refreshing state... [id=rtbassoc-078da58a6c545905f]
+aws_instance.web: Refreshing state... [id=i-078813795859e6c6e]
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.

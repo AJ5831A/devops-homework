@@ -1,0 +1,1 @@
+PASS: applied and validated actual AWS resources, security settings and no-change plan.

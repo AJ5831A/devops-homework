@@ -1,0 +1,15 @@
+aws_s3_bucket.demo: Creating...
+aws_s3_bucket.demo: Creation complete after 4s [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_public_access_block.demo: Creating...
+aws_s3_bucket_versioning.demo: Creating...
+aws_s3_bucket_server_side_encryption_configuration.demo: Creating...
+aws_s3_bucket_public_access_block.demo: Creation complete after 1s [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_server_side_encryption_configuration.demo: Creation complete after 1s [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_versioning.demo: Creation complete after 2s [id=aj5831a-devops-20261007154047150600000001]
+
+Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+bucket_arn = "arn:aws:s3:::aj5831a-devops-20261007154047150600000001"
+bucket_name = "aj5831a-devops-20261007154047150600000001"

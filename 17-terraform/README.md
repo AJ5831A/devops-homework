@@ -7,4 +7,4 @@
 - [VPC](aws-services/04-vpc/README.md)
 - [DynamoDB and RDS](aws-services/05-dynamodb-rds/README.md)
 
-Terraform formatting, provider initialization and validation passed in hosted CI; see [validation evidence](../evidence/infrastructure/README.md). AWS apply and runtime evidence remain pending. No AWS resources are claimed to have been created.
+Terraform formatting, provider initialization and validation passed. The real AWS S3 lifecycle also completed on 7 October 2026 in `ap-south-1`: four resources created, security settings verified, a no-change plan confirmed, and all four resources destroyed. The empty Terraform state and AWS bucket 404 independently verified cleanup. See [runtime evidence](../evidence/aws/17-s3-20261007T153930Z/README.md).

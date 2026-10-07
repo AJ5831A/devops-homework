@@ -1,0 +1,173 @@
+{
+    "Reservations": [
+        {
+            "ReservationId": "r-0ad931a222cd48cd0",
+            "OwnerId": "[ACCOUNT_REDACTED]",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/xvda",
+                            "Ebs": {
+                                "AttachTime": "2026-10-07T15:43:01+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-095a8506d90ba8f54",
+                                "EbsCardIndex": 0
+                            }
+                        }
+                    ],
+                    "ClientToken": "terraform-20261007154259757400000004",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Association": {
+                                "IpOwnerId": "amazon",
+                                "PublicDnsName": "ec2-3-110-184-229.ap-south-1.compute.amazonaws.com",
+                                "PublicIp": "3.110.184.229"
+                            },
+                            "Attachment": {
+                                "AttachTime": "2026-10-07T15:43:00+00:00",
+                                "AttachmentId": "eni-attach-05ac8a432a198615c",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-072cf8e958478a777",
+                                    "GroupName": "aj-devops-web-20261007154247973100000002"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "02:ff:d8:82:a2:07",
+                            "NetworkInterfaceId": "eni-0d741acfb56a923bd",
+                            "OwnerId": "[ACCOUNT_REDACTED]",
+                            "PrivateDnsName": "ip-10-20-1-127.ap-south-1.compute.internal",
+                            "PrivateIpAddress": "10.20.1.127",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Association": {
+                                        "IpOwnerId": "amazon",
+                                        "PublicDnsName": "ec2-3-110-184-229.ap-south-1.compute.amazonaws.com",
+                                        "PublicIp": "3.110.184.229"
+                                    },
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-10-20-1-127.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "10.20.1.127"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-00438b5cd3e555e2e",
+                            "VpcId": "vpc-00e9b2626bf6907ba",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/xvda",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-072cf8e958478a777",
+                            "GroupName": "aj-devops-web-20261007154247973100000002"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "aj-devops-web"
+                        },
+                        {
+                            "Key": "ManagedBy",
+                            "Value": "Terraform"
+                        },
+                        {
+                            "Key": "Project",
+                            "Value": "aj5831a-devops-homework"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi-preferred",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2026-10-07T15:43:00+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default",
+                        "RebootMigration": "default"
+                    },
+                    "CurrentInstanceBootMode": "uefi",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false,
+                        "HiddenByDefault": false
+                    },
+                    "SecondaryInterfaces": [],
+                    "InstanceId": "i-078813795859e6c6e",
+                    "ImageId": "ami-03054015e26069645",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-20-1-127.ap-south-1.compute.internal",
+                    "PublicDnsName": "ec2-3-110-184-229.ap-south-1.compute.amazonaws.com",
+                    "StateTransitionReason": "",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "t3.micro",
+                    "LaunchTime": "2026-10-07T15:43:00+00:00",
+                    "Placement": {
+                        "AvailabilityZoneId": "aps1-az1",
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "ap-south-1a"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-00438b5cd3e555e2e",
+                    "VpcId": "vpc-00e9b2626bf6907ba",
+                    "PrivateIpAddress": "10.20.1.127",
+                    "PublicIpAddress": "3.110.184.229"
+                }
+            ]
+        }
+    ]
+}

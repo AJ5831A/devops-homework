@@ -1,0 +1,100 @@
+aws_s3_bucket.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_public_access_block.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_versioning.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_server_side_encryption_configuration.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.demo will be destroyed
+  - resource "aws_s3_bucket" "demo" {
+      - arn                         = "arn:aws:s3:::aj5831a-devops-20261007154047150600000001" -> null
+      - bucket                      = "aj5831a-devops-20261007154047150600000001" -> null
+      - bucket_domain_name          = "aj5831a-devops-20261007154047150600000001.s3.amazonaws.com" -> null
+      - bucket_prefix               = "aj5831a-devops-" -> null
+      - bucket_regional_domain_name = "aj5831a-devops-20261007154047150600000001.s3.ap-south-1.amazonaws.com" -> null
+      - force_destroy               = false -> null
+      - hosted_zone_id              = "Z11RGJOFQNVJUP" -> null
+      - id                          = "aj5831a-devops-20261007154047150600000001" -> null
+      - object_lock_enabled         = false -> null
+      - region                      = "ap-south-1" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {} -> null
+      - tags_all                    = {
+          - "ManagedBy" = "Terraform"
+          - "Project"   = "aj5831a-devops-homework"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - grant {
+          - id          = "47e2bea7df6401300aa21c77b87ac6d7948cc54d75cdddc9246d0df5f6e5987f" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = false -> null
+
+              - apply_server_side_encryption_by_default {
+                  - sse_algorithm     = "AES256" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = true -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # aws_s3_bucket_public_access_block.demo will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "demo" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "aj5831a-devops-20261007154047150600000001" -> null
+      - id                      = "aj5831a-devops-20261007154047150600000001" -> null
+      - ignore_public_acls      = true -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # aws_s3_bucket_server_side_encryption_configuration.demo will be destroyed
+  - resource "aws_s3_bucket_server_side_encryption_configuration" "demo" {
+      - bucket                = "aj5831a-devops-20261007154047150600000001" -> null
+      - id                    = "aj5831a-devops-20261007154047150600000001" -> null
+        # (1 unchanged attribute hidden)
+
+      - rule {
+          - bucket_key_enabled = false -> null
+
+          - apply_server_side_encryption_by_default {
+              - sse_algorithm     = "AES256" -> null
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_versioning.demo will be destroyed
+  - resource "aws_s3_bucket_versioning" "demo" {
+      - bucket                = "aj5831a-devops-20261007154047150600000001" -> null
+      - id                    = "aj5831a-devops-20261007154047150600000001" -> null
+        # (1 unchanged attribute hidden)
+
+      - versioning_configuration {
+          - status     = "Enabled" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+Plan: 0 to add, 0 to change, 4 to destroy.
+
+Changes to Outputs:
+  - bucket_arn  = "arn:aws:s3:::aj5831a-devops-20261007154047150600000001" -> null
+  - bucket_name = "aj5831a-devops-20261007154047150600000001" -> null

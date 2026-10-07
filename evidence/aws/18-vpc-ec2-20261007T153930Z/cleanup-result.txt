@@ -1,0 +1,1 @@
+PASS: Terraform state empty; task S3 bucket absent (404); EC2 terminated, VPC absent and root volume absent.

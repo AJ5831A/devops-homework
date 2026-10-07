@@ -1,0 +1,357 @@
+data.aws_availability_zones.available: Reading...
+data.aws_ami.linux: Reading...
+aws_vpc.main: Refreshing state... [id=vpc-00e9b2626bf6907ba]
+aws_s3_bucket.demo: Refreshing state... [id=aj5831a-cloud-lab-20261007154235806100000001]
+data.aws_availability_zones.available: Read complete after 1s [id=ap-south-1]
+data.aws_ami.linux: Read complete after 1s [id=ami-03054015e26069645]
+aws_internet_gateway.main: Refreshing state... [id=igw-0d180e56de67ac87e]
+aws_subnet.public: Refreshing state... [id=subnet-00438b5cd3e555e2e]
+aws_security_group.web: Refreshing state... [id=sg-072cf8e958478a777]
+aws_s3_bucket_public_access_block.demo: Refreshing state... [id=aj5831a-cloud-lab-20261007154235806100000001]
+aws_s3_bucket_versioning.demo: Refreshing state... [id=aj5831a-cloud-lab-20261007154235806100000001]
+aws_s3_bucket_server_side_encryption_configuration.demo: Refreshing state... [id=aj5831a-cloud-lab-20261007154235806100000001]
+aws_route_table.public: Refreshing state... [id=rtb-0e86060b6e05c6e81]
+aws_route_table_association.public: Refreshing state... [id=rtbassoc-078da58a6c545905f]
+aws_instance.web: Refreshing state... [id=i-078813795859e6c6e]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_instance.web will be destroyed
+  - resource "aws_instance" "web" {
+      - ami                                  = "ami-03054015e26069645" -> null
+      - arn                                  = "arn:aws:ec2:ap-south-1:[ACCOUNT_REDACTED]:instance/i-078813795859e6c6e" -> null
+      - associate_public_ip_address          = true -> null
+      - availability_zone                    = "ap-south-1a" -> null
+      - cpu_core_count                       = 1 -> null
+      - cpu_threads_per_core                 = 2 -> null
+      - disable_api_stop                     = false -> null
+      - disable_api_termination              = false -> null
+      - ebs_optimized                        = false -> null
+      - get_password_data                    = false -> null
+      - hibernation                          = false -> null
+      - id                                   = "i-078813795859e6c6e" -> null
+      - instance_initiated_shutdown_behavior = "stop" -> null
+      - instance_state                       = "running" -> null
+      - instance_type                        = "t3.micro" -> null
+      - ipv6_address_count                   = 0 -> null
+      - ipv6_addresses                       = [] -> null
+      - monitoring                           = false -> null
+      - placement_partition_number           = 0 -> null
+      - primary_network_interface_id         = "eni-0d741acfb56a923bd" -> null
+      - private_dns                          = "ip-10-20-1-127.ap-south-1.compute.internal" -> null
+      - private_ip                           = "10.20.1.127" -> null
+      - public_dns                           = "ec2-3-110-184-229.ap-south-1.compute.amazonaws.com" -> null
+      - public_ip                            = "3.110.184.229" -> null
+      - secondary_private_ips                = [] -> null
+      - security_groups                      = [] -> null
+      - source_dest_check                    = true -> null
+      - subnet_id                            = "subnet-00438b5cd3e555e2e" -> null
+      - tags                                 = {
+          - "Name" = "aj-devops-web"
+        } -> null
+      - tags_all                             = {
+          - "ManagedBy" = "Terraform"
+          - "Name"      = "aj-devops-web"
+          - "Project"   = "aj5831a-devops-homework"
+        } -> null
+      - tenancy                              = "default" -> null
+      - user_data                            = "89bd83a017da086389c940d179d802e063f760d7" -> null
+      - user_data_replace_on_change          = true -> null
+      - vpc_security_group_ids               = [
+          - "sg-072cf8e958478a777",
+        ] -> null
+        # (8 unchanged attributes hidden)
+
+      - capacity_reservation_specification {
+          - capacity_reservation_preference = "open" -> null
+        }
+
+      - cpu_options {
+          - core_count       = 1 -> null
+          - threads_per_core = 2 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - credit_specification {
+          - cpu_credits = "unlimited" -> null
+        }
+
+      - enclave_options {
+          - enabled = false -> null
+        }
+
+      - maintenance_options {
+          - auto_recovery = "default" -> null
+        }
+
+      - metadata_options {
+          - http_endpoint               = "enabled" -> null
+          - http_protocol_ipv6          = "disabled" -> null
+          - http_put_response_hop_limit = 2 -> null
+          - http_tokens                 = "required" -> null
+          - instance_metadata_tags      = "disabled" -> null
+        }
+
+      - private_dns_name_options {
+          - enable_resource_name_dns_a_record    = false -> null
+          - enable_resource_name_dns_aaaa_record = false -> null
+          - hostname_type                        = "ip-name" -> null
+        }
+
+      - root_block_device {
+          - delete_on_termination = true -> null
+          - device_name           = "/dev/xvda" -> null
+          - encrypted             = true -> null
+          - iops                  = 3000 -> null
+          - kms_key_id            = "arn:aws:kms:ap-south-1:[ACCOUNT_REDACTED]:key/b5666adb-cf2c-46f4-b603-2b549fc31cc1" -> null
+          - tags                  = {} -> null
+          - tags_all              = {
+              - "ManagedBy" = "Terraform"
+              - "Project"   = "aj5831a-devops-homework"
+            } -> null
+          - throughput            = 125 -> null
+          - volume_id             = "vol-095a8506d90ba8f54" -> null
+          - volume_size           = 8 -> null
+          - volume_type           = "gp3" -> null
+        }
+    }
+
+  # aws_internet_gateway.main will be destroyed
+  - resource "aws_internet_gateway" "main" {
+      - arn      = "arn:aws:ec2:ap-south-1:[ACCOUNT_REDACTED]:internet-gateway/igw-0d180e56de67ac87e" -> null
+      - id       = "igw-0d180e56de67ac87e" -> null
+      - owner_id = "[ACCOUNT_REDACTED]" -> null
+      - tags     = {} -> null
+      - tags_all = {
+          - "ManagedBy" = "Terraform"
+          - "Project"   = "aj5831a-devops-homework"
+        } -> null
+      - vpc_id   = "vpc-00e9b2626bf6907ba" -> null
+    }
+
+  # aws_route_table.public will be destroyed
+  - resource "aws_route_table" "public" {
+      - arn              = "arn:aws:ec2:ap-south-1:[ACCOUNT_REDACTED]:route-table/rtb-0e86060b6e05c6e81" -> null
+      - id               = "rtb-0e86060b6e05c6e81" -> null
+      - owner_id         = "[ACCOUNT_REDACTED]" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - cidr_block                 = "0.0.0.0/0"
+              - gateway_id                 = "igw-0d180e56de67ac87e"
+                # (11 unchanged attributes hidden)
+            },
+        ] -> null
+      - tags             = {} -> null
+      - tags_all         = {
+          - "ManagedBy" = "Terraform"
+          - "Project"   = "aj5831a-devops-homework"
+        } -> null
+      - vpc_id           = "vpc-00e9b2626bf6907ba" -> null
+    }
+
+  # aws_route_table_association.public will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-078da58a6c545905f" -> null
+      - route_table_id = "rtb-0e86060b6e05c6e81" -> null
+      - subnet_id      = "subnet-00438b5cd3e555e2e" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_s3_bucket.demo will be destroyed
+  - resource "aws_s3_bucket" "demo" {
+      - arn                         = "arn:aws:s3:::aj5831a-cloud-lab-20261007154235806100000001" -> null
+      - bucket                      = "aj5831a-cloud-lab-20261007154235806100000001" -> null
+      - bucket_domain_name          = "aj5831a-cloud-lab-20261007154235806100000001.s3.amazonaws.com" -> null
+      - bucket_prefix               = "aj5831a-cloud-lab-" -> null
+      - bucket_regional_domain_name = "aj5831a-cloud-lab-20261007154235806100000001.s3.ap-south-1.amazonaws.com" -> null
+      - force_destroy               = false -> null
+      - hosted_zone_id              = "Z11RGJOFQNVJUP" -> null
+      - id                          = "aj5831a-cloud-lab-20261007154235806100000001" -> null
+      - object_lock_enabled         = false -> null
+      - region                      = "ap-south-1" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {} -> null
+      - tags_all                    = {
+          - "ManagedBy" = "Terraform"
+          - "Project"   = "aj5831a-devops-homework"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - grant {
+          - id          = "47e2bea7df6401300aa21c77b87ac6d7948cc54d75cdddc9246d0df5f6e5987f" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = false -> null
+
+              - apply_server_side_encryption_by_default {
+                  - sse_algorithm     = "AES256" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = true -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # aws_s3_bucket_public_access_block.demo will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "demo" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "aj5831a-cloud-lab-20261007154235806100000001" -> null
+      - id                      = "aj5831a-cloud-lab-20261007154235806100000001" -> null
+      - ignore_public_acls      = true -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # aws_s3_bucket_server_side_encryption_configuration.demo will be destroyed
+  - resource "aws_s3_bucket_server_side_encryption_configuration" "demo" {
+      - bucket                = "aj5831a-cloud-lab-20261007154235806100000001" -> null
+      - id                    = "aj5831a-cloud-lab-20261007154235806100000001" -> null
+        # (1 unchanged attribute hidden)
+
+      - rule {
+          - bucket_key_enabled = false -> null
+
+          - apply_server_side_encryption_by_default {
+              - sse_algorithm     = "AES256" -> null
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_versioning.demo will be destroyed
+  - resource "aws_s3_bucket_versioning" "demo" {
+      - bucket                = "aj5831a-cloud-lab-20261007154235806100000001" -> null
+      - id                    = "aj5831a-cloud-lab-20261007154235806100000001" -> null
+        # (1 unchanged attribute hidden)
+
+      - versioning_configuration {
+          - status     = "Enabled" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_security_group.web will be destroyed
+  - resource "aws_security_group" "web" {
+      - arn                    = "arn:aws:ec2:ap-south-1:[ACCOUNT_REDACTED]:security-group/sg-072cf8e958478a777" -> null
+      - description            = "HTTP lab access; no SSH ingress" -> null
+      - egress                 = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "Package downloads and DNS"
+              - from_port        = 0
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "-1"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 0
+            },
+        ] -> null
+      - id                     = "sg-072cf8e958478a777" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = [
+                  - "[LEARNER_IP_REDACTED]/32",
+                ]
+              - description      = "HTTP from learner network"
+              - from_port        = 80
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 80
+            },
+        ] -> null
+      - name                   = "aj-devops-web-20261007154247973100000002" -> null
+      - name_prefix            = "aj-devops-web-" -> null
+      - owner_id               = "[ACCOUNT_REDACTED]" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {} -> null
+      - tags_all               = {
+          - "ManagedBy" = "Terraform"
+          - "Project"   = "aj5831a-devops-homework"
+        } -> null
+      - vpc_id                 = "vpc-00e9b2626bf6907ba" -> null
+    }
+
+  # aws_subnet.public will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:ap-south-1:[ACCOUNT_REDACTED]:subnet/subnet-00438b5cd3e555e2e" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "ap-south-1a" -> null
+      - availability_zone_id                           = "aps1-az1" -> null
+      - cidr_block                                     = "10.20.1.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-00438b5cd3e555e2e" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "[ACCOUNT_REDACTED]" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {} -> null
+      - tags_all                                       = {
+          - "ManagedBy" = "Terraform"
+          - "Project"   = "aj5831a-devops-homework"
+        } -> null
+      - vpc_id                                         = "vpc-00e9b2626bf6907ba" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # aws_vpc.main will be destroyed
+  - resource "aws_vpc" "main" {
+      - arn                                  = "arn:aws:ec2:ap-south-1:[ACCOUNT_REDACTED]:vpc/vpc-00e9b2626bf6907ba" -> null
+      - assign_generated_ipv6_cidr_block     = false -> null
+      - cidr_block                           = "10.20.0.0/16" -> null
+      - default_network_acl_id               = "acl-013940d281decf90a" -> null
+      - default_route_table_id               = "rtb-0f919f6cad7765c60" -> null
+      - default_security_group_id            = "sg-0fb2e029cdaf41698" -> null
+      - dhcp_options_id                      = "dopt-06741f79341001310" -> null
+      - enable_dns_hostnames                 = true -> null
+      - enable_dns_support                   = true -> null
+      - enable_network_address_usage_metrics = false -> null
+      - id                                   = "vpc-00e9b2626bf6907ba" -> null
+      - instance_tenancy                     = "default" -> null
+      - ipv6_netmask_length                  = 0 -> null
+      - main_route_table_id                  = "rtb-0f919f6cad7765c60" -> null
+      - owner_id                             = "[ACCOUNT_REDACTED]" -> null
+      - tags                                 = {
+          - "Name" = "aj-devops-vpc"
+        } -> null
+      - tags_all                             = {
+          - "ManagedBy" = "Terraform"
+          - "Name"      = "aj-devops-vpc"
+          - "Project"   = "aj5831a-devops-homework"
+        } -> null
+        # (4 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 0 to change, 11 to destroy.
+
+Changes to Outputs:
+  - bucket_name = "aj5831a-cloud-lab-20261007154235806100000001" -> null
+  - instance_id = "i-078813795859e6c6e" -> null
+  - subnet_id   = "subnet-00438b5cd3e555e2e" -> null
+  - vpc_id      = "vpc-00e9b2626bf6907ba" -> null
+  - web_url     = "http://3.110.184.229" -> null

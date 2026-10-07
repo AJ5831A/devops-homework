@@ -1,0 +1,419 @@
+Authenticated profile devops-lab; account [ACCOUNT_REDACTED]; region ap-south-1
+
+[2026-10-07T15:39:30.835059+00:00] $ /private/tmp/devops-bin/terraform init -input=false -no-color
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Installing hashicorp/aws v5.100.0...
+- Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+
+Terraform has been successfully initialized!
+
+EXIT: 0
+
+[2026-10-07T15:40:36.808937+00:00] $ /private/tmp/devops-bin/terraform validate -no-color
+Success! The configuration is valid.
+
+
+EXIT: 0
+
+[2026-10-07T15:40:41.787613+00:00] $ /private/tmp/devops-bin/terraform plan -input=false -no-color -out=apply.tfplan
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.demo will be created
+  + resource "aws_s3_bucket" "demo" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_prefix               = "aj5831a-devops-"
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = false
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags_all                    = {
+          + "ManagedBy" = "Terraform"
+          + "Project"   = "aj5831a-devops-homework"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket_public_access_block.demo will be created
+  + resource "aws_s3_bucket_public_access_block" "demo" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + restrict_public_buckets = true
+    }
+
+  # aws_s3_bucket_server_side_encryption_configuration.demo will be created
+  + resource "aws_s3_bucket_server_side_encryption_configuration" "demo" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+
+      + rule {
+          + apply_server_side_encryption_by_default {
+              + sse_algorithm     = "AES256"
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_versioning.demo will be created
+  + resource "aws_s3_bucket_versioning" "demo" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+
+      + versioning_configuration {
+          + mfa_delete = (known after apply)
+          + status     = "Enabled"
+        }
+    }
+
+Plan: 4 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + bucket_arn  = (known after apply)
+  + bucket_name = (known after apply)
+
+EXIT: 0
+Accepted create-only plan: 4 task resources.
+
+[2026-10-07T15:40:45.421706+00:00] $ /private/tmp/devops-bin/terraform apply -input=false -no-color apply.tfplan
+aws_s3_bucket.demo: Creating...
+aws_s3_bucket.demo: Creation complete after 4s [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_public_access_block.demo: Creating...
+aws_s3_bucket_versioning.demo: Creating...
+aws_s3_bucket_server_side_encryption_configuration.demo: Creating...
+aws_s3_bucket_public_access_block.demo: Creation complete after 1s [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_server_side_encryption_configuration.demo: Creation complete after 1s [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_versioning.demo: Creation complete after 2s [id=aj5831a-devops-20261007154047150600000001]
+
+Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+bucket_arn = "arn:aws:s3:::aj5831a-devops-20261007154047150600000001"
+bucket_name = "aj5831a-devops-20261007154047150600000001"
+
+EXIT: 0
+
+[2026-10-07T15:40:53.107100+00:00] $ /private/tmp/devops-bin/terraform show -no-color
+# aws_s3_bucket.demo:
+resource "aws_s3_bucket" "demo" {
+    acceleration_status         = null
+    arn                         = "arn:aws:s3:::aj5831a-devops-20261007154047150600000001"
+    bucket                      = "aj5831a-devops-20261007154047150600000001"
+    bucket_domain_name          = "aj5831a-devops-20261007154047150600000001.s3.amazonaws.com"
+    bucket_prefix               = "aj5831a-devops-"
+    bucket_regional_domain_name = "aj5831a-devops-20261007154047150600000001.s3.ap-south-1.amazonaws.com"
+    force_destroy               = false
+    hosted_zone_id              = "Z11RGJOFQNVJUP"
+    id                          = "aj5831a-devops-20261007154047150600000001"
+    object_lock_enabled         = false
+    policy                      = null
+    region                      = "ap-south-1"
+    request_payer               = "BucketOwner"
+    tags_all                    = {
+        "ManagedBy" = "Terraform"
+        "Project"   = "aj5831a-devops-homework"
+    }
+
+    grant {
+        id          = "47e2bea7df6401300aa21c77b87ac6d7948cc54d75cdddc9246d0df5f6e5987f"
+        permissions = [
+            "FULL_CONTROL",
+        ]
+        type        = "CanonicalUser"
+        uri         = null
+    }
+
+    server_side_encryption_configuration {
+        rule {
+            bucket_key_enabled = false
+
+            apply_server_side_encryption_by_default {
+                kms_master_key_id = null
+                sse_algorithm     = "AES256"
+            }
+        }
+    }
+
+    versioning {
+        enabled    = false
+        mfa_delete = false
+    }
+}
+
+# aws_s3_bucket_public_access_block.demo:
+resource "aws_s3_bucket_public_access_block" "demo" {
+    block_public_acls       = true
+    block_public_policy     = true
+    bucket                  = "aj5831a-devops-20261007154047150600000001"
+    id                      = "aj5831a-devops-20261007154047150600000001"
+    ignore_public_acls      = true
+    restrict_public_buckets = true
+}
+
+# aws_s3_bucket_server_side_encryption_configuration.demo:
+resource "aws_s3_bucket_server_side_encryption_configuration" "demo" {
+    bucket                = "aj5831a-devops-20261007154047150600000001"
+    expected_bucket_owner = null
+    id                    = "aj5831a-devops-20261007154047150600000001"
+
+    rule {
+        apply_server_side_encryption_by_default {
+            kms_master_key_id = null
+            sse_algorithm     = "AES256"
+        }
+    }
+}
+
+# aws_s3_bucket_versioning.demo:
+resource "aws_s3_bucket_versioning" "demo" {
+    bucket                = "aj5831a-devops-20261007154047150600000001"
+    expected_bucket_owner = null
+    id                    = "aj5831a-devops-20261007154047150600000001"
+
+    versioning_configuration {
+        mfa_delete = null
+        status     = "Enabled"
+    }
+}
+
+
+Outputs:
+
+bucket_arn = "arn:aws:s3:::aj5831a-devops-20261007154047150600000001"
+bucket_name = "aj5831a-devops-20261007154047150600000001"
+
+EXIT: 0
+
+[2026-10-07T15:40:54.312787+00:00] $ /private/tmp/devops-bin/terraform output -json
+{
+  "bucket_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:s3:::aj5831a-devops-20261007154047150600000001"
+  },
+  "bucket_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "aj5831a-devops-20261007154047150600000001"
+  }
+}
+
+EXIT: 0
+
+[2026-10-07T15:40:54.614184+00:00] $ aws s3api get-public-access-block --bucket aj5831a-devops-20261007154047150600000001 --region ap-south-1
+{
+    "PublicAccessBlockConfiguration": {
+        "BlockPublicAcls": true,
+        "IgnorePublicAcls": true,
+        "BlockPublicPolicy": true,
+        "RestrictPublicBuckets": true
+    }
+}
+
+EXIT: 0
+
+[2026-10-07T15:40:55.531899+00:00] $ aws s3api get-bucket-versioning --bucket aj5831a-devops-20261007154047150600000001 --region ap-south-1
+{
+    "Status": "Enabled"
+}
+
+EXIT: 0
+
+[2026-10-07T15:40:56.208714+00:00] $ aws s3api get-bucket-encryption --bucket aj5831a-devops-20261007154047150600000001 --region ap-south-1
+{
+    "ServerSideEncryptionConfiguration": {
+        "Rules": [
+            {
+                "ApplyServerSideEncryptionByDefault": {
+                    "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": false,
+                "BlockedEncryptionTypes": {
+                    "EncryptionType": [
+                        "SSE-C"
+                    ]
+                }
+            }
+        ]
+    }
+}
+
+EXIT: 0
+
+[2026-10-07T15:40:56.810444+00:00] $ /private/tmp/devops-bin/terraform plan -input=false -no-color -detailed-exitcode
+aws_s3_bucket.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_versioning.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_public_access_block.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_server_side_encryption_configuration.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+
+EXIT: 0
+
+[2026-10-07T15:41:02.630148+00:00] $ /private/tmp/devops-bin/terraform plan -destroy -input=false -no-color -out=destroy.tfplan
+aws_s3_bucket.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_public_access_block.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_versioning.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_server_side_encryption_configuration.demo: Refreshing state... [id=aj5831a-devops-20261007154047150600000001]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.demo will be destroyed
+  - resource "aws_s3_bucket" "demo" {
+      - arn                         = "arn:aws:s3:::aj5831a-devops-20261007154047150600000001" -> null
+      - bucket                      = "aj5831a-devops-20261007154047150600000001" -> null
+      - bucket_domain_name          = "aj5831a-devops-20261007154047150600000001.s3.amazonaws.com" -> null
+      - bucket_prefix               = "aj5831a-devops-" -> null
+      - bucket_regional_domain_name = "aj5831a-devops-20261007154047150600000001.s3.ap-south-1.amazonaws.com" -> null
+      - force_destroy               = false -> null
+      - hosted_zone_id              = "Z11RGJOFQNVJUP" -> null
+      - id                          = "aj5831a-devops-20261007154047150600000001" -> null
+      - object_lock_enabled         = false -> null
+      - region                      = "ap-south-1" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {} -> null
+      - tags_all                    = {
+          - "ManagedBy" = "Terraform"
+          - "Project"   = "aj5831a-devops-homework"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - grant {
+          - id          = "47e2bea7df6401300aa21c77b87ac6d7948cc54d75cdddc9246d0df5f6e5987f" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = false -> null
+
+              - apply_server_side_encryption_by_default {
+                  - sse_algorithm     = "AES256" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = true -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # aws_s3_bucket_public_access_block.demo will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "demo" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "aj5831a-devops-20261007154047150600000001" -> null
+      - id                      = "aj5831a-devops-20261007154047150600000001" -> null
+      - ignore_public_acls      = true -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # aws_s3_bucket_server_side_encryption_configuration.demo will be destroyed
+  - resource "aws_s3_bucket_server_side_encryption_configuration" "demo" {
+      - bucket                = "aj5831a-devops-20261007154047150600000001" -> null
+      - id                    = "aj5831a-devops-20261007154047150600000001" -> null
+        # (1 unchanged attribute hidden)
+
+      - rule {
+          - bucket_key_enabled = false -> null
+
+          - apply_server_side_encryption_by_default {
+              - sse_algorithm     = "AES256" -> null
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_versioning.demo will be destroyed
+  - resource "aws_s3_bucket_versioning" "demo" {
+      - bucket                = "aj5831a-devops-20261007154047150600000001" -> null
+      - id                    = "aj5831a-devops-20261007154047150600000001" -> null
+        # (1 unchanged attribute hidden)
+
+      - versioning_configuration {
+          - status     = "Enabled" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+Plan: 0 to add, 0 to change, 4 to destroy.
+
+Changes to Outputs:
+  - bucket_arn  = "arn:aws:s3:::aj5831a-devops-20261007154047150600000001" -> null
+  - bucket_name = "aj5831a-devops-20261007154047150600000001" -> null
+
+EXIT: 0
+
+[2026-10-07T15:41:10.365662+00:00] $ /private/tmp/devops-bin/terraform apply -input=false -no-color destroy.tfplan
+aws_s3_bucket_public_access_block.demo: Destroying... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_server_side_encryption_configuration.demo: Destroying... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_versioning.demo: Destroying... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_versioning.demo: Destruction complete after 0s
+aws_s3_bucket_public_access_block.demo: Destruction complete after 1s
+aws_s3_bucket_server_side_encryption_configuration.demo: Destruction complete after 1s
+aws_s3_bucket.demo: Destroying... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket.demo: Destruction complete after 0s
+
+Apply complete! Resources: 0 added, 0 changed, 4 destroyed.
+
+EXIT: 0
+
+[2026-10-07T15:41:13.376608+00:00] $ /private/tmp/devops-bin/terraform state list
+
+EXIT: 0
+
+[2026-10-07T15:41:13.675574+00:00] $ aws s3api head-bucket --bucket aj5831a-devops-20261007154047150600000001 --region ap-south-1
+
+aws: [ERROR]: An error occurred (404) when calling the HeadBucket operation: Not Found
+
+EXIT: 254
+PASS: task resources destroyed and independently checked.

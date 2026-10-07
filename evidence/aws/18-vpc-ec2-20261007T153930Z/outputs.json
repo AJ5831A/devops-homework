@@ -1,0 +1,27 @@
+{
+  "bucket_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "aj5831a-cloud-lab-20261007154235806100000001"
+  },
+  "instance_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "i-078813795859e6c6e"
+  },
+  "subnet_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "subnet-00438b5cd3e555e2e"
+  },
+  "vpc_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vpc-00e9b2626bf6907ba"
+  },
+  "web_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "http://3.110.184.229"
+  }
+}

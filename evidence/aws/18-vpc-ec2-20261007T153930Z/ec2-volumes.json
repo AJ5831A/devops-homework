@@ -1,0 +1,46 @@
+{
+    "Volumes": [
+        {
+            "AvailabilityZoneId": "aps1-az1",
+            "Iops": 3000,
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "Terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "aj5831a-devops-homework"
+                }
+            ],
+            "VolumeType": "gp3",
+            "MultiAttachEnabled": false,
+            "Throughput": 125,
+            "Operator": {
+                "Managed": false,
+                "HiddenByDefault": false
+            },
+            "VolumeArn": "arn:aws:ec2:ap-south-1:[ACCOUNT_REDACTED]:volume/vol-095a8506d90ba8f54",
+            "OwnerId": "[ACCOUNT_REDACTED]",
+            "VolumeId": "vol-095a8506d90ba8f54",
+            "Size": 8,
+            "SnapshotId": "snap-023d18e7e51635c17",
+            "AvailabilityZone": "ap-south-1a",
+            "State": "in-use",
+            "CreateTime": "2026-10-07T15:43:01.291000+00:00",
+            "Attachments": [
+                {
+                    "DeleteOnTermination": true,
+                    "EbsCardIndex": 0,
+                    "VolumeId": "vol-095a8506d90ba8f54",
+                    "InstanceId": "i-078813795859e6c6e",
+                    "Device": "/dev/xvda",
+                    "State": "attached",
+                    "AttachTime": "2026-10-07T15:43:01+00:00"
+                }
+            ],
+            "Encrypted": true,
+            "KmsKeyId": "arn:aws:kms:ap-south-1:[ACCOUNT_REDACTED]:key/b5666adb-cf2c-46f4-b603-2b549fc31cc1"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+aws_s3_bucket_public_access_block.demo: Destroying... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_server_side_encryption_configuration.demo: Destroying... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_versioning.demo: Destroying... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket_versioning.demo: Destruction complete after 0s
+aws_s3_bucket_public_access_block.demo: Destruction complete after 1s
+aws_s3_bucket_server_side_encryption_configuration.demo: Destruction complete after 1s
+aws_s3_bucket.demo: Destroying... [id=aj5831a-devops-20261007154047150600000001]
+aws_s3_bucket.demo: Destruction complete after 0s
+
+Apply complete! Resources: 0 added, 0 changed, 4 destroyed.

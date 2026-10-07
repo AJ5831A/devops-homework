@@ -1,0 +1,2 @@
+
+aws: [ERROR]: An error occurred (InvalidVpcID.NotFound) when calling the DescribeVpcs operation: The vpc ID 'vpc-00e9b2626bf6907ba' does not exist
