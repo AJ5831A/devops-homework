@@ -1,0 +1,27 @@
+aws_s3_bucket_server_side_encryption_configuration.demo: Destroying... [id=aj5831a-final-lab-20261007154252587100000001]
+aws_s3_bucket_versioning.demo: Destroying... [id=aj5831a-final-lab-20261007154252587100000001]
+aws_s3_bucket_public_access_block.demo: Destroying... [id=aj5831a-final-lab-20261007154252587100000001]
+aws_instance.web: Destroying... [id=i-05e68bc1da5543d6c]
+aws_s3_bucket_server_side_encryption_configuration.demo: Destruction complete after 1s
+aws_s3_bucket_versioning.demo: Destruction complete after 1s
+aws_s3_bucket_public_access_block.demo: Destruction complete after 2s
+aws_s3_bucket.demo: Destroying... [id=aj5831a-final-lab-20261007154252587100000001]
+aws_s3_bucket.demo: Destruction complete after 0s
+aws_instance.web: Still destroying... [id=i-05e68bc1da5543d6c, 10s elapsed]
+aws_instance.web: Still destroying... [id=i-05e68bc1da5543d6c, 20s elapsed]
+aws_instance.web: Still destroying... [id=i-05e68bc1da5543d6c, 30s elapsed]
+aws_instance.web: Destruction complete after 31s
+aws_route_table_association.public: Destroying... [id=rtbassoc-09a21e44711e0c5b8]
+aws_security_group.web: Destroying... [id=sg-000e9a03225d26386]
+aws_route_table_association.public: Destruction complete after 0s
+aws_subnet.public: Destroying... [id=subnet-0759029a37968ba3c]
+aws_route_table.public: Destroying... [id=rtb-046f30c92d559e3f4]
+aws_security_group.web: Destruction complete after 1s
+aws_route_table.public: Destruction complete after 1s
+aws_internet_gateway.main: Destroying... [id=igw-0975d47293f5a45ef]
+aws_subnet.public: Destruction complete after 1s
+aws_internet_gateway.main: Destruction complete after 0s
+aws_vpc.main: Destroying... [id=vpc-09ea9af1fe3c70bda]
+aws_vpc.main: Destruction complete after 1s
+
+Apply complete! Resources: 0 added, 0 changed, 11 destroyed.

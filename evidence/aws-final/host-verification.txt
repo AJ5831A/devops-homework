@@ -1,0 +1,2 @@
+AWS EC2 get-console-output --latest trusted host fingerprint matched ssh-keyscan ED25519 key.
+256 SHA256:wZY0hAtJnzf76DHJ9jwBntqbbbh6HcrbI26M1mCPqK8 13.233.196.178 (ED25519)

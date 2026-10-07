@@ -1,0 +1,27 @@
+{
+  "bucket_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "aj5831a-final-lab-20261007154252587100000001"
+  },
+  "instance_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "i-05e68bc1da5543d6c"
+  },
+  "subnet_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "subnet-0759029a37968ba3c"
+  },
+  "vpc_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vpc-09ea9af1fe3c70bda"
+  },
+  "web_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "http://13.233.196.178"
+  }
+}

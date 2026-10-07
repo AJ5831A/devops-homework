@@ -5,8 +5,14 @@ Provisions a VPC, public subnet, Internet Gateway/default route, security group,
 ```bash
 cp terraform.tfvars.example terraform.tfvars
 # Edit BOTH CIDRs to your public IPv4 /32 and select your existing EC2 key pair.
-export AWS_PROFILE=your-lab-profile
-aws sts get-caller-identity
+# Sign in if this profile is not already authenticated:
+aws --region ap-south-1 login --profile devops-lab
+# AWS provider 5.x did not consume this new CLI login profile directly.
+# Export temporary credentials into this shell, without printing them:
+set +x
+eval "$(aws --profile devops-lab --region ap-south-1 configure export-credentials --format env)"
+unset AWS_PROFILE AWS_DEFAULT_PROFILE
+aws --region ap-south-1 sts get-caller-identity
 terraform init
 terraform fmt
 terraform validate
@@ -43,6 +49,31 @@ References and dependencies construct the Terraform graph; `depends_on` ensures 
 
 ## Cleanup and evidence
 
-Terraform formatting, provider initialization and validation passed in hosted CI; see [infrastructure validation evidence](../../evidence/infrastructure/README.md). AWS execution and cluster evidence are pending. Capture real Terraform validation/plan/apply/output, node readiness and browser results after running. Uninstall project workloads, then run `terraform destroy` from this folder. S3 must be empty including versions; `force_destroy=false` protects uploaded data. Deleting the single node destroys its local-path volumes. Remove the local kubeconfig after teardown.
+The full AWS lifecycle ran on 7 October 2026 in `ap-south-1`: Terraform
+planned/applied 11 resources, Amazon Linux 2023 bootstrapped a Ready k3s
+`v1.36.5+k3s1` node, and Helm deployed the exact previously scanned image.
+Traefik served the application and readiness endpoint with HTTP 200; two Pods
+were ready and HPA reported CPU metrics. [Actual cloud evidence and browser
+screenshot](../../evidence/aws-final/README.md) include plan/apply/show/output,
+host-key verification, resources, and teardown checks.
+
+The lab used `aws configure export-credentials --format process` in a local
+Python wrapper to pass short-lived credentials only to the Terraform child
+process. The shell example above provides the equivalent bridge for provider
+5.x. Include the region explicitly: an initial cleanup invocation omitted it
+and stopped before Terraform; adding `--region ap-south-1` resolved that issue.
+Do not run credential export by itself into terminal output or save its result
+to the repository.
+
+The userdata uses the existing `curl` or installs `curl-minimal` when absent,
+avoiding the conflicting full-curl package on Amazon Linux 2023.
+
+Uninstall project workloads, then run `terraform destroy` from this folder. S3 must be empty including versions; `force_destroy=false` protects uploaded data. Deleting the single node destroys its local-path volumes. Remove the local kubeconfig after teardown.
+
+After teardown, clear the exported temporary shell credentials:
+
+```bash
+unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+```
 
 Reference: [K3s quick-start and kubeconfig location](https://docs.k3s.io/quick-start).

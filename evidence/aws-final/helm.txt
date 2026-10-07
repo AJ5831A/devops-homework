@@ -1,0 +1,7 @@
+Release "devops-demo" does not exist. Installing it now.
+NAME: devops-demo
+LAST DEPLOYED: Wed Oct  7 21:16:08 2026
+NAMESPACE: devops-final
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None

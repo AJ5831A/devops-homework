@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-10-07T15:50:02.791339+00:00",
+  "region": "ap-south-1",
+  "instanceId": "i-05e68bc1da5543d6c",
+  "profile": "devops-lab",
+  "image": "ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681",
+  "sourceImageWorkflow": "https://github.com/AJ5831A/devops-homework/actions/runs/37640204903",
+  "imageArtifactSHA256": "b2086f3dbfda1c0afd27f879d018cd46fbd2ceb7946dadd47768b6a845fb7c94",
+  "testedUserDataSHA256": "0e0e9d3c61f3ccbee36cc118de1e296ffea6ba6e982cb5ba383fdff77f625360",
+  "evidenceRedactions": [
+    "operator public IPv4 replaced with <operator-public-ip>",
+    "AWS account number replaced with <aws-account-id>"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "verifiedAt": "2026-10-07T15:50:55.048993+00:00",
+  "allChecksPassed": true,
+  "checks": [
+    {
+      "command": "aws ec2 delete-key-pair --key-name aj-final-lab-20261007",
+      "exitCode": 0,
+      "stdout": "{\n    \"Return\": true,\n    \"KeyPairId\": \"key-07e022e27bc32df2b\"\n}",
+      "stderr": ""
+    },
+    {
+      "command": "aws ec2 describe-instances --instance-ids i-05e68bc1da5543d6c --query Reservations[].Instances[].State.Name --output json",
+      "exitCode": 0,
+      "stdout": "[\n    \"terminated\"\n]",
+      "stderr": ""
+    },
+    {
+      "command": "aws ec2 describe-volumes --volume-ids vol-09ad38e914e09cf08 --output json",
+      "exitCode": 254,
+      "stdout": "",
+      "stderr": "aws: [ERROR]: An error occurred (InvalidVolume.NotFound) when calling the DescribeVolumes operation: The volume 'vol-09ad38e914e09cf08' does not exist."
+    },
+    {
+      "command": "aws ec2 describe-vpcs --vpc-ids vpc-09ea9af1fe3c70bda",
+      "exitCode": 254,
+      "stdout": "",
+      "stderr": "aws: [ERROR]: An error occurred (InvalidVpcID.NotFound) when calling the DescribeVpcs operation: The vpc ID 'vpc-09ea9af1fe3c70bda' does not exist"
+    },
+    {
+      "command": "aws ec2 describe-subnets --subnet-ids subnet-0759029a37968ba3c",
+      "exitCode": 254,
+      "stdout": "",
+      "stderr": "aws: [ERROR]: An error occurred (InvalidSubnetID.NotFound) when calling the DescribeSubnets operation: The subnet ID 'subnet-0759029a37968ba3c' does not exist"
+    },
+    {
+      "command": "aws ec2 describe-security-groups --group-ids sg-000e9a03225d26386",
+      "exitCode": 254,
+      "stdout": "",
+      "stderr": "aws: [ERROR]: An error occurred (InvalidGroup.NotFound) when calling the DescribeSecurityGroups operation: The security group 'sg-000e9a03225d26386' does not exist"
+    },
+    {
+      "command": "aws ec2 describe-route-tables --route-table-ids rtb-046f30c92d559e3f4",
+      "exitCode": 254,
+      "stdout": "",
+      "stderr": "aws: [ERROR]: An error occurred (InvalidRouteTableID.NotFound) when calling the DescribeRouteTables operation: The routeTable ID 'rtb-046f30c92d559e3f4' does not exist"
+    },
+    {
+      "command": "aws ec2 describe-internet-gateways --internet-gateway-ids igw-0975d47293f5a45ef",
+      "exitCode": 254,
+      "stdout": "",
+      "stderr": "aws: [ERROR]: An error occurred (InvalidInternetGatewayID.NotFound) when calling the DescribeInternetGateways operation: The internetGateway ID 'igw-0975d47293f5a45ef' does not exist"
+    },
+    {
+      "command": "aws ec2 describe-key-pairs --key-names aj-final-lab-20261007",
+      "exitCode": 254,
+      "stdout": "",
+      "stderr": "aws: [ERROR]: An error occurred (InvalidKeyPair.NotFound) when calling the DescribeKeyPairs operation: The key pair 'aj-final-lab-20261007' does not exist"
+    },
+    {
+      "command": "aws s3api head-bucket --bucket aj5831a-final-lab-20261007154252587100000001",
+      "exitCode": 254,
+      "stdout": "",
+      "stderr": "aws: [ERROR]: An error occurred (404) when calling the HeadBucket operation: Not Found"
+    },
+    {
+      "command": "aws ec2 describe-network-interfaces --filters Name=vpc-id,Values=vpc-09ea9af1fe3c70bda --query NetworkInterfaces[].NetworkInterfaceId --output json",
+      "exitCode": 0,
+      "stdout": "[]",
+      "stderr": ""
+    }
+  ]
+}

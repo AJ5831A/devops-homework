@@ -1,0 +1,12 @@
+NAME                               READY   STATUS    RESTARTS   AGE   IP           NODE                                         NOMINATED NODE   READINESS GATES
+pod/devops-demo-6f5dcbdfcd-6mq96   1/1     Running   0          54s   10.42.0.10   ip-10-20-1-112.ap-south-1.compute.internal   <none>           <none>
+pod/devops-demo-6f5dcbdfcd-dfvdm   1/1     Running   0          69s   10.42.0.9    ip-10-20-1-112.ap-south-1.compute.internal   <none>           <none>
+
+NAME                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/devops-demo   ClusterIP   10.43.50.140   <none>        80/TCP    69s   app=devops-demo
+
+NAME                                    CLASS     HOSTS          ADDRESS       PORTS   AGE
+ingress.networking.k8s.io/devops-demo   traefik   devops.local   10.20.1.112   80      69s
+
+NAME                                              REFERENCE                TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/devops-demo   Deployment/devops-demo   cpu: 1%/60%   2         5         2          69s

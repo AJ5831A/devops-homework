@@ -1,0 +1,12 @@
+[
+    {
+        "InstanceId": "i-05e68bc1da5543d6c",
+        "State": "running",
+        "Type": "t3.small",
+        "VpcId": "vpc-09ea9af1fe3c70bda",
+        "SubnetId": "subnet-0759029a37968ba3c",
+        "Volumes": [
+            "vol-09ad38e914e09cf08"
+        ]
+    }
+]

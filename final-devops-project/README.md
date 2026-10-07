@@ -169,7 +169,13 @@ retrieve a local kubeconfig. Fill in your IP CIDRs and existing EC2 key pair,
 review `terraform plan`, then apply. The single EC2 node runs k3s with Traefik
 and metrics-server. Deploy the published image using the Helm command above,
 adding `--set ingress.className=traefik`. Local Minikube image loading is not
-applicable to this remote cluster. AWS output and execution evidence are pending.
+applicable to this remote cluster. The full real AWS lifecycle completed on
+7 October 2026: 11 resources created, k3s Ready, exact gated image deployed by
+Helm, and Traefik HTTP 200 for the app and readiness. All 11 resources were then
+destroyed and the temporary SSH key pair removed; independent AWS queries
+verified cleanup. [Cloud execution evidence](../evidence/aws-final/README.md).
+
+![Application served through AWS k3s Traefik Ingress](../evidence/aws-final/application-browser.png)
 
 ## CI/CD and DevSecOps
 

@@ -1,0 +1,13 @@
+NAME                                          READY   STATUS      RESTARTS       AGE     IP          NODE                                         NOMINATED NODE   READINESS GATES
+pod/coredns-7cfb7bc9c7-ggbkx                  1/1     Running     0              2m22s   10.42.0.4   ip-10-20-1-112.ap-south-1.compute.internal   <none>           <none>
+pod/helm-install-traefik-2jsz7                0/1     Completed   2 (2m4s ago)   2m22s   10.42.0.2   ip-10-20-1-112.ap-south-1.compute.internal   <none>           <none>
+pod/helm-install-traefik-crd-k7hrb            0/1     Completed   0              2m22s   10.42.0.5   ip-10-20-1-112.ap-south-1.compute.internal   <none>           <none>
+pod/local-path-provisioner-77b9867795-8wp75   1/1     Running     0              2m22s   10.42.0.3   ip-10-20-1-112.ap-south-1.compute.internal   <none>           <none>
+pod/metrics-server-6dc596dfb8-7dztl           1/1     Running     0              2m22s   10.42.0.6   ip-10-20-1-112.ap-south-1.compute.internal   <none>           <none>
+pod/svclb-traefik-e0869a77-75fsv              2/2     Running     0              109s    10.42.0.7   ip-10-20-1-112.ap-south-1.compute.internal   <none>           <none>
+pod/traefik-7c8544f77-gqfb2                   1/1     Running     0              109s    10.42.0.8   ip-10-20-1-112.ap-south-1.compute.internal   <none>           <none>
+
+NAME                     TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)                      AGE     SELECTOR
+service/kube-dns         ClusterIP      10.43.0.10     <none>        53/UDP,53/TCP,9153/TCP       2m26s   k8s-app=kube-dns
+service/metrics-server   ClusterIP      10.43.51.234   <none>        443/TCP                      2m26s   k8s-app=metrics-server
+service/traefik          LoadBalancer   10.43.19.227   10.20.1.112   80:30245/TCP,443:31294/TCP   109s    app.kubernetes.io/instance=traefik-kube-system,app.kubernetes.io/name=traefik

@@ -1,0 +1,4 @@
+docker.io/library/devops final:be9442981	saved	
+application/vnd.oci.image.manifest.v1+json sha256:9d15ccf2d99f4d1ad9e4c7d9f5f4c815d041699d3c309a774e5c9e1837b792fc
+Importing	elapsed: 2.1 s	total:   0.0 B	(0.0 B/s)	
+ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681
