@@ -1,0 +1,9 @@
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES              SELECTOR
+deployment.apps/hello   2/2     2            2           19s   web          nginx:1.28-alpine   app=hello
+
+NAME                         READY   STATUS    RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+pod/hello-6459d95578-59vdg   1/1     Running   0          19s   10.244.30.159   devops-homework   <none>           <none>
+pod/hello-6459d95578-ht2ck   1/1     Running   0          19s   10.244.30.160   devops-homework   <none>           <none>
+
+NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/hello   ClusterIP   10.100.247.4   <none>        80/TCP    19s   app=hello

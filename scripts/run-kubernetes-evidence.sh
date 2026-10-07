@@ -46,9 +46,9 @@ http_expect() {
 }
 wait_text() {
   # Wait for a real state transition without inventing output; bounded to 90 s.
-  resource=$1; path=$2; pattern=$3; attempt=0
+  resource=$1; path=$2; pattern=$3; max_attempts=${4:-30}; attempt=0
   log "WAIT: $resource $path matches $pattern"
-  while [ "$attempt" -lt 30 ]; do
+  while [ "$attempt" -lt "$max_attempts" ]; do
     value=$(k -n "$NS" get "$resource" -o "jsonpath=$path" 2>/dev/null || true)
     if printf '%s' "$value" | grep -Eq "$pattern"; then log "OBSERVED: $value"; return 0; fi
     attempt=$((attempt+1)); sleep 3
@@ -113,7 +113,9 @@ apply 09-kubernetes-workloads/blue-green/; rollout blue; rollout green; http_exp
 run k -n "$NS" patch service active -p '{"spec":{"selector":{"track":"green"}}}'
 http_expect http://active green
 apply 09-kubernetes-workloads/canary/; rollout stable; rollout canary
-run k -n "$NS" exec client -- sh -c 'for i in $(seq 1 100); do wget -qO- -T 5 http://canary-route; done'
+wait_text endpoints/canary-route '{.subsets[0].addresses[*].ip}' '^([^ ]+ ){9}[^ ]+$'
+sleep 3
+run k -n "$NS" exec client -- sh -c 'samples=$(for i in $(seq 1 100); do wget -qO- -T 5 http://canary-route; done); printf "%s\n" "$samples"; printf "%s\n" "$samples" | grep -qx stable && printf "%s\n" "$samples" | grep -qx canary'
 apply 09-kubernetes-workloads/recreate/v1.yaml; rollout recreate; http_expect http://recreate "recreate v1"
 k -n "$NS" get pods -w > "$OUT/recreate-watch.log" 2>&1 & PIDS="$PIDS $!"; watcher=$!
 apply 09-kubernetes-workloads/recreate/v2.yaml; rollout recreate; http_expect http://recreate "recreate v2"
@@ -143,7 +145,7 @@ for file in "$ROOT"/09-kubernetes-workloads/lifecycle/*.yaml; do
   esac
   case "$name" in
     readiness) run k -n "$NS" exec "$name" -- rm /tmp/healthy; wait_text "pod/$name" '{.status.containerStatuses[0].ready}' '^false$' ;;
-    liveness) run k -n "$NS" exec "$name" -- rm /tmp/healthy; wait_text "pod/$name" '{.status.containerStatuses[0].restartCount}' '^[1-9]' ;;
+    liveness) run k -n "$NS" exec "$name" -- sh -c 'for n in $(seq 1 30); do test -f /tmp/healthy && exit 0; sleep 1; done; exit 1'; run k -n "$NS" exec "$name" -- rm /tmp/healthy; wait_text "pod/$name" '{.status.containerStatuses[0].restartCount}' '^[1-9]' ;;
     termination) k -n "$NS" logs -f "$name" > "$OUT/termination.log" 2>&1 & PIDS="$PIDS $!" ;;
   esac
   run k -n "$NS" delete -f "$file" --wait=true --timeout=60s
@@ -156,8 +158,8 @@ apply 10-kubernetes-services/; rollout web; client
 run k -n "$NS" get svc -o wide
 run k -n "$NS" get endpointslices
 http http://clusterip; http http://headless
-run k -n "$NS" exec client -- nslookup headless
-run k -n "$NS" exec client -- nslookup externalname
+run k -n "$NS" exec client -- nslookup "headless.$NS.svc.cluster.local."
+run k -n "$NS" exec client -- nslookup "externalname.$NS.svc.cluster.local."
 optional k -n "$NS" exec client -- wget -qO- -T 10 http://externalname
 nodeip=$(k get nodes -o 'jsonpath={.items[0].status.addresses[?(@.type=="InternalIP")].address}')
 http "http://$nodeip:30080"
@@ -174,7 +176,11 @@ minikube -p "$PROFILE" tunnel > "$OUT/loadbalancer-tunnel.log" 2>&1 </dev/null &
 sleep 12
 run k -n "$NS" get service loadbalancer -o yaml
 lb=$(k -n "$NS" get svc loadbalancer -o 'jsonpath={.status.loadBalancer.ingress[0].ip}' 2>/dev/null || true)
-if [ -n "$lb" ]; then optional curl --max-time 15 -fsS "http://$lb"; else log 'LoadBalancer external address still pending; see tunnel log (host privileges may be needed).'; fi
+if [ -z "$lb" ]; then
+  wait_text service/loadbalancer '{.status.loadBalancer.ingress[0].ip}' '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+'
+  lb=$(k -n "$NS" get svc loadbalancer -o 'jsonpath={.status.loadBalancer.ingress[0].ip}' 2>/dev/null || true)
+fi
+if [ -n "$lb" ]; then run curl --max-time 15 --retry 3 --retry-connrefused -fsS "http://$lb"; else log 'FAIL: LoadBalancer external address unavailable; see tunnel log.'; FAIL=$((FAIL+1)); fi
 http http://loadbalancer
 kill "$tunnelpid" 2>/dev/null || true
 
@@ -246,6 +252,8 @@ for sample in 1 2 3 4 5 6; do
   optional k -n "$NS" top pods
   sleep 15
  done
+wait_text hpa/cpu-demo '{.status.currentReplicas}' '^[2-5]$' 60
+wait_text deployment/cpu-demo '{.status.readyReplicas}' '^[2-5]$' 60
 run k -n "$NS" describe hpa cpu-demo
 run k -n "$NS" delete pod load-generator web-load
 run k -n "$NS" patch deployment web-app --type=json -p '[{"op":"replace","path":"/spec/template/spec/containers/0/readinessProbe/httpGet/path","value":"/missing"}]'
@@ -303,12 +311,12 @@ run k -n "$NS" exec bad-dns -- cat /etc/resolv.conf
 expected_failure k -n "$NS" exec bad-dns -- nslookup -timeout=2 -retry=1 troubleshooting-service
 run k -n "$NS" delete pod bad-dns
 run k -n "$NS" run bad-dns --image=busybox:1.37 --restart=Never -- sleep 3600; ready bad-dns
-run k -n "$NS" exec bad-dns -- nslookup troubleshooting-service
+run k -n "$NS" exec bad-dns -- nslookup "troubleshooting-service.$NS.svc.cluster.local."
 cni=$(k -n kube-system get daemonsets -o name)
 if printf '%s' "$cni" | grep -Eq 'calico|cilium|antrea'; then
   apply 13-kubernetes-troubleshooting/issues/networkpolicy.yaml
   sleep 5
-  run k -n "$NS" exec client -- nslookup troubleshooting-service
+  run k -n "$NS" exec client -- nslookup "troubleshooting-service.$NS.svc.cluster.local."
   expected_failure k -n "$NS" exec client -- wget -qO- -T 5 http://troubleshooting-service
   run k -n "$NS" delete -f "$ROOT/13-kubernetes-troubleshooting/issues/networkpolicy.yaml"
   sleep 3
@@ -317,7 +325,10 @@ else
   log 'SKIPPED enforced NetworkPolicy failure: no known policy-enforcing CNI detected. Plain Pod-to-Service networking was verified above.'
 fi
 observe
-log "Final HPA cooldown observation (elapsed cooldown depends on troubleshooting duration)"
+log "Final HPA cooldown observation: assert return to one replica after stabilization"
+NS=hw-runtime-storage
+wait_text hpa/cpu-demo '{.status.currentReplicas}' '^1$' 150
+wait_text deployment/cpu-demo '{.status.readyReplicas}' '^1$'
 run k -n hw-runtime-storage get hpa,pods
 optional k -n hw-runtime-storage top pods
 for ns in $NAMESPACES; do k -n "$ns" get all -o wide > "$OUT/$ns-final.txt" 2>&1; done

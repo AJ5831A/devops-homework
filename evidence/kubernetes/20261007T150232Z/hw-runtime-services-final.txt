@@ -1,0 +1,17 @@
+NAME                      READY   STATUS    RESTARTS   AGE     IP              NODE              NOMINATED NODE   READINESS GATES
+pod/client                1/1     Running   0          6m10s   10.244.30.179   devops-homework   <none>           <none>
+pod/web-7f4b764c4-flbpc   1/1     Running   0          6m12s   10.244.30.177   devops-homework   <none>           <none>
+pod/web-7f4b764c4-xgxj2   1/1     Running   0          6m12s   10.244.30.178   devops-homework   <none>           <none>
+
+NAME                   TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)        AGE     SELECTOR
+service/clusterip      ClusterIP      10.101.219.14    <none>           80/TCP         6m12s   app=web
+service/externalname   ExternalName   <none>           example.com      <none>         6m12s   <none>
+service/headless       ClusterIP      None             <none>           80/TCP         6m12s   app=web
+service/loadbalancer   LoadBalancer   10.107.131.130   10.107.131.130   80:30134/TCP   6m12s   app=web
+service/nodeport       NodePort       10.102.55.25     <none>           80:30080/TCP   6m12s   app=web
+
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES              SELECTOR
+deployment.apps/web   2/2     2            2           6m12s   web          nginx:1.28-alpine   app=web
+
+NAME                            DESIRED   CURRENT   READY   AGE     CONTAINERS   IMAGES              SELECTOR
+replicaset.apps/web-7f4b764c4   2         2         2       6m12s   web          nginx:1.28-alpine   app=web,pod-template-hash=7f4b764c4

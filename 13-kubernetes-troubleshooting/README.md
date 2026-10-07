@@ -1,6 +1,6 @@
 # Kubernetes Troubleshooting
 
-> Runtime evidence is pending: this authoring environment has no Kubernetes cluster, kubectl or Minikube. Commands and expected behavior below are a reproducible lab guide, not claimed execution output. Capture real output/screenshots on a cluster before submission. Use only the disposable namespace indicated; cleanup removes that lab’s resources.
+> Executed on 7 October 2026 using Kubernetes v1.34.0 and Minikube. The [runtime evidence index](../evidence/kubernetes/README.md) distinguishes the hosted run, its six runner-check failures, and targeted local repairs. Commands below remain a reproducible guide; the recorded-results section links observed output.
 
 ## Task 1: Important commands
 
@@ -85,3 +85,11 @@ A policy-ignorant CNI will not reproduce the networking failure. For a separate 
 ## Task 3: Mini project
 
 See [mini-project/README.md](mini-project/README.md). Save before/after logs and screenshots from the real cluster for every issue. Cleanup: `kubectl delete namespace hw-troubleshooting`.
+
+## Recorded runtime results
+
+The run captured CrashLoopBackOff, ImagePullBackOff, Unschedulable, missing-volume ConfigMap and missing-environment ConfigMap failures, followed by repairs. A Service selector mismatch blocked HTTP until repaired. Bad DNS failed, and the targeted rerun checks recovery using absolute service names. Calico NetworkPolicy blocked HTTP; deleting the policy restored `Troubleshooting repaired`.
+
+[Complete transcript](../evidence/kubernetes/20261007T150232Z/transcript.log) · [Evidence and repair details](../evidence/kubernetes/README.md).
+
+![Rendered recorded output](../evidence/kubernetes/20261007T150232Z/networkpolicy.png)

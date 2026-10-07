@@ -1,0 +1,4 @@
+Run: 20261007T150232Z
+Required failures: 6
+Context: devops-homework
+Namespaces:  hw-runtime-fundamentals hw-runtime-workloads hw-runtime-services hw-runtime-config hw-runtime-storage hw-runtime-troubleshooting

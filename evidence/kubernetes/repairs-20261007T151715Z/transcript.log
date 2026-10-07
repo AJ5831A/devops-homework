@@ -1,0 +1,482 @@
+
+[2026-10-07T15:17:15Z] RUN: k create namespace hw-runtime-repairs
+namespace/hw-runtime-repairs created
+PASS
+
+[2026-10-07T15:17:15Z] RUN: k label namespace hw-runtime-repairs homework-runner=kubernetes-repairs
+namespace/hw-runtime-repairs labeled
+PASS
+
+[2026-10-07T15:17:15Z] RUN: kn apply -f /Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/09-kubernetes-workloads/lifecycle/liveness.yaml
+pod/liveness created
+PASS
+
+[2026-10-07T15:17:15Z] RUN: kn wait --for=condition=Ready pod/liveness --timeout=180s
+pod/liveness condition met
+PASS
+
+[2026-10-07T15:17:23Z] RUN: kn exec liveness -- sh -c for n in $(seq 1 30); do test -f /tmp/healthy && exit 0; sleep 1; done; exit 1
+PASS
+
+[2026-10-07T15:17:32Z] RUN: kn exec liveness -- rm /tmp/healthy
+PASS
+
+[2026-10-07T15:17:32Z] RUN: wait_value pod/liveness {.status.containerStatuses[0].restartCount} ^[1-9] 30
+2026-10-07T15:17:32Z pod/liveness {.status.containerStatuses[0].restartCount} = 0
+2026-10-07T15:17:37Z pod/liveness {.status.containerStatuses[0].restartCount} = 0
+2026-10-07T15:17:42Z pod/liveness {.status.containerStatuses[0].restartCount} = 0
+2026-10-07T15:17:47Z pod/liveness {.status.containerStatuses[0].restartCount} = 0
+2026-10-07T15:17:52Z pod/liveness {.status.containerStatuses[0].restartCount} = 0
+2026-10-07T15:17:57Z pod/liveness {.status.containerStatuses[0].restartCount} = 0
+2026-10-07T15:18:02Z pod/liveness {.status.containerStatuses[0].restartCount} = 0
+2026-10-07T15:18:07Z pod/liveness {.status.containerStatuses[0].restartCount} = 0
+2026-10-07T15:18:13Z pod/liveness {.status.containerStatuses[0].restartCount} = 1
+PASS
+
+[2026-10-07T15:18:13Z] RUN: kn describe pod liveness
+Name:             liveness
+Namespace:        hw-runtime-repairs
+Priority:         0
+Service Account:  default
+Node:             devops-homework/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 20:47:15 +0530
+Labels:           <none>
+Annotations:      cni.projectcalico.org/containerID: bded4750593d50f66dc8f7c3a6a7c7498b9ef937cea869cb6c741637e8e6dacc
+                  cni.projectcalico.org/podIP: 10.244.30.139/32
+                  cni.projectcalico.org/podIPs: 10.244.30.139/32
+Status:           Running
+IP:               10.244.30.139
+IPs:
+  IP:  10.244.30.139
+Containers:
+  main:
+    Container ID:  containerd://2f1f12fb98e02f2f211bb873a9f53c257c0eb97e7ecd6c9f786ac9f822bb6f31
+    Image:         busybox:1.37
+    Image ID:      docker.io/library/busybox@sha256:bdf57e528e45e4433820e045b29b4597825a1c9e38353532d90a01445013f82e
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      sh
+      -c
+      sleep 10; touch /tmp/healthy; sleep 3600
+    State:          Running
+      Started:      Wed, 07 Oct 2026 20:48:11 +0530
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    137
+      Started:      Wed, 07 Oct 2026 20:47:22 +0530
+      Finished:     Wed, 07 Oct 2026 20:48:11 +0530
+    Ready:          True
+    Restart Count:  1
+    Liveness:       exec [test -f /tmp/healthy] delay=15s timeout=1s period=2s successThreshold=1 failureThreshold=3
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-9dbg6 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-9dbg6:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                From               Message
+  ----     ------     ----               ----               -------
+  Normal   Scheduled  58s                default-scheduler  Successfully assigned hw-runtime-repairs/liveness to devops-homework
+  Normal   Pulling    58s                kubelet            spec.containers{main}: Pulling image "busybox:1.37"
+  Normal   Pulled     51s                kubelet            spec.containers{main}: Successfully pulled image "busybox:1.37" in 6.443s (6.443s including waiting). Image size: 1911395 bytes.
+  Warning  Unhealthy  32s (x3 over 36s)  kubelet            spec.containers{main}: Liveness probe failed:
+  Normal   Killing    32s                kubelet            spec.containers{main}: Container main failed liveness probe, will be restarted
+  Normal   Created    2s (x2 over 51s)   kubelet            spec.containers{main}: Created container: main
+  Normal   Started    2s (x2 over 51s)   kubelet            spec.containers{main}: Started container main
+  Normal   Pulled     2s                 kubelet            spec.containers{main}: Container image "busybox:1.37" already present on machine
+PASS
+
+[2026-10-07T15:18:13Z] RUN: kn delete pod liveness --wait=true
+pod "liveness" deleted from hw-runtime-repairs namespace
+PASS
+
+[2026-10-07T15:18:44Z] RUN: kn apply -f /Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/10-kubernetes-services/
+deployment.apps/web created
+service/clusterip created
+service/externalname created
+Warning: spec.SessionAffinity is ignored for headless services
+service/headless created
+service/loadbalancer created
+service/nodeport created
+PASS
+
+[2026-10-07T15:18:44Z] RUN: kn rollout status deployment/web --timeout=180s
+Waiting for deployment "web" rollout to finish: 0 of 2 updated replicas are available...
+Waiting for deployment "web" rollout to finish: 1 of 2 updated replicas are available...
+deployment "web" successfully rolled out
+PASS
+
+[2026-10-07T15:18:45Z] RUN: kn run client --image=busybox:1.37 --restart=Never -- sleep 7200
+pod/client created
+PASS
+
+[2026-10-07T15:18:45Z] RUN: kn wait --for=condition=Ready pod/client --timeout=180s
+pod/client condition met
+PASS
+
+[2026-10-07T15:18:46Z] RUN: kn exec client -- nslookup headless.hw-runtime-repairs.svc.cluster.local.
+Server:		10.96.0.10
+Address:	10.96.0.10:53
+
+
+Name:	headless.hw-runtime-repairs.svc.cluster.local
+Address: 10.244.30.152
+Name:	headless.hw-runtime-repairs.svc.cluster.local
+Address: 10.244.30.151
+
+PASS
+
+[2026-10-07T15:18:46Z] RUN: kn exec client -- nslookup externalname.hw-runtime-repairs.svc.cluster.local.
+Server:		10.96.0.10
+Address:	10.96.0.10:53
+
+externalname.hw-runtime-repairs.svc.cluster.local	canonical name = example.com
+
+externalname.hw-runtime-repairs.svc.cluster.local	canonical name = example.com
+Name:	example.com
+Address: 172.66.147.243
+Name:	example.com
+Address: 104.20.23.154
+
+PASS
+
+[2026-10-07T15:18:48Z] RUN: kn apply -f /Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/13-kubernetes-troubleshooting/mini-project/deployment.yaml
+deployment.apps/troubleshooting-app created
+PASS
+
+[2026-10-07T15:18:48Z] RUN: kn apply -f /Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/13-kubernetes-troubleshooting/mini-project/service.yaml
+service/troubleshooting-service created
+PASS
+
+[2026-10-07T15:18:48Z] RUN: kn rollout status deployment/troubleshooting-app --timeout=180s
+Waiting for deployment "troubleshooting-app" rollout to finish: 0 of 2 updated replicas are available...
+Waiting for deployment "troubleshooting-app" rollout to finish: 1 of 2 updated replicas are available...
+deployment "troubleshooting-app" successfully rolled out
+PASS
+
+[2026-10-07T15:18:49Z] RUN: kn apply -f /Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/13-kubernetes-troubleshooting/issues/dns.yaml
+pod/bad-dns created
+PASS
+
+[2026-10-07T15:18:49Z] RUN: kn wait --for=condition=Ready pod/bad-dns --timeout=180s
+pod/bad-dns condition met
+PASS
+Server:		192.0.2.1
+Address:	192.0.2.1:53
+
+** server can't find troubleshooting-service.hw-runtime-repairs.svc.cluster.local.: NXDOMAIN
+
+** server can't find troubleshooting-service.hw-runtime-repairs.svc.cluster.local.: NXDOMAIN
+
+command terminated with exit code 1
+PASS: broken DNS failed as expected
+
+[2026-10-07T15:18:50Z] RUN: kn delete pod bad-dns --wait=true
+pod "bad-dns" deleted from hw-runtime-repairs namespace
+PASS
+
+[2026-10-07T15:19:23Z] RUN: kn run bad-dns --image=busybox:1.37 --restart=Never -- sleep 7200
+pod/bad-dns created
+PASS
+
+[2026-10-07T15:19:23Z] RUN: kn wait --for=condition=Ready pod/bad-dns --timeout=180s
+pod/bad-dns condition met
+PASS
+
+[2026-10-07T15:19:24Z] RUN: kn exec bad-dns -- nslookup troubleshooting-service.hw-runtime-repairs.svc.cluster.local.
+Server:		10.96.0.10
+Address:	10.96.0.10:53
+
+Name:	troubleshooting-service.hw-runtime-repairs.svc.cluster.local
+Address: 10.96.17.123
+
+
+PASS
+
+[2026-10-07T15:19:24Z] RUN: kn exec client -- wget -qO- -T 10 http://troubleshooting-service
+Troubleshooting repaired
+PASS
+
+[2026-10-07T15:19:24Z] RUN: kn apply -f /Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/13-kubernetes-troubleshooting/issues/networkpolicy.yaml
+networkpolicy.networking.k8s.io/deny-app created
+PASS
+
+[2026-10-07T15:19:29Z] RUN: kn exec client -- nslookup troubleshooting-service.hw-runtime-repairs.svc.cluster.local.
+Server:		10.96.0.10
+Address:	10.96.0.10:53
+
+Name:	troubleshooting-service.hw-runtime-repairs.svc.cluster.local
+Address: 10.96.17.123
+
+
+PASS
+wget: download timed out
+command terminated with exit code 1
+PASS: policy blocked HTTP while DNS succeeded
+
+[2026-10-07T15:19:34Z] RUN: kn delete -f /Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/13-kubernetes-troubleshooting/issues/networkpolicy.yaml
+networkpolicy.networking.k8s.io "deny-app" deleted from hw-runtime-repairs namespace
+PASS
+
+[2026-10-07T15:19:37Z] RUN: kn exec client -- wget -qO- -T 10 http://troubleshooting-service
+Troubleshooting repaired
+PASS
+
+[2026-10-07T15:19:37Z] RUN: k -n kube-system rollout status deployment/metrics-server --timeout=240s
+deployment "metrics-server" successfully rolled out
+PASS
+
+[2026-10-07T15:19:38Z] RUN: kn apply -f /Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/12-kubernetes-storage/hpa/application.yaml
+deployment.apps/cpu-demo created
+service/cpu-demo created
+PASS
+
+[2026-10-07T15:19:38Z] RUN: kn rollout status deployment/cpu-demo --timeout=240s
+Waiting for deployment "cpu-demo" rollout to finish: 0 of 1 updated replicas are available...
+deployment "cpu-demo" successfully rolled out
+PASS
+
+[2026-10-07T15:20:29Z] RUN: kn apply -f /Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/12-kubernetes-storage/hpa/hpa.yml
+horizontalpodautoscaler.autoscaling/cpu-demo created
+PASS
+
+[2026-10-07T15:20:29Z] RUN: kn apply -f /Users/aryanjakhar/Desktop/Scaler School of Technology/DevOpsAssignment/devops-homework/12-kubernetes-storage/hpa/load-generator.yaml
+pod/load-generator created
+PASS
+
+[2026-10-07T15:20:29Z] RUN: wait_value hpa/cpu-demo {.status.currentReplicas} ^[2-5]$ 100
+2026-10-07T15:20:29Z hpa/cpu-demo {.status.currentReplicas} = 
+2026-10-07T15:20:34Z hpa/cpu-demo {.status.currentReplicas} = 
+2026-10-07T15:20:40Z hpa/cpu-demo {.status.currentReplicas} = 
+2026-10-07T15:20:45Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:20:50Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:20:55Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:00Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:05Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:10Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:15Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:20Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:25Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:30Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:35Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:40Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:45Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:50Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:21:55Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:22:00Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:22:05Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:22:11Z hpa/cpu-demo {.status.currentReplicas} = 1
+2026-10-07T15:22:16Z hpa/cpu-demo {.status.currentReplicas} = 4
+PASS
+
+[2026-10-07T15:22:16Z] RUN: wait_value deployment/cpu-demo {.status.readyReplicas} ^[2-5]$ 60
+2026-10-07T15:22:16Z deployment/cpu-demo {.status.readyReplicas} = 5
+PASS
+
+[2026-10-07T15:22:16Z] RUN: kn get hpa,pods
+NAME                                           REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/cpu-demo   Deployment/cpu-demo   cpu: 501%/50%   1         5         4          107s
+
+NAME                                       READY   STATUS    RESTARTS   AGE
+pod/bad-dns                                1/1     Running   0          2m53s
+pod/client                                 1/1     Running   0          3m31s
+pod/cpu-demo-59998df45-84jpw               1/1     Running   0          2s
+pod/cpu-demo-59998df45-bnmv9               1/1     Running   0          17s
+pod/cpu-demo-59998df45-mczxv               1/1     Running   0          17s
+pod/cpu-demo-59998df45-mvjgd               1/1     Running   0          17s
+pod/cpu-demo-59998df45-pv522               1/1     Running   0          2m38s
+pod/load-generator                         1/1     Running   0          107s
+pod/troubleshooting-app-65654b5c9d-46mvt   1/1     Running   0          3m28s
+pod/troubleshooting-app-65654b5c9d-57gdg   1/1     Running   0          3m28s
+pod/web-7f4b764c4-bl7sn                    1/1     Running   0          3m32s
+pod/web-7f4b764c4-g748r                    1/1     Running   0          3m32s
+PASS
+
+[2026-10-07T15:22:16Z] RUN: kn top pods
+NAME                                   CPU(cores)   MEMORY(bytes)   
+bad-dns                                0m           0Mi             
+client                                 0m           0Mi             
+cpu-demo-59998df45-pv522               501m         71Mi            
+load-generator                         2m           0Mi             
+troubleshooting-app-65654b5c9d-46mvt   0m           4Mi             
+troubleshooting-app-65654b5c9d-57gdg   0m           4Mi             
+web-7f4b764c4-bl7sn                    0m           4Mi             
+web-7f4b764c4-g748r                    0m           4Mi             
+PASS
+
+[2026-10-07T15:22:16Z] RUN: kn describe hpa cpu-demo
+Name:                                                  cpu-demo
+Namespace:                                             hw-runtime-repairs
+Labels:                                                <none>
+Annotations:                                           <none>
+CreationTimestamp:                                     Wed, 07 Oct 2026 20:50:29 +0530
+Reference:                                             Deployment/cpu-demo
+Metrics:                                               ( current / target )
+  resource cpu on pods  (as a percentage of request):  501% (501m) / 50%
+Min replicas:                                          1
+Max replicas:                                          5
+Deployment pods:                                       4 current / 5 desired
+Conditions:
+  Type            Status  Reason            Message
+  ----            ------  ------            -------
+  AbleToScale     True    SucceededRescale  the HPA controller was able to update the target scale to 5
+  ScalingActive   True    ValidMetricFound  the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)
+  ScalingLimited  True    TooManyReplicas   the desired replica count is more than the maximum replica count
+Events:
+  Type     Reason                        Age                From                       Message
+  ----     ------                        ----               ----                       -------
+  Warning  FailedGetResourceMetric       92s                horizontal-pod-autoscaler  failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+  Warning  FailedComputeMetricsReplicas  92s                horizontal-pod-autoscaler  invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+  Warning  FailedGetResourceMetric       32s (x4 over 77s)  horizontal-pod-autoscaler  failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+  Warning  FailedComputeMetricsReplicas  32s (x4 over 77s)  horizontal-pod-autoscaler  invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+  Normal   SuccessfulRescale             17s                horizontal-pod-autoscaler  New size: 4; reason: cpu resource utilization (percentage of request) above target
+  Normal   SuccessfulRescale             2s                 horizontal-pod-autoscaler  New size: 5; reason: cpu resource utilization (percentage of request) above target
+PASS
+
+[2026-10-07T15:22:16Z] RUN: kn delete pod load-generator --wait=true
+pod "load-generator" deleted from hw-runtime-repairs namespace
+PASS
+
+[2026-10-07T15:22:46Z] RUN: wait_value hpa/cpu-demo {.status.currentReplicas} ^1$ 100
+2026-10-07T15:22:47Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:22:52Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:22:57Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:02Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:07Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:12Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:17Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:22Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:27Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:32Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:37Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:42Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:47Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:52Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:23:57Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:03Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:08Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:13Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:18Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:23Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:28Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:33Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:38Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:43Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:48Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:53Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:24:58Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:03Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:08Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:14Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:19Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:24Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:29Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:34Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:39Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:44Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:49Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:54Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:25:59Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:26:04Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:26:09Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:26:14Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:26:19Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:26:25Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:26:30Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:26:35Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:26:40Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:26:45Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:26:50Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:26:55Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:00Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:05Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:10Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:15Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:20Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:25Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:31Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:36Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:41Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:46Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:51Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:27:56Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:01Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:06Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:11Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:16Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:21Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:26Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:31Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:37Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:42Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:47Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:52Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:28:57Z hpa/cpu-demo {.status.currentReplicas} = 5
+2026-10-07T15:29:02Z hpa/cpu-demo {.status.currentReplicas} = 1
+PASS
+
+[2026-10-07T15:29:02Z] RUN: wait_value deployment/cpu-demo {.status.readyReplicas} ^1$ 30
+2026-10-07T15:29:02Z deployment/cpu-demo {.status.readyReplicas} = 1
+PASS
+
+[2026-10-07T15:29:02Z] RUN: kn get hpa,pods
+NAME                                           REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/cpu-demo   Deployment/cpu-demo   cpu: 1%/50%   1         5         1          8m33s
+
+NAME                                       READY   STATUS    RESTARTS   AGE
+pod/bad-dns                                1/1     Running   0          9m39s
+pod/client                                 1/1     Running   0          10m
+pod/cpu-demo-59998df45-mczxv               1/1     Running   0          7m3s
+pod/troubleshooting-app-65654b5c9d-46mvt   1/1     Running   0          10m
+pod/troubleshooting-app-65654b5c9d-57gdg   1/1     Running   0          10m
+pod/web-7f4b764c4-bl7sn                    1/1     Running   0          10m
+pod/web-7f4b764c4-g748r                    1/1     Running   0          10m
+PASS
+
+[2026-10-07T15:29:02Z] RUN: kn describe hpa cpu-demo
+Name:                                                  cpu-demo
+Namespace:                                             hw-runtime-repairs
+Labels:                                                <none>
+Annotations:                                           <none>
+CreationTimestamp:                                     Wed, 07 Oct 2026 20:50:29 +0530
+Reference:                                             Deployment/cpu-demo
+Metrics:                                               ( current / target )
+  resource cpu on pods  (as a percentage of request):  1% (1m) / 50%
+Min replicas:                                          1
+Max replicas:                                          5
+Deployment pods:                                       1 current / 1 desired
+Conditions:
+  Type            Status  Reason              Message
+  ----            ------  ------              -------
+  AbleToScale     True    ReadyForNewScale    recommended size matches current size
+  ScalingActive   True    ValidMetricFound    the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)
+  ScalingLimited  False   DesiredWithinRange  the desired count is within the acceptable range
+Events:
+  Type     Reason                        Age                   From                       Message
+  ----     ------                        ----                  ----                       -------
+  Warning  FailedGetResourceMetric       8m18s                 horizontal-pod-autoscaler  failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+  Warning  FailedComputeMetricsReplicas  8m18s                 horizontal-pod-autoscaler  invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+  Warning  FailedGetResourceMetric       7m18s (x4 over 8m3s)  horizontal-pod-autoscaler  failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+  Warning  FailedComputeMetricsReplicas  7m18s (x4 over 8m3s)  horizontal-pod-autoscaler  invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+  Normal   SuccessfulRescale             7m3s                  horizontal-pod-autoscaler  New size: 4; reason: cpu resource utilization (percentage of request) above target
+  Normal   SuccessfulRescale             6m48s                 horizontal-pod-autoscaler  New size: 5; reason: cpu resource utilization (percentage of request) above target
+  Normal   SuccessfulRescale             17s                   horizontal-pod-autoscaler  New size: 1; reason: All metrics below target
+PASS
+PASS: delayed liveness restart, four FQDN DNS checks, policy denial/recovery, HPA scale-up and full cooldown at 2026-10-07T15:29:02Z

@@ -1,6 +1,6 @@
 # Kubernetes Storage, HPA and Probes
 
-> Runtime evidence is pending: this authoring environment has no Kubernetes cluster, kubectl or Minikube. Commands and expected behavior below are a reproducible lab guide, not claimed execution output. Capture real output/screenshots on a cluster before submission. Use only the disposable namespace indicated; cleanup removes that lab’s resources.
+> Executed on 7 October 2026 using Kubernetes v1.34.0 and Minikube. The [runtime evidence index](../evidence/kubernetes/README.md) distinguishes the hosted run, its six runner-check failures, and targeted local repairs. Commands below remain a reproducible guide; the recorded-results section links observed output.
 
 ## Task 1: Volumes
 
@@ -34,3 +34,17 @@ Expected: utilization rises above the 50% CPU-request target and desired replica
 ## Task 3: Mini project
 
 [Mini project](mini-project/README.md) combines persistent storage, HTTP Service, HPA and all three probes. Cleanup after both exercises: `kubectl delete namespace hw-storage`. PVC deletion may destroy dynamically provisioned data; run only in this disposable lab. Static retained PV cleanup is documented separately.
+
+## Recorded runtime results
+
+The emptyDir file disappeared after Pod replacement. Static PV and dynamically provisioned PVC files survived replacement; the web application returned its page and retained `Aryan-Jakhar`. The hosted CPU demo eventually reached five ready replicas, though its first 90-second observation window showed unknown HPA metrics. The targeted local run captures the full scaling and cooldown checks. Readiness failure and subsequent repair are recorded in the hosted transcript.
+
+[Complete transcript](../evidence/kubernetes/20261007T150232Z/transcript.log) · [Evidence and repair details](../evidence/kubernetes/README.md).
+
+![Rendered recorded output](../evidence/kubernetes/20261007T150232Z/storage-persistence.png)
+
+![Observed HPA scale-up](../evidence/kubernetes/repairs-20261007T151715Z/hpa-scale-up.png)
+
+![Observed HPA cooldown to one ready replica](../evidence/kubernetes/repairs-20261007T151715Z/hpa-cooldown.png)
+
+The local recovery run [passed](../evidence/kubernetes/repairs-20261007T151715Z/result.txt) at 15:29:02 UTC, including the full return to one replica after stopping load.

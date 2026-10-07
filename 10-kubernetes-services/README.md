@@ -1,6 +1,6 @@
 # Kubernetes Networking and Services
 
-> Runtime evidence is pending: this authoring environment has no Kubernetes cluster, kubectl or Minikube. Commands and expected behavior below are a reproducible lab guide, not claimed execution output. Capture real output/screenshots on a cluster before submission. Use only the disposable namespace indicated; cleanup removes that lab’s resources.
+> Executed on 7 October 2026 using Kubernetes v1.34.0 and Minikube. The [runtime evidence index](../evidence/kubernetes/README.md) distinguishes the hosted run, its six runner-check failures, and targeted local repairs. Commands below remain a reproducible guide; the recorded-results section links observed output.
 
 ## Task 1: Five Service patterns
 
@@ -59,3 +59,11 @@ A ReplicaSet maintains Pods; a Service discovers ready matching Pods and provide
 ## Tasks 3–4: DNS
 
 See [FQDN](fqdn/README.md) and [CoreDNS](coredns/README.md).
+
+## Recorded runtime results
+
+ClusterIP and headless HTTP returned the application page. NodePort worked both through the node address and the host URL; `minikube tunnel` assigned LoadBalancer address `10.107.131.130` and the host HTTP request succeeded. ExternalName resolved to `example.com`; its HTTP 403 response is recorded and is not treated as successful application routing. BusyBox short-name DNS checks produced search-suffix NXDOMAIN errors, so the targeted repair uses absolute service names.
+
+[Complete transcript](../evidence/kubernetes/20261007T150232Z/transcript.log) · [Evidence and repair details](../evidence/kubernetes/README.md).
+
+![Rendered recorded output](../evidence/kubernetes/20261007T150232Z/loadbalancer.png)

@@ -1,0 +1,19 @@
+NAME                                       READY   STATUS    RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+pod/bad-dns                                1/1     Running   0          15s   10.244.30.154   devops-homework   <none>           <none>
+pod/client                                 1/1     Running   0          94s   10.244.30.149   devops-homework   <none>           <none>
+pod/config-error                           1/1     Running   0          71s   10.244.30.157   devops-homework   <none>           <none>
+pod/crash                                  1/1     Running   0          86s   10.244.30.147   devops-homework   <none>           <none>
+pod/mount-error                            1/1     Running   0          80s   10.244.30.155   devops-homework   <none>           <none>
+pod/pending                                1/1     Running   0          81s   10.244.30.145   devops-homework   <none>           <none>
+pod/project-broken-pod                     1/1     Running   0          85s   10.244.30.146   devops-homework   <none>           <none>
+pod/troubleshooting-app-65654b5c9d-b62sj   1/1     Running   0          95s   10.244.30.143   devops-homework   <none>           <none>
+pod/troubleshooting-app-65654b5c9d-zwc52   1/1     Running   0          95s   10.244.30.136   devops-homework   <none>           <none>
+
+NAME                              TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/troubleshooting-service   ClusterIP   10.111.17.56   <none>        80/TCP    95s   app=troubleshooting-app
+
+NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES              SELECTOR
+deployment.apps/troubleshooting-app   2/2     2            2           95s   web          nginx:1.28-alpine   app=troubleshooting-app
+
+NAME                                             DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES              SELECTOR
+replicaset.apps/troubleshooting-app-65654b5c9d   2         2         2       95s   web          nginx:1.28-alpine   app=troubleshooting-app,pod-template-hash=65654b5c9d

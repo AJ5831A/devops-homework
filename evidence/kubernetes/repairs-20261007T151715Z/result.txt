@@ -1,0 +1,1 @@
+PASS: delayed liveness restart, four FQDN DNS checks, policy denial/recovery, HPA scale-up and full cooldown at 2026-10-07T15:29:02Z

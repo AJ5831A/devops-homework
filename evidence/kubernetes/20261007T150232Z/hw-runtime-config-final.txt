@@ -1,0 +1,12 @@
+NAME                              READY   STATUS    RESTARTS   AGE     IP              NODE              NOMINATED NODE   READINESS GATES
+pod/config-web-54bddff76f-j99fg   1/1     Running   0          5m48s   10.244.30.180   devops-homework   <none>           <none>
+
+NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE     SELECTOR
+service/config-web   ClusterIP   10.107.129.159   <none>        80/TCP    5m48s   app=config-web
+
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES              SELECTOR
+deployment.apps/config-web   1/1     1            1           5m48s   web          nginx:1.28-alpine   app=config-web
+
+NAME                                    DESIRED   CURRENT   READY   AGE     CONTAINERS   IMAGES              SELECTOR
+replicaset.apps/config-web-54bddff76f   1         1         1       5m48s   web          nginx:1.28-alpine   app=config-web,pod-template-hash=54bddff76f
+replicaset.apps/config-web-5ccb5dd45d   0         0         0       5m40s   web          nginx:1.28-alpine   app=config-web,pod-template-hash=5ccb5dd45d

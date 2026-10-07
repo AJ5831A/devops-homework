@@ -1,0 +1,30 @@
+NAME                           READY   STATUS    RESTARTS   AGE     IP              NODE              NOMINATED NODE   READINESS GATES
+pod/client                     1/1     Running   0          3m58s   10.244.30.191   devops-homework   <none>           <none>
+pod/cpu-demo-59998df45-22d98   1/1     Running   0          95s     10.244.30.144   devops-homework   <none>           <none>
+pod/cpu-demo-59998df45-g8wbv   1/1     Running   0          95s     10.244.30.159   devops-homework   <none>           <none>
+pod/cpu-demo-59998df45-hz4dq   1/1     Running   0          80s     10.244.30.152   devops-homework   <none>           <none>
+pod/cpu-demo-59998df45-p6lpr   1/1     Running   0          95s     10.244.30.160   devops-homework   <none>           <none>
+pod/cpu-demo-59998df45-sm7r6   1/1     Running   0          3m58s   10.244.30.130   devops-homework   <none>           <none>
+pod/emptydir                   1/1     Running   0          5m1s    10.244.30.183   devops-homework   <none>           <none>
+pod/hostpath                   1/1     Running   0          5m      10.244.30.184   devops-homework   <none>           <none>
+pod/static-reader              1/1     Running   0          4m18s   10.244.30.186   devops-homework   <none>           <none>
+pod/web-app-6f88888dfd-5rxj7   1/1     Running   0          4m11s   10.244.30.189   devops-homework   <none>           <none>
+pod/web-app-6f88888dfd-zd957   1/1     Running   0          4m5s    10.244.30.190   devops-homework   <none>           <none>
+
+NAME               TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE     SELECTOR
+service/cpu-demo   ClusterIP   10.109.169.34    <none>        80/TCP    3m58s   app=cpu-demo
+service/web-app    ClusterIP   10.100.101.140   <none>        80/TCP    4m17s   app=web-app
+
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                        SELECTOR
+deployment.apps/cpu-demo   5/5     5            5           3m58s   web          registry.k8s.io/hpa-example   app=cpu-demo
+deployment.apps/web-app    2/2     2            2           4m17s   web          nginx:1.28-alpine             app=web-app
+
+NAME                                 DESIRED   CURRENT   READY   AGE     CONTAINERS   IMAGES                        SELECTOR
+replicaset.apps/cpu-demo-59998df45   5         5         5       3m58s   web          registry.k8s.io/hpa-example   app=cpu-demo,pod-template-hash=59998df45
+replicaset.apps/web-app-6dc49c577c   0         0         0       4m17s   web          nginx:1.28-alpine             app=web-app,pod-template-hash=6dc49c577c
+replicaset.apps/web-app-6f88888dfd   2         2         2       4m11s   web          nginx:1.28-alpine             app=web-app,pod-template-hash=6f88888dfd
+replicaset.apps/web-app-c5dc67948    0         0         0       106s    web          nginx:1.28-alpine             app=web-app,pod-template-hash=c5dc67948
+
+NAME                                           REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/cpu-demo   Deployment/cpu-demo   cpu: 1%/50%   1         5         5          3m50s
+horizontalpodautoscaler.autoscaling/web-app    Deployment/web-app    cpu: 1%/50%   2         5         2          4m16s

@@ -1,0 +1,8 @@
+NAME         READY   STATUS    RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+pod/client   1/1     Running   0          12m   10.244.30.142   devops-homework   <none>           <none>
+
+NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/active         ClusterIP   10.105.75.3     <none>        80/TCP    12m   family=blue-green,track=green
+service/canary-route   ClusterIP   10.99.5.64      <none>        80/TCP    12m   family=canary
+service/recreate       ClusterIP   10.102.224.53   <none>        80/TCP    12m   app=recreate
+service/rolling        ClusterIP   10.96.147.46    <none>        80/TCP    12m   app=rolling

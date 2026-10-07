@@ -1,6 +1,6 @@
 # Kubernetes Fundamentals
 
-> Runtime evidence is pending: this authoring environment has no Kubernetes cluster, kubectl or Minikube. Commands and expected behavior below are a reproducible lab guide, not claimed execution output. Capture real output/screenshots on a cluster before submission. Use only the disposable namespace indicated; cleanup removes that lab’s resources.
+> Executed on 7 October 2026 using Kubernetes v1.34.0 and Minikube. The [runtime evidence index](../evidence/kubernetes/README.md) distinguishes the hosted run, its six runner-check failures, and targeted local repairs. Commands below remain a reproducible guide; the recorded-results section links observed output.
 
 ## Task 1: Install and verify Minikube
 
@@ -57,3 +57,13 @@ Minikube v1.39.0 created Kubernetes v1.34.0 in the Docker-backed Colima lab on 2
 [Actual cluster status](../evidence/kubernetes/local-setup/cluster-ready.txt) · [initial startup state](../evidence/kubernetes/local-setup/cluster-startup.txt)
 
 ![Recorded local cluster output](../evidence/kubernetes/local-setup/cluster-ready.png)
+
+## Recorded runtime results
+
+The hosted run created the Hello deployment and Service, returned `Hello from Kubernetes`, scaled to three replicas, and completed the nginx image rollout. Cluster setup, ReplicaSets, logs, exec output and events are preserved in the complete transcript.
+
+[Complete transcript](../evidence/kubernetes/20261007T150232Z/transcript.log) · [Evidence and repair details](../evidence/kubernetes/README.md).
+
+![Rendered recorded output](../evidence/kubernetes/20261007T150232Z/fundamentals.png)
+
+![Live Hello application](../evidence/kubernetes/local-setup/hello-browser.png)

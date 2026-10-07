@@ -1,0 +1,139 @@
+Wed Oct  7 15:18:26 UTC 2026
+namespace/hw-runtime-canary created
+namespace/hw-runtime-canary labeled
+deployment.apps/canary created
+service/canary-route created
+deployment.apps/stable created
+Waiting for deployment "stable" rollout to finish: 0 out of 9 new replicas have been updated...
+Waiting for deployment "stable" rollout to finish: 0 of 9 updated replicas are available...
+Waiting for deployment "stable" rollout to finish: 1 of 9 updated replicas are available...
+Waiting for deployment "stable" rollout to finish: 2 of 9 updated replicas are available...
+Waiting for deployment "stable" rollout to finish: 3 of 9 updated replicas are available...
+Waiting for deployment "stable" rollout to finish: 4 of 9 updated replicas are available...
+Waiting for deployment "stable" rollout to finish: 5 of 9 updated replicas are available...
+Waiting for deployment "stable" rollout to finish: 6 of 9 updated replicas are available...
+Waiting for deployment "stable" rollout to finish: 7 of 9 updated replicas are available...
+Waiting for deployment "stable" rollout to finish: 8 of 9 updated replicas are available...
+deployment "stable" successfully rolled out
+deployment "canary" successfully rolled out
+pod/client created
+pod/client condition met
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+Ready endpoints: 10
+NAME                      READY   STATUS    RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+canary-cbfc7fdc9-2c7pv    1/1     Running   0          6s    10.244.30.141   devops-homework   <none>           <none>
+client                    1/1     Running   0          4s    10.244.30.150   devops-homework   <none>           <none>
+stable-77f8cdb6d4-8hbc9   1/1     Running   0          6s    10.244.30.149   devops-homework   <none>           <none>
+stable-77f8cdb6d4-b2qsn   1/1     Running   0          6s    10.244.30.147   devops-homework   <none>           <none>
+stable-77f8cdb6d4-h6r4q   1/1     Running   0          6s    10.244.30.140   devops-homework   <none>           <none>
+stable-77f8cdb6d4-hjnt7   1/1     Running   0          6s    10.244.30.145   devops-homework   <none>           <none>
+stable-77f8cdb6d4-mczqw   1/1     Running   0          6s    10.244.30.143   devops-homework   <none>           <none>
+stable-77f8cdb6d4-q5dsj   1/1     Running   0          6s    10.244.30.142   devops-homework   <none>           <none>
+stable-77f8cdb6d4-qgvvs   1/1     Running   0          6s    10.244.30.148   devops-homework   <none>           <none>
+stable-77f8cdb6d4-v29fc   1/1     Running   0          6s    10.244.30.146   devops-homework   <none>           <none>
+stable-77f8cdb6d4-vkx4d   1/1     Running   0          6s    10.244.30.144   devops-homework   <none>           <none>
+NAME                 ADDRESSTYPE   PORTS   ENDPOINTS                                               AGE
+canary-route-q2g95   IPv4          80      10.244.30.142,10.244.30.140,10.244.30.141 + 7 more...   6s
+stable
+stable
+stable
+canary
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+canary
+stable
+canary
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+canary
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+canary
+canary
+stable
+stable
+stable
+canary
+stable
+stable
+stable
+stable
+canary
+canary
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+stable
+canary
+stable
+  10 canary
+  90 stable
+PASS: both stable and canary served from ten ready endpoints at 2026-10-07T15:18:32Z

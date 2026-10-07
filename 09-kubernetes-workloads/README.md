@@ -1,6 +1,6 @@
 # Pods, ReplicaSets and Deployment Strategies
 
-> Runtime evidence is pending: this authoring environment has no Kubernetes cluster, kubectl or Minikube. Commands and expected behavior below are a reproducible lab guide, not claimed execution output. Capture real output/screenshots on a cluster before submission. Use only the disposable namespace indicated; cleanup removes that lab’s resources.
+> Executed on 7 October 2026 using Kubernetes v1.34.0 and Minikube. The [runtime evidence index](../evidence/kubernetes/README.md) distinguishes the hosted run, its six runner-check failures, and targeted local repairs. Commands below remain a reproducible guide; the recorded-results section links observed output.
 
 Run from this folder; first `kubectl create namespace hw-workloads`. All versions return their name/version as HTTP text, so traffic checks distinguish versions.
 
@@ -68,3 +68,34 @@ kubectl delete -n hw-workloads -f lifecycle/running.yaml
 For liveness run `kubectl exec -n hw-workloads liveness -- rm /tmp/healthy`, then watch restarts. For readiness remove the same file and watch READY become 0/1 without a restart. `CrashLoopBackOff`, `ImagePullBackOff`, and `ContainerCreating` are container/display statuses, not Pod phases. The Pod phases are Pending, Running, Succeeded, Failed and Unknown. Unknown reflects inability to obtain state and is not reliably produced by a portable Pod manifest.
 
 Record actual before/after output, timestamps and screenshots for each file. Cleanup: `kubectl delete namespace hw-workloads`.
+
+## Recorded runtime results
+
+Rolling and Recreate deployments returned their v1 then v2 content; the blue/green Service switched from blue to green. Lifecycle fixtures produced the expected scheduling, image-pull, crash, completion and readiness states. The first liveness test ran before its delayed health file existed; the targeted repair waits for that file before testing a real restart. Canary sampling was repeated after all ten endpoints propagated and returned **90 stable / 10 canary** responses out of 100. This is an observed sample, not a guaranteed traffic ratio.
+
+[Complete transcript](../evidence/kubernetes/20261007T150232Z/transcript.log) · [Evidence and repair details](../evidence/kubernetes/README.md).
+
+![Rendered recorded output](../evidence/kubernetes/20261007T150232Z/strategies.png)
+
+### Individual lifecycle screenshots
+
+These are labeled renderings of authentic recorded output, one for each YAML. Liveness uses the successful targeted repair transcript.
+
+| Fixture | Captured observation |
+| --- | --- |
+| `crashloop.yaml` | [Recorded crashloop output](../evidence/kubernetes/20261007T150232Z/lifecycle/crashloop.png) |
+| `failed.yaml` | [Recorded failed output](../evidence/kubernetes/20261007T150232Z/lifecycle/failed.png) |
+| `imagepull.yaml` | [Recorded imagepull output](../evidence/kubernetes/20261007T150232Z/lifecycle/imagepull.png) |
+| `init.yaml` | [Recorded init output](../evidence/kubernetes/20261007T150232Z/lifecycle/init.png) |
+| `liveness.yaml` | [Recorded liveness output](../evidence/kubernetes/20261007T150232Z/lifecycle/liveness.png) |
+| `multi-container.yaml` | [Recorded multi-container output](../evidence/kubernetes/20261007T150232Z/lifecycle/multi-container.png) |
+| `pending.yaml` | [Recorded pending output](../evidence/kubernetes/20261007T150232Z/lifecycle/pending.png) |
+| `readiness.yaml` | [Recorded readiness output](../evidence/kubernetes/20261007T150232Z/lifecycle/readiness.png) |
+| `running.yaml` | [Recorded running output](../evidence/kubernetes/20261007T150232Z/lifecycle/running.png) |
+| `startup.yaml` | [Recorded startup output](../evidence/kubernetes/20261007T150232Z/lifecycle/startup.png) |
+| `succeeded.yaml` | [Recorded succeeded output](../evidence/kubernetes/20261007T150232Z/lifecycle/succeeded.png) |
+| `termination.yaml` | [Recorded termination output](../evidence/kubernetes/20261007T150232Z/lifecycle/termination.png) |
+
+The termination example also [logged its SIGTERM handler](../evidence/kubernetes/20261007T150232Z/lifecycle/termination-signal.png).
+
+![Measured canary response counts](../evidence/kubernetes/canary-20261007T151826Z/canary-counts.png)

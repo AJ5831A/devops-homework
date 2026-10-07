@@ -1,0 +1,1 @@
+PASS: both stable and canary served from ten ready endpoints at 2026-10-07T15:18:32Z

@@ -25,3 +25,5 @@ record `helm create`, linting the generated chart, adding/updating/listing a
 chart repository and searching its nginx charts. The temporary repository was
 removed afterward. Deployment, manifest and effective-values YAML files in
 the run directory preserve the exact chart resources at each stage.
+
+A separate [hosted run](https://github.com/AJ5831A/devops-homework/actions/runs/37641399108) also passed the Helm exercise: [transcript](20261007T151509Z/transcript.txt), [result](20261007T151509Z/result.txt). That workflow failed its separate Kubernetes step; its Helm success does not imply overall workflow success.

@@ -1,0 +1,102 @@
+Started: 20261007T151509Z
+Context: devops-homework
+Namespace: hw-runtime-helm
+v3.16.4+g7877b45
+Kubernetes control plane is running at https://192.168.49.2:8443
+CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+NAME: notes-evidence
+LAST DEPLOYED: Wed Oct  7 15:15:09 2026
+NAMESPACE: hw-runtime-helm
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+deployment "notes-evidence-deploy" successfully rolled out
+NAME                                      READY   STATUS    RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+pod/notes-evidence-deploy-f56c985-62n8j   1/1     Running   0          2s    10.244.30.151   devops-homework   <none>           <none>
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES              SELECTOR
+deployment.apps/notes-evidence-deploy   1/1     1            1           2s    notes        nginx:1.28-alpine   app.kubernetes.io/instance=notes-evidence
+
+NAME                         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/notes-evidence-svc   ClusterIP   10.110.225.246   <none>        80/TCP    2s    app.kubernetes.io/instance=notes-evidence
+
+NAME                              DATA   AGE
+configmap/kube-root-ca.crt        1      2s
+configmap/notes-evidence-config   3      2s
+<p>Environment: development</p>
+Verified install: 1 ready replicas, development ConfigMap and HTTP page.
+NAME          	NAMESPACE      	REVISION	UPDATED                                	STATUS  	CHART            	APP VERSION
+notes-evidence	hw-runtime-helm	1       	2026-10-07 15:15:09.832738381 +0000 UTC	deployed	notes-chart-0.1.0	1.28       
+NAME: notes-evidence
+LAST DEPLOYED: Wed Oct  7 15:15:09 2026
+NAMESPACE: hw-runtime-helm
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+Release "notes-evidence" has been upgraded. Happy Helming!
+NAME: notes-evidence
+LAST DEPLOYED: Wed Oct  7 15:15:13 2026
+NAMESPACE: hw-runtime-helm
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+deployment "notes-evidence-deploy" successfully rolled out
+NAME                                        READY   STATUS        RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+pod/notes-evidence-deploy-d46b88456-42l2n   1/1     Running       0          5s    10.244.30.156   devops-homework   <none>           <none>
+pod/notes-evidence-deploy-d46b88456-9kmds   1/1     Running       0          2s    10.244.30.162   devops-homework   <none>           <none>
+pod/notes-evidence-deploy-d46b88456-rq67n   1/1     Running       0          3s    10.244.30.161   devops-homework   <none>           <none>
+pod/notes-evidence-deploy-f56c985-4xvpb     0/1     Completed     0          5s    10.244.30.158   devops-homework   <none>           <none>
+pod/notes-evidence-deploy-f56c985-62n8j     0/1     Completed     0          8s    10.244.30.151   devops-homework   <none>           <none>
+pod/notes-evidence-deploy-f56c985-76ssx     1/1     Terminating   0          5s    10.244.30.150   devops-homework   <none>           <none>
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES              SELECTOR
+deployment.apps/notes-evidence-deploy   3/3     3            3           8s    notes        nginx:1.28-alpine   app.kubernetes.io/instance=notes-evidence
+
+NAME                         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/notes-evidence-svc   ClusterIP   10.110.225.246   <none>        80/TCP    8s    app.kubernetes.io/instance=notes-evidence
+
+NAME                              DATA   AGE
+configmap/kube-root-ca.crt        1      8s
+configmap/notes-evidence-config   3      8s
+<p>Environment: production</p>
+Verified upgrade: 3 ready replicas, production ConfigMap and HTTP page.
+Release "notes-evidence" has been upgraded. Happy Helming!
+NAME: notes-evidence
+LAST DEPLOYED: Wed Oct  7 15:15:19 2026
+NAMESPACE: hw-runtime-helm
+STATUS: deployed
+REVISION: 3
+TEST SUITE: None
+NAME                                     READY   STATUS             RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+notes-evidence-deploy-766fdfd49f-vtmgp   0/1     ImagePullBackOff   0          2s    10.244.30.165   devops-homework   <none>           <none>
+notes-evidence-deploy-d46b88456-42l2n    1/1     Running            0          8s    10.244.30.156   devops-homework   <none>           <none>
+notes-evidence-deploy-d46b88456-9kmds    1/1     Running            0          5s    10.244.30.162   devops-homework   <none>           <none>
+notes-evidence-deploy-d46b88456-rq67n    1/1     Running            0          6s    10.244.30.161   devops-homework   <none>           <none>
+Rollback was a success! Happy Helming!
+deployment "notes-evidence-deploy" successfully rolled out
+NAME                                        READY   STATUS    RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+pod/notes-evidence-deploy-d46b88456-42l2n   1/1     Running   0          11s   10.244.30.156   devops-homework   <none>           <none>
+pod/notes-evidence-deploy-d46b88456-9kmds   1/1     Running   0          8s    10.244.30.162   devops-homework   <none>           <none>
+pod/notes-evidence-deploy-d46b88456-rq67n   1/1     Running   0          9s    10.244.30.161   devops-homework   <none>           <none>
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES              SELECTOR
+deployment.apps/notes-evidence-deploy   3/3     3            3           14s   notes        nginx:1.28-alpine   app.kubernetes.io/instance=notes-evidence
+
+NAME                         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/notes-evidence-svc   ClusterIP   10.110.225.246   <none>        80/TCP    14s   app.kubernetes.io/instance=notes-evidence
+
+NAME                              DATA   AGE
+configmap/kube-root-ca.crt        1      14s
+configmap/notes-evidence-config   3      14s
+<p>Environment: production</p>
+Verified rollback: 3 ready replicas, production ConfigMap and HTTP page.
+Verified revisions 1→2→3→4; revision 4 restores revision 2.
+REVISION	UPDATED                 	STATUS    	CHART            	APP VERSION	DESCRIPTION     
+1       	Wed Oct  7 15:15:09 2026	superseded	notes-chart-0.1.0	1.28       	Install complete
+2       	Wed Oct  7 15:15:13 2026	superseded	notes-chart-0.1.0	1.28       	Upgrade complete
+3       	Wed Oct  7 15:15:19 2026	superseded	notes-chart-0.1.0	1.28       	Upgrade complete
+4       	Wed Oct  7 15:15:22 2026	deployed  	notes-chart-0.1.0	1.28       	Rollback to 2   
+PASS: Helm install, production upgrade, broken revision and rollback verified at 2026-10-07T15:15:25Z
+Evidence: /home/runner/work/devops-homework/devops-homework/evidence/helm/20261007T151509Z

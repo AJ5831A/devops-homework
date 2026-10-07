@@ -1,6 +1,6 @@
 # Ingress, ConfigMaps and Secrets
 
-> Runtime evidence is pending: this authoring environment has no Kubernetes cluster, kubectl or Minikube. Commands and expected behavior below are a reproducible lab guide, not claimed execution output. Capture real output/screenshots on a cluster before submission. Use only the disposable namespace indicated; cleanup removes that lab’s resources.
+> Executed on 7 October 2026 using Kubernetes v1.34.0 and Minikube. The [runtime evidence index](../evidence/kubernetes/README.md) distinguishes the hosted run, its six runner-check failures, and targeted local repairs. Commands below remain a reproducible guide; the recorded-results section links observed output.
 
 ## Tasks 1–2: Inject and verify configuration
 
@@ -50,3 +50,11 @@ kubectl exec -n hw-config deployment/config-web -- sh -c 'test -n "$DB_PASSWORD"
 ```
 
 Expected before: new Pod shows CreateContainerConfigError; events explain `WRONG_KEY` does not exist. Root cause: the reference names a nonexistent key, while the Secret contains DB_PASSWORD. Expected after: rollout completes and `configured` prints. Old healthy Pods may remain during the failed rolling update; inspect the **new** Pod. Record real before/after describe output, key names (redact values), HTTP responses and screenshots. Cleanup: `kubectl delete namespace hw-config`.
+
+## Recorded runtime results
+
+ConfigMap environment values and the public demonstration Secret matched. The Ingress returned the page for `homework.local` and HTTP 404 for an unknown host. A missing Secret reference produced `CreateContainerConfigError`; restoring the correct deployment completed the rollout.
+
+[Complete transcript](../evidence/kubernetes/20261007T150232Z/transcript.log) · [Evidence and repair details](../evidence/kubernetes/README.md).
+
+![Rendered recorded output](../evidence/kubernetes/20261007T150232Z/config-ingress.png)

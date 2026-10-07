@@ -1,0 +1,109 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+    meta.helm.sh/release-name: notes-evidence
+    meta.helm.sh/release-namespace: hw-runtime-helm
+  creationTimestamp: "2026-10-07T15:15:10Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  name: notes-evidence-deploy
+  namespace: hw-runtime-helm
+  resourceVersion: "3713"
+  uid: 6fd8ea9c-7d78-438c-a9b5-0d2a2ff10d1b
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: notes-evidence
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        checksum/config: 0b8e426ad268ee38171a8758a63856505424f859dd07774600613ad6e4a24ef4
+      labels:
+        app.kubernetes.io/instance: notes-evidence
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: notes-evidence-config
+        image: nginx:1.28-alpine
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: http
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: notes
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: http
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources:
+          limits:
+            cpu: 200m
+            memory: 128Mi
+          requests:
+            cpu: 50m
+            memory: 32Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: page
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 420
+          items:
+          - key: index.html
+            path: index.html
+          name: notes-evidence-config
+        name: page
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2026-10-07T15:15:11Z"
+    lastUpdateTime: "2026-10-07T15:15:11Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2026-10-07T15:15:10Z"
+    lastUpdateTime: "2026-10-07T15:15:11Z"
+    message: ReplicaSet "notes-evidence-deploy-f56c985" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1

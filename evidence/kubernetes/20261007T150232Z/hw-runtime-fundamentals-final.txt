@@ -1,0 +1,15 @@
+NAME                         READY   STATUS    RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+pod/client                   1/1     Running   0          12m   10.244.30.137   devops-homework   <none>           <none>
+pod/hello-666647c56d-fkpf8   1/1     Running   0          12m   10.244.30.139   devops-homework   <none>           <none>
+pod/hello-666647c56d-fx8zp   1/1     Running   0          12m   10.244.30.140   devops-homework   <none>           <none>
+pod/hello-666647c56d-hrgkp   1/1     Running   0          12m   10.244.30.141   devops-homework   <none>           <none>
+
+NAME            TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/hello   ClusterIP   10.104.106.178   <none>        80/TCP    12m   app=hello
+
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES       SELECTOR
+deployment.apps/hello   3/3     3            3           12m   web          nginx:1.28   app=hello
+
+NAME                               DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES              SELECTOR
+replicaset.apps/hello-6459d95578   0         0         0       12m   web          nginx:1.28-alpine   app=hello,pod-template-hash=6459d95578
+replicaset.apps/hello-666647c56d   3         3         3       12m   web          nginx:1.28          app=hello,pod-template-hash=666647c56d

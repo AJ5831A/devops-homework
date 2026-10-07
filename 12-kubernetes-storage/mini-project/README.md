@@ -38,4 +38,4 @@ kubectl apply -n hw-storage -f deployment.yaml
 kubectl rollout status -n hw-storage deployment/web-app
 ```
 
-Record real readiness warnings and restored rollout, persistence readback, HTTP response and HPA samples. No runtime screenshots or outputs are claimed in this implementation.
+The [hosted transcript](../../evidence/kubernetes/20261007T150232Z/transcript.log) records readiness warnings and restored rollout, persistence readback, HTTP response and HPA samples. The nginx web HPA remained at two replicas; the separate CPU demonstration scaled to five. See the [evidence index](../../evidence/kubernetes/README.md) for targeted scaling/cooldown validation.

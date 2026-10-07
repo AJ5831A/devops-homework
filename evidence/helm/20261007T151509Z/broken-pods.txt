@@ -1,0 +1,5 @@
+NAME                                     READY   STATUS             RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+notes-evidence-deploy-766fdfd49f-vtmgp   0/1     ImagePullBackOff   0          2s    10.244.30.165   devops-homework   <none>           <none>
+notes-evidence-deploy-d46b88456-42l2n    1/1     Running            0          8s    10.244.30.156   devops-homework   <none>           <none>
+notes-evidence-deploy-d46b88456-9kmds    1/1     Running            0          5s    10.244.30.162   devops-homework   <none>           <none>
+notes-evidence-deploy-d46b88456-rq67n    1/1     Running            0          6s    10.244.30.161   devops-homework   <none>           <none>
