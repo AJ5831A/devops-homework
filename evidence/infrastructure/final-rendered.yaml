@@ -1,0 +1,88 @@
+---
+# Source: devops-demo/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: validation
+data:
+  APP_MESSAGE: "Hello from Aryan's DevOps final project"
+  APP_VERSION: "local"
+---
+# Source: devops-demo/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: validation
+  labels: &id001
+    app: validation
+spec:
+  selector: *id001
+  ports:
+  - name: http
+    port: 80
+    targetPort: http
+---
+# Source: devops-demo/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: validation
+spec:
+  replicas: 2
+  selector:
+    matchLabels: &id001
+      app: validation
+  template:
+    metadata:
+      annotations:
+        checksum/config: daac2dec69e66b1cd0b763b224fd3bcdc3bd375062caa8ae2321a8ad7f7cb253
+      labels: *id001
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+      - name: app
+        image: "devops-final:local"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: validation
+        - secretRef:
+            name: devops-demo-secret
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 500m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - ALL
+        startupProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          failureThreshold: 30
+          periodSeconds: 2
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: http
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          periodSeconds: 10

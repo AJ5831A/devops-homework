@@ -1,0 +1,126 @@
+---
+# Source: devops-demo/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: validation
+data:
+  APP_MESSAGE: "Hello from Aryan's DevOps final project"
+  APP_VERSION: "be9442981c475a39475f4f14501e0fc95244b681"
+---
+# Source: devops-demo/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: validation
+  labels: &id001
+    app: validation
+spec:
+  selector: *id001
+  ports:
+  - name: http
+    port: 80
+    targetPort: http
+---
+# Source: devops-demo/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: validation
+spec:
+  selector:
+    matchLabels: &id001
+      app: validation
+  template:
+    metadata:
+      annotations:
+        checksum/config: 1352f77070efed0a88bf7818053d7cbff6ae1a052ff49cabb3f9f57ca97e6d0c
+      labels: *id001
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+      - name: app
+        image: "ghcr.io/aj5831a/devops-final:be9442981c475a39475f4f14501e0fc95244b681"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: validation
+        - secretRef:
+            name: devops-demo-secret
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 500m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - ALL
+        startupProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          failureThreshold: 30
+          periodSeconds: 2
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: http
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          periodSeconds: 10
+---
+# Source: devops-demo/templates/hpa.yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: validation
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: validation
+  minReplicas: 2
+  maxReplicas: 5
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 60
+---
+# Source: devops-demo/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: validation
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "devops.local"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: validation
+            port:
+              number: 80

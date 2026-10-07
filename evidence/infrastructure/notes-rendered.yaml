@@ -1,0 +1,84 @@
+---
+# Source: notes-chart/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: validation-config
+data:
+  APP_NAME: "notes-app"
+  ENVIRONMENT: "development"
+  index.html: |
+    <!doctype html>
+    <html><head><title>Notes</title></head><body>
+    <h1>notes-app</h1>
+    <p>Environment: development</p>
+    <p>Packaged and deployed with Helm.</p>
+    </body></html>
+---
+# Source: notes-chart/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: validation-svc
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/instance: validation
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+# Source: notes-chart/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: validation-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: validation
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: validation
+      annotations:
+        checksum/config: 2248c6b34c71c13675df3ea52b5191b5d5326166e36548ed78ab465650f7409e
+    spec:
+      containers:
+        - name: notes
+          image: "nginx:1.28-alpine"
+          ports:
+            - name: http
+              containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: validation-config
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 10
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 32Mi
+          volumeMounts:
+            - name: page
+              mountPath: /usr/share/nginx/html
+              readOnly: true
+      volumes:
+        - name: page
+          configMap:
+            name: validation-config
+            items:
+              - key: index.html
+                path: index.html

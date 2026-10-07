@@ -1,0 +1,6 @@
+Terraform v1.9.8
+on darwin_arm64
+
+Your version of Terraform is out of date! The latest version
+is 1.16.5. You can update by downloading from https://www.terraform.io/downloads.html
+v3.16.4+g7877b45
