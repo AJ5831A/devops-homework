@@ -1,0 +1,5 @@
+*
+!application/
+!application/app.py
+!docker/
+!docker/Dockerfile

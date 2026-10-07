@@ -1,0 +1,17 @@
+groups:
+  - name: devops-demo
+    rules:
+      - alert: DemoApplicationDown
+        expr: up{job="devops-demo"} == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: Demo application scrape target has been down for 30 seconds
+      - alert: DemoHighCPU
+        expr: rate(process_cpu_seconds_total{job="devops-demo"}[1m]) > 0.8
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: Demo process is using more than 0.8 CPU cores

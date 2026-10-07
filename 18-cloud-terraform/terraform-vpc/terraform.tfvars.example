@@ -1,0 +1,5 @@
+aws_region    = "ap-south-1"
+instance_type = "t3.micro"
+# Replace the documentation-only address with your public IPv4 /32.
+http_cidr     = "203.0.113.10/32"
+bucket_prefix = "aj5831a-cloud-lab-"

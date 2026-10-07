@@ -1,0 +1,35 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "blue"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "blue"
+  template:
+    metadata:
+      labels:
+        app: "blue"
+        track: "blue"
+        family: "blue-green"
+    spec:
+      containers:
+        -
+          name: "web"
+          image: "nginx:1.28-alpine"
+          ports:
+            -
+              containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "32Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
+          command:
+            - "sh"
+            - "-c"
+          args:
+            - "printf '%s\\n' 'blue' > /usr/share/nginx/html/index.html; exec nginx -g 'daemon off;'"

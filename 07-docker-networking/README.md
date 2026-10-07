@@ -34,9 +34,9 @@ docker exec frontend ping -c 2 database     # now works
 ```
 
 **Expected result:** `frontend` and `backend` can reach each other over
-`net1`; `backend` (on `net1` + `net2`) acts as a bridge between whichever
-containers share a network with it; two containers can only reach each other
-directly if they share at least one network — Docker's default bridge
+`net1`; `backend` can communicate on both `net1` and `net2`, but does not
+automatically forward traffic between them. Two containers in this setup
+can reach each other directly when they share a network — Docker's default bridge
 networking isolates containers on different user-defined networks.
 
 ## Task 2: Host Network (Apache2)
@@ -89,8 +89,8 @@ to tunnel container traffic between hosts over the existing physical network.
 
 **Key points:**
 
-- Requires **Swarm mode** (`docker swarm init`) or an external key-value
-  store to coordinate network state across hosts — a plain single-host
+- Requires **Swarm mode** (`docker swarm init`) to coordinate network state
+  across hosts — a plain single-host
   `docker network create` only gives you `bridge`/`host`/`none`, not overlay.
 - Used for multi-host container communication — e.g. a `web` service on
   Host A talking to a `db` service on Host B by service name, exactly like

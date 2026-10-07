@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-final
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/AJ5831A/devops-homework.git
+    targetRevision: main
+    path: final-devops-project/helm/devops-demo
+    helm:
+      releaseName: devops-demo
+      valueFiles:
+        - values-gitops.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: devops-final
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

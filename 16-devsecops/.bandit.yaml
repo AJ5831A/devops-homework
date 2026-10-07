@@ -1,0 +1,2 @@
+# Scan all checks. The single inline B104 suppression explains the container bind.
+exclude_dirs: [tests]

@@ -1,0 +1,14 @@
+apiVersion: "v1"
+kind: "Pod"
+metadata:
+  name: "imagepull"
+spec:
+  containers:
+    -
+      name: "main"
+      image: "nginx:homework-nonexistent-tag"
+      command:
+        - "sh"
+        - "-c"
+        - "sleep 3600"
+  restartPolicy: "Never"

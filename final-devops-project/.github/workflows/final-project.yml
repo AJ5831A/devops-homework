@@ -1,0 +1,126 @@
+name: Final DevOps project
+on:
+  push:
+    branches: [main]
+    paths: ['final-devops-project/**', '.github/workflows/final-project.yml']
+  pull_request:
+    paths: ['final-devops-project/**', '.github/workflows/final-project.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests and build check
+        run: |
+          python -m unittest discover -s final-devops-project/application -v
+          python -m compileall -q final-devops-project/application
+      - name: Install security tools
+        run: python -m pip install bandit pip-audit
+      - name: SAST
+        run: bandit -r final-devops-project/application/app.py -c final-devops-project/security/bandit.yaml
+      - name: SCA
+        run: |
+          pip-audit -r final-devops-project/application/requirements.txt
+          echo 'Runtime dependencies are standard library only; Trivy audits the base image.'
+      - name: Secret scan
+        run: >-
+          docker run --rm -v "$PWD:/repo:ro"
+          ghcr.io/gitleaks/gitleaks:v8.24.2 dir /repo
+          --config /repo/final-devops-project/security/gitleaks.toml --redact
+      - uses: azure/setup-helm@v5.0.0
+        with:
+          version: v3.17.3
+      - name: Check chart
+        run: |
+          helm lint final-devops-project/helm/devops-demo
+          helm template devops-demo final-devops-project/helm/devops-demo --set hpa.enabled=true --set ingress.enabled=true > /tmp/final-rendered.yaml
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final-rendered-manifests
+          path: /tmp/final-rendered.yaml
+  image:
+    needs: test-security
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t devops-final:${{ github.sha }} -f final-devops-project/docker/Dockerfile final-devops-project
+      - name: Image security gate
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          image-ref: devops-final:${{ github.sha }}
+          severity: HIGH,CRITICAL
+          exit-code: '1'
+          format: table
+      - run: docker save devops-final:${{ github.sha }} -o /tmp/final-image.tar
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final-image
+          path: /tmp/final-image.tar
+          retention-days: 3
+  publish-deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: final-image
+          path: /tmp
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish the scanned image
+        run: |
+          docker load -i /tmp/final-image.tar
+          IMAGE="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/devops-final"
+          docker tag "devops-final:$GITHUB_SHA" "$IMAGE:$GITHUB_SHA"
+          docker push "$IMAGE:$GITHUB_SHA"
+          echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
+      - uses: helm/kind-action@v1
+        with:
+          cluster_name: final-ci
+      - uses: azure/setup-helm@v5.0.0
+        with:
+          version: v3.17.3
+      - name: Pull published image and deploy to Kubernetes using Helm
+        run: |
+          docker pull "$IMAGE:$GITHUB_SHA"
+          kind load docker-image "$IMAGE:$GITHUB_SHA" --name final-ci
+          kubectl create namespace devops-final
+          TOKEN="$(openssl rand -hex 24)"
+          echo "::add-mask::$TOKEN"
+          kubectl -n devops-final create secret generic devops-demo-secret --from-literal=API_TOKEN="$TOKEN"
+          helm upgrade --install devops-demo final-devops-project/helm/devops-demo \
+            -n devops-final --set image.repository="$IMAGE" --set image.tag="$GITHUB_SHA" \
+            --wait --timeout 180s
+          kubectl -n devops-final rollout status deployment/devops-demo --timeout=180s
+          kubectl -n devops-final run smoke --image=curlimages/curl:8.12.1 --restart=Never --attach \
+            --command -- curl --fail --retry 10 --retry-all-errors --retry-delay 2 http://devops-demo/readyz
+          kubectl -n devops-final get pods,svc > /tmp/deployment-evidence.txt
+          helm -n devops-final list >> /tmp/deployment-evidence.txt
+      - name: Diagnostics
+        if: always()
+        run: |
+          kubectl -n devops-final get pods,svc || true
+          kubectl -n devops-final get events --sort-by=.lastTimestamp || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final-deployment-evidence
+          path: /tmp/deployment-evidence.txt
+      - name: Promotion instructions
+        run: |
+          echo "Promote this scanned image by setting final-devops-project/helm/devops-demo/values-gitops.yaml image.tag to $GITHUB_SHA, then commit and push." >> "$GITHUB_STEP_SUMMARY"
+          echo "The kind cluster is ephemeral. Persistent delivery is handled by Argo CD." >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,92 @@
+name: CI/CD calculator
+on:
+  push:
+    branches: [main]
+    paths: ['15-cicd-github-actions/**', '.github/workflows/cicd-demo.yml']
+  pull_request:
+    paths: ['15-cicd-github-actions/**', '.github/workflows/cicd-demo.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: cicd-demo-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build and unit test
+        working-directory: 15-cicd-github-actions
+        run: |
+          set -euo pipefail
+          python -m compileall -q app
+          python -m unittest discover -s tests -v 2>&1 | tee test-results.txt
+          tar --exclude='__pycache__' -czf application.tar.gz app Dockerfile requirements.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cicd-calculator-build
+          path: |
+            15-cicd-github-actions/application.tar.gz
+            15-cicd-github-actions/test-results.txt
+  delivery:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compute immutable image tag
+        run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}/cicd-calculator:${GITHUB_SHA}" >> "$GITHUB_ENV"
+      - name: Docker build
+        run: docker build --pull -t "$IMAGE" 15-cicd-github-actions
+      - name: Log in to GitHub Container Registry
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish tested image
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: docker push "$IMAGE"
+      - name: Create ephemeral Kubernetes cluster
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: helm/kind-action@v1
+        with:
+          cluster_name: pipeline
+      - name: Deploy and verify
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          set -euo pipefail
+          # Pull the published tag before loading it; no registry credentials enter the cluster.
+          docker pull "$IMAGE"
+          kind load docker-image "$IMAGE" --name pipeline
+          kubectl apply -f 15-cicd-github-actions/k8s/deployment.yaml
+          kubectl set image deployment/cicd-calculator calculator="$IMAGE"
+          kubectl rollout status deployment/cicd-calculator --timeout=180s
+          kubectl get pods -o wide | tee deployment-evidence.txt
+          kubectl port-forward service/cicd-calculator 8080:80 >port-forward.log 2>&1 &
+          FORWARD_PID=$!
+          trap 'kill "$FORWARD_PID" || true' EXIT
+          curl --fail --retry 20 --retry-all-errors --retry-delay 2 http://127.0.0.1:8080/health | tee health.json
+          python3 -c 'import json; assert json.load(open("health.json"))["status"] == "ok"'
+          curl --fail 'http://127.0.0.1:8080/calculate?op=add&a=2&b=3' | tee calculator.json
+          python3 -c 'import json; assert json.load(open("calculator.json"))["result"] == 5'
+      - name: Save deployment evidence
+        if: always() && github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: cicd-calculator-deployment
+          if-no-files-found: ignore
+          path: |
+            deployment-evidence.txt
+            health.json
+            calculator.json
+            port-forward.log

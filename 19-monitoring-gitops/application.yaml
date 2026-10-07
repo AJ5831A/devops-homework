@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: monitoring-gitops-lab
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/AJ5831A/devops-homework.git
+    targetRevision: main
+    path: 19-monitoring-gitops/gitops
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gitops-lab
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions: [CreateNamespace=true]

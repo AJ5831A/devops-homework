@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: devops-demo
+  namespace: devops-final
+data:
+  APP_MESSAGE: Hello from Aryan's DevOps final project
+  APP_VERSION: lab

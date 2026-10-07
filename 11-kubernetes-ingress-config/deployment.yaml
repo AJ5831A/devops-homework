@@ -1,0 +1,57 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "config-web"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "config-web"
+  template:
+    metadata:
+      labels:
+        app: "config-web"
+    spec:
+      containers:
+        -
+          name: "web"
+          image: "nginx:1.28-alpine"
+          ports:
+            -
+              containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "32Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
+          command:
+            - "sh"
+            - "-c"
+          args:
+            - "printf '%s\\n' 'Hello from configured ingress' > /usr/share/nginx/html/index.html; exec nginx -g 'daemon off;'"
+          envFrom:
+            -
+              configMapRef:
+                name: "app-config"
+          env:
+            -
+              name: "DB_PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  name: "app-secret"
+                  key: "DB_PASSWORD"
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "config-web"
+spec:
+  type: "ClusterIP"
+  selector:
+    app: "config-web"
+  ports:
+    -
+      port: 80
+      targetPort: 80

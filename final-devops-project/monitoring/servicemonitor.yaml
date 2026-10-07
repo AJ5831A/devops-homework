@@ -1,0 +1,29 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: devops-demo
+  namespace: devops-final
+spec:
+  selector:
+    matchLabels:
+      app: devops-demo
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: devops-demo
+  namespace: devops-final
+spec:
+  groups:
+    - name: devops-demo
+      rules:
+        - alert: DevOpsAppUnavailable
+          expr: kube_deployment_status_replicas_available{namespace="devops-final",deployment="devops-demo"} < 1
+          for: 1m
+          labels: {severity: critical}
+          annotations:
+            summary: The final application has no available replicas

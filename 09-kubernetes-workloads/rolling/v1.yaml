@@ -1,0 +1,51 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "rolling"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "rolling"
+  template:
+    metadata:
+      labels:
+        app: "rolling"
+    spec:
+      containers:
+        -
+          name: "web"
+          image: "nginx:1.28-alpine"
+          ports:
+            -
+              containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "32Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
+          command:
+            - "sh"
+            - "-c"
+          args:
+            - "printf '%s\\n' 'rolling v1' > /usr/share/nginx/html/index.html; exec nginx -g 'daemon off;'"
+  strategy:
+    type: "RollingUpdate"
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "rolling"
+spec:
+  type: "ClusterIP"
+  selector:
+    app: "rolling"
+  ports:
+    -
+      port: 80
+      targetPort: 80

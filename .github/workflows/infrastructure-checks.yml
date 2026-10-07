@@ -1,0 +1,83 @@
+name: Infrastructure checks
+
+on:
+  push:
+    paths:
+      - '14-helm/**'
+      - '17-terraform/**'
+      - '18-cloud-terraform/**'
+      - 'final-devops-project/terraform/**'
+      - 'final-devops-project/helm/**'
+      - '.github/workflows/infrastructure-checks.yml'
+  pull_request:
+    paths:
+      - '14-helm/**'
+      - '17-terraform/**'
+      - '18-cloud-terraform/**'
+      - 'final-devops-project/terraform/**'
+      - 'final-devops-project/helm/**'
+      - '.github/workflows/infrastructure-checks.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    name: Terraform / ${{ matrix.directory }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        directory:
+          - 17-terraform/terraform-s3-demo
+          - 18-cloud-terraform/terraform-vpc
+          - final-devops-project/terraform
+    defaults:
+      run:
+        working-directory: ${{ matrix.directory }}
+    env:
+      TF_IN_AUTOMATION: 'true'
+      TF_INPUT: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '1.9.8'
+      - name: Check formatting
+        run: terraform fmt -check -diff
+      - name: Initialize providers without a backend
+        run: terraform init -backend=false
+      - name: Validate configuration
+        run: terraform validate -no-color
+
+  helm:
+    name: Helm / ${{ matrix.chart }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        chart:
+          - 14-helm/notes-chart
+          - final-devops-project/helm/devops-demo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v5.0.0
+        with:
+          version: 'v3.16.4'
+      - name: Lint default chart
+        run: helm lint "${{ matrix.chart }}" --strict
+      - name: Render default chart
+        run: helm template validation "${{ matrix.chart }}" > rendered-default.yaml
+      - name: Check Notes production and NodePort values
+        if: matrix.chart == '14-helm/notes-chart'
+        run: |
+          helm lint 14-helm/notes-chart --strict -f 14-helm/notes-chart/values-prod.yaml --set service.type=NodePort
+          helm template validation 14-helm/notes-chart -f 14-helm/notes-chart/values-prod.yaml --set service.type=NodePort > rendered-options.yaml
+      - name: Check final project Ingress, HPA and GitOps values
+        if: matrix.chart == 'final-devops-project/helm/devops-demo'
+        run: |
+          helm lint final-devops-project/helm/devops-demo --strict --set ingress.enabled=true --set hpa.enabled=true
+          helm template validation final-devops-project/helm/devops-demo --set ingress.enabled=true --set hpa.enabled=true > rendered-options.yaml
+          helm lint final-devops-project/helm/devops-demo --strict -f final-devops-project/helm/devops-demo/values-gitops.yaml
+          helm template validation final-devops-project/helm/devops-demo -f final-devops-project/helm/devops-demo/values-gitops.yaml > rendered-gitops.yaml

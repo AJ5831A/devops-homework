@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      API_TOKEN: ${API_TOKEN:?Set API_TOKEN in your shell}
+      APP_MESSAGE: Hello from Aryan's DevOps final project
+    ports:
+      - "127.0.0.1:8080:8080"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]

@@ -1,0 +1,12 @@
+# Set tag to the SHA of a successful published image before initial sync.
+image:
+  repository: ghcr.io/aj5831a/devops-final
+  tag: SET_SUCCESSFUL_COMMIT_SHA
+  pullPolicy: IfNotPresent
+existingSecret: devops-demo-secret
+hpa:
+  enabled: true
+ingress:
+  enabled: true
+  className: nginx
+  host: devops.local

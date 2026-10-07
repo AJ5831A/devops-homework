@@ -1,0 +1,35 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "canary"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "canary"
+  template:
+    metadata:
+      labels:
+        app: "canary"
+        track: "canary"
+        family: "canary"
+    spec:
+      containers:
+        -
+          name: "web"
+          image: "nginx:1.28-alpine"
+          ports:
+            -
+              containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "32Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
+          command:
+            - "sh"
+            - "-c"
+          args:
+            - "printf '%s\\n' 'canary' > /usr/share/nginx/html/index.html; exec nginx -g 'daemon off;'"

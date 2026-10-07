@@ -1,0 +1,18 @@
+replicaCount: 1
+image:
+  repository: nginx
+  tag: "1.28-alpine"
+service:
+  type: ClusterIP
+  port: 80
+  nodePort: 30090
+app:
+  name: notes-app
+  environment: development
+resources:
+  requests:
+    cpu: 50m
+    memory: 32Mi
+  limits:
+    cpu: 200m
+    memory: 128Mi

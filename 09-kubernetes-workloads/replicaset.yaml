@@ -1,0 +1,18 @@
+apiVersion: "apps/v1"
+kind: "ReplicaSet"
+metadata:
+  name: "standalone"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "standalone"
+  template:
+    metadata:
+      labels:
+        app: "standalone"
+    spec:
+      containers:
+        -
+          name: "web"
+          image: "nginx:1.28-alpine"

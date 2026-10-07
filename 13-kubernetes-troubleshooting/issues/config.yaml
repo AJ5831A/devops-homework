@@ -1,0 +1,21 @@
+apiVersion: "v1"
+kind: "Pod"
+metadata:
+  name: "config-error"
+spec:
+  containers:
+    -
+      name: "main"
+      image: "busybox:1.37"
+      command:
+        - "sh"
+        - "-c"
+        - "sleep 3600"
+      env:
+        -
+          name: "APP_ENV"
+          valueFrom:
+            configMapKeyRef:
+              name: "missing-env"
+              key: "APP_ENV"
+  restartPolicy: "Never"

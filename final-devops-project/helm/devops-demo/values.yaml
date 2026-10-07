@@ -1,0 +1,16 @@
+replicaCount: 2
+image:
+  repository: devops-final
+  tag: local
+  pullPolicy: IfNotPresent
+message: "Hello from Aryan's DevOps final project"
+existingSecret: devops-demo-secret
+ingress:
+  enabled: false
+  className: nginx
+  host: devops.local
+hpa:
+  enabled: false
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPU: 60

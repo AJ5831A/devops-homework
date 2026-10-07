@@ -1,0 +1,13 @@
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "active"
+spec:
+  type: "ClusterIP"
+  selector:
+    family: "blue-green"
+    track: "blue"
+  ports:
+    -
+      port: 80
+      targetPort: 80

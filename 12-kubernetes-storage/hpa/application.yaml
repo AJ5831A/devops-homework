@@ -1,0 +1,41 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "cpu-demo"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "cpu-demo"
+  template:
+    metadata:
+      labels:
+        app: "cpu-demo"
+    spec:
+      containers:
+        -
+          name: "web"
+          image: "registry.k8s.io/hpa-example"
+          ports:
+            -
+              containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "32Mi"
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "cpu-demo"
+spec:
+  type: "ClusterIP"
+  selector:
+    app: "cpu-demo"
+  ports:
+    -
+      port: 80
+      targetPort: 80
