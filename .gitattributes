@@ -1,2 +1,3 @@
 # Preserve authentic transcripts, including HTTP CRLF and CLI trailing separators.
 evidence/** -whitespace
+**/evidence/** -whitespace

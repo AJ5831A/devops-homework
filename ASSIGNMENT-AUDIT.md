@@ -11,16 +11,16 @@ submodule directories in the ZIP; fresh runnable projects fill those gaps.
 
 | Existing section | Audit finding |
 | --- | --- |
-| 01 Linux | Link demonstration and notes present; Ubuntu adduser/journalctl evidence remains pending |
+| 01 Linux | Link demonstration and notes present; Ubuntu adduser/journalctl evidence added in this update |
 | 02 Shell | System info script and recorded sample output present |
 | 03 Networking | Command explanations and recorded macOS outputs present |
 | 04 Git | Commit/cherry-pick demonstrations and output present |
-| 05 Docker | Six application folders and Dockerfiles present; builds/browser evidence pending |
-| 06 Multi-stage | Go application and two-stage Dockerfile present; execution evidence pending; name/enrollment now filled |
-| 07 Docker networks | Commands, explanations and bind-mount file present; runtime screenshots pending |
+| 05 Docker | Six application folders and Dockerfiles present; builds/browser evidence added in this update |
+| 06 Multi-stage | Go application and two-stage Dockerfile present; execution evidence added; name/enrollment filled |
+| 07 Docker networks | Commands, explanations and bind-mount file present; runtime screenshots added in this update |
 
-Existing recorded outputs were retained, not re-executed or independently
-verified in this update. The networking explanation was corrected: a container
+Existing recorded outputs were retained. New execution records for Linux user
+management and Docker labs are linked separately from the original outputs. The networking explanation was corrected: a container
 attached to two networks does not automatically route between them.
 
 ## Remaining PDF assignments now implemented

@@ -1,0 +1,28 @@
+Wed Oct  7 15:15:07 UTC 2026
+hw-nodejs-app
+hw-python-app
+hw-java-app
+hw-apache-app
+hw-react-app
+hw-nginx-app
+hw-multistage
+hw-frontend
+hw-backend
+hw-database
+hw-apache-host
+hw-bindmount
+ Container 19-monitoring-gitops-app-1 Stopping 
+ Container 19-monitoring-gitops-prometheus-1 Stopping 
+ Container 19-monitoring-gitops-grafana-1 Stopping 
+ Container 19-monitoring-gitops-prometheus-1 Stopped 
+ Container 19-monitoring-gitops-prometheus-1 Removing 
+ Container 19-monitoring-gitops-prometheus-1 Removed 
+ Container 19-monitoring-gitops-grafana-1 Stopped 
+ Container 19-monitoring-gitops-grafana-1 Removing 
+ Container 19-monitoring-gitops-grafana-1 Removed 
+ Container 19-monitoring-gitops-app-1 Stopped 
+ Container 19-monitoring-gitops-app-1 Removing 
+ Container 19-monitoring-gitops-app-1 Removed 
+ Network 19-monitoring-gitops_default Removing 
+ Network 19-monitoring-gitops_default Removed 
+devops-homework Up 11 minutes

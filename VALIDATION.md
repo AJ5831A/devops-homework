@@ -10,14 +10,9 @@
 - 27 Kubernetes/final-project Bash documentation blocks passed syntax checks.
 - Final application review fixes are documented in [security/REVIEW.md](final-devops-project/security/REVIEW.md).
 
-Repository-wide structural check output:
-
-```text
-Offline structural checks: 90 yaml, 1 json, 10 python, 3 shell, 46 links
-PASS. Helm rendering, Terraform validation and runtime behavior require separate tooling.
-```
-
-`git diff --check` also passed.
+The repository-wide structural checker and application unit tests passed.
+Counts increase as new runtime evidence is added; use the commands below to
+check the current checkout. Raw CLI evidence preserves original whitespace.
 
 ## Reproduce offline checks
 
@@ -55,11 +50,20 @@ Local HTTP readiness/metrics and the application screenshot are in
 verification, cleanup and journalctl transcript is in
 [evidence/linux/ubuntu-users-journal.log](evidence/linux/ubuntu-users-journal.log).
 
+## Additional observed runtime evidence
+
+- [Docker labs](evidence/docker/README.md): all six applications, the multi-stage build, network isolation/connectivity, host networking and bind-mount changes.
+- [Helm lifecycle](evidence/helm/20261007T150849Z/): install, configuration/replica upgrade, failed image, rollback, browser response and uninstall.
+- [Local infrastructure validation](evidence/infrastructure/README.md): all three Terraform init/fmt/validate runs and both chart lint/render checks.
+- [Monitoring](19-monitoring-gitops/evidence/README.md): CPU/memory, logs, health, Grafana, firing alerts and recovery.
+
 ## Remaining execution work
 
-The local Docker/Minikube lab is now installed and its exercise runs are in
-progress. Monitoring, GitOps, complete per-exercise Kubernetes output and AWS
-apply/destroy remain pending until their actual evidence is recorded. The user
-is configuring an AWS lab profile. No cloud credentials or fabricated output
-are committed. Later workflow additions must get a new run before claiming
-validation for those revisions.
+The first hosted Kubernetes exercise run exposed verification-script timing
+and DNS return-code problems. Its original evidence is retained alongside
+ongoing targeted repairs. The final GitOps retry is running after a transient
+GitHub push failure. Neither run is claimed as fully passed here.
+
+AWS plan/apply/output/destroy await the user's lab profile. No cloud credentials
+or fabricated output are committed. Later workflow additions need a new run
+before claiming validation for those revisions.

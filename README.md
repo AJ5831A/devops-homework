@@ -36,8 +36,10 @@ thirteen topics, including the full final project.
 Source/configuration and documentation are implemented. Local application tests
 and structural checks are recorded in [VALIDATION.md](VALIDATION.md).
 Successful GitHub Actions runs now verify CI/CD, security gates, Kubernetes
-smoke deployment, Helm charts and Terraform validation. Live Docker/Kubernetes
-lab exercises, monitoring/GitOps and AWS apply/destroy are being completed. Expected outputs in the runbooks
+smoke deployment, Helm charts and Terraform validation. Docker application,
+networking and volume exercises, the Helm lifecycle, and live Prometheus/Grafana
+monitoring now have recorded evidence. Kubernetes repair checks and the GitOps
+reconciliation run are in progress; AWS apply/destroy awaits the lab profile. Expected outputs in the runbooks
 are explicitly distinguished from observed results; no reference screenshots
 are presented as this submission's evidence.
 
