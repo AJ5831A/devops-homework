@@ -1,0 +1,45 @@
+name: Kubernetes and Helm runtime labs
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  labs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install lab tools
+        run: |
+          curl -fsSL https://storage.googleapis.com/minikube/releases/v1.39.0/minikube-linux-amd64 -o /tmp/minikube
+          sudo install /tmp/minikube /usr/local/bin/minikube
+          curl -fsSL https://dl.k8s.io/release/v1.34.0/bin/linux/amd64/kubectl -o /tmp/kubectl
+          sudo install /tmp/kubectl /usr/local/bin/kubectl
+      - uses: azure/setup-helm@v5.0.0
+        with:
+          version: v3.16.4
+      - name: Create disposable cluster
+        run: |
+          minikube start -p devops-homework --driver=docker --cpus=2 --memory=4800 --kubernetes-version=v1.34.0 --cni=calico
+          minikube -p devops-homework addons enable ingress
+          minikube -p devops-homework addons enable metrics-server
+          kubectl --context=devops-homework -n ingress-nginx rollout status deployment/ingress-nginx-controller --timeout=180s
+          kubectl --context=devops-homework -n kube-system rollout status deployment/metrics-server --timeout=180s
+      - name: Execute Kubernetes assignments
+        run: bash scripts/run-kubernetes-evidence.sh
+      - name: Execute Helm assignment
+        if: always()
+        run: bash scripts/run-helm-evidence.sh
+      - name: Upload actual transcripts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kubernetes-helm-runtime-evidence
+          path: |
+            evidence/kubernetes/
+            evidence/helm/
+      - name: Cluster diagnostics
+        if: failure()
+        run: |
+          kubectl --context=devops-homework get pods -A -o wide
+          kubectl --context=devops-homework get events -A --sort-by=.lastTimestamp | tail -100
